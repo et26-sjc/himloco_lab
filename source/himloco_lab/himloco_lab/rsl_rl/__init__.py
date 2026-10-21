@@ -38,4 +38,10 @@ from .modules.him_actor_critic import *
 from .modules.him_estimator import *
 from .storage.him_rollout_storage import *
 from .runners.him_on_policy_runner import *
-from .wrappers import *
+# The environment adapter requires Kit, while networks and exporters do not.
+def __getattr__(name):
+    if name == "HimlocoVecEnvWrapper":
+        from .wrappers import HimlocoVecEnvWrapper
+        globals()[name] = HimlocoVecEnvWrapper
+        return HimlocoVecEnvWrapper
+    raise AttributeError(name)

@@ -1,0 +1,52 @@
+{
+  "joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint"
+  ],
+  "body_names": [
+    "base",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "FL_foot",
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FR_foot",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf",
+    "RL_foot",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RR_foot"
+  ],
+  "asset": "/home/sjc/HIMLoco-Go1/legged_gym/resources/robots/go1/urdf/go1.urdf",
+  "asset_options": {
+    "default_dof_drive_mode": 3,
+    "collapse_fixed_joints": true,
+    "replace_cylinder_with_capsule": true,
+    "flip_visual_attachments": false,
+    "fix_base_link": false,
+    "density": 0.001,
+    "angular_damping": 0.0,
+    "linear_damping": 0.0,
+    "max_angular_velocity": 1000.0,
+    "max_linear_velocity": 1000.0,
+    "armature": 0.0,
+    "thickness": 0.01,
+    "disable_gravity": false
+  },
+  "evidence": "Isaac Gym gym.get_asset_dof_names on the training URDF with training AssetOptions"
+}

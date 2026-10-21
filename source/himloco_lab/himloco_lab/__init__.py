@@ -10,5 +10,5 @@ Python module serving as a project/extension template.
 # Register Gym environments.
 from .tasks import *
 
-# Register UI extensions.
-from .ui_extension_example import *
+# The optional UI example requires a running Kit app. Keep tensor-only imports usable
+# without SimulationApp; Kit can explicitly import himloco_lab.ui_extension_example.

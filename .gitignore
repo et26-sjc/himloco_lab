@@ -69,3 +69,7 @@ _build
 
 # Docker history
 .isaac-lab-docker-history
+
+# Round-two evaluation reports are tracked; binary observations/exports stay local.
+/artifacts/**/*.pt
+/artifacts/**/*.onnx
