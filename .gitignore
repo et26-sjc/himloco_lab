@@ -65,7 +65,7 @@ _build
 /datasets/
 
 # Tests
-tests/
+# tests/ contains migration regression tests.
 
 # Docker history
 .isaac-lab-docker-history

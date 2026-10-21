@@ -1,5 +1,8 @@
 # HimLoco Lab
 
+Go1 / Isaac Sim 6.1 / Isaac Lab 3.0: [迁移记录、训练、恢复、Play 与实际测试](MIGRATION_GO1.md)。
+
+
 ## Project Overview
 
 This project ports **HimLoco** from **IsaacGym** to **Isaac Lab**.
