@@ -160,7 +160,7 @@ class _HimlocoEncoderOnnxExporter(torch.nn.Module):
         
         return encoder_output
     
-    def export(self, path, filename):
+    def export(self, path, filename, dynamic_batch=True):
         self.to("cpu")
         self.eval()
         
@@ -177,7 +177,8 @@ class _HimlocoEncoderOnnxExporter(torch.nn.Module):
             verbose=self.verbose,
             input_names=["obs_history"],
             output_names=["encoder_output"],
-            dynamic_axes={},
+            dynamic_axes=({"obs_history": {0: "batch"}, "encoder_output": {0: "batch"}}
+                          if dynamic_batch else {}),
         )
 
 
@@ -203,7 +204,7 @@ class _HimlcoPolicyOnnxExporter(torch.nn.Module):
         """
         return self.actor(obs)
     
-    def export(self, path, filename):
+    def export(self, path, filename, dynamic_batch=True):
         self.to("cpu")
         self.eval()
         
@@ -219,5 +220,6 @@ class _HimlcoPolicyOnnxExporter(torch.nn.Module):
             verbose=self.verbose,
             input_names=["obs"],
             output_names=["actions"],
-            dynamic_axes={},
+            dynamic_axes=({"obs": {0: "batch"}, "actions": {0: "batch"}}
+                          if dynamic_batch else {}),
         )

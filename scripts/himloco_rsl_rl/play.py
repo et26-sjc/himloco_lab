@@ -17,6 +17,7 @@ import cli_args  # isort: skip
 
 # add argparse arguments
 parser = argparse.ArgumentParser(description="Play a checkpoint with HimLoco RSL-RL agent.")
+parser.add_argument("--export", choices=["none", "jit", "onnx", "all"], default="none", help="Optional export; inference does not require ONNX.")
 parser.add_argument("--video", action="store_true", default=False, help="Record videos during playback.")
 parser.add_argument("--video_length", type=int, default=200, help="Length of the recorded video (in steps).")
 parser.add_argument(
@@ -169,25 +170,11 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     # obtain the trained policy for inference
     policy = runner.get_inference_policy(device=env.device)
 
-    # export HimLoco dual network (encoder + policy) as TorchScript JIT and ONNX
     export_model_dir = os.path.join(os.path.dirname(resume_path), "exported")
-    print(f"[INFO] Exporting HimLoco dual network to: {export_model_dir}")
-    
-    # Export as TorchScript JIT (combined encoder + policy)
-    export_himloco_policy_as_jit(
-        runner.alg.actor_critic,
-        path=export_model_dir,
-        policy_filename="policy.pt"
-    )
-    
-    # Export as ONNX (separate encoder and policy)
-    export_himloco_policy_as_onnx(
-        runner.alg.actor_critic,
-        path=export_model_dir,
-        encoder_filename="encoder.onnx",
-        policy_filename="policy.onnx",
-        verbose=False
-    )
+    if args_cli.export in ("jit", "all"):
+        export_himloco_policy_as_jit(runner.alg.actor_critic, export_model_dir)
+    if args_cli.export in ("onnx", "all"):
+        export_himloco_policy_as_onnx(runner.alg.actor_critic, export_model_dir)
 
     dt = env.unwrapped.step_dt
 

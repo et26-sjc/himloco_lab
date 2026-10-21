@@ -5,5 +5,11 @@
 
 """Utility functions for HimLoco Lab."""
 
-from .export_deploy_cfg import export_deploy_cfg
+def __getattr__(name):
+    if name == "export_deploy_cfg":
+        from .export_deploy_cfg import export_deploy_cfg
+        globals()[name] = export_deploy_cfg
+        return export_deploy_cfg
+    raise AttributeError(name)
+
 from .export_policy import export_himloco_policy_as_jit, export_himloco_policy_as_onnx
