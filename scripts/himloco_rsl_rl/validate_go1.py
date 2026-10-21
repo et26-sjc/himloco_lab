@@ -60,8 +60,15 @@ def main():
     # Force all rows to timeout. A distinctive action proves final_obs precedes reset.
     env.episode_length_buf[:] = env.max_episode_length - 1
     action = torch.full((args.num_envs, 12), 0.137, device=env.device)
-    obs, critic, _, done, infos, ids, terminal = env.step(action)
+    obs, critic, rewards, done, infos, ids, terminal = env.step(action)
     assert done.all() and len(ids) == args.num_envs
+    # Deliberately artificial episode_length_buf must not dilute reward rates.
+    # There has been exactly one real step since reset, irrespective of the timeout offset.
+    torch.testing.assert_close(sum(infos['him_episode'].values()), rewards.mean()/env.unwrapped.step_dt,
+                               atol=1e-4, rtol=1e-4)
+    from himloco_lab.utils import export_deploy_cfg as deploy_first
+    from himloco_lab.utils import export_deploy_cfg as deploy_second
+    assert callable(deploy_first) and deploy_first is deploy_second
     torch.testing.assert_close(terminal[:, 33:45], action[ids])
     torch.testing.assert_close(critic[:, 33:45], torch.zeros_like(action))
     assert torch.count_nonzero(obs[:, 45:]) == 0

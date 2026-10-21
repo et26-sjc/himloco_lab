@@ -37,7 +37,7 @@ setup(
     license="Apache-2.0",
     include_package_data=True,
     python_requires=">=3.12",
-    extras_require={"validation": ["onnxruntime"]},
+    extras_require={"validation": ["onnxruntime"], "wandb": ["wandb"]},
     classifiers=[
         "Natural Language :: English",
         "Programming Language :: Python :: 3.12",

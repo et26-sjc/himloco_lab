@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import random
 from typing import TYPE_CHECKING
 
@@ -37,6 +38,15 @@ def add_himloco_rsl_rl_args(parser: argparse.ArgumentParser):
     arg_group.add_argument(
         "--log_project_name", type=str, default=None, help="Name of the logging project when using wandb or neptune."
     )
+
+    arg_group.add_argument("--wandb_group", default=None)
+    arg_group.add_argument("--wandb_tags", nargs="+", default=None)
+    arg_group.add_argument("--wandb_mode", choices=["offline", "online", "disabled"], default=None)
+    arg_group.add_argument("--wandb_run_id", default=None)
+    arg_group.add_argument("--wandb_histograms", action=argparse.BooleanOptionalAction, default=None)
+    arg_group.add_argument("--wandb_histogram_interval", type=int, default=None)
+    arg_group.add_argument("--wandb_histogram_samples", type=int, default=None)
+    arg_group.add_argument("--wandb_upload_checkpoints", action=argparse.BooleanOptionalAction, default=None)
 
 
 def parse_himloco_rsl_rl_cfg(task_name: str, args_cli: argparse.Namespace):
@@ -91,4 +101,19 @@ def update_himloco_rsl_rl_cfg(agent_cfg, args_cli: argparse.Namespace):
             agent_cfg.wandb_project = args_cli.log_project_name
             agent_cfg.neptune_project = args_cli.log_project_name
 
+    agent_cfg.wandb_project = (getattr(args_cli, "log_project_name", None)
+                                or os.getenv("WANDB_PROJECT", agent_cfg.wandb_project))
+    for field in ("wandb_group", "wandb_tags", "wandb_mode", "wandb_run_id", "wandb_histogram_interval",
+                  "wandb_histogram_samples", "wandb_upload_checkpoints"):
+        value = getattr(args_cli, field, None)
+        if value is not None:
+            setattr(agent_cfg, field, value)
+    if getattr(args_cli, "wandb_histograms", None) is not None:
+        agent_cfg.wandb_log_histograms = args_cli.wandb_histograms
+    if agent_cfg.wandb_group is None:
+        agent_cfg.wandb_group = os.getenv("WANDB_RUN_GROUP")
+    if not agent_cfg.wandb_tags and os.getenv("WANDB_TAGS"):
+        agent_cfg.wandb_tags = [tag.strip() for tag in os.environ["WANDB_TAGS"].split(",") if tag.strip()]
+    if agent_cfg.wandb_histogram_interval < 1 or agent_cfg.wandb_histogram_samples < 1:
+        raise ValueError("Histogram interval and sample count must be positive")
     return agent_cfg

@@ -74,8 +74,17 @@ class HIMBaseRunnerCfg:
     neptune_project: str = "isaaclab"
     """The neptune project name. Default is "isaaclab"."""
 
-    wandb_project: str = "isaaclab"
+    wandb_project: str = "himloco-go1-baseline"
     """The wandb project name. Default is "isaaclab"."""
+
+    wandb_group: str | None = None
+    wandb_tags: list[str] = []
+    wandb_mode: str | None = None
+    wandb_run_id: str | None = None
+    wandb_log_histograms: bool = False
+    wandb_histogram_interval: int = 10
+    wandb_histogram_samples: int = 2048
+    wandb_upload_checkpoints: bool = False
 
     resume: bool = False
     """Whether to resume a previous training. Default is False.

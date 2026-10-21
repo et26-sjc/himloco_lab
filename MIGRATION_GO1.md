@@ -29,7 +29,7 @@ python -m pip install -e 'source/himloco_lab[validation]' --no-build-isolation
 ```
 
 核心额外依赖为 psutil、tensorboard、onnx；validation extra 增加 onnxruntime。
-Isaac Sim/Lab 及其既有依赖继续使用当前 Conda 环境。未引入 W&B。
+Isaac Sim/Lab 及其既有依赖继续使用当前 Conda 环境。W&B 为第二轮新增的可选依赖，默认仍使用 TensorBoard。
 首次启动会从 NVIDIA 官方资源服务获取 USD、mesh 和 Actuator Net，并利用本机 `/tmp/https` 缓存。
 
 ## 修改文件
@@ -170,8 +170,8 @@ tensorboard --logdir logs/himloco_rsl_rl/go1_rough
 ```
 
 Actor 推理只接受270D history，不接收 privileged observation。
-Play 自动导出到 checkpoint 同目录下的 `exported/`：`policy.pt` 为 Encoder+Actor，ONNX 分为 `encoder.onnx`（270→19，latent已归一化）和 `policy.onnx`（64→12）。
-ONNX 使用固定 batch=1；批量部署需逐环境推理或今后扩展动态 batch。
+第二轮将Play改为默认不导出，可通过`--export jit|onnx|all`显式启用；导出到checkpoint同目录下的`exported/`：`policy.pt` 为 Encoder+Actor，ONNX 分为 `encoder.onnx`（270→19，latent已归一化）和 `policy.onnx`（64→12）。
+第二轮ONNX已支持动态batch，独立验证覆盖batch1/7/64及真实rollout。
 Go1 不生成依赖 `joint_sdk_names` 的 Go2 实机部署配置；Go2 的部署生成入口保留。
 
 ## 实际测试与结果
@@ -216,10 +216,22 @@ checkpoint与TensorBoard保存在 `logs/himloco_rsl_rl/go1_rough/2026-10-21_23-3
 
 短程训练验证的是工程和数据链路，**没有证明运动策略已收敛或具备高质量速度跟踪**。
 下一步运行完整训练并评估不同地形、速度、随机 seed 的长期 reward、跌倒率及跟踪误差。
-本次没有进行 Go1 MuJoCo、SDK、真机、W&B 或新算法开发。
+未进行Go1 MuJoCo、SDK、真机或新算法开发。W&B离线日志已在第二轮完成验证。
 Go2 配置保留并检查可实例化；其 URDF 路径仍需使用者在 `assets/unitree.py` 指向本机模型，未在本次完成 Go2 GPU训练回归。
 录像配置已迁移至原生 VideoRecorderCfg；键盘/录像/独立ONNX Play 不在主要验收路径，需在使用前单独验证。
 Isaac Sim 启动会报告 CPU package、MaterialX/USD 等 warning；真实训练和 Play 已完成。未对第三方核心库作屏蔽修复。
 
 未来 sim2sim/sim2real 应特别核对：公开关节顺序到 SDK/URDF 的映射、rad与力矩单位、Actuator Net 的误差符号及其3个物理步历史、部署50Hz策略与200Hz执行器调用、270D history 顺序与reset、观测缩放、latent L2归一化、默认站姿和0.25 action scale、传感器/坐标系/XYZW约定（本项目为 XYZW，标量在末位）、力矩/速度/碰撞限制，以及部署端是否具备同等执行器模型。
 不得直接把旧 Isaac Gym checkpoint 当作该 Lab 场景的可互换策略。
+
+
+## 第二轮：旧权重、独立导出与W&B（2026-10-22）
+
+- [LEGACY_POLICY_EVAL.md](LEGACY_POLICY_EVAL.md)：旧model_7500严格加载、真实Gym DOF查询、direct/adapted接口、20秒平地/rough与GUI结果，区分网络/语义/物理差异。
+- [EXPORT_POLICY.md](EXPORT_POLICY.md)：新model_4与旧model_7500的独立CPU JIT/split ONNX、多batch和真实rollout验收，Play不再强制导出。
+- [WANDB_LOGGING.md](WANDB_LOGGING.md)：完整指标名、reward归一化、histogram限制、离线初训/恢复计数、正式4096环境命令。
+- 新增报告纳入`artifacts/round2/*.json`及其子目录；原始checkpoint、二进制导出/观测/日志保持本地，不覆盖旧权重。
+- 新logger只改记录与计数，不修改HIM-PPO/Estimator损失或梯度路径。训练默认仍为TensorBoard。
+- 当前可选UI示例按需导入，tensor-only网络检查无需Kit；正常任务注册与Go2部署函数入口保留。
+
+第二轮还以原model_4执行正常headless Play 50步（默认不导出）并成功；日志`/tmp/himloco_round2_play.log`。

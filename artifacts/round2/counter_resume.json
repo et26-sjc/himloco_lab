@@ -1,0 +1,10 @@
+{
+  "source_checkpoint": "model_4.pt",
+  "source_num_envs": 4096,
+  "current_num_envs": 32,
+  "source_timesteps": 1638400,
+  "final_iteration": 5.0,
+  "final_timesteps": 1641600.0,
+  "wandb_disabled": true,
+  "status": "passed"
+}

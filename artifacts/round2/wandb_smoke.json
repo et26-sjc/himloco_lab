@@ -1,0 +1,101 @@
+{
+  "path": "logs/himloco_rsl_rl/go1_rough/2026-10-22_00-23-55_wandb_offline_smoke/wandb/offline-run-20261022_002404-9ott5q82/run-9ott5q82.wandb",
+  "history_rows": 3,
+  "iterations": [
+    1,
+    2,
+    3
+  ],
+  "timesteps": [
+    3200,
+    6400,
+    9600
+  ],
+  "scalar_keys": [
+    "Curriculum/lin_vel_cmd_levels",
+    "Curriculum/terrain_levels",
+    "Episode/max_command_x",
+    "Episode/rew_action_rate",
+    "Episode/rew_ang_vel_xy",
+    "Episode/rew_base_height",
+    "Episode/rew_dof_acc",
+    "Episode/rew_foot_clearance",
+    "Episode/rew_joint_power",
+    "Episode/rew_lin_vel_z",
+    "Episode/rew_orientation",
+    "Episode/rew_smoothness",
+    "Episode/rew_tracking_ang_vel",
+    "Episode/rew_tracking_lin_vel",
+    "Episode/terrain_level",
+    "Episode_Reward/action_rate",
+    "Episode_Reward/base_angular_velocity",
+    "Episode_Reward/base_height_l2",
+    "Episode_Reward/base_linear_velocity",
+    "Episode_Reward/energy",
+    "Episode_Reward/feet_height_body",
+    "Episode_Reward/flat_orientation_l2",
+    "Episode_Reward/joint_acc",
+    "Episode_Reward/smoothness",
+    "Episode_Reward/track_ang_vel_z",
+    "Episode_Reward/track_lin_vel_xy",
+    "Episode_Termination/base_contact",
+    "Episode_Termination/terrain_out_of_bounds",
+    "Episode_Termination/time_out",
+    "Loss/Estimation Loss",
+    "Loss/Swap Loss",
+    "Loss/learning_rate",
+    "Loss/surrogate",
+    "Loss/value_function",
+    "Metrics/base_velocity/error_vel_xy",
+    "Metrics/base_velocity/error_vel_yaw",
+    "Metrics/success_rate",
+    "Metrics/total_timesteps",
+    "Perf/collection_time",
+    "Perf/learning_time",
+    "Perf/total_fps",
+    "Policy/mean_noise_std",
+    "Timing/iteration_time",
+    "Timing/total_time",
+    "Train/mean_episode_length",
+    "Train/mean_episode_length/time",
+    "Train/mean_reward",
+    "Train/mean_reward/time",
+    "_runtime",
+    "_step",
+    "_timestamp",
+    "trainer/iteration",
+    "trainer/timesteps"
+  ],
+  "histogram_keys": [
+    "Distributions/actions/_type",
+    "Distributions/actions/bins",
+    "Distributions/actions/values",
+    "Distributions/values/_type",
+    "Distributions/values/bins",
+    "Distributions/values/values"
+  ],
+  "estimator_losses": [
+    0.24458471462130546,
+    0.11099164262413978,
+    0.11520119868218899
+  ],
+  "swap_losses": [
+    0.10819513127207755,
+    0.10812618844211101,
+    0.1079055704176426
+  ],
+  "run_metadata": {
+    "id": "9ott5q82",
+    "group": "round2-validation",
+    "tags": [
+      "go1",
+      "smoke"
+    ]
+  },
+  "histogram_sample_counts": {
+    "Distributions/actions": 510,
+    "Distributions/values": 320
+  },
+  "status": "passed",
+  "all_required_metrics_present": true
+}
