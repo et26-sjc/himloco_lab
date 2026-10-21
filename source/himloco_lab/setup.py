@@ -19,6 +19,8 @@ EXTENSION_TOML_DATA = toml.load(os.path.join(EXTENSION_PATH, "config", "extensio
 INSTALL_REQUIRES = [
     # NOTE: Add dependencies
     "psutil",
+    "tensorboard",
+    "onnx",
 ]
 
 # Installation operation
@@ -34,11 +36,12 @@ setup(
     install_requires=INSTALL_REQUIRES,
     license="Apache-2.0",
     include_package_data=True,
-    python_requires=">=3.10",
+    python_requires=">=3.12",
+    extras_require={"validation": ["onnxruntime"]},
     classifiers=[
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.10",
-        "Isaac Sim :: 4.5.0",
+        "Programming Language :: Python :: 3.12",
+        "Isaac Sim :: 6.1.0",
     ],
     zip_safe=False,
 )

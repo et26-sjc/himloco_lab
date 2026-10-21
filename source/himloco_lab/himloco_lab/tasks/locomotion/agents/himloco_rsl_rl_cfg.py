@@ -35,4 +35,9 @@ class PPORunnerCfg(HIMOnPolicyRunnerCfg):
         desired_kl = 0.01,
         max_grad_norm = 1.0,
     )
-    
+
+@configclass
+class Go1PPORunnerCfg(PPORunnerCfg):
+    experiment_name = "go1_rough"
+    max_iterations = 10000
+    privileged_history_length = 0

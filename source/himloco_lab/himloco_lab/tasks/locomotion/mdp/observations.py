@@ -17,7 +17,7 @@ def base_external_force(
     """observe external force applied on the base"""
     asset: Articulation = env.scene[asset_cfg.name]
     # shape: (num_envs, 3)
-    return asset.permanent_wrench_composer.composed_force_as_torch[:, asset_cfg.body_ids, :].squeeze(1).clone()
+    return asset.permanent_wrench_composer.out_force_b.torch[:, asset_cfg.body_ids, :].squeeze(1).clone()
 
 
 def height_scan_clip(
@@ -32,5 +32,5 @@ def height_scan_clip(
     # extract the used quantities (to enable type-hinting)
     sensor: RayCaster = env.scene.sensors[sensor_cfg.name]
     # height scan: height = sensor_height - hit_point_z - offset
-    height = sensor.data.pos_w[:, 2].unsqueeze(1) - sensor.data.ray_hits_w[..., 2] - offset
+    height = sensor.data.pos_w.torch[:, 2].unsqueeze(1) - sensor.data.ray_hits_w.torch[..., 2] - offset
     return torch.clip(height, clip[0], clip[1])

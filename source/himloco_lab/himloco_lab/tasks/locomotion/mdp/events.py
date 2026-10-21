@@ -63,7 +63,7 @@ def apply_periodic_external_force_torque(
         torques = zero_torques
     
     # set the forces and torques into the buffers
-    asset.permanent_wrench_composer.set_forces_and_torques(
+    asset.permanent_wrench_composer.set_forces_and_torques_index(
         forces=forces, torques=torques, env_ids=env_ids, body_ids=asset_cfg.body_ids
     )
     

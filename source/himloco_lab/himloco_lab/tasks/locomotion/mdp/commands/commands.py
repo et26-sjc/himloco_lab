@@ -88,7 +88,7 @@ class UniformLevelVelocityCommand(UniformVelocityCommand):
             # resolve indices of heading envs
             env_ids = self.is_heading_env.nonzero(as_tuple=False).flatten()
             # compute angular velocity
-            heading_error = math_utils.wrap_to_pi(self.heading_target[env_ids] - self.robot.data.heading_w[env_ids])
+            heading_error = math_utils.wrap_to_pi(self.heading_target[env_ids] - self.robot.data.heading_w.torch[env_ids])
             self.vel_command_b[env_ids, 2] = torch.clip(
                 self.cfg.heading_control_stiffness * heading_error,
                 min=self.cfg.ranges.ang_vel_z[0],
