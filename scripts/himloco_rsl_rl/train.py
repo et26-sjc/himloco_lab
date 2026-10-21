@@ -31,6 +31,7 @@ parser.add_argument(
 cli_args.add_himloco_rsl_rl_args(parser)
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
+parser.add_argument("--headless", action="store_true", help="Run without a GUI.")
 args_cli, hydra_args = parser.parse_known_args()
 
 # clear out sys.argv for Hydra
@@ -39,6 +40,8 @@ sys.argv = [sys.argv[0]] + hydra_args
 # launch omniverse app
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
+# Kit 110 may append --headless; Hydra must see only its own overrides.
+sys.argv = [sys.argv[0]] + hydra_args
 
 """Rest everything follows."""
 
@@ -78,6 +81,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     # set the environment seed
     # note: certain randomizations occur in the environment initialization so we set the seed here
     env_cfg.seed = agent_cfg.seed
+    env_cfg.scene.terrain.terrain_generator.seed = agent_cfg.seed
     env_cfg.sim.device = args_cli.device if args_cli.device is not None else env_cfg.sim.device
     agent_cfg.device = env_cfg.sim.device
 
@@ -131,7 +135,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     if agent_cfg.resume:
         # we use the same logic as Isaac Lab to find the checkpoint
         from isaaclab_tasks.utils import get_checkpoint_path
-        resume_path = get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint)
+        resume_path = (os.path.abspath(args_cli.checkpoint) if args_cli.checkpoint and os.path.isfile(args_cli.checkpoint)
+                       else get_checkpoint_path(log_root_path, agent_cfg.load_run, agent_cfg.load_checkpoint))
 
     # create runner from HimLoco RSL-RL
     runner = HIMOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=log_dir, device=agent_cfg.device)
@@ -147,13 +152,9 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     dump_yaml(os.path.join(log_dir, "params", "agent.yaml"), agent_cfg)
     
     # Export deployment configuration with history_length and use_encoder flag
-    export_deploy_cfg(
-        env.unwrapped, 
-        log_dir,
-        history_length=agent_cfg.history_length,
-        use_encoder=True  # HimLoco uses dual network architecture
-    )
-     
+    if getattr(env.unwrapped.scene["robot"].cfg, "joint_sdk_names", None):
+        export_deploy_cfg(env.unwrapped, log_dir, history_length=agent_cfg.history_length, use_encoder=True)
+
     shutil.copy(
         inspect.getfile(env_cfg.__class__),
         os.path.join(log_dir, "params", os.path.basename(inspect.getfile(env_cfg.__class__))),

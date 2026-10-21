@@ -79,6 +79,13 @@ class HIMEstimator(nn.Module):
             for param_group in self.optimizer.param_groups:
                 param_group['lr'] = self.learning_rate
                 
+        if obs_history.shape[-1] != self.temporal_steps * self.num_one_step_obs:
+            raise ValueError("Invalid estimator history dimension")
+        if next_critic_obs.shape[-1] < self.num_one_step_obs + 3:
+            raise ValueError("Missing privileged velocity target")
+        if not torch.isfinite(obs_history).all() or not torch.isfinite(next_critic_obs).all():
+            raise ValueError("Non-finite estimator supervision")
+        # Original HIM target: skip commands, include the next true velocity.
         vel = next_critic_obs[:, self.num_one_step_obs:self.num_one_step_obs+3].detach()
         next_obs = next_critic_obs.detach()[:, 3:self.num_one_step_obs+3]
 

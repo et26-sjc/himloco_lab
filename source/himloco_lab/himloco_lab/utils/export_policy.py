@@ -42,6 +42,7 @@ class _HimlcoPolicyJitExporter(torch.nn.Module):
     def __init__(self, actor_critic):
         super().__init__()
         # Copy actor and encoder networks
+        self.num_one_step_obs = actor_critic.num_one_step_obs
         self.actor = copy.deepcopy(actor_critic.actor)
         self.estimator = copy.deepcopy(actor_critic.estimator.encoder)
     
@@ -66,7 +67,7 @@ class _HimlcoPolicyJitExporter(torch.nn.Module):
         
         # Get current observation (first num_one_step_obs dims)
         # Assuming obs_history has shape [batch, history_size * 45], get first 45 dims
-        current_obs = obs_history[..., :45]
+        current_obs = obs_history[..., :self.num_one_step_obs]
         
         # Concatenate: [current_obs, vel, latent] -> policy
         policy_input = torch.cat((current_obs, vel, z), dim=-1)
@@ -171,6 +172,7 @@ class _HimlocoEncoderOnnxExporter(torch.nn.Module):
             obs_history,
             os.path.join(path, filename),
             export_params=True,
+            dynamo=False,
             opset_version=11,
             verbose=self.verbose,
             input_names=["obs_history"],
@@ -186,6 +188,7 @@ class _HimlcoPolicyOnnxExporter(torch.nn.Module):
         super().__init__()
         self.verbose = verbose
         # Copy actor network
+        self.num_one_step_obs = actor_critic.num_one_step_obs
         self.actor = copy.deepcopy(actor_critic.actor)
         
     def forward(self, obs):
@@ -211,6 +214,7 @@ class _HimlcoPolicyOnnxExporter(torch.nn.Module):
             obs,
             os.path.join(path, filename),
             export_params=True,
+            dynamo=False,
             opset_version=11,
             verbose=self.verbose,
             input_names=["obs"],

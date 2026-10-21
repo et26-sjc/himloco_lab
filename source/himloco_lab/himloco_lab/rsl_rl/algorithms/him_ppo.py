@@ -82,7 +82,7 @@ class HIMPPO:
         self.storage = HIMRolloutStorage(num_envs, num_transitions_per_env, actor_obs_shape, critic_obs_shape, action_shape, self.device)
 
     def test_mode(self):
-        self.actor_critic.test()
+        self.actor_critic.eval()
     
     def train_mode(self):
         self.actor_critic.train()
@@ -104,8 +104,13 @@ class HIMPPO:
         self.transition.rewards = rewards.clone()
         self.transition.dones = dones
         # Bootstrapping on time outs
-        if 'time_outs' in infos:
-            self.transition.rewards += self.gamma * torch.squeeze(self.transition.values * infos['time_outs'].unsqueeze(1).to(self.device), 1)
+        timeout = infos.get("time_outs", torch.zeros_like(dones)).to(self.device).bool()
+        if (timeout & ~dones.bool()).any():
+            raise ValueError("Timeout must be a completed transition")
+        if timeout.any():
+            with torch.no_grad():
+                terminal_values = self.actor_critic.evaluate(next_critic_obs[timeout]).squeeze(-1)
+            self.transition.rewards[timeout] += self.gamma * terminal_values
 
         # Record the transition
         self.storage.add_transitions(self.transition)
@@ -189,4 +194,4 @@ class HIMPPO:
         mean_swap_loss /= num_updates
         self.storage.clear()
 
-        return mean_value_loss, mean_surrogate_loss, estimation_loss, swap_loss
+        return mean_value_loss, mean_surrogate_loss, mean_estimation_loss, mean_swap_loss

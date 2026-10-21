@@ -196,16 +196,18 @@ class HIMOnPolicyRunner:
             mean_value_loss, mean_surrogate_loss, mean_estimation_loss, mean_swap_loss = self.alg.update()
             stop = time.time()
             learn_time = stop - start
-            self.current_learning_iteration = it
+            self.current_learning_iteration = it + 1
             # log info
             if self.log_dir is not None:
                 self.log(locals())
                 # Save model
-                if it % self.save_interval == 0:
-                    self.save(os.path.join(self.log_dir, 'model_{}.pt'.format(it)))
+                if self.current_learning_iteration % self.save_interval == 0:
+                    self.save(os.path.join(self.log_dir, 'model_{}.pt'.format(self.current_learning_iteration)))
             # Clear episode infos
             ep_infos.clear()
         
+        if self.writer is not None:
+            self.writer.flush()
         # Save the final model after training
         if self.log_dir is not None:
             self.save(os.path.join(self.log_dir, 'model_{}.pt'.format(self.current_learning_iteration)))
@@ -347,11 +349,13 @@ class HIMOnPolicyRunner:
                 self.writer.save_model(path, self.current_learning_iteration)
 
     def load(self, path, load_optimizer=True):
-        loaded_dict = torch.load(path)
+        loaded_dict = torch.load(path, map_location=self.device, weights_only=False)
         self.alg.actor_critic.load_state_dict(loaded_dict['model_state_dict'])
         if load_optimizer:
             self.alg.optimizer.load_state_dict(loaded_dict['optimizer_state_dict'])
             self.alg.actor_critic.estimator.optimizer.load_state_dict(loaded_dict['estimator_optimizer_state_dict'])
+        self.alg.learning_rate = self.alg.optimizer.param_groups[0]["lr"]
+        self.alg.actor_critic.estimator.learning_rate = self.alg.actor_critic.estimator.optimizer.param_groups[0]["lr"]
         self.current_learning_iteration = loaded_dict['iter']
         return loaded_dict['infos']
 

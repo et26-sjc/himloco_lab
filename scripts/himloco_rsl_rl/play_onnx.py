@@ -37,6 +37,7 @@ parser.add_argument("--onnx_dir", type=str, default=None, help="Directory contai
 cli_args.add_himloco_rsl_rl_args(parser)
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
+parser.add_argument("--headless", action="store_true", help="Run without a GUI.")
 # parse the arguments
 args_cli, hydra_args = parser.parse_known_args()
 
@@ -47,9 +48,16 @@ if args_cli.video:
 # clear out sys.argv for Hydra
 sys.argv = [sys.argv[0]] + hydra_args
 
+# Isaac Lab 3 selects windowed rendering through the Kit visualizer.
+if not args_cli.headless and args_cli.visualizer is None:
+    args_cli.visualizer = ["kit"]
+    args_cli.visualizer_explicit = True
+
 # launch omniverse app
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
+# Kit 110 may append --headless; Hydra must see only its own overrides.
+sys.argv = [sys.argv[0]] + hydra_args
 
 """Rest everything follows."""
 
@@ -180,6 +188,8 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
 
     # set the environment seed
     env_cfg.seed = agent_cfg.seed
+    env_cfg.scene.terrain.terrain_generator.seed = agent_cfg.seed
+    env_cfg.sim.use_fabric = not args_cli.disable_fabric
     env_cfg.sim.device = args_cli.device if args_cli.device is not None else env_cfg.sim.device
 
     # specify directory for logging experiments
@@ -215,20 +225,13 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     # set the log directory for the environment
     env_cfg.log_dir = log_dir
 
-    # create isaac environment
-    env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
-
-    # wrap for video recording
+    # Isaac Lab 3 records from visualizers rather than Gym rgb_array render().
     if args_cli.video:
-        video_kwargs = {
-            "video_folder": os.path.join(log_dir, "videos", "play_onnx"),
-            "step_trigger": lambda step: step == 0,
-            "video_length": args_cli.video_length,
-            "disable_logger": True,
-        }
-        print("[INFO] Recording videos during playback.")
-        print_dict(video_kwargs, nesting=4)
-        env = gym.wrappers.RecordVideo(env, **video_kwargs)
+        from isaaclab.envs.utils.video_recorder_cfg import VideoRecorderCfg
+        env_cfg.video_recorders = [VideoRecorderCfg(
+            source="visualizer:kit", output_dir=os.path.join(log_dir, "videos", "play"),
+            video_length=args_cli.video_length)]
+    env = gym.make(args_cli.task, cfg=env_cfg)
 
     # wrap around environment for HimLoco RSL-RL
     env = HimlocoVecEnvWrapper(

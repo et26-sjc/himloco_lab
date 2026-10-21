@@ -12,6 +12,7 @@ import torch
 
 from himloco_lab.envs import HimlocoManagerBasedRLEnv
 from ..env.vec_env import VecEnv
+from .history import stack_frame
 
 class HimlocoVecEnvWrapper(VecEnv):
     """Wraps around Isaac Lab environment for HimLoco RSL-RL.
@@ -120,7 +121,7 @@ class HimlocoVecEnvWrapper(VecEnv):
             self._termination_privileged_obs = None
         
         # reset at the start since the HimLoco runner does not call reset
-        self.env.reset()
+        self.reset()
 
     def __str__(self):
         """Returns the wrapper name and the :attr:`env` representation string."""
@@ -137,7 +138,7 @@ class HimlocoVecEnvWrapper(VecEnv):
     @property
     def cfg(self) -> object:
         """Returns the configuration class instance of the environment."""
-        return self.env.cfg
+        return self.unwrapped.cfg
 
     @property
     def render_mode(self) -> str | None:
@@ -190,141 +191,56 @@ class HimlocoVecEnvWrapper(VecEnv):
         """Set the seed for the environment."""
         return self.env.seed(seed)
 
-    def reset(self) -> tuple[torch.Tensor, torch.Tensor | None]:
-        """Reset the environment.
-        
-        Returns:
-            obs policy
-        """
-        # reset the environment
-        obs_dict, _ = self.env.reset()
-        return obs_dict["policy"], {"observations": obs_dict}
+    def _validate(self, obs, privileged):
+        for name, tensor, dim in (("policy", obs, self.num_obs),
+                                  ("critic", privileged, self.num_privileged_obs)):
+            if tensor is not None and (tensor.shape != (self.num_envs, dim) or not torch.isfinite(tensor).all()):
+                raise ValueError(f"Invalid {name} observations: {tensor.shape}")
 
-    def get_observations(self) -> torch.Tensor:
-        """Get current policy observations.
-        
-        Returns:
-            Policy observations (history-stacked) as a tensor.
-        """
+    def reset(self):
+        observations, _ = self.env.reset()
+        self.obs_history_buf.zero_()
+        self.obs_history_buf[:, :self.num_one_step_obs] = observations["policy"]
+        if self.privileged_obs_history_buf is not None:
+            self.privileged_obs_history_buf.zero_()
+            self.privileged_obs_history_buf[:, :self.num_one_step_privileged_obs] = observations["critic"]
+        self._validate(self.obs_history_buf, self.privileged_obs_history_buf)
+        return self.obs_history_buf, self.privileged_obs_history_buf
+
+    def get_observations(self):
         return self.obs_history_buf
 
-    def get_privileged_observations(self) -> torch.Tensor | None:
-        """Get current privileged observations.
-        
-        Returns:
-            Privileged observations (history-stacked) as a tensor, or None if not available.
-        """
+    def get_privileged_observations(self):
         return self.privileged_obs_history_buf
 
-    def compute_termination_observations(self, env_ids: torch.Tensor, obs_before_reset: torch.Tensor) -> torch.Tensor | None:
-        """This method extracts the privileged observations for environments that just terminated.
-        
-        Args:
-            env_ids: Indices of environments that terminated.
-            obs_before_reset: observations from environment before reset after action.
-        
-        Returns:
-            Privileged observations for terminated environments.
-            Shape: (len(env_ids), num_one_step_privileged_obs).
-        """
-        if len(env_ids) == 0:
-            return torch.zeros(0, self.num_one_step_privileged_obs, device=self.device)
-        
-        termination_obs = obs_before_reset[env_ids]
-        
-        return termination_obs
-
-    def step(self, actions: torch.Tensor) -> tuple[
-        torch.Tensor, torch.Tensor | None, torch.Tensor, torch.Tensor, dict,
-        torch.Tensor, torch.Tensor
-    ]:
-        """Execute one time-step of the environment's dynamics.
-        
-        This extends the standard step to track terminated environments and their
-        privileged observations, which is required by HimLoco for proper value
-        bootstrapping at episode boundaries.
-        
-        Args:
-            actions: Actions to apply in the environment.
-        
-        Returns:
-            obs: Policy observations for all environments
-            privileged_obs: Privileged/critic observations (None if not available)
-            rewards: Rewards for all environments  
-            dones: Done flags for all environments
-            infos: Additional information dictionary
-            termination_ids: Indices of environments that terminated this step
-            termination_privileged_obs: Privileged obs for terminated environments
-        """
-        # execute step in Isaac Lab environment (no action clipping, managed by environment)
-        obs_dict, obs_before_reset, rewards, terminated, truncated, infos = self.env.step(actions)
-        
-        # compute dones for compatibility with HimLoco RSL-RL
-        dones = (terminated | truncated).to(dtype=torch.long)
-        
-        # move time out information to the extras dict (for infinite horizon tasks)
-        if not self.unwrapped.cfg.is_finite_horizon:
-            infos["time_outs"] = truncated
-        
-        # Extract policy observations (single-step from environment)
-        if "policy" in obs_dict:
-            current_obs = obs_dict["policy"]
-        else:
-            first_key = next(iter(obs_dict.keys()))
-            current_obs = obs_dict[first_key]
-        
-        # Update policy observation history buffer
-        # Environment returns single-step obs, wrapper does history stacking
-        # [new_single_step_obs, old_history[:-single_step]]
-        if self.history_length > 0:
-            self.obs_history_buf = torch.cat(
-                (
-                    current_obs[:, :self.num_one_step_obs],
-                    self.obs_history_buf[:, :-self.num_one_step_obs]
-                ),
-                dim=-1
-            )
-        else:
-            self.obs_history_buf = current_obs
-        
-        # Track which environments terminated this step (HimLoco-specific)
-        self._termination_ids = torch.nonzero(dones, as_tuple=False).squeeze(-1)
-        
-        # Update privileged observation history buffer if available
-        if "critic" in obs_dict:
-            current_privileged_obs = obs_dict["critic"]
-            # Compute termination observations before updating buffer
-            termination_observation = obs_before_reset["critic"]
-            self._termination_privileged_obs = self.compute_termination_observations(
-                self._termination_ids, termination_observation
-            )
-            # Update history buffer
-            if self.privileged_history_length > 0:
-                self.privileged_obs_history_buf = torch.cat(
-                    (
-                        current_privileged_obs[:, :self.num_one_step_privileged_obs],
-                        self.privileged_obs_history_buf[:, :-self.num_one_step_privileged_obs]
-                    ),
-                    dim=-1
-                )
-            else:
-                self.privileged_obs_history_buf = current_privileged_obs
-        
-        # Check for NaN/Inf in observations before returning
-        if torch.isnan(self.obs_history_buf).any() or torch.isinf(self.obs_history_buf).any():
-            raise ValueError("NaN/Inf detected in obs_history_buf!")
-        if torch.isnan(rewards).any() or torch.isinf(rewards).any():
-            raise ValueError("NaN/Inf detected in rewards!")
-            
-        return (
-            self.obs_history_buf,
-            self.privileged_obs_history_buf,
-            rewards,
-            dones,
-            infos,
-            self._termination_ids,
-            self._termination_privileged_obs,
-        )
+    def step(self, actions):
+        if actions.shape != (self.num_envs, self.num_actions) or not torch.isfinite(actions).all():
+            raise ValueError("Invalid actions")
+        obs, rewards, terminated, truncated, extras = self.env.step(actions)
+        dones = terminated | truncated
+        ids = dones.nonzero(as_tuple=False).flatten()
+        infos = dict(extras)
+        # Physical failures take precedence if termination and truncation coincide.
+        infos["time_outs"] = (truncated & ~terminated if not self.cfg.is_finite_horizon
+                              else torch.zeros_like(truncated))
+        terminal = torch.empty((0, self.num_privileged_obs), device=self.device)
+        if len(ids):
+            if "final_obs" not in extras:
+                raise RuntimeError("compute_final_obs must provide pre-reset terminal observations")
+            final = extras["final_obs"]["critic"]
+            terminal = stack_frame(final, self.privileged_obs_history_buf,
+                                   self.privileged_history_length)[ids].clone()
+            if not torch.isfinite(terminal).all():
+                raise ValueError("Non-finite terminal critic observations")
+        # Allocate new buffers: rollout storage still owns references to the old state.
+        self.obs_history_buf = stack_frame(obs["policy"], self.obs_history_buf, self.history_length, ids)
+        self.privileged_obs_history_buf = stack_frame(
+            obs["critic"], self.privileged_obs_history_buf, self.privileged_history_length, ids)
+        self._validate(self.obs_history_buf, self.privileged_obs_history_buf)
+        if rewards.shape != (self.num_envs,) or not torch.isfinite(rewards).all():
+            raise ValueError("Invalid rewards")
+        return (self.obs_history_buf, self.privileged_obs_history_buf, rewards,
+                dones, infos, ids, terminal)
 
     def close(self):
         """Close the environment."""

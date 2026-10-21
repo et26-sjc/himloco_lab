@@ -31,11 +31,14 @@ parser.add_argument(
     "--env_cfg_entry_point", type=str, default="play_env_cfg_entry_point", help="Name of the play environment configuration entry point."
 )
 parser.add_argument("--seed", type=int, default=None, help="Seed used for the environment")
+parser.add_argument("--max_steps", type=int, default=0, help="Stop after this many steps; 0 runs until closed.")
+parser.add_argument("--velocity", type=float, nargs=3, default=None, metavar=("VX", "VY", "WZ"))
 parser.add_argument("--real-time", action="store_true", default=False, help="Run in real-time, if possible.")
 # append HimLoco RSL-RL cli arguments
 cli_args.add_himloco_rsl_rl_args(parser)
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
+parser.add_argument("--headless", action="store_true", help="Run without a GUI.")
 # parse the arguments
 args_cli, hydra_args = parser.parse_known_args()
 
@@ -46,9 +49,16 @@ if args_cli.video:
 # clear out sys.argv for Hydra
 sys.argv = [sys.argv[0]] + hydra_args
 
+# Play opens the Kit GUI by default on Isaac Lab 3.
+if not args_cli.headless and args_cli.visualizer is None:
+    args_cli.visualizer = ["kit"]
+    args_cli.visualizer_explicit = True
+
 # launch omniverse app
 app_launcher = AppLauncher(args_cli)
 simulation_app = app_launcher.app
+# Kit 110 may append --headless; Hydra must see only its own overrides.
+sys.argv = [sys.argv[0]] + hydra_args
 
 """Rest everything follows."""
 
@@ -88,7 +98,18 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     # set the environment seed
     # note: certain randomizations occur in the environment initialization so we set the seed here
     env_cfg.seed = agent_cfg.seed
+    env_cfg.scene.terrain.terrain_generator.seed = agent_cfg.seed
+    env_cfg.sim.use_fabric = not args_cli.disable_fabric
     env_cfg.sim.device = args_cli.device if args_cli.device is not None else env_cfg.sim.device
+    agent_cfg.device = env_cfg.sim.device
+    if args_cli.velocity is not None:
+        vx, vy, wz = args_cli.velocity
+        command = env_cfg.commands.base_velocity
+        command.heading_command = False
+        command.ranges.lin_vel_x = (vx, vx)
+        command.low_vel_env_lin_x_ranges = (vx, vx)
+        command.ranges.lin_vel_y = (vy, vy)
+        command.ranges.ang_vel_z = (wz, wz)
 
     # specify directory for logging experiments
     log_root_path = os.path.join("logs", "himloco_rsl_rl", agent_cfg.experiment_name)
@@ -106,20 +127,18 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     # set the log directory for the environment
     env_cfg.log_dir = log_dir
 
-    # create isaac environment
-    env = gym.make(args_cli.task, cfg=env_cfg, render_mode="rgb_array" if args_cli.video else None)
-
-    # wrap for video recording
+    if not args_cli.headless:
+        from isaaclab_visualizers.kit import KitVisualizerCfg
+        env_cfg.sim.visualizer_cfgs = [KitVisualizerCfg(
+            origin_type="asset", origin_track_path="robot", origin_env_index=0,
+            eye=(3.0, -3.0, 2.0), lookat=(0.0, 0.0, 0.0))]
+    # Isaac Lab 3 records from visualizers rather than Gym rgb_array render().
     if args_cli.video:
-        video_kwargs = {
-            "video_folder": os.path.join(log_dir, "videos", "play"),
-            "step_trigger": lambda step: step == 0,
-            "video_length": args_cli.video_length,
-            "disable_logger": True,
-        }
-        print("[INFO] Recording videos during playback.")
-        print_dict(video_kwargs, nesting=4)
-        env = gym.wrappers.RecordVideo(env, **video_kwargs)
+        from isaaclab.envs.utils.video_recorder_cfg import VideoRecorderCfg
+        env_cfg.video_recorders = [VideoRecorderCfg(
+            source="visualizer:kit", output_dir=os.path.join(log_dir, "videos", "play"),
+            video_length=args_cli.video_length)]
+    env = gym.make(args_cli.task, cfg=env_cfg)
 
     # wrap around environment for HimLoco RSL-RL
     env = HimlocoVecEnvWrapper(
@@ -145,7 +164,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
     runner = HIMOnPolicyRunner(env, agent_cfg.to_dict(), log_dir=None, device=agent_cfg.device)
     
     # load the checkpoint
-    runner.load(resume_path)
+    runner.load(resume_path, load_optimizer=False)
 
     # obtain the trained policy for inference
     policy = runner.get_inference_policy(device=env.device)
@@ -187,8 +206,10 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
             # env stepping
             obs, privileged_obs, rewards, dones, infos, termination_ids, termination_privileged_obs = env.step(actions)
         
+        timestep += 1
+        if args_cli.max_steps and timestep >= args_cli.max_steps:
+            break
         if args_cli.video:
-            timestep += 1
             # Exit the play loop after recording one video
             if timestep == args_cli.video_length:
                 break
@@ -198,6 +219,7 @@ def main(env_cfg: ManagerBasedRLEnvCfg, agent_cfg: HIMOnPolicyRunnerCfg):
         if args_cli.real_time and sleep_time > 0:
             time.sleep(sleep_time)
 
+    print(f"[INFO] PLAY_OK steps={timestep}, deterministic=True, actor_input={env.num_obs}")
     # close the simulator
     env.close()
 
