@@ -1,5 +1,6 @@
 """Paired direct/adapted legacy evaluation using physical state, never reward totals."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -9,6 +10,8 @@ from isaaclab.app import AppLauncher
 parser = argparse.ArgumentParser()
 parser.add_argument('--checkpoint', required=True)
 parser.add_argument('--mode', choices=['direct', 'adapted', 'both'], default='both')
+parser.add_argument('--actuator', choices=['actuator_net', 'pd'], default='actuator_net',
+                    help='Use the official Actuator Net or the Go1 explicit PD baseline (Kp40/Kd1).')
 parser.add_argument('--terrain', choices=['plane', 'rough'], default='plane')
 parser.add_argument('--num_envs', type=int, default=40)
 parser.add_argument('--duration', type=float, default=20.)
@@ -30,6 +33,7 @@ import himloco_lab.tasks
 from himloco_lab.envs import HimlocoManagerBasedRLEnv
 from himloco_lab.rsl_rl import HimlocoVecEnvWrapper
 from himloco_lab.tasks.locomotion.robots.go1.velocity_env_cfg import Go1PlayEnvCfg
+from himloco_lab.tasks.locomotion.robots.go1.pd_env_cfg import Go1PDPlayEnvCfg
 from himloco_lab.inference.legacy_go1 import LegacyGo1ObservationAdapter, LEGACY_JOINT_NAMES
 from himloco_lab.utils.checkpoint import load_inference_model
 from isaaclab.utils.math import euler_xyz_from_quat
@@ -40,7 +44,7 @@ class EvaluationEnv(HimlocoManagerBasedRLEnv):
     def state(self):
         robot = self.scene['robot']
         return {name: getattr(robot.data, name).torch.clone() for name in
-                ('root_pos_w', 'root_lin_vel_b', 'root_ang_vel_b', 'root_quat_w')}
+                ('root_pos_w', 'root_lin_vel_b', 'root_ang_vel_b', 'root_quat_w', 'joint_pos', 'joint_vel')}
 
     def _reset_idx(self, env_ids):
         if getattr(self, '_in_him_step', False):
@@ -52,7 +56,8 @@ def main():
     torch.set_num_threads(4)
     output = Path(args.output); output.mkdir(parents=True, exist_ok=True)
     model, audit = load_inference_model(args.checkpoint, args.device)
-    cfg = Go1PlayEnvCfg(); cfg.seed = args.seed; cfg.scene.num_envs = args.num_envs
+    cfg = Go1PDPlayEnvCfg() if args.actuator == 'pd' else Go1PlayEnvCfg()
+    cfg.seed = args.seed; cfg.scene.num_envs = args.num_envs
     cfg.episode_length_s = args.duration + 1
     cfg.sim.device = args.device
     cfg.curriculum.terrain_levels = None; cfg.curriculum.lin_vel_cmd_levels = None
@@ -77,6 +82,13 @@ def main():
     base = EvaluationEnv(cfg)
     env = HimlocoVecEnvWrapper(base, history_length=5)
     robot = base.scene['robot']
+    actuator = robot.actuators['base_legs']
+    if args.actuator == 'pd':
+        assert type(actuator).__name__ == 'IdealPDActuator'
+        torch.testing.assert_close(actuator.stiffness, torch.full_like(actuator.stiffness, 40.))
+        torch.testing.assert_close(actuator.damping, torch.ones_like(actuator.damping))
+    else:
+        assert type(actuator).__name__ == 'ActuatorNetMLP'
     action_names = robot.joint_names  # explicitly ordered by Go1EnvCfg for both actions and joint observations
     assert list(base.cfg.actions.JointPositionAction.joint_names) == action_names
     defaults = dict(zip(robot.joint_names, robot.data.default_joint_pos.torch[0].cpu().tolist()))
@@ -88,6 +100,7 @@ def main():
     commands = torch.tensor(command_list, device=env.device, dtype=torch.float32)[command_ids]
     modes = ['direct', 'adapted'] if args.mode == 'both' else [args.mode]
     results = []
+    initial_state_hashes = {}
     initial_reference = None
     for mode in modes:
         # Pair the exact same native reset state. No noise, randomization or stochastic policy.
@@ -97,6 +110,11 @@ def main():
         env.obs_history_buf = torch.cat((observations['policy'], torch.zeros(args.num_envs, 225, device=env.device)), -1)
         env.privileged_obs_history_buf = observations['critic'].clone()
         initial = base.state()
+        # Across separate actuator runs, these hashes verify identical reset states.
+        initial_state_hashes[mode] = {
+            key: hashlib.sha256(value.cpu().contiguous().numpy().tobytes()).hexdigest()
+            for key, value in initial.items()
+        }
         if initial_reference is not None:
             for key in initial:
                 torch.testing.assert_close(initial[key], initial_reference[key], rtol=0, atol=0)
@@ -179,6 +197,12 @@ def main():
         torch.save(dict(lab_observations=torch.cat(samples_lab).cpu(),
                         policy_observations=torch.cat(samples_policy).cpu()), output / f'{mode}_observations.pt')
     report = dict(checkpoint=audit, seed=args.seed, duration=args.duration, num_envs=args.num_envs,
+                  actuator=dict(selection=args.actuator, class_name=type(actuator).__name__,
+                      kp=actuator.stiffness[0].tolist() if args.actuator == 'pd' else None,
+                      kd=actuator.damping[0].tolist() if args.actuator == 'pd' else None,
+                      effort_limits=actuator.actuator_effort_limit[0].tolist(),
+                      rated_velocity_limits=actuator.actuator_velocity_limit[0].tolist()),
+                  initial_state_sha256=initial_state_hashes,
                   gui=not args.headless, paired_initial_states=True, legacy_joint_names=LEGACY_JOINT_NAMES,
                   lab_joint_names=robot.joint_names, lab_default_positions=defaults,
                   evaluation='One first episode per environment, censored at horizon; pre-reset physical states.',

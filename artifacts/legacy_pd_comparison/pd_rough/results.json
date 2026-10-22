@@ -1,0 +1,514 @@
+{
+  "checkpoint": {
+    "path": "/home/sjc/HIMLoco-Go1/legged_gym/logs/rough_go1/Sep29_01-01-22_baseline_seed1/model_7500.pt",
+    "keys": [
+      "model_state_dict",
+      "optimizer_state_dict",
+      "estimator_optimizer_state_dict",
+      "iter",
+      "infos"
+    ],
+    "iteration": 0,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "shape_mismatches": {},
+    "parameters": {
+      "std": {
+        "shape": [
+          12
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.0.weight": {
+        "shape": [
+          128,
+          270
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.0.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.2.weight": {
+        "shape": [
+          64,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.4.weight": {
+        "shape": [
+          19,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.4.bias": {
+        "shape": [
+          19
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.0.weight": {
+        "shape": [
+          128,
+          45
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.0.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.2.weight": {
+        "shape": [
+          64,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.4.weight": {
+        "shape": [
+          16,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.4.bias": {
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.proto.weight": {
+        "shape": [
+          32,
+          16
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.0.weight": {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.2.weight": {
+        "shape": [
+          256,
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.4.weight": {
+        "shape": [
+          128,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.4.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.6.weight": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.6.bias": {
+        "shape": [
+          12
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.0.weight": {
+        "shape": [
+          512,
+          238
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.2.weight": {
+        "shape": [
+          256,
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.4.weight": {
+        "shape": [
+          128,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.4.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.6.weight": {
+        "shape": [
+          1,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.6.bias": {
+        "shape": [
+          1
+        ],
+        "dtype": "torch.float32"
+      }
+    },
+    "normalization": "No running normalization parameters; act_inference uses the input directly."
+  },
+  "seed": 1,
+  "duration": 20.0,
+  "num_envs": 40,
+  "actuator": {
+    "selection": "pd",
+    "class_name": "IdealPDActuator",
+    "kp": [
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0
+    ],
+    "kd": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "effort_limits": [
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      23.700000762939453,
+      35.54999923706055,
+      35.54999923706055,
+      35.54999923706055,
+      35.54999923706055
+    ],
+    "rated_velocity_limits": [
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      30.100000381469727,
+      20.059999465942383,
+      20.059999465942383,
+      20.059999465942383,
+      20.059999465942383
+    ]
+  },
+  "initial_state_sha256": {
+    "adapted": {
+      "root_pos_w": "593117224191e308834243c079178583286ea6e5c94511edd7ce7da7f72b0ea1",
+      "root_lin_vel_b": "4b48f21a4b7a02bfbec19ef880a967a02334a3cdcef8ae83de2ef327ba8bc5dd",
+      "root_ang_vel_b": "4b48f21a4b7a02bfbec19ef880a967a02334a3cdcef8ae83de2ef327ba8bc5dd",
+      "root_quat_w": "f1a3a6f7096a6166b8bdfc7841a212c18be34cfb27f8eecb803107eefad7e691",
+      "joint_pos": "5ad82e79923383786a61c4ccf0887921c058ed426742e1a56f4fb364125a71d5",
+      "joint_vel": "155e437b946ac82ae591ff382b8d19efda9397b2282672dbabd91ec31ce8a651"
+    }
+  },
+  "gui": false,
+  "paired_initial_states": true,
+  "legacy_joint_names": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint"
+  ],
+  "lab_joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint"
+  ],
+  "lab_default_positions": {
+    "FL_hip_joint": 0.10000000149011612,
+    "FR_hip_joint": -0.10000000149011612,
+    "RL_hip_joint": 0.10000000149011612,
+    "RR_hip_joint": -0.10000000149011612,
+    "FL_thigh_joint": 0.800000011920929,
+    "FR_thigh_joint": 0.800000011920929,
+    "RL_thigh_joint": 1.0,
+    "RR_thigh_joint": 1.0,
+    "FL_calf_joint": -1.5,
+    "FR_calf_joint": -1.5,
+    "RL_calf_joint": -1.5,
+    "RR_calf_joint": -1.5
+  },
+  "evaluation": "One first episode per environment, censored at horizon; pre-reset physical states.",
+  "results": [
+    {
+      "mode": "adapted",
+      "terrain": "rough",
+      "command": [
+        0,
+        0,
+        0
+      ],
+      "episodes": 8,
+      "survival_s_mean": 20.000267028808594,
+      "survival_s_min": 20.000267028808594,
+      "fall_rate": 0.0,
+      "termination_rate": 0.0,
+      "completed_horizon_rate": 1.0,
+      "world_x_displacement_m_mean": -0.07088209688663483,
+      "body_forward_distance_m_mean": -0.06375164538621902,
+      "horizontal_path_m_mean": 0.09418938308954239,
+      "measured_base_velocity_mean": [
+        -0.003187537658959627,
+        0.0003036759444512427,
+        -0.010503614321351051
+      ],
+      "measured_yaw_rate_mean": -0.005760372616350651,
+      "linear_tracking_rmse": 0.013747780583798885,
+      "yaw_tracking_rmse": 0.01786043308675289,
+      "roll_range_rad": [
+        -0.0471799373626709,
+        0.01346731185913086
+      ],
+      "pitch_range_rad": [
+        -0.051488637924194336,
+        0.0793154239654541
+      ],
+      "max_abs_action": 3.3924801349639893,
+      "clipped_action_steps": 0
+    },
+    {
+      "mode": "adapted",
+      "terrain": "rough",
+      "command": [
+        0.5,
+        0,
+        0
+      ],
+      "episodes": 8,
+      "survival_s_mean": 20.000267028808594,
+      "survival_s_min": 20.000267028808594,
+      "fall_rate": 0.0,
+      "termination_rate": 0.0,
+      "completed_horizon_rate": 1.0,
+      "world_x_displacement_m_mean": 8.692229270935059,
+      "body_forward_distance_m_mean": 9.044321060180664,
+      "horizontal_path_m_mean": 9.088644027709961,
+      "measured_base_velocity_mean": [
+        0.45220986008644104,
+        0.0026511424221098423,
+        -0.035450905561447144
+      ],
+      "measured_yaw_rate_mean": -0.021192431449890137,
+      "linear_tracking_rmse": 0.1439342051744461,
+      "yaw_tracking_rmse": 0.09397973120212555,
+      "roll_range_rad": [
+        -0.19736003875732422,
+        0.161085844039917
+      ],
+      "pitch_range_rad": [
+        -0.41375231742858887,
+        0.23931145668029785
+      ],
+      "max_abs_action": 6.560462474822998,
+      "clipped_action_steps": 0
+    },
+    {
+      "mode": "adapted",
+      "terrain": "rough",
+      "command": [
+        0.7,
+        0,
+        0
+      ],
+      "episodes": 8,
+      "survival_s_mean": 20.000267028808594,
+      "survival_s_min": 20.000267028808594,
+      "fall_rate": 0.0,
+      "termination_rate": 0.0,
+      "completed_horizon_rate": 1.0,
+      "world_x_displacement_m_mean": 13.058319091796875,
+      "body_forward_distance_m_mean": 13.597332954406738,
+      "horizontal_path_m_mean": 13.455499649047852,
+      "measured_base_velocity_mean": [
+        0.6798575520515442,
+        0.003458586987107992,
+        -0.04831297695636749
+      ],
+      "measured_yaw_rate_mean": -0.018943266943097115,
+      "linear_tracking_rmse": 0.11840001493692398,
+      "yaw_tracking_rmse": 0.10919356346130371,
+      "roll_range_rad": [
+        -0.17722058296203613,
+        0.17739462852478027
+      ],
+      "pitch_range_rad": [
+        -0.39091944694519043,
+        0.24962711334228516
+      ],
+      "max_abs_action": 6.787018299102783,
+      "clipped_action_steps": 0
+    },
+    {
+      "mode": "adapted",
+      "terrain": "rough",
+      "command": [
+        0,
+        0,
+        0.3
+      ],
+      "episodes": 8,
+      "survival_s_mean": 20.000267028808594,
+      "survival_s_min": 20.000267028808594,
+      "fall_rate": 0.0,
+      "termination_rate": 0.0,
+      "completed_horizon_rate": 1.0,
+      "world_x_displacement_m_mean": 0.07424117624759674,
+      "body_forward_distance_m_mean": 0.1332845538854599,
+      "horizontal_path_m_mean": 0.27826935052871704,
+      "measured_base_velocity_mean": [
+        0.006664135493338108,
+        -1.598758353793528e-05,
+        -0.008927719667553902
+      ],
+      "measured_yaw_rate_mean": 0.10742254555225372,
+      "linear_tracking_rmse": 0.02137773297727108,
+      "yaw_tracking_rmse": 0.21269695460796356,
+      "roll_range_rad": [
+        -0.04184842109680176,
+        0.11584949493408203
+      ],
+      "pitch_range_rad": [
+        -0.057623863220214844,
+        0.07412576675415039
+      ],
+      "max_abs_action": 3.2067785263061523,
+      "clipped_action_steps": 0
+    },
+    {
+      "mode": "adapted",
+      "terrain": "rough",
+      "command": [
+        0.7,
+        0,
+        0.3
+      ],
+      "episodes": 8,
+      "survival_s_mean": 20.000267028808594,
+      "survival_s_min": 20.000267028808594,
+      "fall_rate": 0.0,
+      "termination_rate": 0.0,
+      "completed_horizon_rate": 1.0,
+      "world_x_displacement_m_mean": -2.420320510864258,
+      "body_forward_distance_m_mean": 13.562758445739746,
+      "horizontal_path_m_mean": 13.59630012512207,
+      "measured_base_velocity_mean": [
+        0.678128719329834,
+        0.02321145310997963,
+        -0.04371628165245056
+      ],
+      "measured_yaw_rate_mean": 0.26944300532341003,
+      "linear_tracking_rmse": 0.12977898120880127,
+      "yaw_tracking_rmse": 0.10768884420394897,
+      "roll_range_rad": [
+        -0.23829364776611328,
+        0.14015698432922363
+      ],
+      "pitch_range_rad": [
+        -0.3558621406555176,
+        0.14679169654846191
+      ],
+      "max_abs_action": 5.779379367828369,
+      "clipped_action_steps": 0
+    }
+  ]
+}

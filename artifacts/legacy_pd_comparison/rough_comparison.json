@@ -1,0 +1,612 @@
+{
+  "initial_states_exact_match": true,
+  "initial_state_sha256": {
+    "adapted": {
+      "root_pos_w": "593117224191e308834243c079178583286ea6e5c94511edd7ce7da7f72b0ea1",
+      "root_lin_vel_b": "4b48f21a4b7a02bfbec19ef880a967a02334a3cdcef8ae83de2ef327ba8bc5dd",
+      "root_ang_vel_b": "4b48f21a4b7a02bfbec19ef880a967a02334a3cdcef8ae83de2ef327ba8bc5dd",
+      "root_quat_w": "f1a3a6f7096a6166b8bdfc7841a212c18be34cfb27f8eecb803107eefad7e691",
+      "joint_pos": "5ad82e79923383786a61c4ccf0887921c058ed426742e1a56f4fb364125a71d5",
+      "joint_vel": "155e437b946ac82ae591ff382b8d19efda9397b2282672dbabd91ec31ce8a651"
+    }
+  },
+  "seed": 1,
+  "num_envs": 40,
+  "episodes_per_command": 8,
+  "duration_s": 20,
+  "terrain": "rough",
+  "terrain_settings": {
+    "num_rows": 3,
+    "num_cols": 10,
+    "difficulty_range": [
+      0,
+      0.5
+    ],
+    "max_init_terrain_level": 1
+  },
+  "evaluation": "First episode per environment; horizon survival includes no termination or truncation.",
+  "previous_report": "artifacts/round2/legacy_rough/results.json",
+  "rows": [
+    {
+      "command": [
+        0,
+        0,
+        0
+      ],
+      "previous_report": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -0.0815662145614624,
+        "body_forward_distance_m_mean": -0.06821957975625992,
+        "horizontal_path_m_mean": 0.10037197917699814,
+        "measured_base_velocity_mean": [
+          -0.0034109349362552166,
+          0.00021843028662260622,
+          -0.01360534131526947
+        ],
+        "measured_yaw_rate_mean": 0.0026674962136894464,
+        "linear_tracking_rmse": 0.02272072061896324,
+        "yaw_tracking_rmse": 0.020509252324700356,
+        "roll_range_rad": [
+          -0.09432697296142578,
+          0.10296320915222168
+        ],
+        "pitch_range_rad": [
+          -0.007275819778442383,
+          0.12903046607971191
+        ],
+        "max_abs_action": 4.0366692543029785,
+        "clipped_action_steps": 0
+      },
+      "actuator_net_rerun": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -0.07904677838087082,
+        "body_forward_distance_m_mean": -0.05962866544723511,
+        "horizontal_path_m_mean": 0.1055150181055069,
+        "measured_base_velocity_mean": [
+          -0.0029813945293426514,
+          0.0005497048841789365,
+          -0.01392018236219883
+        ],
+        "measured_yaw_rate_mean": 0.0008153792005032301,
+        "linear_tracking_rmse": 0.022540360689163208,
+        "yaw_tracking_rmse": 0.018996108323335648,
+        "roll_range_rad": [
+          -0.07819128036499023,
+          0.0327756404876709
+        ],
+        "pitch_range_rad": [
+          2.8133392333984375e-05,
+          0.1326305866241455
+        ],
+        "max_abs_action": 3.9683971405029297,
+        "clipped_action_steps": 0
+      },
+      "pd": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -0.07088209688663483,
+        "body_forward_distance_m_mean": -0.06375164538621902,
+        "horizontal_path_m_mean": 0.09418938308954239,
+        "measured_base_velocity_mean": [
+          -0.003187537658959627,
+          0.0003036759444512427,
+          -0.010503614321351051
+        ],
+        "measured_yaw_rate_mean": -0.005760372616350651,
+        "linear_tracking_rmse": 0.013747780583798885,
+        "yaw_tracking_rmse": 0.01786043308675289,
+        "roll_range_rad": [
+          -0.0471799373626709,
+          0.01346731185913086
+        ],
+        "pitch_range_rad": [
+          -0.051488637924194336,
+          0.0793154239654541
+        ],
+        "max_abs_action": 3.3924801349639893,
+        "clipped_action_steps": 0
+      }
+    },
+    {
+      "command": [
+        0.5,
+        0,
+        0
+      ],
+      "previous_report": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.5,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 14.727663040161133,
+        "survival_s_min": 4.519996643066406,
+        "fall_rate": 0.5,
+        "termination_rate": 0.5,
+        "completed_horizon_rate": 0.5,
+        "world_x_displacement_m_mean": 4.0005669593811035,
+        "body_forward_distance_m_mean": 4.09542989730835,
+        "horizontal_path_m_mean": 4.176900863647461,
+        "measured_base_velocity_mean": [
+          0.28238898515701294,
+          0.00222088978625834,
+          -0.04194414243102074
+        ],
+        "measured_yaw_rate_mean": -0.01939297653734684,
+        "linear_tracking_rmse": 0.24320748448371887,
+        "yaw_tracking_rmse": 0.12345854938030243,
+        "roll_range_rad": [
+          -0.09669137001037598,
+          0.23964571952819824
+        ],
+        "pitch_range_rad": [
+          -0.41995930671691895,
+          0.15866923332214355
+        ],
+        "max_abs_action": 6.665937900543213,
+        "clipped_action_steps": 0
+      },
+      "actuator_net_rerun": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.5,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 14.485161781311035,
+        "survival_s_min": 4.459996700286865,
+        "fall_rate": 0.5,
+        "termination_rate": 0.5,
+        "completed_horizon_rate": 0.5,
+        "world_x_displacement_m_mean": 3.9568872451782227,
+        "body_forward_distance_m_mean": 4.0584516525268555,
+        "horizontal_path_m_mean": 4.123943328857422,
+        "measured_base_velocity_mean": [
+          0.28726887702941895,
+          0.0019404621561989188,
+          -0.04262225329875946
+        ],
+        "measured_yaw_rate_mean": -0.02557077258825302,
+        "linear_tracking_rmse": 0.24121879041194916,
+        "yaw_tracking_rmse": 0.1177278682589531,
+        "roll_range_rad": [
+          -0.09050345420837402,
+          0.2180638313293457
+        ],
+        "pitch_range_rad": [
+          -0.5290594100952148,
+          0.1794266700744629
+        ],
+        "max_abs_action": 6.925856590270996,
+        "clipped_action_steps": 0
+      },
+      "pd": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.5,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": 8.692229270935059,
+        "body_forward_distance_m_mean": 9.044321060180664,
+        "horizontal_path_m_mean": 9.088644027709961,
+        "measured_base_velocity_mean": [
+          0.45220986008644104,
+          0.0026511424221098423,
+          -0.035450905561447144
+        ],
+        "measured_yaw_rate_mean": -0.021192431449890137,
+        "linear_tracking_rmse": 0.1439342051744461,
+        "yaw_tracking_rmse": 0.09397973120212555,
+        "roll_range_rad": [
+          -0.19736003875732422,
+          0.161085844039917
+        ],
+        "pitch_range_rad": [
+          -0.41375231742858887,
+          0.23931145668029785
+        ],
+        "max_abs_action": 6.560462474822998,
+        "clipped_action_steps": 0
+      }
+    },
+    {
+      "command": [
+        0.7,
+        0,
+        0
+      ],
+      "previous_report": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 12.940116882324219,
+        "survival_s_min": 5.279995918273926,
+        "fall_rate": 0.625,
+        "termination_rate": 0.625,
+        "completed_horizon_rate": 0.375,
+        "world_x_displacement_m_mean": 6.274066925048828,
+        "body_forward_distance_m_mean": 6.343901634216309,
+        "horizontal_path_m_mean": 6.394143104553223,
+        "measured_base_velocity_mean": [
+          0.4996858537197113,
+          -0.01135575957596302,
+          -0.06339573115110397
+        ],
+        "measured_yaw_rate_mean": 0.026556432247161865,
+        "linear_tracking_rmse": 0.2514794170856476,
+        "yaw_tracking_rmse": 0.18922832608222961,
+        "roll_range_rad": [
+          -0.12191390991210938,
+          0.24912738800048828
+        ],
+        "pitch_range_rad": [
+          -0.35106587409973145,
+          0.23105931282043457
+        ],
+        "max_abs_action": 9.945727348327637,
+        "clipped_action_steps": 0
+      },
+      "actuator_net_rerun": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 12.417598724365234,
+        "survival_s_min": 6.999994277954102,
+        "fall_rate": 0.625,
+        "termination_rate": 0.625,
+        "completed_horizon_rate": 0.375,
+        "world_x_displacement_m_mean": 5.98770809173584,
+        "body_forward_distance_m_mean": 6.048003196716309,
+        "horizontal_path_m_mean": 6.099468231201172,
+        "measured_base_velocity_mean": [
+          0.49739381670951843,
+          -0.007085889112204313,
+          -0.05902211368083954
+        ],
+        "measured_yaw_rate_mean": 0.02759261429309845,
+        "linear_tracking_rmse": 0.2567276954650879,
+        "yaw_tracking_rmse": 0.18624790012836456,
+        "roll_range_rad": [
+          -0.15198779106140137,
+          0.15804576873779297
+        ],
+        "pitch_range_rad": [
+          -0.4267752170562744,
+          0.21989679336547852
+        ],
+        "max_abs_action": 7.832036972045898,
+        "clipped_action_steps": 0
+      },
+      "pd": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": 13.058319091796875,
+        "body_forward_distance_m_mean": 13.597332954406738,
+        "horizontal_path_m_mean": 13.455499649047852,
+        "measured_base_velocity_mean": [
+          0.6798575520515442,
+          0.003458586987107992,
+          -0.04831297695636749
+        ],
+        "measured_yaw_rate_mean": -0.018943266943097115,
+        "linear_tracking_rmse": 0.11840001493692398,
+        "yaw_tracking_rmse": 0.10919356346130371,
+        "roll_range_rad": [
+          -0.17722058296203613,
+          0.17739462852478027
+        ],
+        "pitch_range_rad": [
+          -0.39091944694519043,
+          0.24962711334228516
+        ],
+        "max_abs_action": 6.787018299102783,
+        "clipped_action_steps": 0
+      }
+    },
+    {
+      "command": [
+        0,
+        0,
+        0.3
+      ],
+      "previous_report": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -0.08945177495479584,
+        "body_forward_distance_m_mean": -0.07449182868003845,
+        "horizontal_path_m_mean": 0.1070127934217453,
+        "measured_base_velocity_mean": [
+          -0.0037245419807732105,
+          0.0004047616384923458,
+          -0.01365043967962265
+        ],
+        "measured_yaw_rate_mean": 0.002534321043640375,
+        "linear_tracking_rmse": 0.021101605147123337,
+        "yaw_tracking_rmse": 0.30126774311065674,
+        "roll_range_rad": [
+          -0.06139016151428223,
+          0.1038823127746582
+        ],
+        "pitch_range_rad": [
+          -0.006183147430419922,
+          0.1093909740447998
+        ],
+        "max_abs_action": 3.866394519805908,
+        "clipped_action_steps": 0
+      },
+      "actuator_net_rerun": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -0.10264096409082413,
+        "body_forward_distance_m_mean": -0.08192978799343109,
+        "horizontal_path_m_mean": 0.11426594853401184,
+        "measured_base_velocity_mean": [
+          -0.004096432588994503,
+          0.0010548484278842807,
+          -0.014164017513394356
+        ],
+        "measured_yaw_rate_mean": 0.002969059394672513,
+        "linear_tracking_rmse": 0.020011533051729202,
+        "yaw_tracking_rmse": 0.3013142943382263,
+        "roll_range_rad": [
+          -0.05418896675109863,
+          0.11969757080078125
+        ],
+        "pitch_range_rad": [
+          -0.00453495979309082,
+          0.1330547332763672
+        ],
+        "max_abs_action": 4.181364059448242,
+        "clipped_action_steps": 0
+      },
+      "pd": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": 0.07424117624759674,
+        "body_forward_distance_m_mean": 0.1332845538854599,
+        "horizontal_path_m_mean": 0.27826935052871704,
+        "measured_base_velocity_mean": [
+          0.006664135493338108,
+          -1.598758353793528e-05,
+          -0.008927719667553902
+        ],
+        "measured_yaw_rate_mean": 0.10742254555225372,
+        "linear_tracking_rmse": 0.02137773297727108,
+        "yaw_tracking_rmse": 0.21269695460796356,
+        "roll_range_rad": [
+          -0.04184842109680176,
+          0.11584949493408203
+        ],
+        "pitch_range_rad": [
+          -0.057623863220214844,
+          0.07412576675415039
+        ],
+        "max_abs_action": 3.2067785263061523,
+        "clipped_action_steps": 0
+      }
+    },
+    {
+      "command": [
+        0.7,
+        0,
+        0.3
+      ],
+      "previous_report": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 15.225168228149414,
+        "survival_s_min": 4.339996814727783,
+        "fall_rate": 0.625,
+        "termination_rate": 0.625,
+        "completed_horizon_rate": 0.375,
+        "world_x_displacement_m_mean": -0.8137013912200928,
+        "body_forward_distance_m_mean": 7.187305450439453,
+        "horizontal_path_m_mean": 7.300576210021973,
+        "measured_base_velocity_mean": [
+          0.46893012523651123,
+          0.022987689822912216,
+          -0.043894991278648376
+        ],
+        "measured_yaw_rate_mean": 0.249416321516037,
+        "linear_tracking_rmse": 0.26817071437835693,
+        "yaw_tracking_rmse": 0.17467239499092102,
+        "roll_range_rad": [
+          -0.18007326126098633,
+          0.2337934970855713
+        ],
+        "pitch_range_rad": [
+          -0.28305983543395996,
+          0.20946526527404785
+        ],
+        "max_abs_action": 6.830761909484863,
+        "clipped_action_steps": 0
+      },
+      "actuator_net_rerun": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 17.597719192504883,
+        "survival_s_min": 5.439995765686035,
+        "fall_rate": 0.375,
+        "termination_rate": 0.375,
+        "completed_horizon_rate": 0.625,
+        "world_x_displacement_m_mean": -1.014371633529663,
+        "body_forward_distance_m_mean": 7.5902791023254395,
+        "horizontal_path_m_mean": 7.7088470458984375,
+        "measured_base_velocity_mean": [
+          0.4361177086830139,
+          0.02142036333680153,
+          -0.04088853672146797
+        ],
+        "measured_yaw_rate_mean": 0.23798060417175293,
+        "linear_tracking_rmse": 0.32663124799728394,
+        "yaw_tracking_rmse": 0.18365420401096344,
+        "roll_range_rad": [
+          -0.2178974151611328,
+          0.18506145477294922
+        ],
+        "pitch_range_rad": [
+          -0.3694303035736084,
+          0.23035478591918945
+        ],
+        "max_abs_action": 8.636125564575195,
+        "clipped_action_steps": 0
+      },
+      "pd": {
+        "mode": "adapted",
+        "terrain": "rough",
+        "command": [
+          0.7,
+          0,
+          0.3
+        ],
+        "episodes": 8,
+        "survival_s_mean": 20.000267028808594,
+        "survival_s_min": 20.000267028808594,
+        "fall_rate": 0.0,
+        "termination_rate": 0.0,
+        "completed_horizon_rate": 1.0,
+        "world_x_displacement_m_mean": -2.420320510864258,
+        "body_forward_distance_m_mean": 13.562758445739746,
+        "horizontal_path_m_mean": 13.59630012512207,
+        "measured_base_velocity_mean": [
+          0.678128719329834,
+          0.02321145310997963,
+          -0.04371628165245056
+        ],
+        "measured_yaw_rate_mean": 0.26944300532341003,
+        "linear_tracking_rmse": 0.12977898120880127,
+        "yaw_tracking_rmse": 0.10768884420394897,
+        "roll_range_rad": [
+          -0.23829364776611328,
+          0.14015698432922363
+        ],
+        "pitch_range_rad": [
+          -0.3558621406555176,
+          0.14679169654846191
+        ],
+        "max_abs_action": 5.779379367828369,
+        "clipped_action_steps": 0
+      }
+    }
+  ],
+  "horizon_survivors": {
+    "previous_actuator_net": 26,
+    "actuator_net_rerun": 28,
+    "pd": 40
+  },
+  "limitations": "Single seed and low/mid difficulty rough terrain. Eight environments per command; no statistical significance or hardest-terrain claim. Does not determine Actuator Net equivalent gains."
+}

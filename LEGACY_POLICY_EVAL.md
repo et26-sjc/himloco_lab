@@ -117,8 +117,8 @@ roll/pitch范围也只统计有效步。自定义EvaluationEnv在reset前捕获�
 - adapted在本次平地20秒内可以站立、前进、边走边转向且无跌倒；vx=.5/.7指令实际约.272/.479m/s，存在欠跟踪。
 - 纯yaw=.3时实际约.003rad/s，未实现可靠原地转向。粗糙地形前进相关指令跌倒50%~62.5%，未验证可靠通过地形。
 - GUI真实运行：direct前进转向约.36s终止；adapted完成8s，平均vx=.487、wz=.268，无跌倒。见 [GUI结果](artifacts/round2/legacy_gui/results.json)。
-- 语义适配后的剩余差异可能包含Actuator Net与旧PD、URDF/USD质量惯量/碰撞、摩擦、初态、接触及地形实现。本轮没有同USD切换PD的控制实验，也未在旧Gym对同一组物理命令重测，不能把欠跟踪/原地旋转问题单独归因于Actuator Net。
-- 下一步优先在旧Gym重复相同command，再在同Lab USD上做独立PD对照，以分离策略本身、执行器与物理模型影响；本轮未改reward或权重追求表面行走效果。
+- 语义适配后的剩余差异可能包含Actuator Net与旧PD、URDF/USD质量惯量/碰撞、摩擦、初态、接触及地形实现。上述第二轮尚未进行同USD切换PD的控制实验；下面补充2026-10-22的独立PD对照。
+- 旧Gym相同command重测仍可进一步分离策略本身与物理模型影响；本轮未改reward或权重追求表面行走效果。
 
 ## 复现与文件
 
@@ -146,3 +146,86 @@ LD_LIBRARY_PATH=/home/sjc/anaconda3/envs/himloco/lib \
 项目入口的可选UI和环境wrapper改为按需导入，使纯张量网络检查无需启动Kit；任务仍照常注册。
 仿真循环用no_grad而非inference_mode：本地Actuator Net每步roll重新分配缓存，inference tensor不能在下一次普通reset中原地修改；这是独立评估循环的执行上下文修复，不修改官方源码。
 原始日志：`/tmp/himloco_network_audit.log`、`/tmp/himloco_legacy_{asset,plane,rough,gui}.log`。
+
+## 2026-10-22：adapted旧权重切换PD40/1的控制实验
+
+在`feat/go1-pd-baseline`上新增`--actuator actuator_net|pd`；默认仍为Actuator Net。
+PD直接复用`Go1PDPlayEnvCfg`的`IdealPDActuator`，Kp40、Kd1、力矩上限23.7/35.55Nm。
+旧`model_7500.pt`严格加载，原有command缩放、按名字的关节/动作映射、默认角及history适配器均未修改；
+adapter的3项单元测试再次通过。没有重新训练或修改checkpoint。
+
+关闭噪声、外力和随机化，其余沿用旧评估入口；两种执行器分别启动仿真。
+结果新增根位置/速度/四元数以及关节位置/速度的初始状态SHA256，跨执行器逐项完全相同。
+Actuator Net不被标注为某组等效PD增益；PD运行时检查12关节Kp=40、Kd=1。
+
+### 平地，指令[1,0,0]
+
+seed1、16环境、20秒，每环境首episode：
+
+| 执行器 | 20秒存活率 | 实际vx m/s | linear RMSE m/s | yaw RMSE rad/s |
+| --- | --- | --- | --- | --- |
+| Actuator Net | 100% | 0.77293 | 0.26767 | 0.15808 |
+| PD40/1 | 100% | 1.02979 | 0.09925 | 0.05914 |
+
+PD的linear/yaw RMSE分别降低约62.9%/62.6%。两者均无action clipping。
+另用PD在Kit GUI运行4环境、8秒：0跌倒，平均vx=1.01340m/s。
+完整报告：[comparison.json](artifacts/legacy_pd_comparison/comparison.json)。
+
+### Rough，与上次报告相同地形和命令
+
+seed1、40环境、每指令8环境、20秒；3×10混合地形、difficulty0~0.5、初始level0/1。
+与上次相同，包含坡面、带噪坡面、楼梯和障碍，不代表最高难度地形。
+本次PD和Actuator Net复跑的六项初始状态SHA256全部相同。
+
+| 指令[vx,vy,wz] | 上次Actuator Net存活率 | 本次Actuator Net复跑 | PD40/1存活率 | 上次/PD平均存活秒 |
+| --- | --- | --- | --- | --- |
+| [0,0,0] | 100% | 100% | 100% | 20.00 / 20.00 |
+| [0.5,0,0] | 50% | 50% | 100% | 14.73 / 20.00 |
+| [0.7,0,0] | 37.5% | 37.5% | 100% | 12.94 / 20.00 |
+| [0,0,0.3] | 100% | 100% | 100% | 20.00 / 20.00 |
+| [0.7,0,0.3] | 37.5% | 62.5% | 100% | 15.23 / 20.00 |
+
+PD共40/40完成时限，无terminated/truncated；上次26/40，本次Actuator Net复跑28/40。
+前进转向组Actuator Net复跑存在样本差异，保留两组结果，不把本次有限样本当作稳定概率估计。
+
+| 指令 | 上次 / PD实际vx | 上次 / PD linear RMSE |
+| --- | --- | --- |
+| [0.5,0,0] | 0.282 / 0.452 | 0.243 / 0.144 |
+| [0.7,0,0] | 0.500 / 0.680 | 0.251 / 0.118 |
+| [0.7,0,0.3] | 0.469 / 0.678 | 0.268 / 0.130 |
+
+前进转向时PD实际wz=0.269rad/s，指令0.3。原地转向仍较弱：
+PD实际wz约0.107rad/s、yaw RMSE约0.213；上次约0.003rad/s、RMSE约0.301。
+存活100%不等于所有指令跟踪都已解决。
+
+这些结果支持：在已对齐语义后，执行器模型差异是旧策略迁移表现的重要影响因素。
+这不是新PD策略训练结果，也不能单凭它确定Actuator Net拟合的是Kp20/Kd0.5。
+仅测试一个seed、每指令8环境、20秒；尚未扩展到多seed、最高地形等级或随机化鲁棒性测试。
+完整逐项结果：[rough_comparison.json](artifacts/legacy_pd_comparison/rough_comparison.json)。
+
+### GUI与定量评估命令
+
+旧Gym权重 + 已对齐adapted + PD40/1，平地GUI：
+
+```bash
+python scripts/himloco_rsl_rl/eval_legacy_go1.py \
+  --checkpoint /home/sjc/HIMLoco-Go1/legged_gym/logs/rough_go1/Sep29_01-01-22_baseline_seed1/model_7500.pt \
+  --mode adapted --actuator pd --terrain plane \
+  --num_envs 4 --seed 1 --duration 20 --velocity 1.0 0 0 --real_time \
+  --output artifacts/legacy_pd_comparison/pd_visual
+```
+
+粗糙地形GUI可将`--terrain plane`改为`rough`，例如指令`--velocity 0.7 0 0.3`。
+完整五组rough headless评估：
+
+```bash
+python scripts/himloco_rsl_rl/eval_legacy_go1.py \
+  --checkpoint /home/sjc/HIMLoco-Go1/legged_gym/logs/rough_go1/Sep29_01-01-22_baseline_seed1/model_7500.pt \
+  --mode adapted --actuator pd --headless --terrain rough \
+  --num_envs 40 --seed 1 --duration 20 --output artifacts/legacy_pd_comparison/pd_rough
+```
+
+对照时改成`--actuator actuator_net`并使用独立output目录。
+实际日志：`/tmp/himloco_legacy_pd_vx1.log`、`/tmp/himloco_legacy_actnet_vx1.log`、
+`/tmp/himloco_legacy_pd_vx1_gui.log`、`/tmp/himloco_legacy_pd_rough.log`、
+`/tmp/himloco_legacy_actnet_rough.log`。

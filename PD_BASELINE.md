@@ -284,3 +284,6 @@ python scripts/himloco_rsl_rl/train.py \
 
 额外试用GUI录像选项时发现当前环境缺少MoviePy；去掉可选`--video`后GUI测试通过。
 本次未验证录像功能，也未为它新增依赖。未开发MuJoCo、未修改旧Gym权重或实机控制器。
+
+旧Gym `model_7500.pt`的adapted+PD跨执行器评估已另行完成（包含rough存活率对照），
+见[LEGACY_POLICY_EVAL.md](LEGACY_POLICY_EVAL.md#2026-10-22adapted旧权重切换pd401的控制实验)。
