@@ -1,0 +1,338 @@
+{
+  "checkpoint": {
+    "path": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-58-42_pd_resume4096/model_4.pt",
+    "keys": [
+      "model_state_dict",
+      "optimizer_state_dict",
+      "estimator_optimizer_state_dict",
+      "iter",
+      "infos",
+      "checkpoint_format_version",
+      "tot_timesteps",
+      "tot_time",
+      "wandb_run_id"
+    ],
+    "iteration": 4,
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "shape_mismatches": {},
+    "parameters": {
+      "std": {
+        "shape": [
+          12
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.0.weight": {
+        "shape": [
+          128,
+          270
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.0.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.2.weight": {
+        "shape": [
+          64,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.4.weight": {
+        "shape": [
+          19,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.encoder.4.bias": {
+        "shape": [
+          19
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.0.weight": {
+        "shape": [
+          128,
+          45
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.0.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.2.weight": {
+        "shape": [
+          64,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.2.bias": {
+        "shape": [
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.4.weight": {
+        "shape": [
+          16,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.target.4.bias": {
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32"
+      },
+      "estimator.proto.weight": {
+        "shape": [
+          32,
+          16
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.0.weight": {
+        "shape": [
+          512,
+          64
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.2.weight": {
+        "shape": [
+          256,
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.4.weight": {
+        "shape": [
+          128,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.4.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.6.weight": {
+        "shape": [
+          12,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "actor.6.bias": {
+        "shape": [
+          12
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.0.weight": {
+        "shape": [
+          512,
+          238
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.0.bias": {
+        "shape": [
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.2.weight": {
+        "shape": [
+          256,
+          512
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.2.bias": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.4.weight": {
+        "shape": [
+          128,
+          256
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.4.bias": {
+        "shape": [
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.6.weight": {
+        "shape": [
+          1,
+          128
+        ],
+        "dtype": "torch.float32"
+      },
+      "critic.6.bias": {
+        "shape": [
+          1
+        ],
+        "dtype": "torch.float32"
+      }
+    },
+    "normalization": "No running normalization parameters; act_inference uses the input directly."
+  },
+  "observations_source": "/home/sjc/himloco_lab/logs/go1_pd_validation/him/rollout_observations.pt",
+  "observation_key": "lab_observations",
+  "standalone_process": true,
+  "backend": "CPU",
+  "onnx_interfaces": {
+    "encoder": [
+      "batch,270",
+      "batch,19"
+    ],
+    "actor": [
+      "batch,64",
+      "batch,12"
+    ]
+  },
+  "cases": {
+    "random_batch_1": {
+      "reloaded_pytorch": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          1,
+          12
+        ]
+      },
+      "jit": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          1,
+          12
+        ]
+      },
+      "onnx": {
+        "max_abs_error": 4.470348358154297e-08,
+        "mean_abs_error": 2.5300929351601553e-08,
+        "shape": [
+          1,
+          12
+        ]
+      }
+    },
+    "random_batch_7": {
+      "reloaded_pytorch": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          7,
+          12
+        ]
+      },
+      "jit": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          7,
+          12
+        ]
+      },
+      "onnx": {
+        "max_abs_error": 8.940696716308594e-08,
+        "mean_abs_error": 1.802774463044443e-08,
+        "shape": [
+          7,
+          12
+        ]
+      }
+    },
+    "random_batch_64": {
+      "reloaded_pytorch": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          64,
+          12
+        ]
+      },
+      "jit": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          64,
+          12
+        ]
+      },
+      "onnx": {
+        "max_abs_error": 1.7881393432617188e-07,
+        "mean_abs_error": 2.3931230330731523e-08,
+        "shape": [
+          64,
+          12
+        ]
+      }
+    },
+    "real_rollout": {
+      "reloaded_pytorch": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          32,
+          12
+        ]
+      },
+      "jit": {
+        "max_abs_error": 0.0,
+        "mean_abs_error": 0.0,
+        "shape": [
+          32,
+          12
+        ]
+      },
+      "onnx": {
+        "max_abs_error": 5.960464477539063e-08,
+        "mean_abs_error": 1.3369572116062045e-08,
+        "shape": [
+          32,
+          12
+        ]
+      }
+    }
+  }
+}

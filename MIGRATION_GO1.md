@@ -214,8 +214,16 @@ checkpoint与TensorBoard保存在 `logs/himloco_rsl_rl/go1_rough/2026-10-21_23-3
 
 ## 边界与后续工作
 
-短程训练验证的是工程和数据链路，**没有证明运动策略已收敛或具备高质量速度跟踪**。
-下一步运行完整训练并评估不同地形、速度、随机 seed 的长期 reward、跌倒率及跟踪误差。
+上述迁移阶段的短程训练验证的是工程和数据链路，**没有证明运动策略已收敛或具备高质量速度跟踪**。
+2026-10-22已完成独立的10000轮Actuator Net训练，目录为
+`logs/himloco_rsl_rl/go1_rough/2026-10-22_01-09-29_go1_him_seed1`，保存`model_10000.pt`；
+W&B project为`himloco-go1-baseline_lab`、run ID为`r20l2lro`，训练Git SHA为`7c48d8a`。
+稳定分支已推送至`origin/feat/go1-isaacsim61`。完整配置及权重校验值保存于
+`artifacts/pd_baseline/actuator_net_reference/`，原权重未修改。
+
+新增独立`Unitree-Go1-Velocity-PD` / `Unitree-Go1-Velocity-PD-Play`任务，仅替换执行器，
+日志目录为`go1_rough_pd`；原Go1任务继续使用官方Actuator Net。
+PD仅完成短训验收，详见[PD_BASELINE.md](PD_BASELINE.md)。
 未进行Go1 MuJoCo、SDK、真机或新算法开发。W&B离线日志已在第二轮完成验证。
 Go2 配置保留并检查可实例化；其 URDF 路径仍需使用者在 `assets/unitree.py` 指向本机模型，未在本次完成 Go2 GPU训练回归。
 录像配置已迁移至原生 VideoRecorderCfg；键盘/录像/独立ONNX Play 不在主要验收路径，需在使用前单独验证。

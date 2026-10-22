@@ -1,0 +1,663 @@
+{
+  "status": "passed",
+  "implementation_commit": "736ed7a",
+  "runs": {
+    "pd_smoke32": {
+      "directory": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-55-30_pd_smoke32",
+      "iterations": [
+        1,
+        2
+      ],
+      "timesteps": [
+        3200,
+        6400
+      ],
+      "tensorboard_scalar_count": 50,
+      "metrics": [
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.633124828338623,
+          "Episode/terrain_level": 2.633124828338623,
+          "Episode/rew_action_rate": -0.23817387223243713,
+          "Episode/rew_ang_vel_xy": -0.6881661415100098,
+          "Episode/rew_base_height": -0.0017338378820568323,
+          "Episode/rew_dof_acc": -1.3605512380599976,
+          "Episode/rew_foot_clearance": -0.0005953743238933384,
+          "Episode/rew_joint_power": -0.005698443856090307,
+          "Episode/rew_lin_vel_z": -0.5882751941680908,
+          "Episode/rew_orientation": -0.016274554654955864,
+          "Episode/rew_smoothness": -0.7089938521385193,
+          "Episode/rew_tracking_ang_vel": 0.0974954292178154,
+          "Episode/rew_tracking_lin_vel": 0.04912259802222252,
+          "Episode_Reward/action_rate": -0.009150093421339989,
+          "Episode_Reward/base_angular_velocity": -0.02635042555630207,
+          "Episode_Reward/base_height_l2": -7.88593097240664e-05,
+          "Episode_Reward/base_linear_velocity": -0.02696455828845501,
+          "Episode_Reward/energy": -0.0002255585859529674,
+          "Episode_Reward/feet_height_body": -2.2381078451871872e-05,
+          "Episode_Reward/flat_orientation_l2": -0.0005964103038422763,
+          "Episode_Reward/joint_acc": -0.0483308881521225,
+          "Episode_Reward/smoothness": -0.027232026681303978,
+          "Episode_Reward/track_ang_vel_z": 0.0040026092901825905,
+          "Episode_Reward/track_lin_vel_xy": 0.0017372190486639738,
+          "Episode_Termination/base_contact": 0.010625000111758709,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.04374999925494194,
+          "Metrics/base_velocity/error_vel_xy": 0.9899470806121826,
+          "Metrics/base_velocity/error_vel_yaw": 0.8041511178016663,
+          "Metrics/success_rate": 0.22999998927116394,
+          "Loss/value_function": 0.45667332112789155,
+          "Loss/surrogate": -0.00038690287619829177,
+          "Loss/Estimation Loss": 0.3292110159993172,
+          "Loss/Swap Loss": 0.10826159603893756,
+          "Loss/learning_rate": 1e-05,
+          "Policy/mean_noise_std": 0.9992801547050476,
+          "Perf/total_fps": 1340.0,
+          "Perf/collection_time": 2.183138608932495,
+          "Perf/learning_time": 0.20442676544189453,
+          "Train/mean_reward": -4.275892925262451,
+          "Train/mean_episode_length": 66.2,
+          "Train/mean_reward/time": -4.275892925262451,
+          "Train/mean_episode_length/time": 66.2,
+          "trainer/iteration": 1.0,
+          "trainer/timesteps": 3200.0,
+          "Metrics/total_timesteps": 3200.0,
+          "Timing/total_time": 2.3875653743743896,
+          "Timing/iteration_time": 2.3875653743743896,
+          "histogram_sample_counts": {
+            "Distributions/actions": 250,
+            "Distributions/values": 250
+          }
+        },
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.4784374237060547,
+          "Episode/terrain_level": 2.4784374237060547,
+          "Episode/rew_action_rate": -0.24035495519638062,
+          "Episode/rew_ang_vel_xy": -0.719510018825531,
+          "Episode/rew_base_height": -0.0007619637763127685,
+          "Episode/rew_dof_acc": -1.0045197010040283,
+          "Episode/rew_foot_clearance": -0.0004835555446334183,
+          "Episode/rew_joint_power": -0.0051835631020367146,
+          "Episode/rew_lin_vel_z": -0.3176790773868561,
+          "Episode/rew_orientation": -0.012804614380002022,
+          "Episode/rew_smoothness": -0.7201570272445679,
+          "Episode/rew_tracking_ang_vel": 0.12121807038784027,
+          "Episode/rew_tracking_lin_vel": 0.08037722110748291,
+          "Episode_Reward/action_rate": -0.0313107855618,
+          "Episode_Reward/base_angular_velocity": -0.10124751925468445,
+          "Episode_Reward/base_height_l2": -0.00011794806778198108,
+          "Episode_Reward/base_linear_velocity": -0.05158799886703491,
+          "Episode_Reward/energy": -0.0006816356326453388,
+          "Episode_Reward/feet_height_body": -6.853071681689471e-05,
+          "Episode_Reward/flat_orientation_l2": -0.0028177343774586916,
+          "Episode_Reward/joint_acc": -0.12792512774467468,
+          "Episode_Reward/smoothness": -0.0940580666065216,
+          "Episode_Reward/track_ang_vel_z": 0.014292119070887566,
+          "Episode_Reward/track_lin_vel_xy": 0.009562642313539982,
+          "Episode_Termination/base_contact": 0.08156249672174454,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.1274999976158142,
+          "Metrics/base_velocity/error_vel_xy": 0.9478937983512878,
+          "Metrics/base_velocity/error_vel_yaw": 1.347339391708374,
+          "Metrics/success_rate": 0.0,
+          "Loss/value_function": 0.33398400992155075,
+          "Loss/surrogate": -0.013025978050427512,
+          "Loss/Estimation Loss": 0.25368952974677084,
+          "Loss/Swap Loss": 0.1082252960652113,
+          "Loss/learning_rate": 1.5000000000000005e-05,
+          "Policy/mean_noise_std": 0.9986302256584167,
+          "Perf/total_fps": 1888.0,
+          "Perf/collection_time": 1.6105132102966309,
+          "Perf/learning_time": 0.0840144157409668,
+          "Train/mean_reward": -6.328823778364393,
+          "Train/mean_episode_length": 107.33333333333333,
+          "Train/mean_reward/time": -6.328823778364393,
+          "Train/mean_episode_length/time": 107.33333333333333,
+          "trainer/iteration": 2.0,
+          "trainer/timesteps": 6400.0,
+          "Metrics/total_timesteps": 6400.0,
+          "Timing/total_time": 4.082093000411987,
+          "Timing/iteration_time": 1.6945276260375977,
+          "histogram_sample_counts": {
+            "Distributions/actions": 250,
+            "Distributions/values": 250
+          }
+        }
+      ],
+      "checkpoints": [
+        "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-55-30_pd_smoke32/model_2.pt"
+      ],
+      "wandb_history_file": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-55-30_pd_smoke32/wandb/offline-run-20261022_205537-x5ou3tiq/run-x5ou3tiq.wandb",
+      "wandb_iterations": [
+        1,
+        2
+      ],
+      "wandb_session": {
+        "id": "x5ou3tiq",
+        "project": "himloco-go1-baseline_lab",
+        "mode": "offline",
+        "dir": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-55-30_pd_smoke32/wandb/offline-run-20261022_205537-x5ou3tiq/files",
+        "parent_run_id": null,
+        "sync_tensorboard": false
+      },
+      "wandb_histogram_samples_per_iteration": 250
+    },
+    "pd_wandb_resume32": {
+      "directory": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_21-01-49_pd_wandb_resume32",
+      "iterations": [
+        3
+      ],
+      "timesteps": [
+        9600
+      ],
+      "tensorboard_scalar_count": 50,
+      "metrics": [
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.640312433242798,
+          "Episode/terrain_level": 2.640312433242798,
+          "Episode/rew_action_rate": -0.24115878343582153,
+          "Episode/rew_ang_vel_xy": -0.6070941686630249,
+          "Episode/rew_base_height": -0.0018356761429458857,
+          "Episode/rew_dof_acc": -1.2319614887237549,
+          "Episode/rew_foot_clearance": -0.0005459572421386838,
+          "Episode/rew_joint_power": -0.005831221118569374,
+          "Episode/rew_lin_vel_z": -0.5837775468826294,
+          "Episode/rew_orientation": -0.011589390225708485,
+          "Episode/rew_smoothness": -0.7177571058273315,
+          "Episode/rew_tracking_ang_vel": 0.09738258272409439,
+          "Episode/rew_tracking_lin_vel": 0.012124618515372276,
+          "Episode_Reward/action_rate": -0.008561699651181698,
+          "Episode_Reward/base_angular_velocity": -0.021277643740177155,
+          "Episode_Reward/base_height_l2": -7.84886215114966e-05,
+          "Episode_Reward/base_linear_velocity": -0.025654425844550133,
+          "Episode_Reward/energy": -0.00021683606610167772,
+          "Episode_Reward/feet_height_body": -1.8837788957171142e-05,
+          "Episode_Reward/flat_orientation_l2": -0.0003425156173761934,
+          "Episode_Reward/joint_acc": -0.03807738795876503,
+          "Episode_Reward/smoothness": -0.025481244549155235,
+          "Episode_Reward/track_ang_vel_z": 0.003840472549200058,
+          "Episode_Reward/track_lin_vel_xy": 0.0002373100578552112,
+          "Episode_Termination/base_contact": 0.0034374999813735485,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.04374999925494194,
+          "Metrics/base_velocity/error_vel_xy": 1.0975981950759888,
+          "Metrics/base_velocity/error_vel_yaw": 0.707234799861908,
+          "Metrics/success_rate": 0.22999998927116394,
+          "Loss/value_function": 0.2900836132466793,
+          "Loss/surrogate": -0.0104715432615194,
+          "Loss/Estimation Loss": 0.2820169970393181,
+          "Loss/Swap Loss": 0.10793895684182644,
+          "Loss/learning_rate": 3.3750000000000014e-05,
+          "Policy/mean_noise_std": 0.9975010752677917,
+          "Perf/total_fps": 1227.0,
+          "Perf/collection_time": 2.389533281326294,
+          "Perf/learning_time": 0.21661782264709473,
+          "Train/mean_reward": -3.7864547967910767,
+          "Train/mean_episode_length": 63.25,
+          "Train/mean_reward/time": -3.7864547967910767,
+          "Train/mean_episode_length/time": 63.25,
+          "trainer/iteration": 3.0,
+          "trainer/timesteps": 9600.0,
+          "Metrics/total_timesteps": 9600.0,
+          "Timing/total_time": 6.688244104385376,
+          "Timing/iteration_time": 2.6061511039733887,
+          "histogram_sample_counts": {}
+        }
+      ],
+      "checkpoints": [
+        "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_21-01-49_pd_wandb_resume32/model_3.pt"
+      ],
+      "wandb_history_file": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_21-01-49_pd_wandb_resume32/wandb/offline-run-20261022_210157-c3bqtbr4/run-c3bqtbr4.wandb",
+      "wandb_iterations": [
+        3
+      ],
+      "wandb_session": {
+        "id": "c3bqtbr4",
+        "project": "himloco-go1-baseline_lab",
+        "mode": "offline",
+        "dir": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_21-01-49_pd_wandb_resume32/wandb/offline-run-20261022_210157-c3bqtbr4/files",
+        "parent_run_id": "x5ou3tiq",
+        "sync_tensorboard": false
+      }
+    },
+    "pd_smoke4096": {
+      "directory": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-56-42_pd_smoke4096",
+      "iterations": [
+        1,
+        2,
+        3
+      ],
+      "timesteps": [
+        409600,
+        819200,
+        1228800
+      ],
+      "tensorboard_scalar_count": 50,
+      "metrics": [
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.4599974155426025,
+          "Episode/terrain_level": 2.4599974155426025,
+          "Episode/rew_action_rate": -0.23366288840770721,
+          "Episode/rew_ang_vel_xy": -0.7157799005508423,
+          "Episode/rew_base_height": -0.002145473612472415,
+          "Episode/rew_dof_acc": -1.452778935432434,
+          "Episode/rew_foot_clearance": -0.000626898487098515,
+          "Episode/rew_joint_power": -0.00549359992146492,
+          "Episode/rew_lin_vel_z": -0.6022969484329224,
+          "Episode/rew_orientation": -0.02004985697567463,
+          "Episode/rew_smoothness": -0.6837287545204163,
+          "Episode/rew_tracking_ang_vel": 0.11742756515741348,
+          "Episode/rew_tracking_lin_vel": 0.178534135222435,
+          "Episode_Reward/action_rate": -0.012029979377985,
+          "Episode_Reward/base_angular_velocity": -0.039945755153894424,
+          "Episode_Reward/base_height_l2": -6.860103894723579e-05,
+          "Episode_Reward/base_linear_velocity": -0.025777434930205345,
+          "Episode_Reward/energy": -0.0002726893580984324,
+          "Episode_Reward/feet_height_body": -3.1099654734134674e-05,
+          "Episode_Reward/flat_orientation_l2": -0.0013286855537444353,
+          "Episode_Reward/joint_acc": -0.06665098667144775,
+          "Episode_Reward/smoothness": -0.035708244889974594,
+          "Episode_Reward/track_ang_vel_z": 0.00568016292527318,
+          "Episode_Reward/track_lin_vel_xy": 0.008830638602375984,
+          "Episode_Termination/base_contact": 0.02218017540872097,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.047917477786540985,
+          "Metrics/base_velocity/error_vel_xy": 0.8341449499130249,
+          "Metrics/base_velocity/error_vel_yaw": 1.130426049232483,
+          "Metrics/success_rate": 0.012000000104308128,
+          "Loss/value_function": 0.4613352596759796,
+          "Loss/surrogate": 5.1462618284858766e-05,
+          "Loss/Estimation Loss": 0.30845360159873964,
+          "Loss/Swap Loss": 0.10749213770031929,
+          "Loss/learning_rate": 0.0015,
+          "Policy/mean_noise_std": 0.9862110018730164,
+          "Perf/total_fps": 60759.0,
+          "Perf/collection_time": 6.18048620223999,
+          "Perf/learning_time": 0.5608246326446533,
+          "Train/mean_reward": -5.80246306180954,
+          "Train/mean_episode_length": 94.2,
+          "Train/mean_reward/time": -5.80246306180954,
+          "Train/mean_episode_length/time": 94.2,
+          "trainer/iteration": 1.0,
+          "trainer/timesteps": 409600.0,
+          "Metrics/total_timesteps": 409600.0,
+          "Timing/total_time": 6.7413108348846436,
+          "Timing/iteration_time": 6.7413108348846436,
+          "histogram_sample_counts": {}
+        },
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.254589796066284,
+          "Episode/terrain_level": 2.254589796066284,
+          "Episode/rew_action_rate": -0.23784583806991577,
+          "Episode/rew_ang_vel_xy": -0.7413341999053955,
+          "Episode/rew_base_height": -0.0007674990338273346,
+          "Episode/rew_dof_acc": -1.1152987480163574,
+          "Episode/rew_foot_clearance": -0.0005597267299890518,
+          "Episode/rew_joint_power": -0.005112918559461832,
+          "Episode/rew_lin_vel_z": -0.3344916105270386,
+          "Episode/rew_orientation": -0.023020362481474876,
+          "Episode/rew_smoothness": -0.7113831639289856,
+          "Episode/rew_tracking_ang_vel": 0.11235502362251282,
+          "Episode/rew_tracking_lin_vel": 0.18387223780155182,
+          "Episode_Reward/action_rate": -0.03427627310156822,
+          "Episode_Reward/base_angular_velocity": -0.10492079704999924,
+          "Episode_Reward/base_height_l2": -0.00010588891746010631,
+          "Episode_Reward/base_linear_velocity": -0.04625574126839638,
+          "Episode_Reward/energy": -0.0007334270630963147,
+          "Episode_Reward/feet_height_body": -7.925248792162165e-05,
+          "Episode_Reward/flat_orientation_l2": -0.003109066979959607,
+          "Episode_Reward/joint_acc": -0.15707145631313324,
+          "Episode_Reward/smoothness": -0.10255356878042221,
+          "Episode_Reward/track_ang_vel_z": 0.016278019174933434,
+          "Episode_Reward/track_lin_vel_xy": 0.026670830324292183,
+          "Episode_Termination/base_contact": 0.13954590260982513,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.1331811547279358,
+          "Metrics/base_velocity/error_vel_xy": 0.8367354869842529,
+          "Metrics/base_velocity/error_vel_yaw": 1.2047309875488281,
+          "Metrics/success_rate": 0.0,
+          "Loss/value_function": 0.24612949118018151,
+          "Loss/surrogate": -0.005622914110426791,
+          "Loss/Estimation Loss": 0.2046478308737278,
+          "Loss/Swap Loss": 0.10458660796284676,
+          "Loss/learning_rate": 0.0033750000000000004,
+          "Policy/mean_noise_std": 0.9735578894615173,
+          "Perf/total_fps": 73247.0,
+          "Perf/collection_time": 5.150694847106934,
+          "Perf/learning_time": 0.44127988815307617,
+          "Train/mean_reward": -9.883538265228271,
+          "Train/mean_episode_length": 180.79,
+          "Train/mean_reward/time": -9.883538265228271,
+          "Train/mean_episode_length/time": 180.79,
+          "trainer/iteration": 2.0,
+          "trainer/timesteps": 819200.0,
+          "Metrics/total_timesteps": 819200.0,
+          "Timing/total_time": 12.333285570144653,
+          "Timing/iteration_time": 5.59197473526001,
+          "histogram_sample_counts": {}
+        },
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.0448389053344727,
+          "Episode/terrain_level": 2.0448389053344727,
+          "Episode/rew_action_rate": -0.23420539498329163,
+          "Episode/rew_ang_vel_xy": -0.7036248445510864,
+          "Episode/rew_base_height": -0.0006532846018671989,
+          "Episode/rew_dof_acc": -1.013663411140442,
+          "Episode/rew_foot_clearance": -0.0005322798388078809,
+          "Episode/rew_joint_power": -0.004977833479642868,
+          "Episode/rew_lin_vel_z": -0.2928791642189026,
+          "Episode/rew_orientation": -0.021338632330298424,
+          "Episode/rew_smoothness": -0.7002028226852417,
+          "Episode/rew_tracking_ang_vel": 0.11137399077415466,
+          "Episode/rew_tracking_lin_vel": 0.17426791787147522,
+          "Episode_Reward/action_rate": -0.053260061889886856,
+          "Episode_Reward/base_angular_velocity": -0.15538637340068817,
+          "Episode_Reward/base_height_l2": -0.00013968677376396954,
+          "Episode_Reward/base_linear_velocity": -0.06296499818563461,
+          "Episode_Reward/energy": -0.0011256571160629392,
+          "Episode_Reward/feet_height_body": -0.00011784343951148912,
+          "Episode_Reward/flat_orientation_l2": -0.004372576251626015,
+          "Episode_Reward/joint_acc": -0.2241048365831375,
+          "Episode_Reward/smoothness": -0.15930181741714478,
+          "Episode_Reward/track_ang_vel_z": 0.025325054302811623,
+          "Episode_Reward/track_lin_vel_xy": 0.03934544324874878,
+          "Episode_Termination/base_contact": 0.2677343785762787,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.19507567584514618,
+          "Metrics/base_velocity/error_vel_xy": 0.8534004092216492,
+          "Metrics/base_velocity/error_vel_yaw": 1.198209524154663,
+          "Metrics/success_rate": 0.0,
+          "Loss/value_function": 0.15955106988549234,
+          "Loss/surrogate": -0.0036047352303285153,
+          "Loss/Estimation Loss": 0.17735878825187684,
+          "Loss/Swap Loss": 0.10112378112971783,
+          "Loss/learning_rate": 0.0075937500000000015,
+          "Policy/mean_noise_std": 0.9640994071960449,
+          "Perf/total_fps": 73855.0,
+          "Perf/collection_time": 5.103619813919067,
+          "Perf/learning_time": 0.44234681129455566,
+          "Train/mean_reward": -13.492962058782577,
+          "Train/mean_episode_length": 260.01,
+          "Train/mean_reward/time": -13.492962058782577,
+          "Train/mean_episode_length/time": 260.01,
+          "trainer/iteration": 3.0,
+          "trainer/timesteps": 1228800.0,
+          "Metrics/total_timesteps": 1228800.0,
+          "Timing/total_time": 17.879252195358276,
+          "Timing/iteration_time": 5.545966625213623,
+          "histogram_sample_counts": {}
+        }
+      ],
+      "checkpoints": [
+        "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-56-42_pd_smoke4096/model_3.pt"
+      ]
+    },
+    "pd_resume4096": {
+      "directory": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-58-42_pd_resume4096",
+      "iterations": [
+        4
+      ],
+      "timesteps": [
+        1638400
+      ],
+      "tensorboard_scalar_count": 50,
+      "metrics": [
+        {
+          "Curriculum/lin_vel_cmd_levels": 1.0,
+          "Episode/max_command_x": 1.0,
+          "Curriculum/terrain_levels": 2.4682860374450684,
+          "Episode/terrain_level": 2.4682860374450684,
+          "Episode/rew_action_rate": -0.215042844414711,
+          "Episode/rew_ang_vel_xy": -0.6172446608543396,
+          "Episode/rew_base_height": -0.002044923370704055,
+          "Episode/rew_dof_acc": -1.1551897525787354,
+          "Episode/rew_foot_clearance": -0.0005628127255477011,
+          "Episode/rew_joint_power": -0.005023995414376259,
+          "Episode/rew_lin_vel_z": -0.5547831654548645,
+          "Episode/rew_orientation": -0.01641334407031536,
+          "Episode/rew_smoothness": -0.6275058388710022,
+          "Episode/rew_tracking_ang_vel": 0.12108685076236725,
+          "Episode/rew_tracking_lin_vel": 0.17718954384326935,
+          "Episode_Reward/action_rate": -0.011071334592998028,
+          "Episode_Reward/base_angular_velocity": -0.034547921270132065,
+          "Episode_Reward/base_height_l2": -6.315798236755654e-05,
+          "Episode_Reward/base_linear_velocity": -0.023295404389500618,
+          "Episode_Reward/energy": -0.000248852331424132,
+          "Episode_Reward/feet_height_body": -2.746248537732754e-05,
+          "Episode_Reward/flat_orientation_l2": -0.0011036667274311185,
+          "Episode_Reward/joint_acc": -0.05112643539905548,
+          "Episode_Reward/smoothness": -0.03277410939335823,
+          "Episode_Reward/track_ang_vel_z": 0.005874329712241888,
+          "Episode_Reward/track_lin_vel_xy": 0.008747292682528496,
+          "Episode_Termination/base_contact": 0.013195800594985485,
+          "Episode_Termination/terrain_out_of_bounds": 0.0,
+          "Episode_Termination/time_out": 0.048286132514476776,
+          "Metrics/base_velocity/error_vel_xy": 0.8293936848640442,
+          "Metrics/base_velocity/error_vel_yaw": 1.0939602851867676,
+          "Metrics/success_rate": 0.012000000104308128,
+          "Loss/value_function": 0.11088313572108746,
+          "Loss/surrogate": -0.002225160049420083,
+          "Loss/Estimation Loss": 0.16155152544379234,
+          "Loss/Swap Loss": 0.09795595780014991,
+          "Loss/learning_rate": 0.01,
+          "Policy/mean_noise_std": 0.9488086104393005,
+          "Perf/total_fps": 59864.0,
+          "Perf/collection_time": 6.2618408203125,
+          "Perf/learning_time": 0.5802385807037354,
+          "Train/mean_reward": -5.0073704075813295,
+          "Train/mean_episode_length": 94.89,
+          "Train/mean_reward/time": -5.0073704075813295,
+          "Train/mean_episode_length/time": 94.89,
+          "trainer/iteration": 4.0,
+          "trainer/timesteps": 1638400.0,
+          "Metrics/total_timesteps": 1638400.0,
+          "Timing/total_time": 24.72133159637451,
+          "Timing/iteration_time": 6.842079401016235,
+          "histogram_sample_counts": {}
+        }
+      ],
+      "checkpoints": [
+        "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-58-42_pd_resume4096/model_4.pt"
+      ]
+    }
+  },
+  "required_scalar_metrics": [
+    "trainer/iteration",
+    "trainer/timesteps",
+    "Metrics/total_timesteps",
+    "Loss/Estimation Loss",
+    "Loss/Swap Loss",
+    "Loss/value_function",
+    "Loss/surrogate",
+    "Loss/learning_rate",
+    "Policy/mean_noise_std",
+    "Train/mean_reward",
+    "Train/mean_episode_length",
+    "Perf/total_fps",
+    "Perf/collection_time",
+    "Perf/learning_time",
+    "Timing/total_time",
+    "Timing/iteration_time",
+    "Episode/terrain_level",
+    "Episode/max_command_x",
+    "Episode/rew_tracking_lin_vel",
+    "Episode/rew_tracking_ang_vel",
+    "Episode/rew_lin_vel_z",
+    "Episode/rew_ang_vel_xy",
+    "Episode/rew_orientation",
+    "Episode/rew_dof_acc",
+    "Episode/rew_joint_power",
+    "Episode/rew_base_height",
+    "Episode/rew_foot_clearance",
+    "Episode/rew_action_rate",
+    "Episode/rew_smoothness"
+  ],
+  "resumes": {
+    "pd_resume4096": {
+      "parameter_max_deltas": {
+        "actor.": 0.12317462265491486,
+        "critic.": 0.11190736293792725,
+        "estimator.encoder.": 0.2109299600124359,
+        "estimator.target.": 0.16002103686332703,
+        "estimator.proto.": 0.3880905508995056
+      },
+      "optimizers": {
+        "optimizer_state_dict": {
+          "state_count": 17,
+          "steps_before": [
+            60.0,
+            60.0
+          ],
+          "steps_after": [
+            80.0,
+            80.0
+          ]
+        },
+        "estimator_optimizer_state_dict": {
+          "state_count": 13,
+          "steps_before": [
+            60.0,
+            60.0
+          ],
+          "steps_after": [
+            80.0,
+            80.0
+          ]
+        }
+      }
+    },
+    "pd_wandb_resume32": {
+      "parameter_max_deltas": {
+        "actor.": 0.005222998559474945,
+        "critic.": 0.006171364337205887,
+        "estimator.encoder.": 0.007855240255594254,
+        "estimator.target.": 0.007009528577327728,
+        "estimator.proto.": 0.0075428783893585205
+      },
+      "optimizers": {
+        "optimizer_state_dict": {
+          "state_count": 17,
+          "steps_before": [
+            40.0,
+            40.0
+          ],
+          "steps_after": [
+            60.0,
+            60.0
+          ]
+        },
+        "estimator_optimizer_state_dict": {
+          "state_count": 13,
+          "steps_before": [
+            40.0,
+            40.0
+          ],
+          "steps_after": [
+            60.0,
+            60.0
+          ]
+        }
+      }
+    }
+  },
+  "actuator_net_checkpoint_unchanged": true,
+  "preexisting_user_files_unchanged": true,
+  "saved_environment_diff_outside_actuators": [
+    "log_dir"
+  ],
+  "gui_play": {
+    "status": "passed",
+    "steps": 100,
+    "num_envs": 4,
+    "velocity": [
+      0.7,
+      0,
+      0.3
+    ],
+    "checkpoint": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_20-58-42_pd_resume4096/model_4.pt",
+    "log": "/tmp/himloco_pd_play_gui.log",
+    "note": "Short smoke policy; GUI/inference validation does not demonstrate learned locomotion."
+  },
+  "control_csv": {
+    "path": "logs/go1_pd_validation/control/substeps.csv",
+    "sha256": "12de3fa8ea2004fadcf0bbc6e379657f47e027cbd1e1fbb90d3c481892fbfa05",
+    "recorded_env_ids": [
+      0
+    ],
+    "all_32_envs_formula_checked": true
+  },
+  "actuator_config_diff": {
+    "class_type": {
+      "actuator_net": "isaaclab.actuators.actuator_net:ActuatorNetMLP",
+      "pd": "isaaclab.actuators.actuator_pd:IdealPDActuator"
+    },
+    "damping": {
+      "actuator_net": "null",
+      "pd": "1.0"
+    },
+    "input_idx": {
+      "actuator_net": [
+        "0",
+        "1",
+        "2"
+      ],
+      "pd": "<absent>"
+    },
+    "input_order": {
+      "actuator_net": "pos_vel",
+      "pd": "<absent>"
+    },
+    "network_file": {
+      "actuator_net": "https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.1/Isaac/IsaacLab/ActuatorNets/Unitree/unitree_go1.pt",
+      "pd": "<absent>"
+    },
+    "pos_scale": {
+      "actuator_net": "-1.0",
+      "pd": "<absent>"
+    },
+    "saturation_effort": {
+      "actuator_net": {
+        ".*_hip_joint": "23.7",
+        ".*_thigh_joint": "23.7",
+        ".*_calf_joint": "35.55"
+      },
+      "pd": "<absent>"
+    },
+    "stiffness": {
+      "actuator_net": "null",
+      "pd": "40.0"
+    },
+    "torque_scale": {
+      "actuator_net": "1.0",
+      "pd": "<absent>"
+    },
+    "vel_scale": {
+      "actuator_net": "1.0",
+      "pd": "<absent>"
+    }
+  },
+  "headless_play": {
+    "status": "passed",
+    "steps": 50,
+    "num_envs": 4,
+    "automatic_checkpoint_selection": true,
+    "load_run": ".*_pd_resume4096",
+    "velocity": [
+      0.5,
+      0,
+      0.2
+    ],
+    "log": "/tmp/himloco_pd_play_headless.log"
+  }
+}
