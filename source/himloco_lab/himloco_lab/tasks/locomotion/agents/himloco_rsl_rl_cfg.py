@@ -41,3 +41,8 @@ class Go1PPORunnerCfg(PPORunnerCfg):
     experiment_name = "go1_rough"
     max_iterations = 10000
     privileged_history_length = 0
+
+
+@configclass
+class Go1PDPPORunnerCfg(Go1PPORunnerCfg):
+    experiment_name = "go1_rough_pd"

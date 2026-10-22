@@ -1,0 +1,55 @@
+seed: 1
+device: cuda:0
+num_steps_per_env: 100
+max_iterations: 10000
+empirical_normalization: null
+save_interval: 100
+experiment_name: go1_rough
+run_name: go1_him_seed1
+logger: wandb
+neptune_project: isaaclab
+wandb_project: himloco-go1-baseline_lab
+wandb_group: go1-baseline
+wandb_tags:
+- go1
+- isaaclab3
+- physx
+wandb_mode: null
+wandb_run_id: null
+wandb_log_histograms: false
+wandb_histogram_interval: 10
+wandb_histogram_samples: 2048
+wandb_upload_checkpoints: false
+resume: false
+load_run: .*
+load_checkpoint: model_.*.pt
+class_name: HIMOnPolicyRunner
+policy_class_name: HIMActorCritic
+algorithm_class_name: HIMPPO
+policy:
+  actor_hidden_dims:
+  - 512
+  - 256
+  - 128
+  critic_hidden_dims:
+  - 512
+  - 256
+  - 128
+  activation: elu
+  init_noise_std: 1.0
+  normalize_obs: false
+algorithm:
+  num_learning_epochs: 5
+  num_mini_batches: 4
+  clip_param: 0.2
+  gamma: 0.99
+  lam: 0.95
+  value_loss_coef: 1.0
+  entropy_coef: 0.01
+  learning_rate: 0.001
+  max_grad_norm: 1.0
+  use_clipped_value_loss: true
+  schedule: adaptive
+  desired_kl: 0.01
+history_length: 5
+privileged_history_length: 0

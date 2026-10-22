@@ -1,0 +1,33 @@
+{
+  "git_sha": "7c48d8a410946599473255763d04c25d3ae88f96",
+  "branch": "feat/go1-isaacsim61",
+  "checkpoint": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough/2026-10-22_01-09-29_go1_him_seed1/model_10000.pt",
+  "checkpoint_sha256": "6dd33fbb05ecdb79759a8cb14c74626e15fa572a64968765947a3db2ce61ad79",
+  "saved_config_sha256": {
+    "env.yaml": "3ee336073bd71d0386f4e9bda737dc7c29201ff713371a3034f771217bf2c03b",
+    "agent.yaml": "c2a49bd7266a9649df242de6e153205f5d14dec9ca22e782d368eb38a799f7ec",
+    "velocity_env_cfg.py": "824c34f21adb94ab0a2d516e725be0b4e63754a1cded1803a05a7c5f249a52d6"
+  },
+  "run_directory": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough/2026-10-22_01-09-29_go1_him_seed1",
+  "wandb": {
+    "id": "r20l2lro",
+    "project": "himloco-go1-baseline_lab",
+    "mode": "online",
+    "dir": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough/2026-10-22_01-09-29_go1_him_seed1/wandb/run-20261022_011002-r20l2lro/files",
+    "parent_run_id": null,
+    "sync_tensorboard": false
+  },
+  "python": "3.12.15 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [GCC 14.3.0]",
+  "isaaclab_source": "/home/sjc/RL_Research/IsaacLab-3.0",
+  "isaaclab_source_version": "3.0.0",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "isaacsim": "6.1.0.0",
+    "isaaclab": "17.0.2",
+    "wandb": "0.31.0",
+    "onnx": "1.23.2",
+    "onnxruntime": "1.31.0"
+  },
+  "physics_backend": "Isaac Sim PhysX GPU",
+  "training_command": "WANDB_PROJECT=himloco-go1-baseline_lab WANDB_MODE=online python scripts/himloco_rsl_rl/train.py --task Unitree-Go1-Velocity --headless --num_envs 4096 --seed 1 --max_iterations 10000 --logger wandb --run_name go1_him_seed1 --wandb_group go1-baseline --wandb_tags go1 isaaclab3 physx"
+}

@@ -6,6 +6,8 @@ from isaaclab.app import AppLauncher
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--num_envs', type=int, default=32)
+parser.add_argument('--task', choices=['Unitree-Go1-Velocity', 'Unitree-Go1-Velocity-PD'],
+                    default='Unitree-Go1-Velocity')
 parser.add_argument('--output', default='logs/go1_validation')
 AppLauncher.add_app_launcher_args(parser)
 parser.add_argument('--headless', action='store_true')
@@ -20,10 +22,10 @@ import torch
 import onnxruntime as ort
 import himloco_lab.tasks
 from himloco_lab.rsl_rl import HIMOnPolicyRunner, HimlocoVecEnvWrapper
-from himloco_lab.tasks.locomotion.robots.go1.velocity_env_cfg import Go1EnvCfg, GO1_JOINT_NAMES
-from himloco_lab.tasks.locomotion.agents.himloco_rsl_rl_cfg import Go1PPORunnerCfg
+from himloco_lab.tasks.locomotion.robots.go1.velocity_env_cfg import GO1_JOINT_NAMES
 from himloco_lab.utils import export_himloco_policy_as_jit, export_himloco_policy_as_onnx
 from isaaclab.utils.math import quat_apply_inverse
+from isaaclab_tasks.utils.parse_cfg import load_cfg_from_registry
 
 
 def main():
@@ -31,11 +33,12 @@ def main():
     suite = unittest.defaultTestLoader.discover(str(Path(__file__).resolve().parents[2] / 'tests'), pattern='test_him_contracts.py')
     if not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful():
         raise AssertionError('HIM contract tests failed')
-    cfg = Go1EnvCfg(); cfg.scene.num_envs = args.num_envs; cfg.seed = 1
+    cfg = load_cfg_from_registry(args.task, 'env_cfg_entry_point')
+    cfg.scene.num_envs = args.num_envs; cfg.seed = 1
     cfg.scene.terrain.terrain_generator.seed = cfg.seed
     cfg.observations.policy.enable_corruption = False
     output = Path(args.output); output.mkdir(parents=True, exist_ok=True)
-    env = HimlocoVecEnvWrapper(gym.make('Unitree-Go1-Velocity', cfg=cfg), history_length=5)
+    env = HimlocoVecEnvWrapper(gym.make(args.task, cfg=cfg), history_length=5)
     robot = env.unwrapped.scene['robot']
     assert (env.num_one_step_obs, env.num_obs, env.num_privileged_obs, env.num_actions) == (45, 270, 238, 12)
     assert robot.joint_names == GO1_JOINT_NAMES, robot.joint_names
@@ -51,7 +54,8 @@ def main():
     go2 = Go2EnvCfg()
     assert 'GO2HV' in go2.scene.robot.actuators
     assert go2.scene.height_scanner.prim_path.endswith('/base')
-    assert type(robot.actuators['base_legs']).__name__ == 'ActuatorNetMLP'
+    expected_actuator = 'IdealPDActuator' if args.task.endswith('-PD') else 'ActuatorNetMLP'
+    assert type(robot.actuators['base_legs']).__name__ == expected_actuator
     assert torch.isfinite(env.get_observations()).all()
     assert torch.count_nonzero(env.get_observations()[:, 45:]) == 0
     # Native XYZW orientation and projected gravity agree, including live root state.
@@ -75,7 +79,7 @@ def main():
     assert torch.count_nonzero(env.unwrapped.pre_pre_action) == 0
     torch.testing.assert_close(critic[:, :45], obs[:, :45])
     assert env.unwrapped.observation_manager.group_obs_dim['critic'] == (238,)
-    agent = Go1PPORunnerCfg()
+    agent = load_cfg_from_registry(args.task, 'himloco_rsl_rl_cfg')
     runner = HIMOnPolicyRunner(env, agent.to_dict(), log_dir=str(output), device=env.device)
     model = runner.alg.actor_critic
     actor_before = model.actor[0].weight.detach().clone()
@@ -85,6 +89,7 @@ def main():
     assert not torch.equal(estimator_before, model.estimator.encoder[0].weight)
     assert all(torch.isfinite(p).all() for p in model.parameters())
     inputs = env.get_observations().clone()
+    torch.save({'lab_observations': inputs.cpu()}, output / 'rollout_observations.pt')
     with torch.inference_mode():
         expected = runner.get_inference_policy()(inputs).clone()
     checkpoint = output / 'model_1.pt'
@@ -107,7 +112,7 @@ def main():
     encoded = encoder.run(None, {'obs_history': sample.numpy()})[0]
     onnx = policy.run(None, {'obs': np.concatenate((sample.numpy()[:, :45], encoded), axis=-1)})[0]
     np.testing.assert_allclose(onnx, reference.numpy(), atol=2e-5, rtol=2e-5)
-    result = dict(status='passed', num_envs=args.num_envs, policy=45, history=270, critic=238, action=12,
+    result = dict(status='passed', task=args.task, num_envs=args.num_envs, policy=45, history=270, critic=238, action=12,
                   joint_names=robot.joint_names, body_names=robot.body_names,
                   default_joint_pos=robot.data.default_joint_pos.torch[0].tolist(),
                   actuator=type(robot.actuators['base_legs']).__name__,
