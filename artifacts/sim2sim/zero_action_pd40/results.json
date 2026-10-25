@@ -1,0 +1,415 @@
+{
+  "command": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "mode": "zero_action",
+  "duration_requested_s": 4.0,
+  "survival_s": 3.999999999999937,
+  "geometric_fall": false,
+  "geometric_fall_rate": 0.0,
+  "fall_reason": null,
+  "completed_horizon": true,
+  "viewer_closed": false,
+  "linear_tracking_rmse": 0.01673969321635498,
+  "yaw_tracking_rmse": 0.00029545123659429083,
+  "mean_body_velocity": [
+    -0.00402828311842224,
+    4.5695276340451256e-05,
+    -0.027233198134867655
+  ],
+  "mean_body_angular_velocity": [
+    -0.0002507107870558366,
+    -0.0005916425215217296,
+    3.740277982025291e-05
+  ],
+  "mean_vx": -0.004028283118422237,
+  "mean_vy": 4.569527634045125e-05,
+  "mean_wz": 3.740277982025285e-05,
+  "base_height_mean": 0.293838322435331,
+  "base_height_range": [
+    0.28308067013417465,
+    0.39975475000000005
+  ],
+  "roll_range": [
+    -0.0014187355374315719,
+    9.034453065360044e-10
+  ],
+  "pitch_range": [
+    -0.00361280685778575,
+    0.021896713969063213
+  ],
+  "joint_tracking_rmse": [
+    0.01148456696099044,
+    0.010772694948315353,
+    0.008443643084999402,
+    0.007400616033977319,
+    0.01941264559097256,
+    0.018906960131062314,
+    0.012102375780099393,
+    0.011552270715322945,
+    0.1236977927556652,
+    0.12227446202786024,
+    0.0913404686358778,
+    0.09015077646582512
+  ],
+  "applied_torque_rms": [
+    0.46446125210448846,
+    0.43545526482071617,
+    0.34094858353689117,
+    0.2987922339896715,
+    0.8248395346893476,
+    0.8053115941224132,
+    0.5159354288949135,
+    0.49462456794905013,
+    4.9933555606807225,
+    4.936332907165372,
+    3.678641326300339,
+    3.63083434076386
+  ],
+  "applied_torque_peak": [
+    1.0025023888307594,
+    0.8685383560289209,
+    0.5809523396896237,
+    0.45119926453300774,
+    5.613260978160506,
+    5.580592202207209,
+    3.542226243941968,
+    3.500250008709834,
+    11.628204503643442,
+    11.571114233672077,
+    6.703699240938064,
+    6.640561354028737
+  ],
+  "joint_velocity_peak": [
+    0.5962697745165687,
+    0.5223463949339837,
+    0.37438919280982924,
+    0.29589576061639433,
+    3.2631478089131973,
+    3.2495854661918786,
+    2.2426088417648153,
+    2.219451651963439,
+    6.3219684400449045,
+    6.295977778904573,
+    3.8999675291572764,
+    3.8652238500163185
+  ],
+  "rated_velocity_exceedance_ratio": 0.0,
+  "torque_saturation_ratio": 0.0,
+  "foot_contact_fraction": [
+    0.97,
+    0.97,
+    0.96875,
+    0.96875
+  ],
+  "foot_normal_force_mean": [
+    35.64556220282145,
+    35.215138552270986,
+    27.24859361608168,
+    26.862541959699783
+  ],
+  "world_displacement": [
+    -0.016008407271000363,
+    0.0001798541892432399,
+    -0.10884018929020134
+  ],
+  "horizontal_path_length": 0.016976683218299142,
+  "body_forward_distance": -0.016113132473688948,
+  "steady_standing_fraction": 1.0,
+  "physics_steps": 800,
+  "policy_calls": 0,
+  "action_updates": 200,
+  "initial_state_sha256": "837e9545b77c231108cfa4fd721be5ce375e8e4a74c8ffe439f07fe9c0749fef",
+  "controller": {
+    "type": "pd",
+    "kp": [
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0,
+      40.0
+    ],
+    "kd": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "actual_gain_label": "kp40_kd1",
+  "config": {
+    "model": "/home/sjc/himloco_lab/sim2sim/go1/models/unitree_go1/scene_torque.xml",
+    "profile": "lab",
+    "physics_dt": 0.005,
+    "decimation": 4,
+    "initial_height": 0.4,
+    "initial_yaw": 0.0,
+    "fall_height": 0.16,
+    "fall_tilt": 1.0,
+    "fall_duration": 0.1,
+    "controller": {
+      "type": "pd",
+      "kp": 40.0,
+      "kd": 1.0,
+      "action_scale": 0.25,
+      "hip_reduction": 1.0
+    }
+  },
+  "policy": {
+    "policy": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/exported/policy.pt",
+    "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+    "profile": "lab",
+    "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "checkpoint": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt"
+  },
+  "model": {
+    "path": "/home/sjc/himloco_lab/sim2sim/go1/models/unitree_go1/scene_torque.xml",
+    "xml_sha256": "bcfc3f3d7aa8aed088e9f52d5993e40bad1b4a8ff8155620c328f91d6c69900c",
+    "source": {
+      "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+      "commit": "f3b6013629c7b94f8ee93fd977b161fa8350f9bc",
+      "subdirectory": "unitree_go1",
+      "license": "BSD-3-Clause (see LICENSE)",
+      "changes": [
+        "remove every position servo/default",
+        "replace 12 actuators with unit-gear torque motors",
+        "remove position-control home keyframe",
+        "torque scene includes go1_torque.xml"
+      ],
+      "files": {
+        "CHANGELOG.md": "0cf56d81d15241511c79e8c5e83dcd069b64df30103e97227207e4dfbf0775dc",
+        "LICENSE": "2b794acf1e250f5545ae5a47d81e5685ea5488ce077d1087ed8be5f81e9ba5c0",
+        "README.md": "a4b63613124da20b09f9f8c550482d670ab2b784a272a489f94e2288df43f151",
+        "assets/calf.stl": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8",
+        "assets/hip.stl": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0",
+        "assets/thigh.stl": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8",
+        "assets/thigh_mirror.stl": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8",
+        "assets/trunk.stl": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970",
+        "go1.xml": "d5a7466784c8e72fd174cc7fa5a92754a1a0a6d458a1dec79e7ca0abc9525c4a",
+        "go1_torque.xml": "15e0aa7fc5b249031c3d9536e4502bb162f34ea17723a677bb5edddd38d78240",
+        "scene.xml": "eceb4231bf2a3b0a190296963b38b904ed77dc14f5770bbcdd67fb0be8c49374",
+        "scene_torque.xml": "bcfc3f3d7aa8aed088e9f52d5993e40bad1b4a8ff8155620c328f91d6c69900c"
+      }
+    },
+    "joint_names": [
+      "FL_hip_joint",
+      "FR_hip_joint",
+      "RL_hip_joint",
+      "RR_hip_joint",
+      "FL_thigh_joint",
+      "FR_thigh_joint",
+      "RL_thigh_joint",
+      "RR_thigh_joint",
+      "FL_calf_joint",
+      "FR_calf_joint",
+      "RL_calf_joint",
+      "RR_calf_joint"
+    ],
+    "qpos_indices": [
+      10,
+      7,
+      16,
+      13,
+      11,
+      8,
+      17,
+      14,
+      12,
+      9,
+      18,
+      15
+    ],
+    "qvel_indices": [
+      9,
+      6,
+      15,
+      12,
+      10,
+      7,
+      16,
+      13,
+      11,
+      8,
+      17,
+      14
+    ],
+    "actuator_indices": [
+      3,
+      0,
+      9,
+      6,
+      4,
+      1,
+      10,
+      7,
+      5,
+      2,
+      11,
+      8
+    ],
+    "default_joint_pos": [
+      0.1,
+      -0.1,
+      0.1,
+      -0.1,
+      0.8,
+      0.8,
+      1.0,
+      1.0,
+      -1.5,
+      -1.5,
+      -1.5,
+      -1.5
+    ],
+    "effort_limits": [
+      23.7,
+      23.7,
+      23.7,
+      23.7,
+      23.7,
+      23.7,
+      23.7,
+      23.7,
+      35.55,
+      35.55,
+      35.55,
+      35.55
+    ],
+    "passive_damping": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    "armature": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01
+    ],
+    "frictionloss": [
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.2
+    ],
+    "joint_ranges": [
+      [
+        -0.863,
+        0.863
+      ],
+      [
+        -0.863,
+        0.863
+      ],
+      [
+        -0.863,
+        0.863
+      ],
+      [
+        -0.863,
+        0.863
+      ],
+      [
+        -0.686,
+        4.501
+      ],
+      [
+        -0.686,
+        4.501
+      ],
+      [
+        -0.686,
+        4.501
+      ],
+      [
+        -0.686,
+        4.501
+      ],
+      [
+        -2.818,
+        -0.888
+      ],
+      [
+        -2.818,
+        -0.888
+      ],
+      [
+        -2.818,
+        -0.888
+      ],
+      [
+        -2.818,
+        -0.888
+      ]
+    ],
+    "foot_friction": [
+      [
+        0.8,
+        0.02,
+        0.01
+      ],
+      [
+        0.8,
+        0.02,
+        0.01
+      ],
+      [
+        0.8,
+        0.02,
+        0.01
+      ],
+      [
+        0.8,
+        0.02,
+        0.01
+      ]
+    ],
+    "total_mass": 12.743448,
+    "timestep": 0.005,
+    "torque_motor_verified": true
+  },
+  "mujoco_version": "3.11.0",
+  "wall_time_s": 0.0695525860064663
+}

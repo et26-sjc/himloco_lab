@@ -208,6 +208,7 @@ zero-action nominal PD单独运行4秒，平均高度0.294m、无跌倒、末2�
 - `summary.csv`：便于对比的速度、RMSE、高度、存活、饱和等标量。
 - 每case的`results.json`及本地`trace.npz`：200Hz位置、速度、roll/pitch、计算/施加力矩、
   q_target/q/dq、力矩饱和、四足接触/法向力、完整qpos/qvel；另有50Hz actor帧及action。
+  q/dq/target/torque对应本次积分前的控制采样，full_qpos/full_qvel和机体评价状态对应积分后。
 - Linear RMSE：`sqrt(mean((vx-cmdx)^2+(vy-cmdy)^2))`，Yaw RMSE同理，按每物理步统计。
 - Joint tracking RMSE：每关节target与实际角度误差；torque RMS/peak/saturation按真实计算与裁剪统计。
 - Foot contact：地面与指定足geom接触且法向力>1N，顺序FL/FR/RL/RR。
@@ -287,6 +288,7 @@ python sim2sim/go1/audit_lab_contract.py --headless --policy "$GO1_POLICY"
 开发起点`73fc02a`已按用户要求推送至`origin/feat/go1-pd-baseline`，旧Actuator Net分支
 `feat/go1-isaacsim61`保持`7c48d8a`。MuJoCo代码在当前PD分支本地提交，不自动推送；提交可用
 `git log --oneline -3`查看。
+MuJoCo实现提交为`add70af`；验证报告记录完整实现SHA，结果数据另作独立本地提交。
 
 本轮交付PD后端；可选官方Actuator Net MuJoCo后端尚未实现，未将PD20或PD40标作网络力矩推理。
 没有MuJoCo训练、实机控制或Unitree通信。GUI能执行、控制闭环成立与高质量速度跟踪分别评价；
