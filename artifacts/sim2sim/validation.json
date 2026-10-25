@@ -179,5 +179,13 @@
     "default MuJoCo locomotion has tracking degradation",
     "no policy retraining or checkpoint modification"
   ],
-  "implementation_git_sha": "add70af828453261ac4a3bdb084cf427c625b98a"
+  "implementation_git_sha": "add70af828453261ac4a3bdb084cf427c625b98a",
+  "csv_validation": {
+    "line_endings": "LF",
+    "rows_roundtripped": {
+      "pd_sweep": 15,
+      "repeatability": 1
+    },
+    "control_and_inference_unchanged": true
+  }
 }

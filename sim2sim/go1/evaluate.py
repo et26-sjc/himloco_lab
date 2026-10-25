@@ -51,7 +51,7 @@ def main():
               'linear_tracking_rmse', 'yaw_tracking_rmse', 'mean_vx', 'mean_vy', 'mean_wz',
               'base_height_mean', 'torque_saturation_ratio', 'rated_velocity_exceedance_ratio']
     with (root/'summary.csv').open('w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         for row in rows:
             writer.writerow({k:row[k] for k in fields})
