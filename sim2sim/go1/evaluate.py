@@ -50,11 +50,14 @@ def main():
     fields = ['suite_group', 'actual_gain_label', 'command', 'survival_s', 'geometric_fall_rate',
               'linear_tracking_rmse', 'yaw_tracking_rmse', 'mean_vx', 'mean_vy', 'mean_wz',
               'base_height_mean', 'torque_saturation_ratio', 'rated_velocity_exceedance_ratio']
+    output_fields = fields + ['passive_damping_override', 'effective_dynamics_sha256']
     with (root/'summary.csv').open('w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+        writer = csv.DictWriter(f, fieldnames=output_fields, lineterminator='\n')
         writer.writeheader()
         for row in rows:
-            writer.writerow({k:row[k] for k in fields})
+            writer.writerow({**{k:row[k] for k in fields},
+                             'passive_damping_override':row['config'].get('passive_damping'),
+                             'effective_dynamics_sha256':row['model'].get('effective_dynamics_sha256')})
     print('MUJOCO_EVALUATION_OK', root/'summary.json')
 
 

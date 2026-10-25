@@ -6,7 +6,7 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
-from .config import default_position
+from .config import default_position, gain_vector
 from .policy_runner import sha256
 
 
@@ -29,6 +29,11 @@ class MujocoAdapter:
             raise ValueError('Expected twelve hinge joints')
         self.qpos_ids = self.model.jnt_qposadr[self.joint_ids]
         self.dof_ids = self.model.jnt_dofadr[self.joint_ids]
+        self.authored_passive_damping = self.model.dof_damping[self.dof_ids].copy()
+        if cfg.passive_damping is not None:
+            # An explicit experiment setting, separate from the controller's Kd.
+            # The shipped XML and all other physical parameters remain intact.
+            self.model.dof_damping[self.dof_ids] = gain_vector(cfg.passive_damping, self.names)
         self.actuator_ids = []
         for joint in self.joint_ids:
             ids = np.flatnonzero((self.model.actuator_trntype == mujoco.mjtTrn.mjTRN_JOINT)
@@ -169,12 +174,22 @@ class MujocoAdapter:
     def model_metadata(self):
         path = Path(self.cfg.model)
         provenance = path.parent / 'provenance.json'
+        dynamics = hashlib.sha256()
+        for array in (self.model.dof_damping, self.model.dof_armature, self.model.dof_frictionloss,
+                      self.model.body_mass, self.model.body_inertia, self.model.geom_friction,
+                      self.model.geom_contype, self.model.geom_conaffinity,
+                      self.model.geom_solref, self.model.geom_solimp):
+            dynamics.update(np.ascontiguousarray(array).tobytes())
         return dict(path=str(path.resolve()), xml_sha256=sha256(path),
+                    effective_dynamics_sha256=dynamics.hexdigest(),
                     source=json.loads(provenance.read_text()) if provenance.exists() else None,
                     joint_names=list(self.names), qpos_indices=self.qpos_ids.tolist(),
                     qvel_indices=self.dof_ids.tolist(), actuator_indices=self.actuator_ids.tolist(),
                     default_joint_pos=self.default_pos.tolist(), effort_limits=self.effort_limits.tolist(),
                     passive_damping=self.model.dof_damping[self.dof_ids].tolist(),
+                    authored_passive_damping=self.authored_passive_damping.tolist(),
+                    runtime_overrides=({'passive_damping':self.model.dof_damping[self.dof_ids].tolist()}
+                                       if self.cfg.passive_damping is not None else {}),
                     armature=self.model.dof_armature[self.dof_ids].tolist(),
                     frictionloss=self.model.dof_frictionloss[self.dof_ids].tolist(),
                     joint_ranges=self.model.jnt_range[self.joint_ids].tolist(),

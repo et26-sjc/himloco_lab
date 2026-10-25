@@ -52,6 +52,7 @@ class SimConfig:
     decimation: int = 4
     initial_height: float = 0.4
     initial_yaw: float = 0.0
+    passive_damping: object = None
     fall_height: float = 0.16
     fall_tilt: float = 1.0
     fall_duration: float = 0.1
@@ -92,4 +93,6 @@ def load_config(path=None, **overrides):
         raise ValueError('Invalid action scale or hip reduction')
     gain_vector(controller.kp, cfg.joint_names)
     gain_vector(controller.kd, cfg.joint_names)
+    if cfg.passive_damping is not None:
+        gain_vector(cfg.passive_damping, cfg.joint_names)
     return cfg

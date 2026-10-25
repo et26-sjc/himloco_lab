@@ -17,6 +17,8 @@ def parser(description):
     result.add_argument('--profile', choices=['lab', 'legacy'], default=None)
     result.add_argument('--kp', type=float, default=None)
     result.add_argument('--kd', type=float, default=None)
+    result.add_argument('--passive-damping', type=float, default=None,
+                        help='Explicit physical joint damping override; 0 removes the extra Menagerie damping. Kd is unchanged.')
     result.add_argument('--duration', type=float, default=20.)
     result.add_argument('--velocity', type=float, nargs=3, default=None)
     result.add_argument('--output', default='artifacts/sim2sim/go1_run')
@@ -25,7 +27,8 @@ def parser(description):
 
 def setup(args):
     torch.set_num_threads(1)
-    cfg = load_config(args.config, model=args.model, profile=args.profile, kp=args.kp, kd=args.kd)
+    cfg = load_config(args.config, model=args.model, profile=args.profile, kp=args.kp, kd=args.kd,
+                      passive_damping=args.passive_damping)
     policy = PolicyRunner(args.policy, cfg.profile, args.checkpoint)
     print('EFFECTIVE_CONFIG', json.dumps(cfg.to_dict()), flush=True)
     print('POLICY_PROVENANCE', json.dumps(policy.metadata), flush=True)

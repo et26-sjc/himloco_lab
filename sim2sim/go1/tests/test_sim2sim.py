@@ -98,6 +98,23 @@ class Contracts(unittest.TestCase):
         with self.assertRaises(ValueError):
             gain_vector({'not_a_joint': 1}, LAB_JOINT_NAMES)
 
+    def test_passive_damping_override_is_separate_from_pd(self):
+        original = MujocoAdapter(SimConfig())
+        overridden = MujocoAdapter(SimConfig(passive_damping=0.))
+        np.testing.assert_array_equal(overridden.model.dof_damping[overridden.dof_ids], np.zeros(12))
+        np.testing.assert_array_equal(overridden.authored_passive_damping,
+                                      original.model.dof_damping[original.dof_ids])
+        np.testing.assert_array_equal(original.model.dof_armature, overridden.model.dof_armature)
+        np.testing.assert_array_equal(original.model.dof_frictionloss, overridden.model.dof_frictionloss)
+        controller = PDController(overridden.cfg.controller, overridden.names, overridden.effort_limits)
+        np.testing.assert_array_equal(controller.kp, np.full(12, 40.))
+        np.testing.assert_array_equal(controller.kd, np.ones(12))
+        self.assertEqual(original.model_metadata()['xml_sha256'], overridden.model_metadata()['xml_sha256'])
+        self.assertNotEqual(original.model_metadata()['effective_dynamics_sha256'],
+                            overridden.model_metadata()['effective_dynamics_sha256'])
+        np.testing.assert_array_equal(original.observation([.7,0,0], np.zeros(12)),
+                                      overridden.observation([.7,0,0], np.zeros(12)))
+
     def test_pd_gains_clipping_and_physical_torque(self):
         a = MujocoAdapter(SimConfig())
         for kp, kd in [(40., 1.), (20., .5), (30., .75)]:

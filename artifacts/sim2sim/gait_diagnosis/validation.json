@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "native_lab_steps": 1000,
+  "native_lab_num_envs": 4,
+  "forward_kinematics_max_error_m": {
+    "knee": 1.9587391799635867e-06,
+    "foot": 2.1180399140813266e-06
+  },
+  "unit_tests": 11,
+  "controlled_parameter_cases": 8,
+  "raw_default_trace_unchanged": true,
+  "runtime_override_matches_xml_zero_damping_trace_exactly": true,
+  "checkpoint_and_preexisting_user_files_unchanged": true,
+  "override_zero_damping_five_case_survivors": 5,
+  "correction": "Explicit passive_damping=0; PD Kp40/Kd1, action scale and assets unchanged",
+  "scope": "Fixed trained policy; no retraining. Raw Menagerie default retained. Not a hardware damping identification."
+}

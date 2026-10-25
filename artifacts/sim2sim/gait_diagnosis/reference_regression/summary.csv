@@ -1,0 +1,2 @@
+suite_group,actual_gain_label,command,survival_s,geometric_fall_rate,linear_tracking_rmse,yaw_tracking_rmse,mean_vx,mean_vy,mean_wz,base_height_mean,torque_saturation_ratio,rated_velocity_exceedance_ratio,passive_damping_override,effective_dynamics_sha256
+0,kp40_kd1,"[0.7, 0.0, 0.0]",20.000000000000306,0.0,0.24650507171937588,0.1771801262081484,0.5334201950818814,0.052892158955509486,-0.06634245865451277,0.25087487304799005,0.0030208333333333333,0.0,,b6efe856a581595c79981836884af5b0ef4a172d7383938e2430ed03d3de6ae2

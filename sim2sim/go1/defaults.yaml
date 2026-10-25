@@ -2,6 +2,9 @@ profile: lab
 physics_dt: 0.005
 decimation: 4
 initial_height: 0.4
+# null preserves the published Menagerie reference; 0 matches Lab's absence of
+# extra passive joint damping for the explicit PD40/1 locomotion policy.
+passive_damping: null
 controller:
   type: pd
   kp: 40.0

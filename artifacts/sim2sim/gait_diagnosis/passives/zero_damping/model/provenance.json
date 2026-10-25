@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/google-deepmind/mujoco_menagerie",
+  "commit": "f3b6013629c7b94f8ee93fd977b161fa8350f9bc",
+  "diagnostic_only": true,
+  "passive_parameter_overrides": {
+    "damping": 0.0
+  },
+  "parent_model_sha256": "15e0aa7fc5b249031c3d9536e4502bb162f34ea17723a677bb5edddd38d78240",
+  "files": {
+    "go1_torque.xml": "cf671d8813262ad802e950d17a250c444cf88b22e37a726ba9d27039e341c279",
+    "scene.xml": "bcfc3f3d7aa8aed088e9f52d5993e40bad1b4a8ff8155620c328f91d6c69900c",
+    "../../../../../../sim2sim/go1/models/unitree_go1/assets/calf.stl": "ad3685e132454fd64e4ca3e5089f0d812fb53958e95c14913a22e3193e9e9ed8",
+    "../../../../../../sim2sim/go1/models/unitree_go1/assets/thigh_mirror.stl": "1a90b89de47a57cb12a2d703f6b008a6ace8a1890a381c27723296fd0d00b9d8",
+    "../../../../../../sim2sim/go1/models/unitree_go1/assets/thigh.stl": "bbf7c0a441323088c59276dbec8a32e708a1c61f42d30a6f6775176366ea23f8",
+    "../../../../../../sim2sim/go1/models/unitree_go1/assets/hip.stl": "b6599b9dd2751ebd87449203223f5683a6c235268b76fcc443e00e0d974a06c0",
+    "../../../../../../sim2sim/go1/models/unitree_go1/assets/trunk.stl": "051a57995dc6f892fc9bc53cd94e9a894f3dc209fd646e94d55d764150013970"
+  }
+}

@@ -4,6 +4,10 @@
 PyYAML；Matplotlib用于绘图。**run/evaluate不导入Isaac Lab、HIM Runner、Critic或Unitree SDK。**
 本轮没有新建分支、重新训练、修改原checkpoint或更改原训练/Play/导出/W&B代码。
 
+**前腿异常的后续排查**：原Menagerie额外被动joint damping会使此Lab PD策略出现前腿大幅后偏。
+针对该策略建议显式添加`--passive-damping 0`，控制Kp40/Kd1不变；不加参数仍复现原始模型。
+单因素对照、修正后的指标和GUI命令见[GAIT_DIAGNOSIS.md](GAIT_DIAGNOSIS.md)。
+
 ## 1. 使用哪个策略
 
 已训练PD run：
@@ -46,7 +50,7 @@ GO1_POLICY=logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1
 
 # GUI：默认PD40/1，真实策略闭环、跟随机身相机。
 python sim2sim/go1/run.py --policy "$GO1_POLICY" \
-  --velocity 0.7 0 0.3 --duration 30 --real-time
+  --passive-damping 0 --velocity 0.7 0 0.3 --duration 30 --real-time
 
 # 用户指定浮点增益；配置和有效12维gain都会写入结果。
 python sim2sim/go1/run.py --policy "$GO1_POLICY" \
@@ -71,6 +75,8 @@ python sim2sim/go1/plot_results.py --summary artifacts/sim2sim/my_sweep/summary.
 ```
 
 `run.py`默认GUI，`--headless`关闭GUI，`--real-time`启用墙钟同步；正常结束、几何跌倒或关闭窗口时退出。
+`--passive-damping`为独立的物理阻尼覆盖，CLI值优先于YAML；它不会改动`--kd`。
+本页第5节原始扫描表使用未覆盖的Menagerie阻尼，修正后的五组结果见上面的步态诊断文档。
 `--model`可指定兼容的Go1 torque MJCF；含position/velocity servo、额外actuator、非单位gear或错误力矩范围的模型会报错。
 `--zero-action`为nominal姿态PD诊断，结果标明`mode=zero_action`，不能当作策略表现。
 
@@ -263,7 +269,7 @@ python sim2sim/go1/audit_lab_contract.py --headless --policy "$GO1_POLICY"
 
 实际通过：
 
-1. 10项MuJoCo CPU测试：真实名称映射、拒绝position servo、XYZW/WXYZ边界下的姿态/重力、
+1. 首次实现10项、后续增加阻尼覆盖独立性回归，共11项MuJoCo CPU测试：真实名称映射、拒绝position servo、XYZW/WXYZ边界下的姿态/重力、
    angular velocity坐标、blind actor无真实线速度、clip顺序、history/reset、YAML/CLI及group gains、
    PD40/1和20/.5及30/.75公式、正负裁剪、物理actuator_force/qfrc_actuator、200/50Hz和JIT有限输出。
 2. 既有7项HIM数据/算法回归在Lab开发审计中通过，未对已训练策略运行PPO更新。
