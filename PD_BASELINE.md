@@ -275,12 +275,15 @@ python scripts/himloco_rsl_rl/train.py \
 - `PD_BASELINE.md`、迁移记录及README：启动与复现说明。
 
 提交：稳定版 `7c48d8a`；PD代码与验证器 `736ed7a`；本文件和验证报告的提交可用
-`git log -2 --oneline`查看。PD分支仅在本地提交，未推送。
+`git log --oneline`查看。PD开发完成时仅本地提交；2026-10-25按用户要求已推送至
+`origin/feat/go1-pd-baseline`（`73fc02a`），本轮MuJoCo后续提交不自动推送。
 
 本轮证明了PD控制、训练更新、恢复、GUI推理、日志与导出的工程链路。
-**尚未运行完整10000轮PD训练，也未证明PD运动表现或sim2real性能优于/等于Actuator Net。**
-后续应使用相同seed和训练预算完成PD训练，再固定地形/指令做物理状态指标评估；
-多seed结论需要额外实验。
+上述PD开发阶段仅完成短训。随后用户已完成10000轮PD正式训练：
+`logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt`，
+训练Git SHA为`73fc02a`，W&B ID为`vzm57xqb`。未通过独立评估筛选best模型。
+2026-10-25使用该最终模型完成[独立MuJoCo PD Sim2Sim](sim2sim/go1/README.md)，未重新训练。
+是否优于Actuator Net或改善sim2real仍需固定协议和多seed实验。
 
 额外试用GUI录像选项时发现当前环境缺少MoviePy；去掉可选`--video`后GUI测试通过。
 本次未验证录像功能，也未为它新增依赖。未开发MuJoCo、未修改旧Gym权重或实机控制器。

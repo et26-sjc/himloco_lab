@@ -1,0 +1,10 @@
+profile: lab
+physics_dt: 0.005
+decimation: 4
+initial_height: 0.4
+controller:
+  type: pd
+  kp: 40.0
+  kd: 1.0
+  action_scale: 0.25
+  hip_reduction: 1.0

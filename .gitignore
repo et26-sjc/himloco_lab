@@ -73,3 +73,6 @@ _build
 # Round-two evaluation reports are tracked; binary observations/exports stay local.
 /artifacts/**/*.pt
 /artifacts/**/*.onnx
+
+# Independent MuJoCo traces stay local; JSON/CSV/figures are reviewable artifacts.
+/artifacts/sim2sim/**/*.npz

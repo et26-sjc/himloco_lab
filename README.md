@@ -3,6 +3,7 @@
 Go1 / Isaac Sim 6.1 / Isaac Lab 3.0: [迁移记录、训练、恢复、Play 与实际测试](MIGRATION_GO1.md)。
 旧权重评估：[LEGACY_POLICY_EVAL.md](LEGACY_POLICY_EVAL.md) · 独立导出：[EXPORT_POLICY.md](EXPORT_POLICY.md) · W&B：[WANDB_LOGGING.md](WANDB_LOGGING.md)
 Go1 PD 对照任务：[配置差异、训练与验证](PD_BASELINE.md)（原 Go1 任务继续使用 Actuator Net）。
+Go1 MuJoCo：[独立JIT推理、可调PD、参数扫描与实际结果](sim2sim/go1/README.md)。
 
 
 ## Project Overview

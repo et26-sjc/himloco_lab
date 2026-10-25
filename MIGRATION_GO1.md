@@ -223,8 +223,9 @@ W&B project为`himloco-go1-baseline_lab`、run ID为`r20l2lro`，训练Git SHA�
 
 新增独立`Unitree-Go1-Velocity-PD` / `Unitree-Go1-Velocity-PD-Play`任务，仅替换执行器，
 日志目录为`go1_rough_pd`；原Go1任务继续使用官方Actuator Net。
-PD仅完成短训验收，详见[PD_BASELINE.md](PD_BASELINE.md)。
-未进行Go1 MuJoCo、SDK、真机或新算法开发。W&B离线日志已在第二轮完成验证。
+PD开发阶段完成短训验收，随后用户完成10000轮正式训练，详见[PD_BASELINE.md](PD_BASELINE.md)。
+2026-10-25新增[Go1 MuJoCo可调PD Sim2Sim](sim2sim/go1/README.md)，使用已训练的PD最终模型，
+未重新训练或修改原训练默认行为。未进行SDK、真机或新算法开发。W&B离线日志已在第二轮完成验证。
 Go2 配置保留并检查可实例化；其 URDF 路径仍需使用者在 `assets/unitree.py` 指向本机模型，未在本次完成 Go2 GPU训练回归。
 录像配置已迁移至原生 VideoRecorderCfg；键盘/录像/独立ONNX Play 不在主要验收路径，需在使用前单独验证。
 Isaac Sim 启动会报告 CPU package、MaterialX/USD 等 warning；真实训练和 Play 已完成。未对第三方核心库作屏蔽修复。
