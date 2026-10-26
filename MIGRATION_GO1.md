@@ -252,3 +252,10 @@ Isaac Sim 启动会报告 CPU package、MaterialX/USD 等 warning；真实训练
 部署运行不需要Isaac Runtime。记录了raw clip/scale顺序、raw上一动作、绝对target处理，
 并将训练限位与继承硬件部署限位分开。新策略未在真机或Jetson镜像中验证；本轮完成真实Lab状态回放与CPU检查。
 详细命令和已知启动目标边界见新部署README，原训练/Play/导出默认行为不改。
+
+## 真机返回版本与端到端闭环（2026-10-26）
+
+用户已成功在同一台Go1运行本Lab PD策略，返回归档已合并到当前PD分支。
+新增后台生命周期、内部LCM路由准备、速度/摇杆配置和按关节持续跟踪保护；JIT、SDK桥接与训练接口不改。
+详细改动及本次87+11+7项Python/C++回归见[部署合并验收](go1_lab_deploy/docs/REPOSITORY_SYNC_20261026.md)。
+后退膝触地、纯转向和低速覆盖的下一版建议见[DeployV1方案](docs/GO1_DEPLOYMENT_TUNING_V1.md)，仅为方案，训练默认值未改。

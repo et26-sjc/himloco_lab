@@ -1,0 +1,12 @@
+{
+  "source": "artifacts/sim2sim/gait_diagnosis/isaaclab/gait.npz",
+  "source_sha256": "1e29ea24b8986ebada8c81e8a271e45adf590401f71134827b2fade89a399216",
+  "condition": "Prior native Isaac Lab plane, vx=.7m/s, four envs x 20s; active samples after2s",
+  "samples": 3596,
+  "trunk_height_mean_m": 0.2705007493495941,
+  "trunk_height_p5_m": 0.2664039134979248,
+  "base_height_target_m": 0.3,
+  "base_height_weight": -1,
+  "real_robot_height_measured": false,
+  "training_defaults_changed": false
+}
