@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "scope": "Short supervised forward-command diagnosis requested after supported stand and forward attempt",
+  "source_config_sha256": "52071b53effc7d1b976b3f782ecf8f60b568206bcfc55f4f6514dfaf65d05255",
+  "previous_runtime_review": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_supported_runtime_review_20261025.json SHA256=3bf6852a50d307afefc47e45184b06d6eef511e33b07453249b4b9718ccd9882; supervised fixed-support contact trial; hardware policy results pending",
+  "capture_file": "audit/20261025_fixes/him_first_unsupported_forward_attempt.jsonl",
+  "capture_sha256": "c6a97579d0146874377a5f69d0e17518bcf715d53ea5777e9ef6376cb1281399",
+  "observations": {
+    "operator_report": "Support removed; robot bore weight and stood. Operator confirmed all feet mostly stayed on the ground with body leaning/slow shifting, rather than three legs stepping and one leg stuck.",
+    "running_seconds": 35.000026445,
+    "forward_command_max_m_s": 0.15,
+    "forward_frames_above_0_05": 247,
+    "FL_calf_actual_peak_to_peak_rad": 0.0013,
+    "FL_calf_requested_peak_to_peak_rad": 0.0637,
+    "RR_calf_actual_peak_to_peak_rad": 0.0017,
+    "interpretation": "Forward command reached policy. FL/RR calf tracking differed under load; not evidence of a single failed motor. No clear periodic stepping in requested targets at the current low command."
+  },
+  "training_reference": {
+    "fork_commit": "c59f76349c4718da19aa9b055a830ac1a383f038",
+    "url": "https://github.com/et26-sjc/HIMLoco-Go1/blob/c59f76349c4718da19aa9b055a830ac1a383f038/legged_gym/legged_gym/envs/base/legged_robot.py#L477",
+    "command_resampling": "commands[env_ids, :2] *= (norm(commands[env_ids, :2]) > 0.2)",
+    "meaning": "Nonzero training resampling has planar magnitude above 0.20 m/s. Deployment 0.15 m/s commands are still supplied to the actor and are not automatically zeroed by the exported network.",
+    "uncertainty": "A value above 0.20 does not guarantee gait initiation; actual training-run metadata and unloaded same-command tracking are not available."
+  },
+  "parameter_change": {
+    "previous_max_abs_command": [
+      0.15,
+      0.1,
+      0.15
+    ],
+    "max_abs_command": [
+      0.3,
+      0.1,
+      0.15
+    ],
+    "meaning": "Raise only linear forward/reverse stick range to +/-0.30 m/s, retaining zero center, deadzone and linear scaling. No forced minimum-speed jump.",
+    "policy_observation_action_pd_changes": false,
+    "other_guards_changed": false
+  },
+  "diagnostic_changes": [
+    "Log MCU torque estimates and raw sticks alongside requested targets and joint feedback",
+    "Print requested velocities once per second during RUNNING"
+  ],
+  "operation": "Use clear space and fall-catching support that does not touch legs. Sticks centered for calibration and handover. On a deliberate short forward check, verify printed vx near +0.25 to +0.30 m/s. Center sticks after 1-2 seconds; L2 if feet do not alternate or body leans/collapses. Do not increase gains or disable watchdogs to force motion.",
+  "runtime_parameters": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.3,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": 0.08,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.2,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "hardware_forward_walking_validated": false,
+  "model_sha256": "71466584a0f500cc94a97ac3852b3287650ab326fcb957c7387624894cfb2456"
+}

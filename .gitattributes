@@ -12,3 +12,9 @@
 *.hdf5 filter=lfs diff=lfs merge=lfs -text
 
 *.bat text eol=crlf
+
+# Keep the robot-validated bridge/protocol bytes for source-digest reuse.
+go1_lab_deploy/go1_lab_deploy/unitree_legged_sdk_bin/lcm_position.cpp -text whitespace=-blank-at-eol
+go1_lab_deploy/go1_lab_deploy/lcm_types/leg_control_data_lcmt.lcm -text whitespace=-blank-at-eol
+# This small standalone release must include actual JIT bytes without Git LFS.
+go1_lab_deploy/models/policy.pt -filter -diff -merge -text

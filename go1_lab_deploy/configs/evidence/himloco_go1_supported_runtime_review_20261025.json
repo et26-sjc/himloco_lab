@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "scope": "Supervised fixed-support foot-contact HIM trial requested by the operator",
+  "operator_request": "Accept the small measured static pose error and proceed; do not hold the robot by hand during calibration",
+  "source_config_sha256": "467fe8f51e622e4bcea2010af434f9cba8f93aa3dfc01117ea40af1425ad35f6",
+  "previous_runtime_review": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_suspended_runtime_review_20261025.json SHA256=18da6f7853004ec6713cdaf217c28298f3fce62a5ccd261bd74f6ba7c6de2b27; static review for FIRST SUPERVISED SUSPENDED TRIAL ONLY; hardware results pending",
+  "capture_sha256": "d3c1ad349297901284b690b2eb1f363c4ae34484a3a1a6836123f73d36b5f939",
+  "capture_file": "audit/20261025_fixes/him_second_calibration_settle_timeout.jsonl",
+  "capture_remote_log": "/home/unitree/himloco_alignment/him_trial_logs/him_suspended_20261025_181240_14678.jsonl",
+  "observed_condition": "Operator confirmed feet touching ground or body bearing load; no learned HIM actions were executed",
+  "observed_steady_error": {
+    "joint": "RL_calf_joint",
+    "mean_last_second_rad": 0.178977,
+    "previous_tolerance_rad": 0.15,
+    "note": "Estimated from the recorded calibration; not a guarantee for the next trial or proof of the cause of the load"
+  },
+  "parameter_change": {
+    "calibration_tolerance_rad": 0.2,
+    "meaning": "Accept an absolute nominal-position error up to 0.20 rad for six consecutive actual history frames",
+    "nominal_targets_changed": false,
+    "policy_or_observation_contract_changed": false,
+    "pd_gains_changed": false,
+    "other_runtime_guards_changed": false
+  },
+  "model_sha256": "71466584a0f500cc94a97ac3852b3287650ab326fcb957c7387624894cfb2456",
+  "physical_review_reference": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_physical_review_20261025.json SHA256=b64b1a472cbfba6909a7e6e1ba690f0be3ff4e60724ca6c05a5b72ac7e374c23; manual coarse identity/sign review of all 12 joints; RR_hip wrong-side motion corrected within capture; coupling/early returns retained; strict automatic report unchanged; no encoder-zero calibration",
+  "runtime_parameters": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.15,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": 0.08,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.2,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "operation": {
+    "support": "Fixed mechanical support catches the body on zero gains and clears the leg motion; no hand holding required",
+    "first_R2": "Calibration, SETTLE, six actual history frames, then READY; no automatic policy handover",
+    "second_R2": "Operator releases and presses R2 again in READY; one-second policy ramp follows",
+    "first_policy_attempt": "Centered sticks; manually stop after 2-3 seconds; no free walking claim",
+    "stop": "L2 in every phase; R2 during RAMP/RUNNING or Python Ctrl+C requests stop; restart bridge and Python after any stop"
+  },
+  "not_validated": [
+    "HIM learned closed-loop behavior under ground load",
+    "HIM free walking",
+    "Precise IMU or encoder zero calibration"
+  ],
+  "hardware_trial_already_passed": false
+}

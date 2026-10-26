@@ -1,0 +1,7 @@
+# Standalone deployment only; keep the existing Jetson image/Torch installation.
+# Tested here: Python 3.12.15, numpy 2.3.1, Torch 2.11.0 CPU inference.
+# TorchScript must pass --check in the actual target image before --run.
+numpy>=1.19
+lcm>=1.4
+# torch: use a runtime compatible with the target Jetson and this exact JIT.
+# Isaac Lab, Isaac Gym, MuJoCo and the training project are not runtime dependencies.

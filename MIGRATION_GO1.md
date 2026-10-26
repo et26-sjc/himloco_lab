@@ -244,3 +244,11 @@ Isaac Sim 启动会报告 CPU package、MaterialX/USD 等 warning；真实训练
 - 当前可选UI示例按需导入，tensor-only网络检查无需Kit；正常任务注册与Go2部署函数入口保留。
 
 第二轮还以原model_4执行正常headless Play 50步（默认不导出）并成功；日志`/tmp/himloco_round2_play.log`。
+
+## 独立 Lab PD 真机部署接口（2026-10-26）
+
+新增 [go1_lab_deploy/README.md](go1_lab_deploy/README.md)：复用同机已验证 Gym SDK/LCM、按钮和接管流程，
+直接生成 Lab 原生45D/270D观测，以名称双向映射SDK关节，使用最终PD `model_10000`的原始JIT。
+部署运行不需要Isaac Runtime。记录了raw clip/scale顺序、raw上一动作、绝对target处理，
+并将训练限位与继承硬件部署限位分开。新策略未在真机或Jetson镜像中验证；本轮完成真实Lab状态回放与CPU检查。
+详细命令和已知启动目标边界见新部署README，原训练/Play/导出默认行为不改。

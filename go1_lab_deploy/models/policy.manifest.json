@@ -1,0 +1,16 @@
+{
+  "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+  "checkpoint": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt",
+  "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+  "profile": "lab",
+  "input_shape": [
+    "batch",
+    270
+  ],
+  "output_shape": [
+    "batch",
+    12
+  ],
+  "preparation": "Strict checkpoint load and matching JIT inference, optimizer not restored",
+  "pytorch_jit_max_abs_error": 0.0
+}

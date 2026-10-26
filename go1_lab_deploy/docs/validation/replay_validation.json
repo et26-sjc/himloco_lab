@@ -1,0 +1,367 @@
+{
+  "status": "passed",
+  "failed_comparisons": [],
+  "timestamp_utc": "2026-10-26T10:07:10.669140+00:00",
+  "samples": 1024,
+  "environments": 4,
+  "history_reset_samples": 4,
+  "finite": true,
+  "errors": {
+    "frame": {
+      "max_abs_error": 4.649162292480469e-06,
+      "mean_abs_error": 1.2961247901128243e-07,
+      "compared_values": 46080
+    },
+    "history": {
+      "max_abs_error": 4.649162292480469e-06,
+      "mean_abs_error": 1.2831236644059472e-07,
+      "compared_values": 276480
+    },
+    "raw_action_lab": {
+      "max_abs_error": 4.649162292480469e-06,
+      "mean_abs_error": 4.737421477329917e-07,
+      "compared_values": 12288
+    },
+    "target_lab": {
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 1.1864813131978735e-07,
+      "compared_values": 12288
+    },
+    "target_sdk": {
+      "max_abs_error": 1.1920928955078125e-06,
+      "mean_abs_error": 1.1864813131978735e-07,
+      "compared_values": 12288
+    },
+    "previous_action_cache": {
+      "max_abs_error": 4.649162292480469e-06,
+      "mean_abs_error": 4.7246157919289544e-07,
+      "compared_values": 12288
+    },
+    "sdk_q_roundtrip": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 12288
+    },
+    "sdk_dq_roundtrip": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 12288
+    },
+    "frame/commands": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 3072
+    },
+    "frame/base_ang_vel": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 3072
+    },
+    "frame/projected_gravity": {
+      "max_abs_error": 5.364418029785156e-07,
+      "mean_abs_error": 5.434086839765465e-08,
+      "compared_values": 3072
+    },
+    "frame/joint_pos_rel": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 12288
+    },
+    "frame/joint_vel_rel": {
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "compared_values": 12288
+    },
+    "frame/last_action": {
+      "max_abs_error": 4.649162292480469e-06,
+      "mean_abs_error": 4.7246157919289544e-07,
+      "compared_values": 12288
+    }
+  },
+  "absolute_tolerances": {
+    "frame": 2e-05,
+    "history": 2e-05,
+    "raw_action_lab": 2e-05,
+    "target_lab": 2e-05,
+    "target_sdk": 2e-05,
+    "previous_action_cache": 2e-05,
+    "sdk_q_roundtrip": 2e-06,
+    "sdk_dq_roundtrip": 2e-06,
+    "frame/commands": 2e-06,
+    "frame/base_ang_vel": 2e-06,
+    "frame/projected_gravity": 2e-06,
+    "frame/joint_pos_rel": 2e-06,
+    "frame/joint_vel_rel": 2e-06,
+    "frame/last_action": 2e-05
+  },
+  "cpu_inference_latency_ms": {
+    "p50": 0.11284000356681645,
+    "p95": 0.13644355349242684,
+    "maximum": 0.3108649980276823,
+    "mean": 0.11649637258415169,
+    "warmup_calls": 5,
+    "timed_calls": 1024
+  },
+  "mechanical_bounds": {
+    "violation_samples": 12,
+    "targets_clipped_to_deployment_limits": false,
+    "per_joint": [
+      {
+        "name": "FL_hip_joint",
+        "minimum_target_rad": -0.2169584035873413,
+        "maximum_target_rad": 0.1263590306043625,
+        "minimum_measured_rad": -0.19502943754196167,
+        "maximum_measured_rad": 0.114387646317482,
+        "deployment_lower_rad": -0.8028514385223389,
+        "deployment_upper_rad": 0.8028514385223389,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "FR_hip_joint",
+        "minimum_target_rad": 0.057189978659152985,
+        "maximum_target_rad": 0.22972267866134644,
+        "minimum_measured_rad": -0.10000000149011612,
+        "maximum_measured_rad": 0.23310993611812592,
+        "deployment_lower_rad": -0.8028514385223389,
+        "deployment_upper_rad": 0.8028514385223389,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RL_hip_joint",
+        "minimum_target_rad": -0.32243016362190247,
+        "maximum_target_rad": -0.1096460297703743,
+        "minimum_measured_rad": -0.29979994893074036,
+        "maximum_measured_rad": 0.10000000149011612,
+        "deployment_lower_rad": -0.8028514385223389,
+        "deployment_upper_rad": 0.8028514385223389,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RR_hip_joint",
+        "minimum_target_rad": -0.03849925473332405,
+        "maximum_target_rad": 0.2704969346523285,
+        "minimum_measured_rad": -0.10000000149011612,
+        "maximum_measured_rad": 0.2831493616104126,
+        "deployment_lower_rad": -0.8028514385223389,
+        "deployment_upper_rad": 0.8028514385223389,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "FL_thigh_joint",
+        "minimum_target_rad": 0.4895266592502594,
+        "maximum_target_rad": 1.129686713218689,
+        "minimum_measured_rad": 0.48764869570732117,
+        "maximum_measured_rad": 1.2536492347717285,
+        "deployment_lower_rad": -1.0471975803375244,
+        "deployment_upper_rad": 4.188790321350098,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "FR_thigh_joint",
+        "minimum_target_rad": 0.5679230690002441,
+        "maximum_target_rad": 1.1479017734527588,
+        "minimum_measured_rad": 0.5586032271385193,
+        "maximum_measured_rad": 1.3166289329528809,
+        "deployment_lower_rad": -1.0471975803375244,
+        "deployment_upper_rad": 4.188790321350098,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RL_thigh_joint",
+        "minimum_target_rad": 0.24447447061538696,
+        "maximum_target_rad": 1.2278189659118652,
+        "minimum_measured_rad": 0.2311389446258545,
+        "maximum_measured_rad": 1.1919395923614502,
+        "deployment_lower_rad": -1.0471975803375244,
+        "deployment_upper_rad": 4.188790321350098,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RR_thigh_joint",
+        "minimum_target_rad": 0.1710783839225769,
+        "maximum_target_rad": 1.1894001960754395,
+        "minimum_measured_rad": 0.16773736476898193,
+        "maximum_measured_rad": 1.1779319047927856,
+        "deployment_lower_rad": -1.0471975803375244,
+        "deployment_upper_rad": 4.188790321350098,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "FL_calf_joint",
+        "minimum_target_rad": -2.094167709350586,
+        "maximum_target_rad": -1.4250777959823608,
+        "minimum_measured_rad": -2.0703964233398438,
+        "maximum_measured_rad": -1.5,
+        "deployment_lower_rad": -2.696533679962158,
+        "deployment_upper_rad": -0.9162978529930115,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "FR_calf_joint",
+        "minimum_target_rad": -2.1677651405334473,
+        "maximum_target_rad": -1.0546290874481201,
+        "minimum_measured_rad": -2.136662483215332,
+        "maximum_measured_rad": -1.2723082304000854,
+        "deployment_lower_rad": -2.696533679962158,
+        "deployment_upper_rad": -0.9162978529930115,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RL_calf_joint",
+        "minimum_target_rad": -2.059019088745117,
+        "maximum_target_rad": -0.77318274974823,
+        "minimum_measured_rad": -2.017627716064453,
+        "maximum_measured_rad": -1.2584978342056274,
+        "deployment_lower_rad": -2.696533679962158,
+        "deployment_upper_rad": -0.9162978529930115,
+        "lower_violations": 0,
+        "upper_violations": 12,
+        "lower_touches": 0,
+        "upper_touches": 0
+      },
+      {
+        "name": "RR_calf_joint",
+        "minimum_target_rad": -2.100362777709961,
+        "maximum_target_rad": -1.2063488960266113,
+        "minimum_measured_rad": -2.061344623565674,
+        "maximum_measured_rad": -1.5,
+        "deployment_lower_rad": -2.696533679962158,
+        "deployment_upper_rad": -0.9162978529930115,
+        "lower_violations": 0,
+        "upper_violations": 0,
+        "lower_touches": 0,
+        "upper_touches": 0
+      }
+    ],
+    "interpretation": "Inherited deployment bounds are diagnosed without clipping or suppressing policy output; a live runner would reject violations. These are not native Lab target limits."
+  },
+  "provenance": {
+    "config_path": "/home/sjc/himloco_lab/go1_lab_deploy/himloco.json",
+    "config_sha256": "eabb6c468503b0c082e278fbde77c8c06885a5ff7300423c4a29f07fd04fabd0",
+    "deployment_contract_path": "/home/sjc/himloco_lab/go1_lab_deploy/deployment_contract.json",
+    "deployment_contract_sha256": "c695d7946a30cbc375a34a5b76a1d554509ed55d9f42309d66b1a350bbc03540",
+    "policy_path": "/home/sjc/himloco_lab/go1_lab_deploy/models/policy.pt",
+    "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+    "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "reference_path": "/home/sjc/himloco_lab/artifacts/go1_lab_deploy/lab_reference/reference.npz",
+    "reference_sha256": "a43a9675f079c98328af60683c9dcfa8195bc071288b96e42052c48db43412b8",
+    "metadata_sha256": "8c72ec3521910451348b376d69049e50d8b08f1801174e71822e70795f478543",
+    "reference_metadata": {
+      "status": "passed",
+      "task": "Unitree-Go1-Velocity-PD-Play",
+      "seed": 1,
+      "steps": 256,
+      "num_envs": 4,
+      "samples": 1024,
+      "policy": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/exported/policy.pt",
+      "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+      "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+      "native_lab_source_sha": "f1d05de81575907abc80567a7f7e4210e9e5e832",
+      "python": "3.12.15",
+      "torch": "2.11.0+cu128",
+      "isaacsim": "6.1.0.0",
+      "isaaclab_distribution": "17.0.2",
+      "policy_dt": 0.02,
+      "lab_joint_names": [
+        "FL_hip_joint",
+        "FR_hip_joint",
+        "RL_hip_joint",
+        "RR_hip_joint",
+        "FL_thigh_joint",
+        "FR_thigh_joint",
+        "RL_thigh_joint",
+        "RR_thigh_joint",
+        "FL_calf_joint",
+        "FR_calf_joint",
+        "RL_calf_joint",
+        "RR_calf_joint"
+      ],
+      "sdk_joint_names": [
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint"
+      ],
+      "default_joint_pos_lab": [
+        0.10000000149011612,
+        -0.10000000149011612,
+        0.10000000149011612,
+        -0.10000000149011612,
+        0.800000011920929,
+        0.800000011920929,
+        1.0,
+        1.0,
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5
+      ],
+      "command": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "history_order": "current,previous_1,...,previous_5; reset past frames zero",
+      "previous_action": "native action_manager.action, before observation clip +/-100",
+      "target_processing": "clip(default_joint_pos + 0.25 * raw_action, -100, 100)",
+      "synchronized_state": "pre-action; expected target belongs to the same raw action",
+      "source_files": {
+        "/home/sjc/RL_Research/IsaacLab-3.0/source/isaaclab/isaaclab/envs/mdp/actions/joint_actions.py": "ccbed556176d39442eedf5fd15d2f151c0ad28ebbd76076507a7cf636aac7414",
+        "/home/sjc/RL_Research/IsaacLab-3.0/source/isaaclab/isaaclab/managers/observation_manager.py": "c6fbef094029ba9cc579810af15fb4c45b1068d5b4eea174aa5ded5275464ddf",
+        "/home/sjc/himloco_lab/source/himloco_lab/himloco_lab/rsl_rl/wrappers/himloco_vec_env_wrapper.py": "4cc42f5b4f3a26377cf189437ea865c043583e49a59eddc1a89ab5432ac63179",
+        "/home/sjc/himloco_lab/source/himloco_lab/himloco_lab/tasks/locomotion/robots/go1/pd_env_cfg.py": "7b8488261b9f824b5d010500841b287aa6e9fdd6146c3577c456b36b1951133d"
+      },
+      "target_formula_max_abs_error": 0.0,
+      "resets": 0,
+      "reference_sha256": "a43a9675f079c98328af60683c9dcfa8195bc071288b96e42052c48db43412b8",
+      "motor_commands_published": false
+    },
+    "validator_source_sha256": "bc7ef89917bb600abdb39d2268be75bae933dd6a0a9e09b52c619dc4b7178c2e",
+    "python": "3.12.15",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.3.1",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "replay_semantics": "Fixed recorded sensor states; independent per-environment closed observation history and previous raw action cache. This is not a new physical trajectory or hardware validation.",
+  "motor_commands_published": false,
+  "isaac_runtime_imported": false,
+  "lcm_imported": false
+}

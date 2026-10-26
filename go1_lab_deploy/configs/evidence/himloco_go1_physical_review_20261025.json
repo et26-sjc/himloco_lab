@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "scope": "Manual coarse review of physical joint identities/signs and IMU axis conventions",
+  "operator_reports_wrong_leg_joint_or_direction": true,
+  "operator_reported_error": {
+    "recorded_label": "joint_RR_hip_joint",
+    "reported_physical_action": "Initially moved left rear hip; noticed and switched to right rear hip in the SAME capture",
+    "observed_sequence": "RL_hip increases near 5.5-7 s, then RR_hip increases after about 7.5 s",
+    "conclusion": "The clarified physical sequence agrees with distinct SDK channels; preserve mapping",
+    "targeted_recheck_required": false
+  },
+  "deployment_configuration_changed_by_this_script": false,
+  "motor_commands_published_by_this_script": 0,
+  "coarse_joint_mapping_accepted_by_manual_review": true,
+  "coarse_imu_axes_accepted_by_manual_review": true,
+  "precision_imu_mounting_calibrated": false,
+  "joint_encoder_zero_offsets_calibrated": false,
+  "him_motor_calibration_or_policy_validated": false,
+  "runtime_thresholds_physically_validated": false,
+  "automatic_report_sha256": "19bec7416bdb80abca1bf06164aec8d98ccb12159b50eacbe03b5088b7e16cdd",
+  "imu": {
+    "pose_checks_passed": {
+      "roll_left_up": true,
+      "pitch_nose_up": true,
+      "yaw_left": true
+    },
+    "identity_mount_axis_error_deg": {
+      "roll_left_up": 3.533179255372392,
+      "pitch_nose_up": 4.582244014304464,
+      "yaw_left": 1.247383981472605
+    },
+    "quaternion_rpy_max_error_deg": 0.0008815646325342998,
+    "identity_mount_neutral_tilt_deg": 0.532611820117884,
+    "level_instrument_measurement_confirmed": false,
+    "decision": "Preserve R_BS=I and wxyz; freehand-fit rotation not applied"
+  },
+  "joint_traces": {
+    "FR_hip_joint": {
+      "capture_sha256": "b87b7eb41d0097443097b5b3c2e465e78ba7bff456daae8b2cd37b3edc073fcb",
+      "fresh_samples": 661,
+      "max_sample_gap_s": 0.02456692700025087,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.10351354059051066,
+      "labelled_channel_middle_delta_rad": 0.26734422676443853,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        0.10351354059051066,
+        -5.5214937995484714e-05,
+        -3.44690154581162e-05,
+        0.018615337198271464,
+        -4.987155689911704e-05,
+        9.484150830463278e-06,
+        -1.2467012685923873e-05,
+        -7.124508128453222e-06,
+        2.377173479839456e-06,
+        1.7811270321133055e-05,
+        5.343381096367672e-06,
+        -4.754346959900957e-06
+      ],
+      "largest_other_channel_by_peak": "FL_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.02392102712217499,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "FR_thigh_joint": {
+      "capture_sha256": "5366d268b4099a248b06abf32f6b15582ff83f53d49d9541db24f81743f1da8a",
+      "fresh_samples": 665,
+      "max_sample_gap_s": 0.023266666999916197,
+      "automatic_endpoint_check_passed": false,
+      "labelled_channel_endpoint_delta_rad": 0.16686479133718152,
+      "labelled_channel_middle_delta_rad": 0.15376175825765517,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -0.0021443577373728984,
+        0.16686479133718152,
+        -0.06562738208209762,
+        -0.007312913370483065,
+        6.412057315602349e-05,
+        7.110483505989862e-06,
+        -1.4249016256906444e-05,
+        1.7811270321965722e-06,
+        -1.188586739919728e-06,
+        8.905635160538772e-06,
+        5.343381096367672e-06,
+        -4.754346959900957e-06
+      ],
+      "largest_other_channel_by_peak": "FR_calf_joint",
+      "largest_other_channel_peak_abs_rad": 0.06570225954055786,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "FR_calf_joint": {
+      "capture_sha256": "88eca851dcfb4a838214e106ad60676f8074ab442f5355ffd699b8a3111a9adf",
+      "fresh_samples": 662,
+      "max_sample_gap_s": 0.023598541999945155,
+      "automatic_endpoint_check_passed": false,
+      "labelled_channel_endpoint_delta_rad": 0.19167578921598527,
+      "labelled_channel_middle_delta_rad": 0.09900393306239227,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        0.07028306757702546,
+        -0.15650991218931534,
+        0.19167578921598527,
+        -0.08373696176225648,
+        1.6030143288991994e-05,
+        -4.740322337548619e-06,
+        1.78112703208555e-06,
+        1.78112703208555e-06,
+        2.377173479839456e-06,
+        -1.2467889224765383e-05,
+        1.78112703208555e-06,
+        0.0
+      ],
+      "largest_other_channel_by_peak": "FR_thigh_joint",
+      "largest_other_channel_peak_abs_rad": 0.15659895363975973,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "FL_hip_joint": {
+      "capture_sha256": "c5214f9ef283a132e6fa954af6d8f363cca86e05dba949d3e371a98e120fd642",
+      "fresh_samples": 661,
+      "max_sample_gap_s": 0.02512182300006316,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.2926661648294505,
+      "labelled_channel_middle_delta_rad": 0.28251183911151545,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -0.03451645374298096,
+        7.836958941287442e-05,
+        1.1850805843316436e-06,
+        0.2926661648294505,
+        8.013756836161567e-05,
+        -7.1104835062119065e-06,
+        3.562254064226611e-06,
+        -1.0686762192735344e-05,
+        -1.188586739919728e-06,
+        0.0,
+        -8.905635160538772e-06,
+        4.754346959900957e-06
+      ],
+      "largest_other_channel_by_peak": "FR_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.03461073426639333,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "FL_thigh_joint": {
+      "capture_sha256": "5da3fb5a624359fd1d81d0a00024ff7ca810e6b33a6c3d9cbadafb0b27d9076a",
+      "fresh_samples": 664,
+      "max_sample_gap_s": 0.023447395999937726,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.3017530160791734,
+      "labelled_channel_middle_delta_rad": 0.30179984635220275,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        0.004662650472977583,
+        0.05685587840921735,
+        -1.545162761917851e-05,
+        0.015653484227026213,
+        0.3017530160791734,
+        -1.1885867401417727e-06,
+        -1.9592397353218605e-05,
+        1.78112703208555e-06,
+        1.188586739919728e-06,
+        -5.343381096312161e-06,
+        -1.78112703208555e-06,
+        -4.754346959900957e-06
+      ],
+      "largest_other_channel_by_peak": "FR_thigh_joint",
+      "largest_other_channel_peak_abs_rad": 0.05742937151123495,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "FL_calf_joint": {
+      "capture_sha256": "547b1cf90d398261e2c646ecc5fea012434176dd794e4792ee4febb9892fd6c6",
+      "fresh_samples": 667,
+      "max_sample_gap_s": 0.02344552099975772,
+      "automatic_endpoint_check_passed": false,
+      "labelled_channel_endpoint_delta_rad": 0.09534692764282227,
+      "labelled_channel_middle_delta_rad": 0.09559814651672521,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -0.018825516981237075,
+        0.00048088939750895454,
+        0.0,
+        -0.0544674950377906,
+        0.00037581780377554663,
+        0.09534692764282227,
+        1.78112703208555e-06,
+        3.5622540641711e-06,
+        3.5657602197591842e-06,
+        7.124508128397711e-06,
+        0.0,
+        0.0
+      ],
+      "largest_other_channel_by_peak": "FL_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.05469724776990273,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "RR_hip_joint": {
+      "capture_sha256": "f8e381819f455a2265c0e463bb5c1909bc8fee4dc63952daad78efa265266b34",
+      "fresh_samples": 661,
+      "max_sample_gap_s": 0.024053072999777214,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.5108941287240562,
+      "labelled_channel_middle_delta_rad": 0.20066544452509397,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -3.562254064226611e-06,
+        0.0,
+        -8.29556409054355e-06,
+        -1.4249016256906444e-05,
+        -7.124508128397711e-06,
+        -2.3701611686632873e-06,
+        0.5108941287240562,
+        -0.0001068676219266873,
+        3.565760219981229e-06,
+        0.000322364051552379,
+        -0.012102042927461532,
+        8.302576401719719e-06
+      ],
+      "largest_other_channel_by_peak": "RL_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.24909501610433354,
+      "physical_label_status": "Manually reviewed: initial wrong-side motion corrected within capture",
+      "clarified_motion_windows": {
+        "initial_wrong_left_hip": {
+          "window_s": [
+            6.0,
+            7.0
+          ],
+          "RR_hip_delta_rad": -0.007733616008142348,
+          "RL_hip_delta_rad": 0.2342255274871266
+        },
+        "corrected_right_hip_hold": {
+          "window_s": [
+            9.0,
+            10.0
+          ],
+          "RR_hip_delta_rad": 0.4602191323957618,
+          "RL_hip_delta_rad": 0.02361632004212376
+        }
+      }
+    },
+    "RR_thigh_joint": {
+      "capture_sha256": "ba634a7e3025ea91498c6308343626f23d783ad60bdcb9c632ce4563b8ea6e2d",
+      "fresh_samples": 662,
+      "max_sample_gap_s": 0.023607500000252912,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.4789406236480265,
+      "labelled_channel_middle_delta_rad": 0.47557989839746206,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -3.562254064226611e-06,
+        8.905635160538772e-06,
+        5.925402921880263e-06,
+        -1.2467889224820894e-05,
+        -3.5622540641711e-06,
+        2.3701611686632873e-06,
+        -0.0001816670684253452,
+        0.4789406236480265,
+        -7.131520439607186e-05,
+        -0.02797465442734605,
+        -0.015227801659527973,
+        1.1850805843316436e-06
+      ],
+      "largest_other_channel_by_peak": "RL_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.028453760068206227,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "RR_calf_joint": {
+      "capture_sha256": "6ccccce576543e2b757b081e65feedb07c26d8d429bf30e759f5b58662e65576",
+      "fresh_samples": 660,
+      "max_sample_gap_s": 0.023734375000003638,
+      "automatic_endpoint_check_passed": false,
+      "labelled_channel_endpoint_delta_rad": -0.07432884795993,
+      "labelled_channel_middle_delta_rad": 0.0837034816213781,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -1.78112703208555e-06,
+        -5.235434003436623e-06,
+        -3.953774770026897e-06,
+        -6.584772664186556e-06,
+        -4.317883713911286e-07,
+        -5.458552994497268e-06,
+        -0.031174359753488853,
+        -0.06754386563139592,
+        -0.07432884795993,
+        -0.0033341449637251663,
+        3.6482717476582494e-05,
+        1.440711199895972e-06
+      ],
+      "largest_other_channel_by_peak": "RR_thigh_joint",
+      "largest_other_channel_peak_abs_rad": 0.0749440052930046,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "RL_hip_joint": {
+      "capture_sha256": "088651aae47a7207cf55ed2e56c735296c5b92edcfe88032a4ac8cf73d533708",
+      "fresh_samples": 662,
+      "max_sample_gap_s": 0.04067625000016051,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.36243271477082195,
+      "labelled_channel_middle_delta_rad": 0.3783954179040216,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        8.905635160538772e-06,
+        -3.562254064226611e-06,
+        0.0,
+        -3.562254064226611e-06,
+        -8.905635160538772e-06,
+        0.0,
+        -0.010924845879130504,
+        2.8498032513812888e-05,
+        4.754346959678912e-06,
+        0.36243271477082195,
+        0.004076785901013569,
+        -2.377173479839456e-06
+      ],
+      "largest_other_channel_by_peak": "RR_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.017334777861833572,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "RL_thigh_joint": {
+      "capture_sha256": "69538a1182cb780466f5422c2ebadca5133fe76ca614eb85b972db39688032ba",
+      "fresh_samples": 660,
+      "max_sample_gap_s": 0.024245260000043345,
+      "automatic_endpoint_check_passed": true,
+      "labelled_channel_endpoint_delta_rad": 0.3520500629130956,
+      "labelled_channel_middle_delta_rad": 0.3439141495575296,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        -1.61920639285551e-07,
+        1.2413915678188836e-06,
+        6.5394051360634364e-06,
+        6.584772664186556e-06,
+        6.314904932025467e-06,
+        2.086481308616328e-06,
+        0.011606926254516405,
+        0.0002830372774664802,
+        -0.005268874121647116,
+        0.012839132332228081,
+        0.3520500629130956,
+        0.00022404429746836207
+      ],
+      "largest_other_channel_by_peak": "RL_hip_joint",
+      "largest_other_channel_peak_abs_rad": 0.01718662543730301,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    },
+    "RL_calf_joint": {
+      "capture_sha256": "8fdeb206919c669dd9a4bb1aa7329b96ef5f58fe61d1977a87519003eb14b30c",
+      "fresh_samples": 662,
+      "max_sample_gap_s": 0.0988988019998942,
+      "automatic_endpoint_check_passed": false,
+      "labelled_channel_endpoint_delta_rad": 0.07971066236495972,
+      "labelled_channel_middle_delta_rad": 0.0797611635062452,
+      "middle_window_s": [
+        6,
+        10
+      ],
+      "endpoint_delta_all_sdk_joints_rad": [
+        0.0,
+        -7.124508128453222e-06,
+        2.3701611686632873e-06,
+        1.781127032141061e-06,
+        1.78112703208555e-06,
+        1.1815744287435592e-06,
+        -0.011469841879956862,
+        5.343381096334365e-05,
+        2.1394561318999195e-05,
+        0.004156927413800193,
+        0.10262833973940677,
+        0.07971066236495972
+      ],
+      "largest_other_channel_by_peak": "RL_thigh_joint",
+      "largest_other_channel_peak_abs_rad": 0.10316980235716877,
+      "physical_label_status": "Manually reviewed with labelled physical motion; coupled motion permitted for coarse identity/sign check"
+    }
+  },
+  "automatic_endpoint_pass_count": 7,
+  "rr_calf_trace_note": "RR_calf channel increases about 0.084 rad in the 6-10 s window, then returns below the baseline around 12-13 s. Net negative endpoint delta alone cannot establish a reversed encoder. Coarse sign review uses the labelled extension phase; this is recorded manual acceptance, not a strict endpoint pass."
+}

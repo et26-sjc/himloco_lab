@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "python_deployment_tests": 79,
+  "existing_him_regressions": 7,
+  "cpp_bridge_guard_tests": 1,
+  "real_lab_reference_samples": 3072,
+  "original_gym_bundle_unchanged": true,
+  "checkpoint_and_policy_unchanged": true,
+  "preexisting_user_files_unchanged": true,
+  "cpp_and_lcm_sources_unchanged": true,
+  "cpp_source_sha256": {
+    "lcm_position.cpp": "5780d98fe727b7885088793ae7e71fac5c3fbb0f5e7874754f2a0a2e3ca09610",
+    "bridge_guard.hpp": "e4a895d1de5f78f582c21bd0a25e9616c9147a4a0df88504b49c1e8dcc70690a",
+    "CMakeLists.txt": "916fd0389a93299018b22728021f0063a099f80725dcc74aff9034a486b38e06"
+  },
+  "new_policy_hardware_tested": false,
+  "target_jetson_image_tested": false,
+  "motor_commands_published": false
+}

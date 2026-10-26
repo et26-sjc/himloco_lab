@@ -76,3 +76,8 @@ _build
 
 # Independent MuJoCo traces stay local; JSON/CSV/figures are reviewable artifacts.
 /artifacts/sim2sim/**/*.npz
+
+# Lab deployment reports are tracked; synchronized sensor traces/releases stay local.
+/artifacts/go1_lab_deploy/**/*.npz
+/artifacts/go1_lab_deploy/*.tar.gz
+/artifacts/go1_lab_deploy/release_check/

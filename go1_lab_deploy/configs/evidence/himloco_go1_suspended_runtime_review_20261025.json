@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "reviewer": "Codex static source/configuration review at the user's request",
+  "scope": "First supervised suspended HIM motor trial; operator keeps sticks centered and stops after 2-3 seconds of policy",
+  "hardware_trial_already_passed": false,
+  "general_configuration_modified": false,
+  "source_config_sha256": "cb5ef8a436f69bd98d41853664a5953e1fac9ad5bdc5358890aabc75b128decd",
+  "model_sha256": "71466584a0f500cc94a97ac3852b3287650ab326fcb957c7387624894cfb2456",
+  "training_metadata_assumption": "User accepted default Go1 config: https://github.com/et26-sjc/HIMLoco-Go1/tree/c59f76349c4718da19aa9b055a830ac1a383f038 ; order basis mujoco_sim2sim/config.py; actual training-run DOF dump unavailable",
+  "physical_review_reference": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_physical_review_20261025.json SHA256=b64b1a472cbfba6909a7e6e1ba690f0be3ff4e60724ca6c05a5b72ac7e374c23; manual coarse identity/sign review of all 12 joints; RR_hip wrong-side motion corrected within capture; coupling/early returns retained; strict automatic report unchanged; no encoder-zero calibration",
+  "runtime_parameters": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.15,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": 0.08,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.15,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "parameter_review": {
+    "nominal_pd": "Kp=40, Kd=1 as in the audited Go1 training contract; WTW Kp=20 is not substituted",
+    "initial_calibration": "3-second position interpolation; first gains zero; gains ramp over 0.5 seconds",
+    "initial_pose_allowance": "Measured folded pose allowance 0.2 rad only before/during calibration; targets remain inside URDF",
+    "handover": "At least 6 actual settled hold observations; second R2 starts a 1-second zero-command action ramp",
+    "measured_tracking": "0.5 rad tracking-error stop for this first suspended trial; not an enforced torque limit",
+    "target_step": "Existing 0.08 rad per 20 ms rejection retained; first policy trial may legitimately abort here",
+    "tilt": "0.5 rad from projected gravity; suspended body remains near level",
+    "command_limits": "Low limits 0.15 m/s forward, 0.10 m/s lateral, 0.15 rad/s yaw; sticks stay centered initially",
+    "timing": "50 ms state, 100 ms command watchdog and RC reception, 40 ms allowed scheduler lateness retained",
+    "sdk": "PositionLimit and PowerProtect factor 9 retained; changed targets or SDK protection latch stop",
+    "torque": "No doubled feedforward PD: desired velocity and feedforward torque are zero; firmware torque-limit equivalence remains unverified"
+  },
+  "stop_semantics": {
+    "L2": "Stop request in every phase; also checked directly by the C++ bridge",
+    "R2": "Starts calibration in WAIT_R2, starts policy in READY, stops in other active phases",
+    "Ctrl_C_python": "Requests a latched stop after any commands were published",
+    "after_stop": "Restart BOTH bridge and Python before another attempt; no automatic rearming",
+    "mechanical_support": "Remain supported with legs clear; zero gains do not hold the body up or prove electrical shutdown"
+  },
+  "not_validated_by_this_review": [
+    "HIM physical tracking and learned-policy closed-loop behavior",
+    "HIM RC axis directions during actual locomotion",
+    "Ground load bearing and free walking"
+  ]
+}

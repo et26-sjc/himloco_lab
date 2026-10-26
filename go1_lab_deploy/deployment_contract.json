@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "policy_profile": "lab_go1_pd_v1",
+  "joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint"
+  ],
+  "sdk_joint_names": [
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint"
+  ],
+  "default_joint_pos": [
+    0.10000000149011612,
+    -0.10000000149011612,
+    0.10000000149011612,
+    -0.10000000149011612,
+    0.800000011920929,
+    0.800000011920929,
+    1.0,
+    1.0,
+    -1.5,
+    -1.5,
+    -1.5,
+    -1.5
+  ],
+  "observation": {
+    "terms": [
+      "commands",
+      "base_ang_vel",
+      "projected_gravity",
+      "joint_pos_rel",
+      "joint_vel_rel",
+      "last_action"
+    ],
+    "dimensions": [
+      3,
+      3,
+      3,
+      12,
+      12,
+      12
+    ],
+    "scales": [
+      1.0,
+      0.25,
+      1.0,
+      1.0,
+      0.05,
+      1.0
+    ],
+    "raw_clip": [
+      -100.0,
+      100.0
+    ],
+    "processing": "raw_clip_then_scale",
+    "history_frames": 6,
+    "frame_dim": 45,
+    "history_dim": 270,
+    "history_order": "current_first",
+    "reset_padding": "zero_past_frames",
+    "previous_action": "raw_policy_action",
+    "default_joint_velocity": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "action": {
+    "dim": 12,
+    "scale": 0.25,
+    "hip_reduction": 1.0,
+    "processing": "clip_default_plus_scale_times_raw_action",
+    "absolute_target_clip": [
+      -100.0,
+      100.0
+    ]
+  },
+  "controller": {
+    "type": "mcu_position_pd",
+    "kp": 40.0,
+    "kd": 1.0,
+    "policy_dt": 0.02,
+    "training_physics_dt": 0.005,
+    "training_decimation": 4,
+    "bridge_dt": 0.002,
+    "desired_velocity": 0.0,
+    "feedforward_torque": 0.0
+  },
+  "training_joint_effort_limits_nm": [
+    23.7,
+    23.7,
+    23.7,
+    23.7,
+    23.7,
+    23.7,
+    23.7,
+    23.7,
+    35.55,
+    35.55,
+    35.55,
+    35.55
+  ],
+  "training_joint_velocity_limits_rad_s": [
+    30.1,
+    30.1,
+    30.1,
+    30.1,
+    30.1,
+    30.1,
+    30.1,
+    30.1,
+    20.06,
+    20.06,
+    20.06,
+    20.06
+  ],
+  "training_joint_limits_rad": [
+    [
+      -0.863,
+      0.863
+    ],
+    [
+      -0.863,
+      0.863
+    ],
+    [
+      -0.863,
+      0.863
+    ],
+    [
+      -0.863,
+      0.863
+    ],
+    [
+      -0.686,
+      4.501
+    ],
+    [
+      -0.686,
+      4.501
+    ],
+    [
+      -0.686,
+      4.501
+    ],
+    [
+      -0.686,
+      4.501
+    ],
+    [
+      -2.818,
+      -0.888
+    ],
+    [
+      -2.818,
+      -0.888
+    ],
+    [
+      -2.818,
+      -0.888
+    ],
+    [
+      -2.818,
+      -0.888
+    ]
+  ],
+  "deployment_joint_limits_rad": [
+    [
+      -0.8028514385223389,
+      0.8028514385223389
+    ],
+    [
+      -0.8028514385223389,
+      0.8028514385223389
+    ],
+    [
+      -0.8028514385223389,
+      0.8028514385223389
+    ],
+    [
+      -0.8028514385223389,
+      0.8028514385223389
+    ],
+    [
+      -1.0471975803375244,
+      4.188790321350098
+    ],
+    [
+      -1.0471975803375244,
+      4.188790321350098
+    ],
+    [
+      -1.0471975803375244,
+      4.188790321350098
+    ],
+    [
+      -1.0471975803375244,
+      4.188790321350098
+    ],
+    [
+      -2.696533679962158,
+      -0.9162978529930115
+    ],
+    [
+      -2.696533679962158,
+      -0.9162978529930115
+    ],
+    [
+      -2.696533679962158,
+      -0.9162978529930115
+    ],
+    [
+      -2.696533679962158,
+      -0.9162978529930115
+    ]
+  ],
+  "provenance": {
+    "training_repository": "https://github.com/et26-sjc/himloco_lab",
+    "training_git_sha": "73fc02aa59482bcd80d1b1d81f16ea1483d17571",
+    "checkpoint": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt",
+    "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+    "selection": "Final model_10000, not a separately selected best-evaluation model",
+    "isaac_sim": "6.1.0",
+    "isaac_lab_source": "3.0.0",
+    "torch_export": "2.11.0+cu128",
+    "gym_deployment_source": "/home/sjc/HIMLoco-Go1/him_go1_gym_deploy_20261026/him_go1_gym_deploy",
+    "gym_source_manifest": "provenance/gym_source.json",
+    "hardware_validation": "Lab policy not yet run on hardware; inherited SDK/IMU mapping records refer to the same robot and Gym deployment only"
+  },
+  "deployment_differences": [
+    "History reset is zero-padded; existing six measured-frame SETTLE warmup and RAMP handover are preserved.",
+    "During partial RAMP only, previous_action describes the blended target; normal RUNNING uses raw network output.",
+    "Bridge and Python retain the original deployment mechanical bounds, separate from Lab training limits.",
+    "Lab clips explicit PD effort each physics substep; SDK sends position/gains and relies on MCU PD and SDK protections. Exact effort/velocity enforcement is not assumed identical.",
+    "No MuJoCo passive damping parameter is sent to hardware. Kp40/Kd1 remain MCU controller gains."
+  ]
+}

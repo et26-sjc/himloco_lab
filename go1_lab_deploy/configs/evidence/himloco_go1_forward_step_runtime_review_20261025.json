@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "scope": "Short supported forward-command diagnosis after two target-step guard stops",
+  "source_config_sha256": "f6b89e5e1c3c256394ea7b99b7a6a1131a273cab850b3b6080a3adee3221f47f",
+  "previous_runtime_review": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_forward_runtime_review_20261025.json SHA256=212a28e738b2a3fc1844497340629dccdd48d24364118c0e851b1c0944475fa2; short supervised forward diagnosis; walking results pending",
+  "replay_report": "audit/20261025_fixes/forward_target_step_replay.json",
+  "replay_sha256": "0d84cdc372e70819c658495460eb27d5afe95edb4e32d47ef40c523de2af91c5",
+  "captures": [
+    {
+      "file": "him_forward_20261025_185004_17463.jsonl",
+      "sha256": "4824cb5e1c5b9c8e61b091198b18a58aeb4355cd65c5d9095d1a05baa38f618c",
+      "fault": "Target step exceeds reviewed limit",
+      "running_frames": 209,
+      "last_15_frames_max_replay_action_difference": 1.430511474609375e-06,
+      "exact_rejected_frame_available": false,
+      "counterfactual_next_predictions": [
+        {
+          "assumption": "last_feedback_held",
+          "joint": "FL_calf_joint",
+          "signed_step_rad": -0.0932389497756958,
+          "max_abs_step_rad": 0.0932389497756958
+        },
+        {
+          "assumption": "first_order_joint_extrapolation",
+          "joint": "FL_calf_joint",
+          "signed_step_rad": -0.09099435806274414,
+          "max_abs_step_rad": 0.09099435806274414
+        }
+      ],
+      "interpretation": "The rejected frame was not recorded by the old runner. These predictions reuse the last feedback, with or without first-order extrapolation. They are not the measured fault target."
+    },
+    {
+      "file": "him_forward_20261025_185116_17683.jsonl",
+      "sha256": "4eeed5c596a78b35db127d0feb5af765bb9e34654ede7d9087a61f0ccc18238f",
+      "fault": "Target step exceeds reviewed limit",
+      "running_frames": 141,
+      "last_15_frames_max_replay_action_difference": 1.7881393432617188e-06,
+      "exact_rejected_frame_available": false,
+      "counterfactual_next_predictions": [
+        {
+          "assumption": "last_feedback_held",
+          "joint": "FL_calf_joint",
+          "signed_step_rad": -0.12016963958740234,
+          "max_abs_step_rad": 0.12016963958740234
+        },
+        {
+          "assumption": "first_order_joint_extrapolation",
+          "joint": "FL_calf_joint",
+          "signed_step_rad": -0.11678469181060791,
+          "max_abs_step_rad": 0.11678469181060791
+        }
+      ],
+      "interpretation": "The rejected frame was not recorded by the old runner. These predictions reuse the last feedback, with or without first-order extrapolation. They are not the measured fault target."
+    }
+  ],
+  "operator_observation": "Body lowered after policy handover, forward tendency but no successful alternating steps before stop",
+  "parameter_change": {
+    "max_joint_target_step_rad": [
+      0.08,
+      0.15
+    ],
+    "meaning": "A still bounded 0.15 rad target change per policy cycle; this is an added deployment guard, not a trained HIM action limit or a measured motor speed limit.",
+    "basis": "Both recordings reproduce saved actions within 1.8e-6. Counterfactual next targets using held/extrapolated last joint feedback predict FL calf changes about 0.091-0.120 rad. Exact rejected frames were not logged. This motivates a short supported diagnostic with detailed fault capture, not unrestricted walking.",
+    "actions_clipped_to_guard": false,
+    "pd_or_observation_or_mapping_changed": false,
+    "other_runtime_guards_changed": false
+  },
+  "diagnostic_change": "Target-step faults retain the exact rejected target, joint, delta, threshold, measured state, torque estimates, commands and history; stop is published before disk logging. Rejected targets remain unpublished.",
+  "operation": "Clear space, fall-catching support clear of all legs, centered sticks through startup; request forward +0.25 to +0.30 m/s briefly for 1-2 seconds, then center. L2 if no alternating steps, asymmetric support, or continued lean. Do not raise this limit again without examining the exact fault record.",
+  "runtime_parameters": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.3,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": 0.15,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.2,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "hardware_forward_walking_validated": false,
+  "model_sha256": "71466584a0f500cc94a97ac3852b3287650ab326fcb957c7387624894cfb2456"
+}

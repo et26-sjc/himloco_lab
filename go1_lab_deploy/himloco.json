@@ -1,0 +1,86 @@
+{
+  "schema_version": 2,
+  "source_commit": "73fc02aa59482bcd80d1b1d81f16ea1483d17571",
+  "model": {
+    "path": "models/policy.pt",
+    "sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+    "training_dof_names": [
+      "FL_hip_joint",
+      "FR_hip_joint",
+      "RL_hip_joint",
+      "RR_hip_joint",
+      "FL_thigh_joint",
+      "FR_thigh_joint",
+      "RL_thigh_joint",
+      "RR_thigh_joint",
+      "FL_calf_joint",
+      "FR_calf_joint",
+      "RL_calf_joint",
+      "RR_calf_joint"
+    ],
+    "training_config_reference": "deployment_contract.json; provenance/training_env.yaml and training_agent.yaml; actual Lab articulation/reference replay"
+  },
+  "alignment": {
+    "attitude_source": "quaternion_wxyz",
+    "sensor_to_body_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "verified": true,
+    "verification_reference": "configs/evidence/himloco_go1_physical_review_20261025.json SHA256=b64b1a472cbfba6909a7e6e1ba690f0be3ff4e60724ca6c05a5b72ac7e374c23; manual coarse wxyz/body-axis/gyro review; R_BS=I; precision level/mounting zero NOT calibrated; inherited same-robot hardware interface record, not a Lab policy hardware test",
+    "joint_mapping_verified": true,
+    "joint_mapping_reference": "configs/evidence/himloco_go1_physical_review_20261025.json SHA256=b64b1a472cbfba6909a7e6e1ba690f0be3ff4e60724ca6c05a5b72ac7e374c23; manual coarse identity/sign review of all 12 joints; RR_hip wrong-side motion corrected within capture; coupling/early returns retained; strict automatic report unchanged; no encoder-zero calibration; inherited same-robot hardware interface record, not a Lab policy hardware test"
+  },
+  "runtime": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.3,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": null,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.2,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "safety_reviewed": true,
+    "safety_review_reference": "configs/evidence/himloco_go1_forward_policy_runtime_review_20261025.json SHA256=8f26f431207471ac6d6e05c9e232438b1f1dedcfb53c3fa7b7f7cfd00ec7ab0b; operator-requested target-step stop disabled only; short supported walking attempt; inherited unchanged deployment thresholds, Lab policy hardware performance untested",
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "policy_profile": "lab_go1_pd_v1",
+  "deployment_contract": {
+    "path": "deployment_contract.json",
+    "sha256": "c695d7946a30cbc375a34a5b76a1d554509ed55d9f42309d66b1a350bbc03540"
+  }
+}

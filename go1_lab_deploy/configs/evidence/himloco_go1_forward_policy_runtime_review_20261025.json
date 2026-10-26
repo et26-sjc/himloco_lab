@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "review_date_local": "2026-10-25",
+  "scope": "Short supported walking attempt with the added target-delta stop disabled",
+  "operator_request": "Can we remove the limit and directly test how it walks, after FL calf 0.1661 rad exceeded 0.15 rad",
+  "source_config_sha256": "f2405bd4315fccb373d41bedabf7af1fae09f142d9c89a091c98bed02b161436",
+  "previous_runtime_review": "project-relative go1_gym_deploy/configs/evidence/himloco_go1_forward_step_runtime_review_20261025.json SHA256=fb8124125b8cfbc71e36446b74c1a9fb6912b4df320d47536d94de4a9377a80a; short supported target-step diagnosis; walking not validated",
+  "capture_file": "audit/20261025_fixes/him_forward_20261025_185953_18393.jsonl",
+  "capture_sha256": "23ab6178d9d3a98d49a8062ecd46073a98d86445f011d7cfbc11ba27e4251954",
+  "exact_fault_frame_assessment": {
+    "fault_joint": "FL_calf_joint",
+    "actual_period_s": 0.02002843800073606,
+    "signed_target_delta_rad": -0.16613984107971191,
+    "previous_target_rad": -1.8934435844421387,
+    "rejected_target_rad": -2.0595834255218506,
+    "actual_joint_rad": -1.8472119569778442,
+    "commands": [
+      0.3,
+      0.0,
+      -0.0
+    ],
+    "targets_finite": true,
+    "targets_inside_urdf": true,
+    "max_candidate_tracking_error_rad": 0.3762723207473755,
+    "max_candidate_pd_formula_nm": 14.480202734470367,
+    "pd_note": "Formula with zero desired velocity/feedforward, not measured or post-Safety torque",
+    "rejected_candidate_was_sent": false
+  },
+  "parameter_change": {
+    "max_joint_target_step_rad": [
+      0.15,
+      null
+    ],
+    "meaning": "JSON null disables only the added target-step stop; the policy targets are still finite-checked and mechanically bounded, without new action clipping or slew limiting.",
+    "other_runtime_guards_changed": false,
+    "model_observation_mapping_pd_changed": false
+  },
+  "preserved": [
+    "Go1 URDF target bounds and SDK PositionLimit",
+    "SDK PowerProtect factor 9",
+    "0.50 rad joint tracking stop",
+    "0.50 rad body tilt stop",
+    "SDK state, RC and command watchdogs",
+    "L2 in every phase and R2 stop during RAMP/RUNNING",
+    "3-second calibration, gain ramp and 1-second action ramp"
+  ],
+  "diagnostic_change": "Each successful cycle records maximum target delta, its joint, and whether the optional delta stop is enabled. Fault records include the last successfully read state snapshot with its received timestamp, after requesting stop.",
+  "runtime_parameters": {
+    "policy_dt": 0.02,
+    "state_timeout_s": 0.05,
+    "command_timeout_s": 0.1,
+    "rc_timeout_s": 0.1,
+    "calibration_duration_s": 3.0,
+    "startup_joint_margin_rad": 0.2,
+    "calibration_gain_ramp_s": 0.5,
+    "calibration_target_inset_rad": 0.001,
+    "history_warmup_frames": 6,
+    "action_ramp_s": 1.0,
+    "max_abs_command": [
+      0.3,
+      0.1,
+      0.15
+    ],
+    "command_axis_signs": [
+      1,
+      1,
+      -1
+    ],
+    "command_deadzone": 0.05,
+    "max_tilt_rad": 0.5,
+    "max_joint_target_step_rad": null,
+    "max_tracking_error_rad": 0.5,
+    "calibration_tolerance_rad": 0.2,
+    "calibration_settle_timeout_s": 5.0,
+    "max_cycle_lateness_s": 0.04,
+    "startup_timeout_s": 10.0,
+    "ready_timeout_s": 60.0,
+    "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
+  },
+  "operation": "Short supervised forward request +0.25 to +0.30 m/s for 1-2 seconds, then center sticks; fall-catching support must clear all legs, with clear space in front. L2 if the robot does not alternate steps or body support becomes asymmetric. No automatic stop after 2 seconds.",
+  "hardware_forward_walking_validated": false,
+  "limitation": "A bounded finite candidate does not prove safe subsequent closed-loop behavior. Standing and the requested crouched posture do not validate walking.",
+  "model_sha256": "71466584a0f500cc94a97ac3852b3287650ab326fcb957c7387624894cfb2456"
+}
