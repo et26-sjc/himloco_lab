@@ -259,3 +259,9 @@ Isaac Sim 启动会报告 CPU package、MaterialX/USD 等 warning；真实训练
 新增后台生命周期、内部LCM路由准备、速度/摇杆配置和按关节持续跟踪保护；JIT、SDK桥接与训练接口不改。
 详细改动及本次87+11+7项Python/C++回归见[部署合并验收](go1_lab_deploy/docs/REPOSITORY_SYNC_20261026.md)。
 后退膝触地、纯转向和低速覆盖的下一版建议见[DeployV1方案](docs/GO1_DEPLOYMENT_TUNING_V1.md)，仅为方案，训练默认值未改。
+
+## 独立PD DeployV1训练配置（2026-10-26）
+
+按用户确认新增`Unitree-Go1-Velocity-PD-DeployV1`和`-Play`，高度.32/-2、非足部接触-.5/1N、
+训练平移门限.10、heading比例.5，旧任务不改。原PD控制与HIM算法/观测接口保持。
+32环境真实接触验证和2iteration训练已通过；正式4096环境命令与结果见[DeployV1说明](docs/GO1_DEPLOYMENT_TUNING_V1.md)。

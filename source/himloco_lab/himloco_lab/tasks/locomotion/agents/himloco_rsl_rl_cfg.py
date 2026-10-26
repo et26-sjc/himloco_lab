@@ -46,3 +46,8 @@ class Go1PPORunnerCfg(PPORunnerCfg):
 @configclass
 class Go1PDPPORunnerCfg(Go1PPORunnerCfg):
     experiment_name = "go1_rough_pd"
+
+
+@configclass
+class Go1PDDeployV1PPORunnerCfg(Go1PDPPORunnerCfg):
+    experiment_name = "go1_rough_pd_deploy_v1"
