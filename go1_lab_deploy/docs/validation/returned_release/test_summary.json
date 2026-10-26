@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "source_archive_sha256": "c49fb6ded57685333f1cb94d57a7836796003a2fb0eed5d654a2245075494c18",
+  "deployment_unit_tests": 87,
+  "sim2sim_unit_tests": 11,
+  "him_unit_tests": 7,
+  "cpp_guard_tests": 1,
+  "bash_syntax_scripts": 11,
+  "new_tracking_regressions": [
+    "short lag/recovery",
+    "same-joint persistence and latched stop",
+    "different joints cannot accumulate timers",
+    "instant large error",
+    "READY immediate stop",
+    "old-config immediate stop",
+    "RAMP persistence/blending",
+    "config validation"
+  ],
+  "replayed_native_lab_samples": 2048,
+  "replay_frame_action_max_abs_error": 3.814697265625e-06,
+  "replay_absolute_target_max_abs_error_rad": 9.5367431640625e-07,
+  "simulated_handover_seconds": 15,
+  "simulated_running_seconds": 10.8,
+  "simulated_root_support": "WAIT_R2/CALIBRATE/SETTLE only; not hardware validation",
+  "policy_cpp_lcm_unchanged": true,
+  "source_archive_unchanged": true,
+  "new_robot_or_docker_or_route_operations_performed": false,
+  "hardware_evidence": "User-tested returned archive and docs/runtime/lab_tracking_run_20261026.json; not a new robot run by this merge",
+  "lateral_sign_fix_status": "Archive retains pending dedicated hardware verification flag"
+}

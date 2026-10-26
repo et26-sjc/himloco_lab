@@ -56,26 +56,28 @@
     "history_warmup_frames": 6,
     "action_ramp_s": 1.0,
     "max_abs_command": [
+      0.6,
       0.3,
-      0.1,
-      0.15
+      0.6
     ],
     "command_axis_signs": [
       1,
-      1,
+      -1,
       -1
     ],
     "command_deadzone": 0.05,
     "max_tilt_rad": 0.5,
     "max_joint_target_step_rad": null,
     "max_tracking_error_rad": 0.5,
+    "tracking_error_timeout_s": 0.15,
+    "max_instant_tracking_error_rad": 1.0,
     "calibration_tolerance_rad": 0.2,
     "calibration_settle_timeout_s": 5.0,
     "max_cycle_lateness_s": 0.04,
     "startup_timeout_s": 10.0,
     "ready_timeout_s": 60.0,
     "safety_reviewed": true,
-    "safety_review_reference": "configs/evidence/himloco_go1_forward_policy_runtime_review_20261025.json SHA256=8f26f431207471ac6d6e05c9e232438b1f1dedcfb53c3fa7b7f7cfd00ec7ab0b; operator-requested target-step stop disabled only; short supported walking attempt; inherited unchanged deployment thresholds, Lab policy hardware performance untested",
+    "safety_review_reference": "configs/evidence/himloco_go1_forward_policy_runtime_review_20261025.json SHA256=8f26f431207471ac6d6e05c9e232438b1f1dedcfb53c3fa7b7f7cfd00ec7ab0b; inherited hardware thresholds and disabled added target-step stop retained. 20261026 operator requested increased RC command ranges after a Lab hardware run at [0.3,0.1,0.15]; new [0.6,0.3,0.6] command maxima are within saved training ranges; user later confirmed forward/lateral/yaw movement with this background release; two runs stopped on ~0.53 rad rear-calf tracking errors; see docs/BACKGROUND_AND_SPEED_20261026.md and docs/TRACKING_GUARD_20261026.md; 20261026 operator authorized small tracking-stop adjustment after two ~0.53 rad rear-calf exits: RAMP/RUNNING only, same joint >0.50 rad continuously for 0.15 s or >1.00 rad instantly; calibration tracking unchanged. User subsequently reported improved walking; latest run had 63.82 s policy activity, no tracking stop, and a rejected FR calf target 0.00184 rad beyond the inherited mechanical bound; see docs/runtime/lab_tracking_run_20261026.json. 20261026 freeze: lateral stick sign changed +1 to -1 after operator reported reversed lateral direction; forward/yaw signs unchanged; corrected lateral sign awaits hardware confirmation; see docs/DEPLOYMENT_GUIDE.md",
     "lcm_url": "udpm://239.255.76.67:7667?ttl=255"
   },
   "policy_profile": "lab_go1_pd_v1",

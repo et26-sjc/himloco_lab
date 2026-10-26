@@ -27,6 +27,7 @@ _RUNTIME_KEYS = {
     "calibration_settle_timeout_s", "max_cycle_lateness_s", "startup_timeout_s",
     "ready_timeout_s", "safety_reviewed", "safety_review_reference", "lcm_url",
 }
+_RUNTIME_OPTIONAL_KEYS = {"tracking_error_timeout_s", "max_instant_tracking_error_rad"}
 
 
 def _keys(value, expected, label):
@@ -93,7 +94,9 @@ def validate_config(config, require_ready=False):
     runtime = config["runtime"]
     _keys(model, _MODEL_KEYS, "model")
     _keys(alignment, _ALIGNMENT_KEYS, "alignment")
-    _keys(runtime, _RUNTIME_KEYS, "runtime")
+    runtime_keys = (_RUNTIME_KEYS | (set(runtime) & _RUNTIME_OPTIONAL_KEYS)
+                    if isinstance(runtime, dict) else _RUNTIME_KEYS)
+    _keys(runtime, runtime_keys, "runtime")
     if not isinstance(model["path"], str) or not model["path"].strip():
         raise ValueError("model.path must be a nonempty string")
     if model["sha256"] is not None and (not isinstance(model["sha256"], str) or
@@ -124,6 +127,17 @@ def validate_config(config, require_ready=False):
                 "calibration_settle_timeout_s", "max_cycle_lateness_s", "startup_timeout_s",
                 "ready_timeout_s"):
         _number(runtime[key], "runtime." + key)
+    # Older configs retain their immediate tracking stop. The optional delay
+    # applies only in RAMP/RUNNING, separately for each physical joint.
+    tracking_timeout = _number(runtime.get("tracking_error_timeout_s", 0.0),
+                               "runtime.tracking_error_timeout_s", positive=False)
+    if tracking_timeout < 0:
+        raise ValueError("tracking_error_timeout_s must be nonnegative")
+    instant_limit = _number(
+        runtime.get("max_instant_tracking_error_rad", runtime["max_tracking_error_rad"]),
+        "runtime.max_instant_tracking_error_rad")
+    if instant_limit < runtime["max_tracking_error_rad"]:
+        raise ValueError("max_instant_tracking_error_rad must be >= max_tracking_error_rad")
     # A null value explicitly disables only the added target-delta stop.
     # Mechanical bounds, tracking, tilt, freshness and stop buttons still apply.
     if runtime["max_joint_target_step_rad"] is not None:

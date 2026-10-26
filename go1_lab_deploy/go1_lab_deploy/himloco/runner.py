@@ -50,6 +50,7 @@ class Controller:
         self.last_time = None
         self.last_tick = None
         self.last_target = None
+        self.tracking_error_since = np.full(12, np.nan)
         self.seen_edges = None
         self.calibration_start = None
 
@@ -57,7 +58,8 @@ class Controller:
         self.phase, self.phase_start = phase, now
 
     def _command(self, state):
-        # lx -> body-left, ly -> body-forward, rx -> yaw, signs explicitly reviewed.
+        # Raw ly/lx/rx feed vx/vy/yaw; physical stick directions are configured
+        # only through runtime.command_axis_signs, never joint/IMU sign changes.
         sticks = np.array([state["left_stick"][1], state["left_stick"][0],
                            state["right_stick"][0]], dtype=float)
         sticks[np.abs(sticks) <= self.rt["command_deadzone"]] = 0.0
@@ -106,11 +108,56 @@ class Controller:
         if np.any(q < self.lower - margin) or np.any(q > self.upper + margin):
             raise SafetyFault("Measured joint position outside {} limits".format(
                 "calibration startup" if self.phase in ("WAIT_R2", "CALIBRATE") else "Go1 URDF"))
+        tracking_status = {}
         if self.last_target is not None:
             if state["source_tick"] == self.last_tick:
                 raise SafetyFault("No new SDK sample this policy cycle")
-            if np.max(np.abs(q - self.last_target)) > self.rt["max_tracking_error_rad"]:
-                raise SafetyFault("Joint tracking error exceeds reviewed limit")
+            errors = np.abs(q - self.last_target)
+            limit = self.rt["max_tracking_error_rad"]
+            moving = self.phase in ("RAMP", "RUNNING")
+            timeout = self.rt.get("tracking_error_timeout_s", 0.0) if moving else 0.0
+            instant_limit = (self.rt.get("max_instant_tracking_error_rad", limit)
+                             if moving else limit)
+            over = errors > limit
+            # A different joint cannot inherit another joint's elapsed time.
+            # Returning within the limit resets only that joint's timer.
+            self.tracking_error_since[~over] = np.nan
+            newly_over = over & np.isnan(self.tracking_error_since)
+            self.tracking_error_since[newly_over] = now
+            durations = np.zeros(12)
+            durations[over] = now - self.tracking_error_since[over]
+            largest = int(np.argmax(errors))
+            longest = int(np.argmax(np.where(over, durations, -1.0)))
+            tracking_status = dict(
+                tracking_error_max_rad=float(errors[largest]),
+                tracking_error_max_joint=self.mapping.policy_names[largest],
+                tracking_error_over_limit_s=float(durations[longest]),
+                tracking_error_over_limit_joint=(self.mapping.policy_names[longest]
+                                                if np.any(over) else None),
+                tracking_error_limit_rad=limit, tracking_error_timeout_s=timeout,
+                tracking_error_instant_limit_rad=instant_limit)
+            instant_fault = errors[largest] > instant_limit
+            sustained = over & (durations >= timeout)
+            if instant_fault or np.any(sustained):
+                joint = (largest if instant_fault else
+                         int(np.argmax(np.where(sustained, errors, -1.0))))
+                raise SafetyFault(
+                    "Joint tracking error: {} {:.4f} rad; {:.3f}s above {:.4f} rad "
+                    "(delay {:.3f}s, instant limit {:.4f} rad)".format(
+                        self.mapping.policy_names[joint], errors[joint], durations[joint],
+                        limit, timeout, instant_limit),
+                    details=dict(kind="tracking_error", phase=self.phase,
+                                 trigger="instant" if instant_fault else "sustained",
+                                 joint=self.mapping.policy_names[joint],
+                                 error_rad=float(errors[joint]),
+                                 duration_s=float(durations[joint]),
+                                 limit_rad=limit, timeout_s=timeout,
+                                 instant_limit_rad=instant_limit,
+                                 previous_target_policy=self.last_target.copy(),
+                                 q_policy=q.copy(), dq_policy=dq.copy(),
+                                 error_policy_rad=errors.copy(),
+                                 exceedance_policy_s=durations.copy(),
+                                 candidate_sent=False))
         self.last_tick = state["source_tick"]
         edges = state["r2_edges"]
         if self.seen_edges is None:
@@ -139,6 +186,7 @@ class Controller:
                       state_age_s=state["state_age_s"], rc_age_s=state["rc_age_s"],
                       period_s=period, q_policy=q, dq_policy=dq,
                       omega_body=omega, gravity_body=gravity, tilt_rad=tilt)
+        result.update(tracking_status)
         if "tau_sdk" in state:
             # MCU torque estimate for tracking diagnosis, never a feedforward command.
             result["tau_est_policy_nm"] = self.mapping.to_policy(state["tau_sdk"])
@@ -351,6 +399,10 @@ def run_deployment(config, policy, log_path=None):
             receiver.start()
             _wait_state(receiver, rt)
             print("Fresh SDK state. Center sticks; release then press R2 to calibrate. L2 stops.")
+            print("Policy tracking guard: >{:.3f} rad for {:.3f}s on the SAME joint; "
+                  ">{:.3f} rad stops immediately. Calibration tracking is unchanged.".format(
+                      rt["max_tracking_error_rad"], rt.get("tracking_error_timeout_s", 0.0),
+                      rt.get("max_instant_tracking_error_rad", rt["max_tracking_error_rad"])))
             deadline = time.monotonic()
             while True:
                 now = time.monotonic()

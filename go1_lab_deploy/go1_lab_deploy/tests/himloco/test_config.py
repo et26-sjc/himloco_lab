@@ -83,6 +83,23 @@ class ConfigTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate JSON key"):
                 load_config(path)
 
+    def test_tracking_persistence_fields_and_backward_compatibility(self):
+        for key, value in (("tracking_error_timeout_s", -0.01),
+                           ("tracking_error_timeout_s", float("nan")),
+                           ("tracking_error_timeout_s", True),
+                           ("tracking_error_timeout_s", None),
+                           ("max_instant_tracking_error_rad", .49),
+                           ("max_instant_tracking_error_rad", float("inf")),
+                           ("max_instant_tracking_error_rad", "1.0")):
+            bad = copy.deepcopy(self.config)
+            bad["runtime"][key] = value
+            with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                validate_config(bad)
+        old = copy.deepcopy(self.config)
+        old["runtime"].pop("tracking_error_timeout_s")
+        old["runtime"].pop("max_instant_tracking_error_rad")
+        validate_config(old, require_ready=True)
+
 
 if __name__ == "__main__":
     unittest.main()

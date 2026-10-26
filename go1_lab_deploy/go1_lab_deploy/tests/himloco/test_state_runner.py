@@ -337,6 +337,92 @@ class ControllerTests(unittest.TestCase):
             expected = default_positions(SDK_JOINT_NAMES)[sdk_index] + .25 * self.action[names.index(name)]
             self.assertAlmostEqual(result["target_sdk"][sdk_index], expected, places=6)
 
+    def running(self):
+        self.ready()
+        self.edges = 2
+        for _ in range(55):
+            result = self.step()
+        self.assertEqual(result["phase"], "RUNNING")
+
+    def tracking_error(self, magnitude, joint=8):
+        # Synthetic SDK feedback stays inside the mechanical envelope; only
+        # lag behind the previously accepted target is varied in this test.
+        measured = self.ctrl.last_target.copy()
+        measured[joint] -= magnitude
+        return self.step(q_sdk=self.ctrl.mapping.to_sdk(measured))
+
+    def test_policy_short_tracking_lag_is_logged_and_recovers(self):
+        self.running()
+        for _ in range(5):
+            result = self.tracking_error(.55)
+            self.assertEqual(result["phase"], "RUNNING")
+        self.assertAlmostEqual(result["tracking_error_over_limit_s"], .08)
+        self.assertEqual(result["tracking_error_over_limit_joint"], "FL_calf_joint")
+        result = self.tracking_error(.49)
+        self.assertEqual(result["tracking_error_over_limit_s"], 0.)
+        self.assertIsNone(result["tracking_error_over_limit_joint"])
+        for _ in range(3):
+            result = self.tracking_error(.55)
+        self.assertAlmostEqual(result["tracking_error_over_limit_s"], .04)
+
+    def test_same_joint_sustained_tracking_error_latches_stop(self):
+        self.running()
+        for _ in range(8):
+            result = self.tracking_error(.55)
+        self.assertLess(result["tracking_error_over_limit_s"], .15)
+        previous = self.ctrl.last_target.copy()
+        with self.assertRaises(SafetyFault) as caught:
+            self.tracking_error(.55)
+        details = caught.exception.details
+        self.assertEqual(details["trigger"], "sustained")
+        self.assertEqual(details["joint"], "FL_calf_joint")
+        self.assertGreaterEqual(details["duration_s"], .15)
+        self.assertFalse(details["candidate_sent"])
+        self.assertEqual(self.ctrl.phase, "STOPPED")
+        np.testing.assert_array_equal(self.ctrl.last_target, previous)
+
+    def test_different_joints_cannot_accumulate_tracking_time(self):
+        self.running()
+        for i in range(24):
+            result = self.tracking_error(.55, joint=8 + i % 2)
+            self.assertEqual(result["tracking_error_over_limit_s"], 0.)
+        self.assertEqual(result["phase"], "RUNNING")
+
+    def test_large_tracking_error_stops_immediately_during_policy(self):
+        self.running()
+        with self.assertRaises(SafetyFault) as caught:
+            self.tracking_error(1.01)
+        self.assertEqual(caught.exception.details["trigger"], "instant")
+        self.assertEqual(caught.exception.details["duration_s"], 0.)
+
+    def test_ramp_uses_policy_persistence_without_changing_target_blending(self):
+        self.ready()
+        self.edges = 2
+        self.step()
+        for _ in range(4):
+            result = self.tracking_error(.55)
+            self.assertEqual(result["phase"], "RAMP")
+            self.assertEqual(result["tracking_error_timeout_s"], .15)
+            np.testing.assert_allclose(result["target_policy"],
+                self.ctrl.q0 + .25 * result["applied_action"], atol=1e-7)
+
+    def test_ready_tracking_error_keeps_original_immediate_threshold(self):
+        self.ready()
+        with self.assertRaises(SafetyFault) as caught:
+            self.tracking_error(.55)
+        self.assertEqual(caught.exception.details["phase"], "READY")
+        self.assertEqual(caught.exception.details["timeout_s"], 0.)
+        self.assertEqual(caught.exception.details["instant_limit_rad"], .5)
+
+    def test_legacy_configs_without_optional_fields_keep_immediate_stop(self):
+        self.cfg["runtime"].pop("tracking_error_timeout_s")
+        self.cfg["runtime"].pop("max_instant_tracking_error_rad")
+        self.ctrl = Controller(self.cfg, self.policy)
+        self.running()
+        with self.assertRaises(SafetyFault) as caught:
+            self.tracking_error(.55)
+        self.assertEqual(caught.exception.details["timeout_s"], 0.)
+
 
 if __name__ == "__main__":
     unittest.main()

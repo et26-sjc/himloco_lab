@@ -1,0 +1,50 @@
+{
+  "report_date_local": "2026-10-26",
+  "source_log": "/home/unitree/go1_lab_deploy/logs/him_lab_20240615_182005_14220.jsonl",
+  "source_log_sha256": "b22153e88ffd5e570ac65c5c65a5150b7c4d6f8e8cac27996504a5dacde9e14c",
+  "reason": "Policy target outside Go1 URDF limits",
+  "phase_counts": {
+    "WAIT_R2": 1144,
+    "CALIBRATE": 150,
+    "SETTLE": 7,
+    "READY": 85,
+    "RAMP": 51,
+    "RUNNING": 3140
+  },
+  "policy_active_s": 63.81998226700034,
+  "active_frames": 3191,
+  "violations": [
+    {
+      "joint": "FR_calf_joint",
+      "rejected_target_rad": -2.698369264602661,
+      "lower_rad": -2.696533679962158,
+      "upper_rad": -0.9162978529930115,
+      "excess_rad": 0.0018355846405029297
+    }
+  ],
+  "commands_at_rejection": [
+    0.3403682827949524,
+    0,
+    0
+  ],
+  "candidate_sent": false,
+  "max_tracking_error_rad": 0.7210643887519836,
+  "max_continuous_exceedance_s": 0.08000364599956811,
+  "max_policy_period_ms": 20.70499999990716,
+  "max_tilt_deg": 11.859814044107987,
+  "model_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+  "command_axis_signs": [
+    1,
+    1,
+    -1
+  ],
+  "max_abs_command": [
+    0.6,
+    0.3,
+    0.6
+  ],
+  "tracking_error_timeout_s": 0.15,
+  "max_instant_tracking_error_rad": 1,
+  "user_report": "After the tracking adjustment walking improved; lateral stick direction was still reversed.",
+  "lateral_sign_fix_hardware_verified": false
+}

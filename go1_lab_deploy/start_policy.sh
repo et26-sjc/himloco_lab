@@ -9,14 +9,25 @@ if [[ "${1:-}" == --describe && "$#" -eq 1 ]]; then
     echo 'Policy interface: lab_go1_pd_v1; Lab joint order; unscaled velocity commands.'
     echo "Docker image/container: $him_image / $him_container"
     echo "Persistent logs: $him_log_dir"
-    echo 'Kp=40, Kd=1; 50 Hz; vx +/-0.30, vy +/-0.10, yaw +/-0.15.'
-    echo 'Extra target-step stop disabled; other source guards retained.'
+    echo 'Kp=40, Kd=1; 50 Hz. Configured vx/vy/yaw command maxima:'
+    "$him_python" -B - "$him_root/himloco.json" <<'PY'
+import json
+import sys
+with open(sys.argv[1]) as stream:
+    print(json.load(stream)['runtime']['max_abs_command'])
+PY
+    echo 'Use --background for nohup/setsid without Docker -it; actual limits come from himloco.json.'
+    echo 'Target-step stop disabled. RAMP/RUNNING tracking uses the configured persistence and instant threshold.'
+    echo 'Calibration tracking, mechanical bounds, communication watchdogs and stop buttons retained.'
     echo 'First R2 calibrates; second R2 in READY starts policy. R2 stops RAMP/RUNNING; L2 stops every phase.'
     echo 'Offline description only; no container or publisher started.'
     exit 0
 fi
-if [[ "$#" -ne 0 ]]; then
-    echo "Usage: sudo bash $0 [--describe]" >&2
+him_background=false
+if [[ "${1:-}" == --background && "$#" -eq 1 ]]; then
+    him_background=true
+elif [[ "$#" -ne 0 ]]; then
+    echo "Usage: sudo bash $0 [--describe | --background]" >&2
     exit 2
 fi
 him_verify_sources
@@ -58,9 +69,32 @@ him_log_name="him_lab_$(date +%Y%m%d_%H%M%S)_$$.jsonl"
 echo "HIM log: $him_log_dir/$him_log_name"
 echo 'Center sticks. First R2 calibrates; release and press R2 again only in READY.'
 echo 'L2 stops every phase. R2 stops RAMP/RUNNING. No automatic duration limit.'
-echo 'Stopping requests zero gains; body support must be ready. Ctrl+C here, then Ctrl+C terminal A.'
-exec docker run --rm -it --name "$him_container" --network host --runtime nvidia \
-    --entrypoint python3 -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONIOENCODING=utf-8 \
-    -v "$him_root:/opt/him:ro" -v "$him_log_dir:/logs" \
-    "$him_image" -u -B /opt/him/go1_lab_deploy/scripts/deploy_policy.py \
-    --config /opt/him/himloco.json --run --log "/logs/$him_log_name"
+echo 'Stopping requests zero gains; body support must be ready.'
+him_docker_args=(run --rm --init --name "$him_container" --network host --runtime nvidia
+    --stop-signal SIGINT --stop-timeout 5 --label "him.deploy.root=$him_root"
+    --entrypoint python3 -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONIOENCODING=utf-8
+    -v "$him_root:/opt/him:ro" -v "$him_log_dir:/logs")
+if "$him_background"; then
+    command -v nohup >/dev/null
+    command -v setsid >/dev/null
+else
+    him_docker_args+=(-it)
+fi
+him_docker_args+=("$him_image" -u -B /opt/him/go1_lab_deploy/scripts/deploy_policy.py
+    --config /opt/him/himloco.json --run --log "/logs/$him_log_name")
+if "$him_background"; then
+    him_console_name="${him_log_name%.jsonl}.console.log"
+    nohup setsid docker "${him_docker_args[@]}" \
+        >"$him_log_dir/$him_console_name" 2>&1 </dev/null &
+    him_background_pid=$!
+    printf '%s\n' "$him_background_pid" >"$him_log_dir/background_policy_client.pid"
+    ln -sfn -- "$him_console_name" "$him_log_dir/latest_policy.console.log"
+    echo "Policy Docker client launch PID: $him_background_pid"
+    echo "Policy output: $him_log_dir/$him_console_name"
+    echo 'Wait for HIM phase: WAIT_R2 in the output before using the remote.'
+    echo 'The process is detached; Ctrl+C in this SSH terminal does NOT stop the policy.'
+    echo 'Use remote L2/R2 or stop_background.sh to stop; support the body first.'
+    exit 0
+fi
+echo 'Foreground mode: Ctrl+C here, then Ctrl+C terminal A.'
+exec docker "${him_docker_args[@]}"

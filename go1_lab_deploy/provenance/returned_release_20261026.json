@@ -1,0 +1,27 @@
+{
+  "archive": "/home/sjc/go1_lab_deploy_20261026.tar.gz",
+  "archive_sha256": "c49fb6ded57685333f1cb94d57a7836796003a2fb0eed5d654a2245075494c18",
+  "changed": [
+    "README.md",
+    "go1_lab_deploy/himloco/config.py",
+    "go1_lab_deploy/himloco/runner.py",
+    "go1_lab_deploy/scripts/build_deployment_bundle.py",
+    "himloco.json",
+    "manifest.json",
+    "start_bridge.sh",
+    "start_policy.sh"
+  ],
+  "added": [
+    "docs/BACKGROUND_AND_SPEED_20261026.md",
+    "docs/DEPLOYMENT_GUIDE.md",
+    "docs/TRACKING_GUARD_20261026.md",
+    "docs/runtime/lab_tracking_run_20261026.json",
+    "scripts/prepare_background_network.sh",
+    "start_background.sh",
+    "status_background.sh",
+    "stop_background.sh"
+  ],
+  "missing_from_archive": [],
+  "integration_note": "Imported robot-tested user changes. No policy weights, observation/action contract, C++ bridge or LCM schema changes. Local regression results recorded separately.",
+  "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336"
+}

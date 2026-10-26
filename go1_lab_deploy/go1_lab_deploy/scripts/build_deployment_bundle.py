@@ -55,6 +55,7 @@ def build_bundle(config_path, model_path, output, deploy_root=DEPLOY_ROOT):
     shutil.copytree(str(deploy_root), str(output / "go1_lab_deploy"), ignore=_ignored)
     # Portable launchers and inherited hardware records travel with the source.
     for name in ("README.md", "LICENSE", "requirements.txt", "start_bridge.sh", "start_policy.sh",
+                 "start_background.sh", "status_background.sh", "stop_background.sh",
                  "scripts", "docs", "configs", "provenance"):
         source = deploy_root.parent / name
         if source.is_dir():
