@@ -82,3 +82,8 @@ python sim2sim/go1/compare_motion.py \
 [MuJoCo](../artifacts/go1_deploy_v1/evaluation_20261027/mujoco/comparison.json)、
 [对照图](../artifacts/go1_deploy_v1/evaluation_20261027/motion_comparison.png)。
 本轮没有重训、改动新旧checkpoint或替换已验证的真机部署包。
+
+## 后续：弧线漂移与模型选择
+
+用户进一步确认机头转偏。追加检查了8000/9000/9500/10000，9500在本组名义工况下比10000更均衡，
+但低速倒退仍弱，并非所有指标都更好。参见[偏航漂移复核](GO1_DEPLOY_V1_DRIFT_REVIEW_20261027.md)。

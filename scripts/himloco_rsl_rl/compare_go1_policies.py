@@ -12,7 +12,8 @@ from isaaclab.app import AppLauncher
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--baseline', required=True)
-parser.add_argument('--candidate', required=True)
+parser.add_argument('--candidate', required=True, action='append',
+                    help='Candidate JIT; repeat to compare saved checkpoints without retraining')
 parser.add_argument('--duration', type=float, default=20.)
 parser.add_argument('--replicas', type=int, default=4)
 parser.add_argument('--output', default='artifacts/go1_deploy_v1/evaluation_20261027/native_lab')
@@ -72,7 +73,10 @@ def main():
         commands = torch.tensor(COMMANDS,device=env.device).repeat_interleave(args.replicas,dim=0)
         results = []
         state_hash = None
-        for label,path in (('baseline',args.baseline),('candidate',args.candidate)):
+        policies = [('baseline', args.baseline)] + [
+            ('candidate' if len(args.candidate) == 1 else f'candidate_{i}', path)
+            for i, path in enumerate(args.candidate)]
+        for label,path in policies:
             model = torch.jit.load(path,map_location=env.device).eval()
             base.seed(1)
             env.reset()
@@ -108,6 +112,7 @@ def main():
                     # Done environments have already reset: exclude them before reading gait states.
                     valid = active & ~done.bool()
                     samples.append(dict(valid=valid.clone(),height=height.clone(),
+                        root_position=robot.data.root_pos_w.torch.clone(),
                         knee_z=robot.data.body_pos_w.torch[:,knee_ids,2].clone(),
                         velocity=robot.data.root_lin_vel_b.torch.clone(),
                         omega=robot.data.root_ang_vel_b.torch.clone(),
@@ -134,6 +139,18 @@ def main():
                 x,y,z,w = quat.T
                 roll = np.arctan2(2*(w*x+y*z),1-2*(x*x+y*y))
                 pitch = np.arcsin(np.clip(2*(w*y-z*x),-1,1))
+                heading_changes, cross_tracks = [], []
+                for replica in range(args.replicas):
+                    indices = np.flatnonzero(valid[:, replica])
+                    if len(indices) < 2:
+                        continue
+                    q = trace['quaternion'][indices, index*args.replicas+replica]
+                    qx,qy,qz,qw = q.T
+                    yaw = np.unwrap(np.arctan2(2*(qw*qz+qx*qy),1-2*(qy*qy+qz*qz)))
+                    p = trace['root_position'][indices, index*args.replicas+replica]
+                    delta = p[-1] - p[0]
+                    heading_changes.append(float(np.rad2deg(yaw[-1]-yaw[0])))
+                    cross_tracks.append(float(-np.sin(yaw[0])*delta[0]+np.cos(yaw[0])*delta[1]))
                 cases.append(dict(command=command,survivors=int(trace['survived_horizon'][group].sum()),
                     replicas=args.replicas,valid_samples=int(valid.sum()),
                     mean_velocity=velocity.mean(0).tolist() if len(velocity) else None,
@@ -146,6 +163,10 @@ def main():
                     rear_knee_origin_z_min=float(knee[:,2:].min()) if len(knee) else None,
                     leg_contact_fraction=float(contact.any(axis=1).mean()) if len(contact) else None,
                     rear_leg_contact_fraction=float(contact[:,4:].any(axis=1).mean()) if len(contact) else None,
+                    heading_change_deg_mean=float(np.mean(heading_changes)) if heading_changes else None,
+                    heading_change_abs_deg_mean=float(np.mean(np.abs(heading_changes))) if heading_changes else None,
+                    cross_track_displacement_mean_m=float(np.mean(cross_tracks)) if cross_tracks else None,
+                    cross_track_displacement_abs_mean_m=float(np.mean(np.abs(cross_tracks))) if cross_tracks else None,
                     abs_roll_pitch_p95=np.percentile(np.abs(np.column_stack((roll,pitch))),95,axis=0).tolist() if len(roll) else None))
             results.append(dict(label=label,policy=str(Path(path).resolve()),policy_sha256=sha256(path),
                 initial_state_sha256=signature,cases=cases))
@@ -155,6 +176,9 @@ def main():
             limitations='Flat/no randomization. Replicas are translated nominal copies, not a robustness confidence interval. '
             'Knee metric is joint-origin height, not collision-surface clearance. Contacts use >1N normal force '
             'history at 50Hz samples. No hardware conclusion or per-reward causality claim.',
+            drift_definition='Signed/absolute heading change and actual root displacement across the starting '
+            'heading, from the first valid sample after 2s to the final valid first-episode sample. '
+            'Heading change is only unwanted drift when the requested yaw rate is zero.',
             motor_commands_published=False)
         (output/'comparison.json').write_text(json.dumps(report,indent=2,allow_nan=False)+'\n')
         print('PAIRED_EVALUATION_OK',output/'comparison.json',flush=True)
