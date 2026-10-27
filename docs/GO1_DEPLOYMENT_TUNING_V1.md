@@ -141,3 +141,9 @@ python scripts/himloco_rsl_rl/play.py \
 heading混合只影响训练指令生成：50%环境根据heading误差计算wz、另外50%使用采样wz，
 Actor仍只接收同样的物理速度命令。Play和真机仍直接给vx/vy/wz，没有新增heading输入或部署闭环。
 未来使用新权重时，按原导出/打包流程更新JIT及其来源摘要、config/manifest即可；本轮成功部署的旧包未修改。
+
+## 完整训练后的实际结果（2026-10-27）
+
+用户已完成10000iteration。当前配对平地测试确认机身和后膝原点高度提高，但中低速后退与纯转向存在跟踪退化；
+不能将本版称为所有工况都改善，实机碰膝仍未验证。实际数据、模型路径和可视化命令见
+[DeployV1完整训练评估](GO1_DEPLOY_V1_EVALUATION_20261027.md)。

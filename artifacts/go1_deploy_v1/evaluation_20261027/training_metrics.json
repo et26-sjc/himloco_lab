@@ -1,0 +1,156 @@
+{
+  "baseline": {
+    "Curriculum/terrain_levels": {
+      "last_step": 10000,
+      "last100_mean": 5.919787888526916,
+      "finite": true
+    },
+    "Episode/terrain_level": {
+      "last_step": 10000,
+      "last100_mean": 5.919787888526916,
+      "finite": true
+    },
+    "Episode/rew_base_height": {
+      "last_step": 10000,
+      "last100_mean": -0.0010000301501713693,
+      "finite": true
+    },
+    "Episode/rew_orientation": {
+      "last_step": 10000,
+      "last100_mean": -0.009203594354912638,
+      "finite": true
+    },
+    "Episode/rew_tracking_ang_vel": {
+      "last_step": 10000,
+      "last100_mean": 0.4065466332435608,
+      "finite": true
+    },
+    "Episode/rew_tracking_lin_vel": {
+      "last_step": 10000,
+      "last100_mean": 0.8706517285108566,
+      "finite": true
+    },
+    "Episode_Reward/base_height_l2": {
+      "last_step": 10000,
+      "last100_mean": -0.0009724209550768137,
+      "finite": true
+    },
+    "Episode_Reward/feet_height_body": {
+      "last_step": 10000,
+      "last100_mean": -9.747516793140676e-05,
+      "finite": true
+    },
+    "Episode_Reward/flat_orientation_l2": {
+      "last_step": 10000,
+      "last100_mean": -0.00889122461900115,
+      "finite": true
+    },
+    "Loss/value_function": {
+      "last_step": 10000,
+      "last100_mean": 0.007974348780699074,
+      "finite": true
+    },
+    "Loss/Estimation Loss": {
+      "last_step": 10000,
+      "last100_mean": 0.030346184093505143,
+      "finite": true
+    },
+    "Loss/Swap Loss": {
+      "last_step": 10000,
+      "last100_mean": 0.10154448933899403,
+      "finite": true
+    },
+    "Train/mean_episode_length": {
+      "last_step": 10000,
+      "last100_mean": 980.1171984863281,
+      "finite": true
+    },
+    "Train/mean_episode_length/time": {
+      "last_step": 54155,
+      "last100_mean": 980.1171984863281,
+      "finite": true
+    }
+  },
+  "deploy_v1": {
+    "Curriculum/terrain_levels": {
+      "last_step": 10000,
+      "last100_mean": 5.501852807998657,
+      "finite": true
+    },
+    "Episode/terrain_level": {
+      "last_step": 10000,
+      "last100_mean": 5.501852807998657,
+      "finite": true
+    },
+    "Episode/rew_base_height": {
+      "last_step": 10000,
+      "last100_mean": -0.00345840856898576,
+      "finite": true
+    },
+    "Episode/rew_orientation": {
+      "last_step": 10000,
+      "last100_mean": -0.007654123376123607,
+      "finite": true
+    },
+    "Episode/rew_tracking_ang_vel": {
+      "last_step": 10000,
+      "last100_mean": 0.4079968023300171,
+      "finite": true
+    },
+    "Episode/rew_tracking_lin_vel": {
+      "last_step": 10000,
+      "last100_mean": 0.8741033273935318,
+      "finite": true
+    },
+    "Episode/rew_undesired_leg_contacts": {
+      "last_step": 10000,
+      "last100_mean": -0.02310079097747803,
+      "finite": true
+    },
+    "Episode_Reward/base_height_l2": {
+      "last_step": 10000,
+      "last100_mean": -0.00336815528338775,
+      "finite": true
+    },
+    "Episode_Reward/feet_height_body": {
+      "last_step": 10000,
+      "last100_mean": -0.00011063579731853678,
+      "finite": true
+    },
+    "Episode_Reward/flat_orientation_l2": {
+      "last_step": 10000,
+      "last100_mean": -0.007339962050318718,
+      "finite": true
+    },
+    "Episode_Reward/undesired_leg_contacts": {
+      "last_step": 10000,
+      "last100_mean": -0.022310678735375403,
+      "finite": true
+    },
+    "Loss/value_function": {
+      "last_step": 10000,
+      "last100_mean": 0.009339963849633932,
+      "finite": true
+    },
+    "Loss/Estimation Loss": {
+      "last_step": 10000,
+      "last100_mean": 0.030917928926646708,
+      "finite": true
+    },
+    "Loss/Swap Loss": {
+      "last_step": 10000,
+      "last100_mean": 0.10205796606838703,
+      "finite": true
+    },
+    "Train/mean_episode_length": {
+      "last_step": 10000,
+      "last100_mean": 978.4348999023438,
+      "finite": true
+    },
+    "Train/mean_episode_length/time": {
+      "last_step": 52218,
+      "last100_mean": 978.4348999023438,
+      "finite": true
+    }
+  }
+}

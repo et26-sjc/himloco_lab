@@ -1,0 +1,173 @@
+{
+  "status": "passed",
+  "duration_s": 20.0,
+  "warmup_excluded_s": 2.0,
+  "kp": 40.0,
+  "kd": 1.0,
+  "passive_damping": 0.0,
+  "paired_initial_states": true,
+  "initial_state_sha256": "837e9545b77c231108cfa4fd721be5ce375e8e4a74c8ffe439f07fe9c0749fef",
+  "results": [
+    {
+      "label": "baseline",
+      "policy": {
+        "policy": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/exported/policy.pt",
+        "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+        "profile": "lab",
+        "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+        "checkpoint": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt"
+      },
+      "cases": [
+        {
+          "command": [
+            0.3,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.24026651397344026,
+          "mean_wz": -0.007074310354265394,
+          "linear_rmse": 0.06698562808524428,
+          "yaw_rmse": 0.0335646734226818,
+          "base_height_mean": 0.26053783504968364,
+          "rear_knee_origin_z_p5": 0.0354207679137613,
+          "rear_calf_collision_clearance_p5": 0.0015992353168214981,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": -0.18081146389199734,
+          "mean_wz": 0.01777940394310187,
+          "linear_rmse": 0.12290768379600826,
+          "yaw_rmse": 0.029090484201781723,
+          "base_height_mean": 0.2577075499395232,
+          "rear_knee_origin_z_p5": 0.047353452492925524,
+          "rear_calf_collision_clearance_p5": 0.0008684851211185683,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            0.0,
+            0.0,
+            0.3
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.0016468161741584014,
+          "mean_wz": 0.08919185134146657,
+          "linear_rmse": 0.016727768109623894,
+          "yaw_rmse": 0.21593649287634148,
+          "base_height_mean": 0.2623546377768611,
+          "rear_knee_origin_z_p5": 0.05283729851473923,
+          "rear_calf_collision_clearance_p5": 0.002275693401460819,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            0.1,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.03961590609837142,
+          "mean_wz": 0.010216394378779001,
+          "linear_rmse": 0.06195769731875991,
+          "yaw_rmse": 0.01316730796927449,
+          "base_height_mean": 0.25170275725976726,
+          "rear_knee_origin_z_p5": 0.04358492831674598,
+          "rear_calf_collision_clearance_p5": 0.0013469306111501568,
+          "geometric_nonfoot_contact_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "policy": {
+        "policy": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/2026-10-26_23-18-08_go1_pd_deploy_v1_seed1/exported/policy.pt",
+        "policy_sha256": "077aa65a43d11365673e161d83b5cf8a57210bac9d2335627fcc0998cfd3df2a",
+        "profile": "lab",
+        "checkpoint_sha256": "4271b5928779e68a3845e8495d0627d01e82f53e7634ac1bf16a6526f9843cd9",
+        "checkpoint": "/home/sjc/himloco_lab/logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/2026-10-26_23-18-08_go1_pd_deploy_v1_seed1/model_10000.pt"
+      },
+      "cases": [
+        {
+          "command": [
+            0.3,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.21397271140932347,
+          "mean_wz": -0.023463333165006203,
+          "linear_rmse": 0.09069045958174458,
+          "yaw_rmse": 0.04759639803589053,
+          "base_height_mean": 0.2716592525173274,
+          "rear_knee_origin_z_p5": 0.05409557871637925,
+          "rear_calf_collision_clearance_p5": 0.002257896274187401,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            -0.3,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": -0.11573049930467509,
+          "mean_wz": -0.004199639627552108,
+          "linear_rmse": 0.1869119193781212,
+          "yaw_rmse": 0.01095599027683206,
+          "base_height_mean": 0.27927156983222573,
+          "rear_knee_origin_z_p5": 0.07803536775225613,
+          "rear_calf_collision_clearance_p5": 0.0029200053042018155,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            0.0,
+            0.0,
+            0.3
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.0007748283785407854,
+          "mean_wz": 0.05897954911989375,
+          "linear_rmse": 0.011983243437808929,
+          "yaw_rmse": 0.2412619219160765,
+          "base_height_mean": 0.27135734967812275,
+          "rear_knee_origin_z_p5": 0.06139371242874432,
+          "rear_calf_collision_clearance_p5": 0.00260304293659759,
+          "geometric_nonfoot_contact_fraction": 0.0
+        },
+        {
+          "command": [
+            0.1,
+            0.0,
+            0.0
+          ],
+          "survival_s": 20.000000000000306,
+          "fall": false,
+          "mean_vx": 0.020521434263926122,
+          "mean_wz": -0.0015248355966318418,
+          "linear_rmse": 0.08187111990998765,
+          "yaw_rmse": 0.004995128856165855,
+          "base_height_mean": 0.2745848153011277,
+          "rear_knee_origin_z_p5": 0.07043443035580585,
+          "rear_calf_collision_clearance_p5": 0.003295725180712149,
+          "geometric_nonfoot_contact_fraction": 0.0
+        }
+      ]
+    }
+  ],
+  "limitations": "One nominal episode per command, no robustness confidence interval. Knee joint-origin height is not surface clearance. Calf capsule clearance/contact applies to the pinned Menagerie collision approximation, excludes all four foot spheres, and is not a hardware measurement."
+}

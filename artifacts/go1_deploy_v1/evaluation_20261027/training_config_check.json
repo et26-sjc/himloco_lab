@@ -1,0 +1,50 @@
+{
+  "run": "logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/2026-10-26_23-18-08_go1_pd_deploy_v1_seed1",
+  "num_envs": "4096",
+  "target_height": "0.32",
+  "height_weight": "-2.0",
+  "leg_contact": {
+    "func": "isaaclab.envs.mdp.rewards:undesired_contacts",
+    "params": {
+      "threshold": "1.0",
+      "sensor_cfg": {
+        "name": "contact_forces",
+        "joint_names": "null",
+        "joint_ids": [
+          "null",
+          "null",
+          "null"
+        ],
+        "fixed_tendon_names": "null",
+        "fixed_tendon_ids": [
+          "null",
+          "null",
+          "null"
+        ],
+        "body_names": [
+          ".*_thigh",
+          ".*_calf"
+        ],
+        "body_ids": [
+          "null",
+          "null",
+          "null"
+        ],
+        "object_collection_names": "null",
+        "object_collection_ids": [
+          "null",
+          "null",
+          "null"
+        ],
+        "preserve_order": "false"
+      }
+    },
+    "weight": "-0.5"
+  },
+  "min_command_norm": "0.1",
+  "heading_command": "true",
+  "rel_heading_envs": "0.5",
+  "max_iterations": "10000",
+  "seed": "1",
+  "resume": "false"
+}

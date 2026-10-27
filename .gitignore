@@ -81,3 +81,4 @@ _build
 /artifacts/go1_lab_deploy/**/*.npz
 /artifacts/go1_lab_deploy/*.tar.gz
 /artifacts/go1_lab_deploy/release_check/
+/artifacts/go1_deploy_v1/**/*.npz
