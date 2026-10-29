@@ -1,7 +1,20 @@
 # Go1 PD 部署导向的温和训练调整建议
 
-2026-10-26。**已按用户确认落实为独立DeployV1训练/Play任务，完成32环境×2iteration的工程验证；尚未启动正式训练。**
+2026-10-26 实现；2026-10-29 更新状态。**DeployV1已完成10000 iterations正式训练及后续配对评估，暂不作为Newton迁移的训练基准。**
 当前已成功部署的model_10000、原Go1 Actuator Net/PD任务、观测/动作接口和HIM算法保持原样。
+
+## 实验归档与后续开发基准
+
+完整训练目录为`logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/2026-10-26_23-18-08_go1_pd_deploy_v1_seed1/`。
+训练改动限于下述reward/command配置，没有改变HIM算法；独立任务注册、验证脚本和配对评估工具一并保留。
+实际评估显示机身/后膝原点高度提高，同时部分工况的倒退和yaw跟踪退化，不能视为全面优于原PD baseline。
+结果见[完整训练评估](GO1_DEPLOY_V1_EVALUATION_20261027.md)和[转偏与checkpoint对照](GO1_DEPLOY_V1_DRIFT_REVIEW_20261027.md)。
+
+后续Newton开发可从当前已提交代码直接创建`feat/go1-newton`，无需删除DeployV1任务或另建工作目录。
+Newton配置应继承原始`Go1PDEnvCfg`/`Go1PDPlayEnvCfg`，不继承`Go1PDDeployV1EnvCfg`；
+保留原PD的高度target=.30/weight=-1、平移门限=.20、heading比例=1.0，不引入DeployV1非足部接触项。
+原PD、sim2sim、sim2real及已部署JIT继续保留；使用既有`himloco_lab`环境。
+实现范围与验收要求见[Newton迁移审计](../NEWTON_MIGRATION_AUDIT.md)。
 
 ## 已确认事实与尚待验证的归因
 
