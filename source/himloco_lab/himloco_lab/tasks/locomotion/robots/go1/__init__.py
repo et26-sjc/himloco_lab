@@ -22,14 +22,3 @@ for suffix, config in (("", "Go1PDEnvCfg"), ("-Play", "Go1PDPlayEnvCfg")):
             "himloco_rsl_rl_cfg": "himloco_lab.tasks.locomotion.agents.himloco_rsl_rl_cfg:Go1PDPPORunnerCfg",
         },
     )
-
-for suffix, config in (("", "Go1PDDeployV1EnvCfg"), ("-Play", "Go1PDDeployV1PlayEnvCfg")):
-    gym.register(
-        id=f"Unitree-Go1-Velocity-PD-DeployV1{suffix}",
-        entry_point="himloco_lab.envs:HimlocoManagerBasedRLEnv",
-        disable_env_checker=True,
-        kwargs={
-            "env_cfg_entry_point": f"{__name__}.deploy_v1_env_cfg:{config}",
-            "himloco_rsl_rl_cfg": "himloco_lab.tasks.locomotion.agents.himloco_rsl_rl_cfg:Go1PDDeployV1PPORunnerCfg",
-        },
-    )

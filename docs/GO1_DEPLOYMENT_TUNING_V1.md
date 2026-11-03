@@ -1,20 +1,7 @@
 # Go1 PD 部署导向的温和训练调整建议
 
-2026-10-26 实现；2026-10-29 更新状态。**DeployV1已完成10000 iterations正式训练及后续配对评估，暂不作为Newton迁移的训练基准。**
-当前已成功部署的model_10000、原Go1 Actuator Net/PD任务、观测/动作接口和HIM算法保持原样。
-
-## 实验归档与后续开发基准
-
-完整训练目录为`logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/2026-10-26_23-18-08_go1_pd_deploy_v1_seed1/`。
-训练改动限于下述reward/command配置，没有改变HIM算法；独立任务注册、验证脚本和配对评估工具一并保留。
-实际评估显示机身/后膝原点高度提高，同时部分工况的倒退和yaw跟踪退化，不能视为全面优于原PD baseline。
-结果见[完整训练评估](GO1_DEPLOY_V1_EVALUATION_20261027.md)和[转偏与checkpoint对照](GO1_DEPLOY_V1_DRIFT_REVIEW_20261027.md)。
-
-后续Newton开发可从当前已提交代码直接创建`feat/go1-newton`，无需删除DeployV1任务或另建工作目录。
-Newton配置应继承原始`Go1PDEnvCfg`/`Go1PDPlayEnvCfg`，不继承`Go1PDDeployV1EnvCfg`；
-保留原PD的高度target=.30/weight=-1、平移门限=.20、heading比例=1.0，不引入DeployV1非足部接触项。
-原PD、sim2sim、sim2real及已部署JIT继续保留；使用既有`himloco_lab`环境。
-实现范围与验收要求见[Newton迁移审计](../NEWTON_MIGRATION_AUDIT.md)。
+2026-10-26。**这是下一版实验方案，尚未写入训练默认配置，也未启动训练。**
+当前已成功部署的model_10000、Go1 Actuator Net/PD任务、观测/动作接口和HIM算法保持原样。
 
 ## 已确认事实与尚待验证的归因
 
@@ -41,9 +28,9 @@ Newton配置应继承原始`Go1PDEnvCfg`/`Go1PDPlayEnvCfg`，不继承`Go1PDDepl
 更合理的工作假设是：当前奖励/采样对膝净空和低速/倒退/纯转向覆盖不足，加上真实关节跟踪滞后、
 模型/地面/负载差异，使已有较小的仿真净空进一步缩小。训练改动可改善策略裕度，但不替代动力学核对。
 
-## DeployV1初值（已实现）
+## 推荐的DeployV1初值
 
-使用独立任务`Unitree-Go1-Velocity-PD-DeployV1`，**不覆盖当前成功baseline**。HIM-PPO/Estimator、45/270/238维观测、
+保留独立任务或配置profile，**不要覆盖当前成功baseline**。HIM-PPO/Estimator、45/270/238维观测、
 Kp40/Kd1、action scale .25、q0、.005s×4、地形、随机化和PPO超参数均保持。
 
 | 项目 | 当前 | 建议V1 | 目的 |
@@ -100,63 +87,10 @@ Kp40/Kd1、action scale .25、q0、.005s×4、地形、随机化和PPO超参数�
 - rough terrain能力和静止抖动不能明显退化。高度不能只看目标参数，应看实际分布。
 
 固定低速评估需确认实际送给策略的命令值。本项目当前Play的`--velocity`路径仍保留训练采样器门限，
-旧任务的小命令可能被清零。新`Unitree-Go1-Velocity-PD-DeployV1-Play`已将min_command_norm设为0，
-用于固定低速命令评估，并保持heading_command=False；训练任务门限仍为.10。旧任务Play与训练默认值保持原样。
+小命令可能被清零；做低速评估时应显式绕过该门限（评估cfg设min_command_norm=0），并记录actual command。
+本次没有修改Play或训练默认行为。
 
 依据：本项目`source/himloco_lab/himloco_lab/tasks/locomotion/velocity_env_cfg.py`、Go1配置、
 `mdp/rewards.py`、`mdp/commands/commands.py`及实际`go1_lab_deploy/provenance/training_env.yaml`。
 Isaac Lab接触数据说明：[官方ContactSensor文档](https://isaac-sim.github.io/IsaacLab/main/source/api/lab/isaaclab.sensors.html)。
-以上数值是温和的起始配置，不代表已收敛或已在真机验证的新策略。
-
-
-## 已执行验证与正式启动
-
-实现文件为`robots/go1/deploy_v1_env_cfg.py`，共享原PD物理/观测/算法和rough terrain；
-训练相对原PD任务严格只有五处变化：height目标、height权重、非足部contact项、平移norm门限、heading环境比例。
-Runner只改变experiment_name为`go1_rough_pd_deploy_v1`，PPO超参数与网络完全继承。
-
-实际PhysX验证32环境：
-
-- 原PD/Actuator Net配置实例化前后不变，单帧/Actor历史/Critic/Action为45/270/238/12。
-- 新contact项恰好匹配8个thigh/calf，不包含foot；正常站立计数0。
-- 真实降低机器人产生碰撞后计数最大6，直接与PhysX normal force history对照一致，未伪造sensor buffer。
-- heading与直接yaw两组都存在；Kp40/Kd1、200Hz物理/50Hz策略频率保持。
-
-实际rough terrain训练32env×2iteration：6400步，随机初始化、TensorBoard日志，checkpoint`model_2.pt`保存并以weights_only=True读回；
-PPO与Estimator独立optimizer均40步，权重、optimizer状态和loss有限。新接触reward已出现在日志中。
-这是工程smoke，不是运动质量或收敛证明；本轮没有执行4096env正式训练。
-
-报告：`artifacts/go1_deploy_v1/validation.json`及`training_smoke.json`。
-
-正式训练（从随机初始化，不加resume）：
-
-```bash
-conda activate himloco_lab
-WANDB_PROJECT=himloco-go1-baseline_lab WANDB_MODE=online \
-python scripts/himloco_rsl_rl/train.py \
-  --task Unitree-Go1-Velocity-PD-DeployV1 --headless \
-  --num_envs 4096 --seed 1 --max_iterations 10000 \
-  --logger wandb --run_name go1_pd_deploy_v1_seed1 \
-  --wandb_group go1-deploy-v1 --wandb_tags go1 isaaclab3 physx pd deploy_v1
-```
-
-原命令的脚本和参数接口保持；**task要换成新名称**，继续用原PD/Actuator Net任务会训练原配置。
-日志根目录为`logs/himloco_rsl_rl/go1_rough_pd_deploy_v1/`，默认不恢复旧权重。
-
-新任务Play：
-
-```bash
-python scripts/himloco_rsl_rl/play.py \
-  --task Unitree-Go1-Velocity-PD-DeployV1-Play --num_envs 16 \
-  --checkpoint /absolute/path/to/new_run/model_10000.pt --velocity 0.1 0 0
-```
-
-heading混合只影响训练指令生成：50%环境根据heading误差计算wz、另外50%使用采样wz，
-Actor仍只接收同样的物理速度命令。Play和真机仍直接给vx/vy/wz，没有新增heading输入或部署闭环。
-未来使用新权重时，按原导出/打包流程更新JIT及其来源摘要、config/manifest即可；本轮成功部署的旧包未修改。
-
-## 完整训练后的实际结果（2026-10-27）
-
-用户已完成10000iteration。当前配对平地测试确认机身和后膝原点高度提高，但中低速后退与纯转向存在跟踪退化；
-不能将本版称为所有工况都改善，实机碰膝仍未验证。实际数据、模型路径和可视化命令见
-[DeployV1完整训练评估](GO1_DEPLOY_V1_EVALUATION_20261027.md)。
+以上数值是温和的起始实验建议，不是已训练或已在真机验证的新策略。
