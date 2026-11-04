@@ -1,0 +1,550 @@
+{
+  "status": "completed",
+  "stage": "A0_preparation_collection_not_model_training",
+  "label_validation": "Raw proxies only; downstream label definition and validation are versioned separately",
+  "baseline_contract_tests_passed": 0,
+  "num_envs": 128,
+  "steps": 64,
+  "transitions": 8192,
+  "scenario": "drop",
+  "seed": 47,
+  "velocity": [
+    0.7,
+    0.0,
+    0.0
+  ],
+  "terrain": null,
+  "drop_height_range_m": [
+    0.4,
+    0.9
+  ],
+  "randomization": false,
+  "observation_noise": false,
+  "research_observations": false,
+  "solver_iterations": [
+    8,
+    4
+  ],
+  "solver_global_bounds": [
+    8,
+    8,
+    4,
+    4
+  ],
+  "physics_observation_schema": null,
+  "baseline_observer": false,
+  "forced_timeout_step": null,
+  "action_source": "zero_action_nominal_PD",
+  "window": {
+    "physics_dt": 0.00125,
+    "policy_dt": 0.02,
+    "rise_interval_s": 0.01
+  },
+  "history_length": 24,
+  "force_time_offsets_from_input_s": [
+    -0.00875,
+    -0.0075,
+    -0.00625,
+    -0.005,
+    -0.00375,
+    -0.0025,
+    -0.00125,
+    0.0,
+    0.00125,
+    0.0025,
+    0.00375,
+    0.005,
+    0.00625,
+    0.0075,
+    0.00875,
+    0.01,
+    0.01125,
+    0.0125,
+    0.01375,
+    0.015,
+    0.01625,
+    0.0175,
+    0.01875,
+    0.02
+  ],
+  "force_order": "oldest first; last 16 samples belong to the completed action interval",
+  "foot_names": [
+    "FL_foot",
+    "FR_foot",
+    "RL_foot",
+    "RR_foot"
+  ],
+  "joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint"
+  ],
+  "policy": "/home/sjc/himloco_lab/go1_lab_deploy/models/policy.pt",
+  "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+  "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+  "reset_count": 0,
+  "terminal_traces_captured": 0,
+  "history_reconstruction_max_error": 0.0,
+  "reference_contact_max_error": 0.0,
+  "history_overlap_max_error": 0.0,
+  "startup_s": 5.251601205000043,
+  "collection_and_io_s": 8.116326170998946,
+  "transitions_per_second_including_io": 1009.3236554823844,
+  "torch_peak_allocated_bytes": 2344960,
+  "memory_note": "Torch allocator excludes PhysX, Warp, Kit and driver allocations",
+  "python": "3.12.15",
+  "torch": "2.11.0+cu128",
+  "isaacsim": "6.1.0.0",
+  "isaaclab_source_version": "3.0.0",
+  "git_head": "b482a92cb95d9bf95c352e8fcd5735ae34659b93",
+  "source_sha256": {
+    "scripts/impact/collect.py": "21fdd7c97dd59a83db786450cd4f38f98eef2f1dd47d0dc600ef6cf96d2b3769",
+    "configs/impact/go1_impact_replay.json": "8bdec0aada531ee8b527f96749d747ce4fc0dc94f2a70e295901b107eca6b7f8",
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "af73ab471b3868624fe0bf807551081128bf4e912994ba9fafc64856c902b715",
+    "source/himloco_lab/himloco_lab/impact/dataset.py": "d0940ee9d98147fd9752216ec309a949c4040bda80667002488e0f81b13b3096",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a",
+    "source/himloco_lab/himloco_lab/impact/inference.py": "dd445cfa757707411bc495a7c787788d1601b56dfb5781597c91155fee1e6a60",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/metrics.py": "8b92699d5993938dde39fe906536bba55ed8485949b4d34e8057b2f8d06b266b",
+    "source/himloco_lab/himloco_lab/impact/models.py": "88bbda09ecfc35ded5a659a8f38368bb20ce95abf764138cc00d6a23fe10644d",
+    "source/himloco_lab/himloco_lab/impact/physics_observer.py": "6bb32107010d1b852a322cabf90677d9399e5f0ebda92c075cd542d63883d520",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "source/himloco_lab/himloco_lab/impact/terrains.py": "a26b039521c4a1e511a50ad4d904c19b08ce789662d1e4f04c6f2ee2fc9596f9"
+  },
+  "lab_step_source_sha256": "15341168a31adc2fa10785ebde13e7e2a8b5a6cef5be113f0c4c88d9a5895562",
+  "shards": [
+    {
+      "file": "shard_00000.npz",
+      "steps": 16,
+      "sha256": "57bcd46644680b612f4de7f4702b01cf4c5590709e3ae68fb523b786cddcfdef",
+      "bytes": 3403994
+    },
+    {
+      "file": "shard_00001.npz",
+      "steps": 16,
+      "sha256": "781986aa0edf5b17abed48d2744a42ac4afc6547860164dc027c216ebe65b146",
+      "bytes": 3403994
+    },
+    {
+      "file": "shard_00002.npz",
+      "steps": 16,
+      "sha256": "ee446c74dbdcff7d8ee41fbd65e10a1e45db34cafe3ebe57198e80d6046ab624",
+      "bytes": 3403994
+    },
+    {
+      "file": "shard_00003.npz",
+      "steps": 16,
+      "sha256": "e5f617c3c37f60d95cbab06c7582cba3afabfbe12ac9a356878104d39746873e",
+      "bytes": 3403994
+    }
+  ],
+  "step_summary": [
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 0
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 7.760739326477051,
+      "max_peak_n": 314.92657470703125,
+      "mean_integral_ns": 0.027411602437496185,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 28.89592170715332,
+      "max_peak_n": 376.32232666015625,
+      "mean_integral_ns": 0.15228037536144257,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 44.07876205444336,
+      "max_peak_n": 413.6585693359375,
+      "mean_integral_ns": 0.35263898968696594,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 55.11145782470703,
+      "max_peak_n": 446.84051513671875,
+      "mean_integral_ns": 0.5782604217529297,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 80.85902404785156,
+      "max_peak_n": 508.5729675292969,
+      "mean_integral_ns": 0.7754443287849426,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 83.05928039550781,
+      "max_peak_n": 562.7442016601562,
+      "mean_integral_ns": 0.9919154644012451,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 85.77559661865234,
+      "max_peak_n": 591.0680541992188,
+      "mean_integral_ns": 1.0839848518371582,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 111.00337219238281,
+      "max_peak_n": 646.1446533203125,
+      "mean_integral_ns": 1.219531536102295,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 144.41085815429688,
+      "max_peak_n": 684.3692626953125,
+      "mean_integral_ns": 1.4798972606658936,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 134.06658935546875,
+      "max_peak_n": 762.4780883789062,
+      "mean_integral_ns": 1.62748122215271,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 156.93943786621094,
+      "max_peak_n": 987.3851928710938,
+      "mean_integral_ns": 1.7157878875732422,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 108.3755874633789,
+      "max_peak_n": 988.61865234375,
+      "mean_integral_ns": 1.6373062133789062,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 73.49092102050781,
+      "max_peak_n": 220.12841796875,
+      "mean_integral_ns": 1.3210630416870117,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 59.64419174194336,
+      "max_peak_n": 219.8411865234375,
+      "mean_integral_ns": 1.0571603775024414,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 47.70655822753906,
+      "max_peak_n": 205.94387817382812,
+      "mean_integral_ns": 0.8293300271034241,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 37.83629608154297,
+      "max_peak_n": 181.49472045898438,
+      "mean_integral_ns": 0.6397725343704224,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 30.133281707763672,
+      "max_peak_n": 148.74697875976562,
+      "mean_integral_ns": 0.5056720972061157,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 25.374900817871094,
+      "max_peak_n": 106.81928253173828,
+      "mean_integral_ns": 0.42725661396980286,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 21.33400535583496,
+      "max_peak_n": 60.768760681152344,
+      "mean_integral_ns": 0.38244515657424927,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 21.556140899658203,
+      "max_peak_n": 86.94347381591797,
+      "mean_integral_ns": 0.3882836103439331,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 23.29837989807129,
+      "max_peak_n": 92.37260437011719,
+      "mean_integral_ns": 0.41333073377609253,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 25.26766586303711,
+      "max_peak_n": 102.86471557617188,
+      "mean_integral_ns": 0.45022302865982056,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 25.4960994720459,
+      "max_peak_n": 86.14537811279297,
+      "mean_integral_ns": 0.4793094992637634,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 27.335166931152344,
+      "max_peak_n": 111.8038558959961,
+      "mean_integral_ns": 0.5033937096595764,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 28.21487808227539,
+      "max_peak_n": 125.47154235839844,
+      "mean_integral_ns": 0.526871919631958,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 29.156641006469727,
+      "max_peak_n": 122.67800903320312,
+      "mean_integral_ns": 0.5407485961914062,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.28413391113281,
+      "max_peak_n": 133.601806640625,
+      "mean_integral_ns": 0.5739166140556335,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 34.0557975769043,
+      "max_peak_n": 140.9132843017578,
+      "mean_integral_ns": 0.6073287725448608,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 37.389156341552734,
+      "max_peak_n": 148.68621826171875,
+      "mean_integral_ns": 0.6601934432983398,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 39.32626724243164,
+      "max_peak_n": 153.2579345703125,
+      "mean_integral_ns": 0.7059911489486694,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 40.306522369384766,
+      "max_peak_n": 151.4206085205078,
+      "mean_integral_ns": 0.7358710765838623,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 42.818782806396484,
+      "max_peak_n": 164.84812927246094,
+      "mean_integral_ns": 0.7620518803596497,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 43.09807586669922,
+      "max_peak_n": 163.91944885253906,
+      "mean_integral_ns": 0.7807945013046265,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 41.97154998779297,
+      "max_peak_n": 166.1806182861328,
+      "mean_integral_ns": 0.7866625785827637,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 39.34191131591797,
+      "max_peak_n": 76.8844223022461,
+      "mean_integral_ns": 0.7525832653045654,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 37.104888916015625,
+      "max_peak_n": 76.37716674804688,
+      "mean_integral_ns": 0.7089207172393799,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 34.846073150634766,
+      "max_peak_n": 70.65727996826172,
+      "mean_integral_ns": 0.6649240255355835,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.88365936279297,
+      "max_peak_n": 64.85313415527344,
+      "mean_integral_ns": 0.6281669735908508,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.49295425415039,
+      "max_peak_n": 60.43962860107422,
+      "mean_integral_ns": 0.60350501537323,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 30.768634796142578,
+      "max_peak_n": 54.611026763916016,
+      "mean_integral_ns": 0.5929766297340393,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 30.685596466064453,
+      "max_peak_n": 49.16798400878906,
+      "mean_integral_ns": 0.5960286259651184,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.166358947753906,
+      "max_peak_n": 44.61508560180664,
+      "mean_integral_ns": 0.6079673171043396,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.858938217163086,
+      "max_peak_n": 41.802833557128906,
+      "mean_integral_ns": 0.6224596500396729,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.566219329833984,
+      "max_peak_n": 41.688812255859375,
+      "mean_integral_ns": 0.6370329856872559,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 33.07294845581055,
+      "max_peak_n": 41.63261032104492,
+      "mean_integral_ns": 0.6487385034561157,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 33.31593322753906,
+      "max_peak_n": 41.434814453125,
+      "mean_integral_ns": 0.6551232933998108,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 33.30445098876953,
+      "max_peak_n": 41.123924255371094,
+      "mean_integral_ns": 0.656201958656311,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 33.105506896972656,
+      "max_peak_n": 40.70920944213867,
+      "mean_integral_ns": 0.653152585029602,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.803985595703125,
+      "max_peak_n": 40.66368103027344,
+      "mean_integral_ns": 0.6476766467094421,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.47077941894531,
+      "max_peak_n": 41.24894332885742,
+      "mean_integral_ns": 0.6415489912033081,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.19691467285156,
+      "max_peak_n": 41.689640045166016,
+      "mean_integral_ns": 0.6361643075942993,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.00999450683594,
+      "max_peak_n": 42.38039779663086,
+      "mean_integral_ns": 0.6324642300605774,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.918872833251953,
+      "max_peak_n": 43.107418060302734,
+      "mean_integral_ns": 0.630811333656311,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.923564910888672,
+      "max_peak_n": 43.930728912353516,
+      "mean_integral_ns": 0.6311079859733582,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 31.992244720458984,
+      "max_peak_n": 44.65188217163086,
+      "mean_integral_ns": 0.6328835487365723,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.10729217529297,
+      "max_peak_n": 45.421226501464844,
+      "mean_integral_ns": 0.635502278804779,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.235321044921875,
+      "max_peak_n": 46.453704833984375,
+      "mean_integral_ns": 0.6383278369903564,
+      "valid_increment_rows": 128
+    },
+    {
+      "mean_peak_n": 32.35487365722656,
+      "max_peak_n": 47.052276611328125,
+      "mean_integral_ns": 0.6408486366271973,
+      "valid_increment_rows": 128
+    }
+  ],
+  "behavior_trace_sha256": "e7e32ea4a09ba7cd52b854e50a2c9390c22ee5e03ebdd38ef6d45f85cff769b3",
+  "schema": {
+    "layout": "time-major [step, env, ...]; global env indices are 0..num_envs-1",
+    "input_time": "policy_step * policy_dt, before the recorded action",
+    "post_frame": "completed interval's frame, terminal replaced with pre-reset final_obs",
+    "history": "current first + five past frames; reconstruct from pre_frame and episode_id; carry across shards",
+    "detection": "post_frame concatenated with pre_history[:225], no future measurements",
+    "forecast": "pre_history and optionally this action; not future actions",
+    "terminal": "keep complete terminal interval; never connect horizons across done",
+    "increment_valid": "false until enough pre-interval force samples exist in the episode",
+    "force_semantics": "world-frame net normal-contact resultant; not total including friction",
+    "integral": "normal-resultant magnitude integral, includes support loading; not isolated impact impulse"
+  }
+}

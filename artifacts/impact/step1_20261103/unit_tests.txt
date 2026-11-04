@@ -1,0 +1,25 @@
+test_corrupt_shard_is_rejected_before_loading (test_impact_data_audit.ImpactDataAuditTests.test_corrupt_shard_is_rejected_before_loading) ... ok
+test_episode_age_must_restart (test_impact_data_audit.ImpactDataAuditTests.test_episode_age_must_restart) ... ok
+test_incomplete_run_is_not_a_dataset (test_impact_data_audit.ImpactDataAuditTests.test_incomplete_run_is_not_a_dataset) ... ok
+test_reset_difference_cannot_be_marked_valid (test_impact_data_audit.ImpactDataAuditTests.test_reset_difference_cannot_be_marked_valid) ... ok
+test_shifted_post_observation_is_rejected (test_impact_data_audit.ImpactDataAuditTests.test_shifted_post_observation_is_rejected) ... ok
+test_terminal_observation_is_kept_without_cross_episode_comparison (test_impact_data_audit.ImpactDataAuditTests.test_terminal_observation_is_kept_without_cross_episode_comparison) ... ok
+test_causal_inputs_and_reset_padding (test_impact_learning.ImpactLearningTests.test_causal_inputs_and_reset_padding) ... ok
+test_event_matching_duplicates_quiet_period_and_no_future_tolerance (test_impact_learning.ImpactLearningTests.test_event_matching_duplicates_quiet_period_and_no_future_tolerance) ... ok
+test_filter_preserves_equal_impulse_pulse_when_dt_halves (test_impact_learning.ImpactLearningTests.test_filter_preserves_equal_impulse_pulse_when_dt_halves) ... ok
+test_model_axis_gradients_are_independent (test_impact_learning.ImpactLearningTests.test_model_axis_gradients_are_independent) ... ok
+test_steady_support_and_linear_loading (test_impact_learning.ImpactLearningTests.test_steady_support_and_linear_loading) ... ok
+test_tied_ranking_does_not_invent_information (test_impact_learning.ImpactLearningTests.test_tied_ranking_does_not_invent_information) ... ok
+test_truth_merge_never_bridges_invalid_reset (test_impact_learning.ImpactLearningTests.test_truth_merge_never_bridges_invalid_reset) ... ok
+test_fixed_physical_window_survives_dt_change_for_linear_loading (test_impact_preparation.ImpactPreparationTests.test_fixed_physical_window_survives_dt_change_for_linear_loading) ... ok
+test_full_interval_includes_first_substep_and_prior_baseline (test_impact_preparation.ImpactPreparationTests.test_full_interval_includes_first_substep_and_prior_baseline) ... ok
+test_horizontal_normal_contact_is_preserved (test_impact_preparation.ImpactPreparationTests.test_horizontal_normal_contact_is_preserved) ... ok
+test_invalid_time_and_nonfinite_supervision_fail (test_impact_preparation.ImpactPreparationTests.test_invalid_time_and_nonfinite_supervision_fail) ... ok
+test_plan_and_stationary_spec_agree_without_claiming_replay (test_impact_preparation.ImpactPreparationTests.test_plan_and_stationary_spec_agree_without_claiming_replay) ... ok
+test_steady_support_is_not_positive_loading (test_impact_preparation.ImpactPreparationTests.test_steady_support_is_not_positive_loading) ... ok
+test_terminal_frame_is_not_the_reset_frame (test_impact_preparation.ImpactPreparationTests.test_terminal_frame_is_not_the_reset_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.302s
+
+OK

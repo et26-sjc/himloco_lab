@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope": "Root state plus initial actor frame (including joint position/velocity), before zero nominal-PD action",
+  "runs": [
+    {
+      "run": "dt5000_p4_v0",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    },
+    {
+      "run": "dt2500_p4_v0",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    },
+    {
+      "run": "dt1250_p4_v0",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    },
+    {
+      "run": "dt625_p4_v0",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    },
+    {
+      "run": "dt2500_p8_v4_global",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    },
+    {
+      "run": "dt1250_p8_v4_global",
+      "root_state_max_abs_difference": 0.0,
+      "initial_actor45_max_abs_difference": 0.0
+    }
+  ]
+}

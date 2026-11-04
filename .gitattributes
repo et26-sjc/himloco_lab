@@ -18,3 +18,7 @@ go1_lab_deploy/go1_lab_deploy/unitree_legged_sdk_bin/lcm_position.cpp -text whit
 go1_lab_deploy/go1_lab_deploy/lcm_types/leg_control_data_lcmt.lcm -text whitespace=-blank-at-eol
 # This small standalone release must include actual JIT bytes without Git LFS.
 go1_lab_deploy/models/policy.pt -filter -diff -merge -text
+
+# Preserve measured research artifacts byte-for-byte for recorded hashes.
+artifacts/impact/**/*.csv -text whitespace=cr-at-eol
+artifacts/impact/force_study_v1/results_tables.md -text whitespace=-blank-at-eof

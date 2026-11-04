@@ -1,0 +1,286 @@
+{
+  "status": "passed",
+  "recorded_UTC": "2026-11-03T18:51:13.118714+00:00",
+  "branch": "feat/go1-impact-replay",
+  "baseline_HEAD": "b482a92cb95d9bf95c352e8fcd5735ae34659b93",
+  "completed_task_runs": 35,
+  "completed_model_instances": 780,
+  "updates_per_model": 60000,
+  "independent_data_replications": 5,
+  "initializations_per_data_replication": 2,
+  "all_cache_audits_passed": 15,
+  "unit_tests_passed": 26,
+  "model_report_evaluation_config_hashes_consistent": true,
+  "all_summary_numbers_finite": true,
+  "unchanged_baseline_sha256": {
+    "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "go1_lab_deploy/models/policy.pt": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336"
+  },
+  "result_files": [
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep1/I0/detection.json",
+      "result_sha256": "6c94dd73b9e8ec0eb5c0ae4e4914d4fbc655cd6b037d9ef8d4e9185a4fa37ce2",
+      "models_sha256": "d523d0aa32203ed6b15d67e30e5a6deb4ab785a8afa38f7b38baf677953d46c2",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep1/I0/forecast.json",
+      "result_sha256": "a06a7c5918b5e1c99749f2a2be6593538d7e83f549839283506c2ba30f1c1b5e",
+      "models_sha256": "09a7eeda1a9294c61e5e0d3ab5a9816e7067e4d2ccc0161a9a0a3b6498ef1f58",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep2/I0/detection.json",
+      "result_sha256": "5de9eb355203a0e2bfe84c9f9bdf227f935e8b355aa05de43c149a8439ec2d77",
+      "models_sha256": "acc93324198928df062770399b4fd4ebe8f663d5ca63a7c46a90dfd049b182de",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep2/I0/forecast.json",
+      "result_sha256": "0296a8682af048f7efeed2b845080ca52d8c599e3159967f4be34350cc9df51c",
+      "models_sha256": "0a748924f57bc4c24c3fd9c185a1bfa19eaf3d07ae65b50096c6ca580658f82f",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep3/I0/detection.json",
+      "result_sha256": "9755b2a43972ef790d241dd22548961f293d3c7c709c0848cec0dfbf301506e9",
+      "models_sha256": "a91597e6f3b5e108e53daed4df768dde4fd88e7d0991effe429b47b3f9e10330",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep3/I0/forecast.json",
+      "result_sha256": "49a393fe563a9464b5a4fc0f5088953011cfe00b33235864a98a23b2831d8515",
+      "models_sha256": "5de1f9833ac185107eb4056ac22fca969e8180c41d2a51975759ec263f1fd8c6",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep4/I0/detection.json",
+      "result_sha256": "bf965f9dab8bdc19cdaec0162052a79bca19a5f38024d387fe944188316f08a1",
+      "models_sha256": "8480cf4158ad5c6396bb2e8e576a526276598ad0b3c26e1d7917504ff6dce506",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep4/I0/forecast.json",
+      "result_sha256": "e92bdfe32281d7171d95d1c8b912ae4fdff7a91f93e6a0053cfb17fc91509385",
+      "models_sha256": "13348030396e1f750ace4a2d49956b3e80ff3654632e5323f40648f91b380d54",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep5/I0/detection.json",
+      "result_sha256": "f9cb4584803ba82c366f7b55fe87ceeda571c5b0923e2db829745bf8f3428c79",
+      "models_sha256": "4979edf4f0021686f64c9683f98d4c91e5134f0326984d1c851026b8655fd744",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/alternatives/rep5/I0/forecast.json",
+      "result_sha256": "27c45174c3c9e8ae10086b6e773a45f4cd5e83017743782c80da29d5fa8c8699",
+      "models_sha256": "4281ecf3bd406d87de3d21b314a235506f56021c1a11e7996c77ec25509da153",
+      "instances": 18
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep1/I0/detection.json",
+      "result_sha256": "337d686ee8d0a95b7c3e2697807f03c4290e7a9d650d73a66bf26dcb26924dc6",
+      "models_sha256": "35bc49b4e3d75bb5b773fde6fe3e1ae423fcbebd32ecc32622c676b98c89cb42",
+      "instances": 64
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep1/I0/forecast.json",
+      "result_sha256": "e086fe827f60692ebb14b62e57b7da15e9ed69b61de83eacd93725f300df22ba",
+      "models_sha256": "24a6845a483c25d194d45b632d8fab371a52ac04879e92d9c1b46f4ddaef47cb",
+      "instances": 32
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep1/I0clean/detection.json",
+      "result_sha256": "7efecd179ab306fb4d4d7accbd968e6ef1cb9fc56b1adb8688255c9fe79f2be7",
+      "models_sha256": "917a720ac01305e53929d75ed48b1e8c2acc01c2382aa473151d55b9a4e42566",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep1/I1/detection.json",
+      "result_sha256": "ef2fe538e3f515fcf3a9341fbbcd1cfdbdf3c3eed143a75da45482b971175ea6",
+      "models_sha256": "b20035c85482ba89df208ae899d4686d3a7a94021e664bb17c5d2460f36e5f1c",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep1/I2/detection.json",
+      "result_sha256": "04df4ae957c9283b2a5a45672dc8db875b819a39a9d98e45eb65fbf9b5d859dd",
+      "models_sha256": "5f2172638b392c6f125cde18ccbfc92ca05c307fc7578f46505db3671a4a8324",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep2/I0/detection.json",
+      "result_sha256": "c13afe07dafde85da8d0a82ddbb44c2d1157804aff892a770718d51968cb350d",
+      "models_sha256": "f762971ff475550b4ab1b293d6bdc86f628339840f79d7dc80f7da788518f9fc",
+      "instances": 64
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep2/I0/forecast.json",
+      "result_sha256": "a1c7436e8db5bf55124a8ecbb995b6aeff83b30053f123e02a64fd93efe4d58c",
+      "models_sha256": "621260da411bc60eac070ed75782673c16063eb23ce026b7051db2297a19afe0",
+      "instances": 32
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep2/I0clean/detection.json",
+      "result_sha256": "50e859a15c49eb4caf3a7a2f9d44b085e3c15c31aef16d9bd198152d44ec580b",
+      "models_sha256": "66b9a29b0c25de7f2e07e9b94e11f3cd375ae4de82d10ef884055534edaa40b2",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep2/I1/detection.json",
+      "result_sha256": "1ba664339261d65e89f6e989bbb508b2b6eea47ff1c0ebfc700015aab7cffe9c",
+      "models_sha256": "4c776d47dfa1908c4ea21ac8b75e76b78ed8351c37a7c9aaa689d4d80d96d2f1",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep2/I2/detection.json",
+      "result_sha256": "06806bcea91975f511b0bfb83efe55f34ad507d108cdcf0370c81bab0451a4c8",
+      "models_sha256": "d55fab3ab8486ef952066380812766fb47b08ac28c06599e06edf42eed2cd168",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep3/I0/detection.json",
+      "result_sha256": "0bde3b590ea92d825ef0318f6dd6c1082adacab0064db8cb470e15fb0bff4e3b",
+      "models_sha256": "b5f1d2ceaace916f14af3dff250021de8fcdab07fc5d14eb247adeaaa3c765ba",
+      "instances": 64
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep3/I0/forecast.json",
+      "result_sha256": "ab6c59504a25829d43304ee683cd28e3a37424b8e610d3140940ff7f7c625226",
+      "models_sha256": "88f1e5f31a7ff4cda64ba87db94696d81b5406e5a35537954fd71b6a55f8cdcd",
+      "instances": 32
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep3/I0clean/detection.json",
+      "result_sha256": "a6af1979adc8f571ff3557c155add520a535b84968bcaadd2d861b1005449ca6",
+      "models_sha256": "1e0bf476ef604797850be07317c4bce1f4fe78b794cabca8379b7667224bfe96",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep3/I1/detection.json",
+      "result_sha256": "ba5e8b8dbc5c6d6495f6d881a6b22270d16a74dcc32d4b7c38c3a10141362687",
+      "models_sha256": "1e2a52b289c8c4dc01f9889084ff86b96b58362f9050b79aab7b701978481886",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep3/I2/detection.json",
+      "result_sha256": "250abb1f1c17749b7598eeb84d5a34d25bc8338e528158ee788bf58d4ff2886f",
+      "models_sha256": "e5afe0ba6c90cdc16376b04e5be605c7c6b0aad33a24c3bca8eba579955b93ff",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep4/I0/detection.json",
+      "result_sha256": "06e378cbd3eb8b762ebb554f6c9f2e0345d68f699968335cf76f82023b7645b8",
+      "models_sha256": "3e4d2139d3c5b4c0cc043dc0555d313399437540aed9794dbb4d720eaa4b343d",
+      "instances": 64
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep4/I0/forecast.json",
+      "result_sha256": "51c000bcf04dac4581c2deaabcc172255604a8c8c74a8f404bd3c7f311e4dae2",
+      "models_sha256": "9dd7336443c33f62fa18521ebfbabaad4cf835a9e4cb9d65b3c0099c0fff5e31",
+      "instances": 32
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep4/I0clean/detection.json",
+      "result_sha256": "5ad1181036b11b01426552635f7ad5bc5b631458def65be411aa4726abd27805",
+      "models_sha256": "2d9e5b07745473b08d1fcbde731600bfa8a503471e5d2387ea33e6dbe56a7cb7",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep4/I1/detection.json",
+      "result_sha256": "96f0a324989604e45e5c4aee8f2be38b0deb97249d5a50371705c9dff1ae78c2",
+      "models_sha256": "dfaa16ee7d48e56227f75eeb3fb32d42ffa9391328c92df5fb78bc0250be7461",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep4/I2/detection.json",
+      "result_sha256": "54f3543c22a00d485230ee6f63ec8dc4b9cd6a5eb8778422575a13f29ad318c9",
+      "models_sha256": "084fb4d871f48b3321f8315d230375108a96de3f211171dce64be5a27b6e04d3",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep5/I0/detection.json",
+      "result_sha256": "20a1bc06791f2780bccd773a8a9df40047c711f7c68185dbac248cc22414efb4",
+      "models_sha256": "b1eb68480e10b7c61e27340d1c9f3bcdb1a2265aa8856a06fc9aa066f0d08dd6",
+      "instances": 64
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep5/I0/forecast.json",
+      "result_sha256": "121eaff774f808640b934e7b9316f3653af8f32de4d636286ee8209472df5948",
+      "models_sha256": "7e1a748c2df756593028aed7d9d12acfe477819976489cd4f71deef8652ce2e3",
+      "instances": 32
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep5/I0clean/detection.json",
+      "result_sha256": "6585b40f473198dcdf865c9dfbda27d71aaae0c3a093edb5e214ceea513149ce",
+      "models_sha256": "020479a09b14373e51f1602de5485a373a6c689f3d8dbd75521e1e6502d1e48e",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep5/I1/detection.json",
+      "result_sha256": "167746aef61bd56cb56a85f570a5a6d8c004b5cb7834cb239d561cf91cf2cd6a",
+      "models_sha256": "d19c6124ac2f4de0e62473cbacd6b33e8fa657cdcd2959277d33f4655028778f",
+      "instances": 8
+    },
+    {
+      "result": "artifacts/impact/force_study_v1/main/rep5/I2/detection.json",
+      "result_sha256": "5c5c56865cb87380beec584ca30cf8a74e5a6c552dca1d23f2cf9390e0b81df9",
+      "models_sha256": "8d9f51a589acf9296bcd93eb524838cecb5f5076e6c3e54453c6f01c99af2a3c",
+      "instances": 8
+    }
+  ],
+  "source_sha256": {
+    "configs/impact/force_study_v1.json": "ce1ef86e31724b06bf8b15cb6db736870157f616f0b5f64aef27b5c7a692acb5",
+    "scripts/impact/analyze_force_physics.py": "eb26c87a147a2ac9149e7b4c234c2745f30021c99de0ad454af907812bbeb4ba",
+    "scripts/impact/analyze_force_reference.py": "5be94edbef1d3ec02fd0ca41a95f762351dae8399779cc26da5449e12bf545a7",
+    "scripts/impact/analyze_paired_branches.py": "771bf66340ef0ef7b095f8ec9ec68dfde461689db5b3696334d0b65bbf2cc543",
+    "scripts/impact/audit_collection.py": "d33cf4fdd2262b870a3c6d54d6506813bc7135a2b56a44f10f7c0512d75c2d2b",
+    "scripts/impact/audit_force_cache.py": "b09b9226a7dd6e748c14e00bfdb65133d6f7fa986784281f652bdca7e19be7a7",
+    "scripts/impact/collect.py": "21fdd7c97dd59a83db786450cd4f38f98eef2f1dd47d0dc600ef6cf96d2b3769",
+    "scripts/impact/collect_force_study.py": "4155b003e3a0a0c6d755ca6ccd6d0e001c4e0f8c43dbc1365989e6ddc6ec9c34",
+    "scripts/impact/compare_collections.py": "a0853bf323f7d4b0276468bca458e1a8747d9c7ca2374e0f85f5f84e1e2831e6",
+    "scripts/impact/evaluate.py": "c1fb4b5b4054e157988f34fe18123d5967b7f9bde0714d16c0e465e192a5aee7",
+    "scripts/impact/evaluate_force_parallel.py": "611951efa69d41a9f6354fa90ff4ecba360a331763122963d5e6b184151de81a",
+    "scripts/impact/evaluate_force_study.py": "6d7f4f9955cf374b52a6a5326d8b0887d61c8bb5b45cc553fb0f00d539cd900d",
+    "scripts/impact/export.py": "4c37f56ad696e7636adaa66a5c954812055b5b3f1ea08ddc6aa2d103d3149a2e",
+    "scripts/impact/paired_contact_branches.py": "8dab9b99076cea5960f5ff0d5b1131671d39b3e820eed355a3d8f7a9147066cc",
+    "scripts/impact/physical_diagnostics.py": "05c60cf4371596c2949a1c0e5ae9786df580ccfa6d29ff3f069c4b2c3695e595",
+    "scripts/impact/plot_force_convergence.py": "174fea82e6d7cb7d11973f85e0b89e1e70cebb0631841b513b0fb7f232485355",
+    "scripts/impact/plot_paired_force_branches.py": "ef618c4225c2e92db9bd8488c3513ca573d388fd22d9a53d60398e827e972c54",
+    "scripts/impact/prepare_dataset.py": "e93d1e709c797f946ae73c370bc6b7cd87c22163f01a1a912a3f8de4641f8793",
+    "scripts/impact/run_force_learning.py": "c703c011e63e2aef2c5b6667d9a3f08a7eedf4220bc656979df848e6bb935945",
+    "scripts/impact/run_force_physics.py": "f531b9cfceabcffede83050524b93ad9fc801e9d877b96926740c3a3cf72fc0a",
+    "scripts/impact/run_step1.py": "92793c2ea7589268398560ec7b1a994bb9b17b9bfb19a6645b24a37f5bac0d14",
+    "scripts/impact/summarize.py": "4f3e90f693e10bba4b552b8cd4735766e38c3e27c0991db7a4ca254975e39ea1",
+    "scripts/impact/summarize_force_study.py": "c71a1f42080f3337a348a8ec7dc6be97b978dd82d2f00b44868d51dcc554486f",
+    "scripts/impact/train.py": "78acc818a947e3577e436b3b26f57ac77061cdbf0fd313619897649a95fd771f",
+    "scripts/impact/train_force_study.py": "16387de0dca63f4f46675c3080fb190e560a351b6df303200589b354710b2078",
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "af73ab471b3868624fe0bf807551081128bf4e912994ba9fafc64856c902b715",
+    "source/himloco_lab/himloco_lab/impact/dataset.py": "d0940ee9d98147fd9752216ec309a949c4040bda80667002488e0f81b13b3096",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a",
+    "source/himloco_lab/himloco_lab/impact/inference.py": "dd445cfa757707411bc495a7c787788d1601b56dfb5781597c91155fee1e6a60",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/metrics.py": "8b92699d5993938dde39fe906536bba55ed8485949b4d34e8057b2f8d06b266b",
+    "source/himloco_lab/himloco_lab/impact/models.py": "88bbda09ecfc35ded5a659a8f38368bb20ce95abf764138cc00d6a23fe10644d",
+    "source/himloco_lab/himloco_lab/impact/physics_observer.py": "6bb32107010d1b852a322cabf90677d9399e5f0ebda92c075cd542d63883d520",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "source/himloco_lab/himloco_lab/impact/terrains.py": "a26b039521c4a1e511a50ad4d904c19b08ce789662d1e4f04c6f2ee2fc9596f9",
+    "tests/test_force_study.py": "f0589464b04d37a3e4b144d65aa8a2344f678d03f0462ca8a7898480c63a6fa9"
+  },
+  "report_artifact_sha256": {
+    "docs/GO1_FORCE_LOADING_RATE_RESULTS.md": "279b7928448e38b45887ba74bf4767ae467b77b94ab6b617f0392b007b6461fb",
+    "artifacts/impact/force_study_v1/summary.json": "e32edbe08ae3b5ea98d832e16e021f302b9834c3fb1b5f8c6834e9e5989f97f5",
+    "artifacts/impact/force_study_v1/metrics.csv": "977dbf67aa9b80fcbc445f39f6486e035c2c49bd62a6e0deafd2c731a8ae5387",
+    "artifacts/impact/force_study_v1/physics.json": "77145f8347468ba29814dc8d9afc31f269a419b62cca18057ce5de2e60759ca1",
+    "artifacts/impact/force_study_v1/paired_branches.json": "edc1705c184c698137571f274d626c1f36a03ff95acbe25e24522c101988aa7f",
+    "artifacts/impact/force_study_v1/constant_references.json": "69854bfcf35a8f42c73aade250f8aa82be1f3f0e67e6d3f7edeb3efccdc9a831",
+    "artifacts/impact/force_study_v1/model_lock_manifest.json": "cebd7c14a82606c95e3beb872aba9fd60beb91295a79af83a251ab00b945afc3",
+    "artifacts/impact/force_study_v1/evaluation_performance_equivalence.json": "ccbe7357b360b504f659e68f0f982a303be4df5c6455117a734f54cf83307ba3"
+  },
+  "provenance_notes": [
+    "Training runtime source chronology is recorded in execution_chronology.json and pre_test_snapshot.json; early report source hashes are save-time disk hashes, not complete executable snapshots.",
+    "Evaluation reused only model-independent ordered row indices and ground-truth event grouping after launch; equivalence checks are recorded separately. No trained models, targets, endpoints or operating points changed after test access.",
+    "Aggregation explicitly includes binary-MSE minus continuous-MSE contrasts for the planned binary-MSE control; primary BCE-vs-validation-selected-regression comparison is retained and reported as failing the full strict FAR gate.",
+    "Intervals are pointwise and conditional on this frozen policy and chosen terrain families; no multiple-comparison correction, hardware accuracy, Replay benefit or online-adaptation claim."
+  ]
+}

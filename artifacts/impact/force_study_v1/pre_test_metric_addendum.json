@@ -1,0 +1,19 @@
+{
+  "recorded_UTC": "2026-11-03T16:51:39.676137+00:00",
+  "stage": "main rep2 training; all final tests remain unopened by evaluation",
+  "change": "Add conditional small-force / small-loading collapse and negative-output diagnostics; no changes to models, optimization, targets or primary comparisons. Physics label-disagreement metrics now include prevalence to expose trivial agreement.",
+  "groups": "exact_zero, positive below resolution, resolution < y < 0.25 normalization_scale, above event threshold",
+  "resolutions": {
+    "force_N": 1,
+    "loading_N_per_s": 100
+  },
+  "synthetic_checks": [
+    "cluster aggregation preserves repeated-initialization exposure",
+    "weak-force negative and zero-collapse metrics"
+  ],
+  "files": {
+    "scripts/impact/evaluate_force_study.py": "cb28aac625e2e4a43e98e49f13fe2394bd3595dbdf15da953f83b35946148bc8",
+    "scripts/impact/summarize_force_study.py": "fe3ec767f634dba2510727c81514ff52c5873829f46a3571bda26b62e8da0234",
+    "scripts/impact/analyze_force_physics.py": "0dd6296cce5bbb74c96f8a20f419d0e8de0dcc1a314aee1520182333377c4f6d"
+  }
+}

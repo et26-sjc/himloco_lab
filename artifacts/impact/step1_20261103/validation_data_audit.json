@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "root": "datasets/go1_impact/step1/validation",
+  "policy_intervals": 600,
+  "transitions": 2457600,
+  "resets": 8192,
+  "valid_increment_rows": 2449408,
+  "post_to_next_pre_frame_max_error": 0.0,
+  "force_history_overlap_max_error": 0.0,
+  "numpy64_vs_torch32_target_max_errors": {
+    "normal_peak_n": 2.266744218104577e-05,
+    "normal_integral_ns": 7.24792482031944e-07,
+    "positive_increment_n": 2.821029588062629e-05,
+    "positive_rate_fixed_window_n_per_s": 0.0031212364046950825,
+    "positive_rate_one_step_n_per_s": 0.007030414810287766
+  },
+  "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+  "max_normal_force_n": 551.4107666015626,
+  "shard_bytes": 1976084528,
+  "bytes_per_transition": 804.0708528645833,
+  "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+}

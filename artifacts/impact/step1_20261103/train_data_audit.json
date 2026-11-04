@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "root": "datasets/go1_impact/step1/train",
+  "policy_intervals": 2500,
+  "transitions": 10240000,
+  "resets": 32799,
+  "valid_increment_rows": 10203105,
+  "post_to_next_pre_frame_max_error": 0.0,
+  "force_history_overlap_max_error": 0.0,
+  "numpy64_vs_torch32_target_max_errors": {
+    "normal_peak_n": 2.8467744925819716e-05,
+    "normal_integral_ns": 8.964538578126735e-07,
+    "positive_increment_n": 2.8467744925819716e-05,
+    "positive_rate_fixed_window_n_per_s": 0.003809854453720618,
+    "positive_rate_one_step_n_per_s": 0.0067667708681256045
+  },
+  "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+  "max_normal_force_n": 546.1191406250002,
+  "shard_bytes": 8233679592,
+  "bytes_per_transition": 804.07027265625,
+  "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+}

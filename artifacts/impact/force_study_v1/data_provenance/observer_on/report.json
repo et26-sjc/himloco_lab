@@ -1,0 +1,998 @@
+{
+  "status": "completed",
+  "stage": "A0_preparation_collection_not_model_training",
+  "label_validation": "Raw proxies only; downstream label definition and validation are versioned separately",
+  "baseline_contract_tests_passed": 0,
+  "num_envs": 64,
+  "steps": 40,
+  "transitions": 2560,
+  "scenario": "suite_walk",
+  "seed": 91,
+  "velocity": [
+    0.7,
+    0.0,
+    0.0
+  ],
+  "terrain": {
+    "families": [
+      "plane",
+      "rough",
+      "slope_down",
+      "slope_up",
+      "stairs_down",
+      "stairs_up",
+      "boxes_heldout"
+    ],
+    "heldout_family_ids": [
+      6
+    ],
+    "family_id": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "tile_row": [
+      2,
+      1,
+      4,
+      4,
+      5,
+      3,
+      0,
+      5,
+      2,
+      0,
+      1,
+      4,
+      3,
+      2,
+      0,
+      1,
+      2,
+      0,
+      3,
+      4,
+      5,
+      3,
+      5,
+      0,
+      3,
+      5,
+      2,
+      0,
+      4,
+      2,
+      5,
+      0,
+      0,
+      1,
+      4,
+      0,
+      5,
+      3,
+      1,
+      1,
+      5,
+      1,
+      0,
+      5,
+      5,
+      0,
+      5,
+      2,
+      3,
+      4,
+      2,
+      3,
+      1,
+      4,
+      0,
+      2,
+      0,
+      5,
+      0,
+      1,
+      5,
+      1,
+      1,
+      5
+    ],
+    "tile_col": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      10,
+      10,
+      10,
+      10,
+      10,
+      11,
+      11,
+      11,
+      11,
+      12,
+      12,
+      12,
+      12,
+      12,
+      13,
+      13,
+      13,
+      13
+    ],
+    "tile_id": [
+      28,
+      14,
+      56,
+      56,
+      70,
+      43,
+      1,
+      71,
+      29,
+      1,
+      16,
+      58,
+      44,
+      30,
+      3,
+      17,
+      31,
+      3,
+      45,
+      60,
+      74,
+      46,
+      74,
+      5,
+      47,
+      75,
+      33,
+      5,
+      62,
+      34,
+      76,
+      6,
+      6,
+      21,
+      63,
+      7,
+      77,
+      50,
+      22,
+      22,
+      78,
+      22,
+      9,
+      79,
+      79,
+      9,
+      80,
+      38,
+      52,
+      66,
+      38,
+      53,
+      25,
+      67,
+      11,
+      40,
+      12,
+      82,
+      12,
+      26,
+      83,
+      27,
+      27,
+      83
+    ],
+    "origins": [
+      [
+        -6.0,
+        -78.0,
+        0.0
+      ],
+      [
+        -18.0,
+        -78.0,
+        0.0
+      ],
+      [
+        18.0,
+        -78.0,
+        0.0
+      ],
+      [
+        18.0,
+        -78.0,
+        0.0
+      ],
+      [
+        30.0,
+        -78.0,
+        0.0
+      ],
+      [
+        6.0,
+        -66.0,
+        0.0
+      ],
+      [
+        -30.0,
+        -66.0,
+        0.0
+      ],
+      [
+        30.0,
+        -66.0,
+        0.0
+      ],
+      [
+        -6.0,
+        -66.0,
+        0.0
+      ],
+      [
+        -30.0,
+        -66.0,
+        0.0
+      ],
+      [
+        -18.0,
+        -54.0,
+        0.04500000178813934
+      ],
+      [
+        18.0,
+        -54.0,
+        0.04749999940395355
+      ],
+      [
+        6.0,
+        -54.0,
+        0.042500000447034836
+      ],
+      [
+        -6.0,
+        -54.0,
+        0.04500000178813934
+      ],
+      [
+        -30.0,
+        -42.0,
+        0.04500000178813934
+      ],
+      [
+        -18.0,
+        -42.0,
+        0.04749999940395355
+      ],
+      [
+        -6.0,
+        -42.0,
+        0.042500000447034836
+      ],
+      [
+        -30.0,
+        -42.0,
+        0.04500000178813934
+      ],
+      [
+        6.0,
+        -42.0,
+        0.042500000447034836
+      ],
+      [
+        18.0,
+        -30.0,
+        0.8899999856948853
+      ],
+      [
+        30.0,
+        -30.0,
+        1.0175000429153442
+      ],
+      [
+        6.0,
+        -30.0,
+        0.7649999856948853
+      ],
+      [
+        30.0,
+        -30.0,
+        1.0175000429153442
+      ],
+      [
+        -30.0,
+        -18.0,
+        0.23499999940395355
+      ],
+      [
+        6.0,
+        -18.0,
+        0.8100000023841858
+      ],
+      [
+        30.0,
+        -18.0,
+        1.0774999856948853
+      ],
+      [
+        -6.0,
+        -18.0,
+        0.5924999713897705
+      ],
+      [
+        -30.0,
+        -18.0,
+        0.23499999940395355
+      ],
+      [
+        18.0,
+        -6.0,
+        -0.7699999809265137
+      ],
+      [
+        -6.0,
+        -6.0,
+        -0.5400000214576721
+      ],
+      [
+        30.0,
+        -6.0,
+        -0.9075000286102295
+      ],
+      [
+        -30.0,
+        -6.0,
+        -0.27250000834465027
+      ],
+      [
+        -30.0,
+        -6.0,
+        -0.27250000834465027
+      ],
+      [
+        -18.0,
+        6.0,
+        -0.35749998688697815
+      ],
+      [
+        18.0,
+        6.0,
+        -0.7875000238418579
+      ],
+      [
+        -30.0,
+        6.0,
+        -0.27250000834465027
+      ],
+      [
+        30.0,
+        6.0,
+        -0.9725000262260437
+      ],
+      [
+        6.0,
+        18.0,
+        1.0279566049575806
+      ],
+      [
+        -18.0,
+        18.0,
+        0.7305741906166077
+      ],
+      [
+        -18.0,
+        18.0,
+        0.7305741906166077
+      ],
+      [
+        30.0,
+        18.0,
+        1.4959574937820435
+      ],
+      [
+        -18.0,
+        18.0,
+        0.7305741906166077
+      ],
+      [
+        -30.0,
+        30.0,
+        0.47836780548095703
+      ],
+      [
+        30.0,
+        30.0,
+        1.5105996131896973
+      ],
+      [
+        30.0,
+        30.0,
+        1.5105996131896973
+      ],
+      [
+        -30.0,
+        30.0,
+        0.47836780548095703
+      ],
+      [
+        30.0,
+        42.0,
+        -1.5401495695114136
+      ],
+      [
+        -6.0,
+        42.0,
+        -0.9920689463615417
+      ],
+      [
+        6.0,
+        42.0,
+        -1.1810355186462402
+      ],
+      [
+        18.0,
+        42.0,
+        -1.4063494205474854
+      ],
+      [
+        -6.0,
+        42.0,
+        -0.9920689463615417
+      ],
+      [
+        6.0,
+        54.0,
+        -1.0564333200454712
+      ],
+      [
+        -18.0,
+        54.0,
+        -0.6270289421081543
+      ],
+      [
+        18.0,
+        54.0,
+        -1.3142383098602295
+      ],
+      [
+        -30.0,
+        54.0,
+        -0.505434513092041
+      ],
+      [
+        -6.0,
+        66.0,
+        0.05531555041670799
+      ],
+      [
+        -30.0,
+        66.0,
+        0.027875661849975586
+      ],
+      [
+        30.0,
+        66.0,
+        0.09968310594558716
+      ],
+      [
+        -30.0,
+        66.0,
+        0.027875661849975586
+      ],
+      [
+        -18.0,
+        66.0,
+        0.04555089771747589
+      ],
+      [
+        30.0,
+        78.0,
+        0.090205617249012
+      ],
+      [
+        -18.0,
+        78.0,
+        0.033704716712236404
+      ],
+      [
+        -18.0,
+        78.0,
+        0.033704716712236404
+      ],
+      [
+        30.0,
+        78.0,
+        0.090205617249012
+      ]
+    ],
+    "initial_state_jitter": "xy +/-0.25m, yaw +/-0.1rad, joint position multiplier .95..1.05, joint velocity +/-0.1rad/s",
+    "tile_size_m": [
+      12,
+      12
+    ],
+    "episode_s": 6.0,
+    "note": "4096 robots share 84 tiles; independent collection seeds define separate geometry splits"
+  },
+  "drop_height_range_m": null,
+  "randomization": false,
+  "observation_noise": true,
+  "research_observations": true,
+  "solver_iterations": [
+    4,
+    0
+  ],
+  "solver_global_bounds": [
+    1,
+    4,
+    0,
+    0
+  ],
+  "physics_observation_schema": {
+    "shape": "[time,env,200Hz_sample,60] float32; before reset",
+    "sample_dt": 0.005,
+    "channels": "clean policy45, root-COM ideal specific force3 in root frame, actual applied torque12",
+    "imu_limit": "ideal simulator COM IMU; no hardware bandwidth, placement, bias or saturation model",
+    "base_body": "trunk",
+    "changes_policy_noise_rng": false
+  },
+  "baseline_observer": false,
+  "forced_timeout_step": 35,
+  "action_source": "frozen_HIMEstimator_and_actor_JIT",
+  "window": {
+    "physics_dt": 0.0025,
+    "policy_dt": 0.02,
+    "rise_interval_s": 0.01
+  },
+  "history_length": 12,
+  "force_time_offsets_from_input_s": [
+    -0.0075,
+    -0.005,
+    -0.0025,
+    0.0,
+    0.0025,
+    0.005,
+    0.0075,
+    0.01,
+    0.0125,
+    0.015,
+    0.0175,
+    0.02
+  ],
+  "force_order": "oldest first; last 8 samples belong to the completed action interval",
+  "foot_names": [
+    "FL_foot",
+    "FR_foot",
+    "RL_foot",
+    "RR_foot"
+  ],
+  "joint_names": [
+    "FL_hip_joint",
+    "FR_hip_joint",
+    "RL_hip_joint",
+    "RR_hip_joint",
+    "FL_thigh_joint",
+    "FR_thigh_joint",
+    "RL_thigh_joint",
+    "RR_thigh_joint",
+    "FL_calf_joint",
+    "FR_calf_joint",
+    "RL_calf_joint",
+    "RR_calf_joint"
+  ],
+  "policy": "/home/sjc/himloco_lab/go1_lab_deploy/models/policy.pt",
+  "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+  "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+  "reset_count": 64,
+  "terminal_traces_captured": 64,
+  "history_reconstruction_max_error": 0.0,
+  "reference_contact_max_error": 0.0,
+  "history_overlap_max_error": 0.0,
+  "startup_s": 5.512440114001947,
+  "collection_and_io_s": 3.794613958998525,
+  "transitions_per_second_including_io": 674.6404318492613,
+  "torch_peak_allocated_bytes": 12031488,
+  "memory_note": "Torch allocator excludes PhysX, Warp, Kit and driver allocations",
+  "python": "3.12.15",
+  "torch": "2.11.0+cu128",
+  "isaacsim": "6.1.0.0",
+  "isaaclab_source_version": "3.0.0",
+  "git_head": "b482a92cb95d9bf95c352e8fcd5735ae34659b93",
+  "source_sha256": {
+    "scripts/impact/collect.py": "21fdd7c97dd59a83db786450cd4f38f98eef2f1dd47d0dc600ef6cf96d2b3769",
+    "configs/impact/go1_impact_replay.json": "8bdec0aada531ee8b527f96749d747ce4fc0dc94f2a70e295901b107eca6b7f8",
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "af73ab471b3868624fe0bf807551081128bf4e912994ba9fafc64856c902b715",
+    "source/himloco_lab/himloco_lab/impact/dataset.py": "d0940ee9d98147fd9752216ec309a949c4040bda80667002488e0f81b13b3096",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a",
+    "source/himloco_lab/himloco_lab/impact/inference.py": "dd445cfa757707411bc495a7c787788d1601b56dfb5781597c91155fee1e6a60",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/metrics.py": "8b92699d5993938dde39fe906536bba55ed8485949b4d34e8057b2f8d06b266b",
+    "source/himloco_lab/himloco_lab/impact/models.py": "88bbda09ecfc35ded5a659a8f38368bb20ce95abf764138cc00d6a23fe10644d",
+    "source/himloco_lab/himloco_lab/impact/physics_observer.py": "6bb32107010d1b852a322cabf90677d9399e5f0ebda92c075cd542d63883d520",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "source/himloco_lab/himloco_lab/impact/terrains.py": "a26b039521c4a1e511a50ad4d904c19b08ce789662d1e4f04c6f2ee2fc9596f9"
+  },
+  "lab_step_source_sha256": "15341168a31adc2fa10785ebde13e7e2a8b5a6cef5be113f0c4c88d9a5895562",
+  "shards": [
+    {
+      "file": "shard_00000.npz",
+      "steps": 16,
+      "sha256": "3046ece4e1ad714aa38fcd401360972a65e1439201aa377335eb34709cf4224c",
+      "bytes": 2106104
+    },
+    {
+      "file": "shard_00001.npz",
+      "steps": 16,
+      "sha256": "c074175b211a13d8619afea35f35e9a83e96d8c376512d9db2a9eb7497c084a2",
+      "bytes": 2106104
+    },
+    {
+      "file": "shard_00002.npz",
+      "steps": 8,
+      "sha256": "fcd0a218f7b2580c898fefe0386a252239fb5808a6782fcc1f7d6a7f1226d11c",
+      "bytes": 1055416
+    }
+  ],
+  "step_summary": [
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 0
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 55.03775405883789,
+      "max_peak_n": 199.88392639160156,
+      "mean_integral_ns": 0.7299239635467529,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 63.81671905517578,
+      "max_peak_n": 212.9835968017578,
+      "mean_integral_ns": 1.163989543914795,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 63.765506744384766,
+      "max_peak_n": 235.04371643066406,
+      "mean_integral_ns": 1.227575421333313,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 55.665672302246094,
+      "max_peak_n": 266.8649597167969,
+      "mean_integral_ns": 1.0477931499481201,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 50.234683990478516,
+      "max_peak_n": 366.5139465332031,
+      "mean_integral_ns": 0.9227163791656494,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 42.513824462890625,
+      "max_peak_n": 271.3076477050781,
+      "mean_integral_ns": 0.8330109715461731,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 35.940067291259766,
+      "max_peak_n": 238.20252990722656,
+      "mean_integral_ns": 0.7017035484313965,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 31.462873458862305,
+      "max_peak_n": 197.1519012451172,
+      "mean_integral_ns": 0.5777710676193237,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 34.06291198730469,
+      "max_peak_n": 110.83639526367188,
+      "mean_integral_ns": 0.5153194069862366,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 37.70618438720703,
+      "max_peak_n": 98.76152801513672,
+      "mean_integral_ns": 0.5520109534263611,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 37.644615173339844,
+      "max_peak_n": 114.80753326416016,
+      "mean_integral_ns": 0.6594367027282715,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 38.288421630859375,
+      "max_peak_n": 119.23562622070312,
+      "mean_integral_ns": 0.6997462511062622,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 37.7536735534668,
+      "max_peak_n": 117.3940658569336,
+      "mean_integral_ns": 0.6887907981872559,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 36.99763107299805,
+      "max_peak_n": 113.12959289550781,
+      "mean_integral_ns": 0.6846660375595093,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 37.536006927490234,
+      "max_peak_n": 117.8440933227539,
+      "mean_integral_ns": 0.7024998068809509,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 39.04007339477539,
+      "max_peak_n": 106.30938720703125,
+      "mean_integral_ns": 0.7246863842010498,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 40.37054443359375,
+      "max_peak_n": 104.92293548583984,
+      "mean_integral_ns": 0.7411611080169678,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 40.52167510986328,
+      "max_peak_n": 116.26766967773438,
+      "mean_integral_ns": 0.7207697629928589,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 38.07880783081055,
+      "max_peak_n": 102.1849136352539,
+      "mean_integral_ns": 0.641680121421814,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 36.87968826293945,
+      "max_peak_n": 106.80779266357422,
+      "mean_integral_ns": 0.5968984365463257,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 33.71619415283203,
+      "max_peak_n": 105.06604766845703,
+      "mean_integral_ns": 0.5875544548034668,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 32.555870056152344,
+      "max_peak_n": 112.96083068847656,
+      "mean_integral_ns": 0.575853705406189,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 35.14817810058594,
+      "max_peak_n": 193.6826171875,
+      "mean_integral_ns": 0.6284534931182861,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 38.32160949707031,
+      "max_peak_n": 245.71034240722656,
+      "mean_integral_ns": 0.6960445046424866,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 38.794551849365234,
+      "max_peak_n": 114.81846618652344,
+      "mean_integral_ns": 0.7301487922668457,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 39.69617462158203,
+      "max_peak_n": 108.7835922241211,
+      "mean_integral_ns": 0.7535708546638489,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 39.57740020751953,
+      "max_peak_n": 110.50421905517578,
+      "mean_integral_ns": 0.7575652003288269,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 39.179168701171875,
+      "max_peak_n": 167.1416778564453,
+      "mean_integral_ns": 0.748559296131134,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 37.134769439697266,
+      "max_peak_n": 123.91938018798828,
+      "mean_integral_ns": 0.70757657289505,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 34.769290924072266,
+      "max_peak_n": 97.62704467773438,
+      "mean_integral_ns": 0.6482160091400146,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 34.798973083496094,
+      "max_peak_n": 92.17147064208984,
+      "mean_integral_ns": 0.6095675826072693,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 32.99590301513672,
+      "max_peak_n": 100.95922088623047,
+      "mean_integral_ns": 0.5746476650238037,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 0
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    },
+    {
+      "mean_peak_n": 0.0,
+      "max_peak_n": 0.0,
+      "mean_integral_ns": 0.0,
+      "valid_increment_rows": 64
+    }
+  ],
+  "behavior_trace_sha256": "d1ca7f2a39ee28cc89da27f7986bdda7d8cddc19c17686952d25808125d287a1",
+  "schema": {
+    "layout": "time-major [step, env, ...]; global env indices are 0..num_envs-1",
+    "input_time": "policy_step * policy_dt, before the recorded action",
+    "post_frame": "completed interval's frame, terminal replaced with pre-reset final_obs",
+    "history": "current first + five past frames; reconstruct from pre_frame and episode_id; carry across shards",
+    "detection": "post_frame concatenated with pre_history[:225], no future measurements",
+    "forecast": "pre_history and optionally this action; not future actions",
+    "terminal": "keep complete terminal interval; never connect horizons across done",
+    "increment_valid": "false until enough pre-interval force samples exist in the episode",
+    "force_semantics": "world-frame net normal-contact resultant; not total including friction",
+    "integral": "normal-resultant magnitude integral, includes support loading; not isolated impact impulse"
+  }
+}

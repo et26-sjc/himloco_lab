@@ -1,0 +1,207 @@
+{
+  "mse/force10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/loading10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/impact10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/force_raw": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/rate_raw": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mse/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/force10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/loading10": {
+    "lr": 0.001,
+    "wd": 1e-05,
+    "trial": 3
+  },
+  "brier/impact10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/force_raw": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/rate_raw": {
+    "lr": 0.001,
+    "wd": 0,
+    "trial": 2
+  },
+  "brier/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "brier/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "bce/force10": {
+    "lr": 0.001,
+    "wd": 0,
+    "trial": 2
+  },
+  "bce/loading10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "bce/impact10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "bce/force_raw": {
+    "lr": 0.001,
+    "wd": 0,
+    "trial": 2
+  },
+  "bce/rate_raw": {
+    "lr": 0.001,
+    "wd": 0,
+    "trial": 2
+  },
+  "bce/force20": {
+    "lr": 0.003,
+    "wd": 1e-05,
+    "trial": 5
+  },
+  "bce/loading20": {
+    "lr": 0.003,
+    "wd": 1e-05,
+    "trial": 5
+  },
+  "bce/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/force10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/loading10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/impact10": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/force_raw": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/rate_raw": {
+    "lr": 0.003,
+    "wd": 1e-05,
+    "trial": 5
+  },
+  "mixture/force20": {
+    "lr": 0.003,
+    "wd": 1e-05,
+    "trial": 5
+  },
+  "mixture/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "mixture/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "huber/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "huber/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "huber/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  }
+}

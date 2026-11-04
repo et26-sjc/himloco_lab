@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "max_abs_difference_by_common_field": {
+    "policy_step": 0,
+    "episode_id": 0,
+    "episode_step": 0,
+    "pre_frame": 0,
+    "action": 0,
+    "root_xy_from_origin": 0,
+    "post_frame": 0,
+    "done": 0,
+    "terminated": 0,
+    "truncated": 0,
+    "increment_valid": 0,
+    "normal_forces_w": 0,
+    "normal_peak_n": 0,
+    "normal_integral_ns": 0,
+    "positive_increment_n": 0,
+    "positive_rate_fixed_window_n_per_s": 0,
+    "positive_rate_one_step_n_per_s": 0
+  },
+  "terminal_counts": [
+    64,
+    64
+  ]
+}

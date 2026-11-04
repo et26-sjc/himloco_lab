@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "branch": "feat/go1-impact-replay",
+  "collections": [
+    {
+      "num_envs": 4096,
+      "steps": 2500,
+      "transitions": 10240000,
+      "seed": 11,
+      "scenario": "suite_walk",
+      "observation_noise": true,
+      "randomization": false,
+      "reset_count": 32799,
+      "terminal_traces_captured": 32799,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "collection_and_io_s": 125.46180254200226,
+      "split": "train",
+      "report_sha256": "b2a1bddbe0c47983d730cecacf4204a207e52b52485072b4671c7bbee869561a"
+    },
+    {
+      "num_envs": 4096,
+      "steps": 600,
+      "transitions": 2457600,
+      "seed": 22,
+      "scenario": "suite_walk",
+      "observation_noise": true,
+      "randomization": false,
+      "reset_count": 8192,
+      "terminal_traces_captured": 8192,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "collection_and_io_s": 31.335811575998378,
+      "split": "validation",
+      "report_sha256": "1c41d93f1aefd3b992dc34eee85841184455b55c63716f0249f849910b0f910d"
+    },
+    {
+      "num_envs": 4096,
+      "steps": 600,
+      "transitions": 2457600,
+      "seed": 33,
+      "scenario": "suite_walk",
+      "observation_noise": true,
+      "randomization": false,
+      "reset_count": 8192,
+      "terminal_traces_captured": 8192,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "collection_and_io_s": 30.999918558998615,
+      "split": "test",
+      "report_sha256": "b0428fe79b074dee6ec8055eb15787e0a686130ac961279b2d8c020cacb55aaf"
+    }
+  ],
+  "new_cpu_tests_passed": 20,
+  "baseline_core_diff_empty": true,
+  "policy_sha256_after": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+  "checkpoint_sha256_after": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+  "environment": {
+    "python": "3.12.15",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.3.1",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "known_failures": [
+    "Initial 64-env suite smoke used grid_width .4m, rejected by terrain generator border validation; retained INCOMPLETE; corrected to .45m before formal collections"
+  ],
+  "source_sha256_current": {
+    "scripts/impact/physical_diagnostics.py": "05c60cf4371596c2949a1c0e5ae9786df580ccfa6d29ff3f069c4b2c3695e595",
+    "scripts/impact/run_step1.py": "92793c2ea7589268398560ec7b1a994bb9b17b9bfb19a6645b24a37f5bac0d14",
+    "scripts/impact/compare_collections.py": "a0853bf323f7d4b0276468bca458e1a8747d9c7ca2374e0f85f5f84e1e2831e6",
+    "scripts/impact/collect.py": "68076fa21e92864ba1ba87f99a85109f64b0613de67bc4992a2ca249ef0e6c58",
+    "scripts/impact/train.py": "78acc818a947e3577e436b3b26f57ac77061cdbf0fd313619897649a95fd771f",
+    "scripts/impact/export.py": "4c37f56ad696e7636adaa66a5c954812055b5b3f1ea08ddc6aa2d103d3149a2e",
+    "scripts/impact/summarize.py": "4f3e90f693e10bba4b552b8cd4735766e38c3e27c0991db7a4ca254975e39ea1",
+    "scripts/impact/audit_collection.py": "d33cf4fdd2262b870a3c6d54d6506813bc7135a2b56a44f10f7c0512d75c2d2b",
+    "scripts/impact/evaluate.py": "c1fb4b5b4054e157988f34fe18123d5967b7f9bde0714d16c0e465e192a5aee7",
+    "scripts/impact/prepare_dataset.py": "e93d1e709c797f946ae73c370bc6b7cd87c22163f01a1a912a3f8de4641f8793",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "af73ab471b3868624fe0bf807551081128bf4e912994ba9fafc64856c902b715",
+    "source/himloco_lab/himloco_lab/impact/dataset.py": "d0940ee9d98147fd9752216ec309a949c4040bda80667002488e0f81b13b3096",
+    "source/himloco_lab/himloco_lab/impact/inference.py": "dd445cfa757707411bc495a7c787788d1601b56dfb5781597c91155fee1e6a60",
+    "source/himloco_lab/himloco_lab/impact/metrics.py": "8b92699d5993938dde39fe906536bba55ed8485949b4d34e8057b2f8d06b266b",
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/terrains.py": "a26b039521c4a1e511a50ad4d904c19b08ce789662d1e4f04c6f2ee2fc9596f9",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/models.py": "88bbda09ecfc35ded5a659a8f38368bb20ce95abf764138cc00d6a23fe10644d",
+    "tests/test_impact_preparation.py": "b7b6ea65ca869b51c1651d56997fd1c1a2d0c5120f289f1c75661e2924bebe66",
+    "tests/test_impact_data_audit.py": "ee0e74c5d75321bf2d9c2129f0c187e809362eda6d873ef7b4ccf3ea27377c30",
+    "tests/test_impact_learning.py": "c1d0ce0e80f1d61eaaf4716ead81de7f545a905357a8d97ccc07ebecaa3cb7d7",
+    "configs/impact/step1.json": "1f6e2d5ad63b79808339536e89d037e26a1672a1439a52ecc62071b6bbb33964",
+    "configs/impact/go1_impact_replay.json": "8bdec0aada531ee8b527f96749d747ce4fc0dc94f2a70e295901b107eca6b7f8"
+  },
+  "post_run_maintenance": [
+    "Generalized test-seed overlap guard to read the experiment spec (same seed 11 in this run)",
+    "Strengthened resume metadata/step validation; numerical training unchanged",
+    "Corrected raw force-order metadata wording for non-default dt",
+    "Refined plots and documentation; stored numerical results unchanged"
+  ]
+}

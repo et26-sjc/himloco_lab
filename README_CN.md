@@ -4,6 +4,9 @@ Go1 / Isaac Sim 6.1 / Isaac Lab 3.0: [迁移记录、训练、恢复、Play 与�
 旧权重评估：[LEGACY_POLICY_EVAL.md](LEGACY_POLICY_EVAL.md) · 独立导出：[EXPORT_POLICY.md](EXPORT_POLICY.md) · W&B：[WANDB_LOGGING.md](WANDB_LOGGING.md)
 Go1 PD 对照任务：[配置差异、训练与验证](PD_BASELINE.md)（原 Go1 任务继续使用 Actuator Net）。
 Go1 MuJoCo：[独立JIT推理、可调PD、参数扫描与实际结果](sim2sim/go1/README.md)。
+Go1 Impact/Replay 研究：[第一步实验与实际结果](docs/GO1_IMPACT_STEP1.md)（4096 env、物理标签诊断、分类/回归/有序表示；Replay 尚待验证）。[总协议](docs/GO1_IMPACT_REPLAY_PROTOCOL.md)。
+接触力/loading-rate 研究：[五组独立数据、七种预测方法、物理时间尺度诊断与阶段结论](docs/GO1_FORCE_LOADING_RATE_RESULTS.md)。
+下一阶段：[持续适应与 Replay 实验方案](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md)；上一阶段已[保留方法、有效权重、报告及数据元信息](artifacts/impact/archives/force_study_v1_20261104/README.md)，约 220 GiB 轨迹/缓存按要求清理。
 
 
 ## 项目概述

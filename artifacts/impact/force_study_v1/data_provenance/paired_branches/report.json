@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "groups": 128,
+  "branches": 32,
+  "steps": 60,
+  "physics_dt": 0.0025,
+  "policy_dt": 0.02,
+  "input": "270D raw noiseless actor history",
+  "action": "zero PD, fixed; not walking policy",
+  "hidden": "per-environment kinematic contact patch top height .01..20m",
+  "scope": "future prediction only; exact/approximate prefix equality must be measured",
+  "sha256": "96713ed642eeb52023269ee412343969cda60199b60cdddcbefee2c7008deb4e"
+}

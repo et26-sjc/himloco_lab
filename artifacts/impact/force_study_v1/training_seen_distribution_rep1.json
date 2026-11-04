@@ -1,0 +1,44 @@
+[
+  {
+    "family": "plane",
+    "valid_robot_intervals": 1333150,
+    "event_prevalence": 0.023921726737426395,
+    "impact20_p99": 2288.31298828125,
+    "force20_mean_N": 32.20017623901367
+  },
+  {
+    "family": "rough",
+    "valid_robot_intervals": 1330875,
+    "event_prevalence": 0.02570282708744247,
+    "impact20_p99": 2402.89599609375,
+    "force20_mean_N": 32.0969352722168
+  },
+  {
+    "family": "slope_down",
+    "valid_robot_intervals": 1330875,
+    "event_prevalence": 0.03215347046116277,
+    "impact20_p99": 2747.46875,
+    "force20_mean_N": 31.73671531677246
+  },
+  {
+    "family": "slope_up",
+    "valid_robot_intervals": 1330875,
+    "event_prevalence": 0.027990795529257068,
+    "impact20_p99": 2478.612548828125,
+    "force20_mean_N": 31.938100814819336
+  },
+  {
+    "family": "stairs_down",
+    "valid_robot_intervals": 1330875,
+    "event_prevalence": 0.04507992861839016,
+    "impact20_p99": 3692.41552734375,
+    "force20_mean_N": 28.95640754699707
+  },
+  {
+    "family": "stairs_up",
+    "valid_robot_intervals": 1330875,
+    "event_prevalence": 0.06514924391847468,
+    "impact20_p99": 3746.70654296875,
+    "force20_mean_N": 33.275047302246094
+  }
+]

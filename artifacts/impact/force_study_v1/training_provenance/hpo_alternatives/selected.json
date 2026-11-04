@@ -1,0 +1,47 @@
+{
+  "huber/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "huber/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "huber/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "logmse/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/force20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/loading20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  },
+  "cdf/impact20": {
+    "lr": 0.003,
+    "wd": 0,
+    "trial": 4
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "recorded_UTC": "2026-11-03T17:39:30.111162+00:00",
+  "python": "3.12.15",
+  "executable": "/home/sjc/anaconda3/envs/himloco_lab/bin/python",
+  "versions": {
+    "isaacsim": "6.1.0.0",
+    "isaaclab": "17.0.2",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.3.1",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "GPU": "NVIDIA GeForce RTX 5070 Ti, 16GB",
+  "branch": "feat/go1-impact-replay",
+  "baseline_weights_sha256": {
+    "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "go1_lab_deploy/models/policy.pt": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336"
+  },
+  "isaaclab_source": {
+    "path": "/home/sjc/RL_Research/IsaacLab-3.0",
+    "git_commit": "ae37b028ea415c91ea2bc32609efcd759ed2b974",
+    "git_describe": "v3.0.0-EA",
+    "module_origin": "/home/sjc/RL_Research/IsaacLab-3.0/source/isaaclab/isaaclab/__init__.py",
+    "note": "Installed distribution metadata reports 17.0.2; record the project release tag and commit separately."
+  }
+}

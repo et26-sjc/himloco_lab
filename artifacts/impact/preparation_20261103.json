@@ -1,0 +1,486 @@
+{
+  "date_local": "2026-11-03 Asia/Shanghai",
+  "status": "preparation_passed; physical_label_definition_and_all_learning_experiments_pending",
+  "branch": "feat/go1-impact-replay",
+  "base_commit": "b482a92cb95d9bf95c352e8fcd5735ae34659b93",
+  "baseline_core_diff": [],
+  "tests": {
+    "impact_CPU_contracts": {
+      "passed": 13
+    },
+    "existing_HIM_PD_contracts": {
+      "passed": 11,
+      "source_report": "logs/impact_preparation/terminal16_v2/report.json"
+    }
+  },
+  "instrumentation_AA": {
+    "passed": true,
+    "atol": 1e-05,
+    "max_abs_error": {
+      "root": 0.0,
+      "q": 0.0,
+      "dq": 0.0,
+      "action": 0.0,
+      "done": 0.0
+    },
+    "reference": "logs/impact_preparation/base_noise_a",
+    "candidate": "logs/impact_preparation/base_noise_b",
+    "scope": "up to eight recorded environments; finite prefix; run A/A before interpreting A/B"
+  },
+  "instrumentation_AB": {
+    "passed": true,
+    "atol": 1e-05,
+    "max_abs_error": {
+      "root": 0.0,
+      "q": 0.0,
+      "dq": 0.0,
+      "action": 0.0,
+      "done": 0.0
+    },
+    "reference": "logs/impact_preparation/base_noise_a",
+    "candidate": "logs/impact_preparation/observed_noise",
+    "scope": "up to eight recorded environments; finite prefix; run A/A before interpreting A/B"
+  },
+  "collections": {
+    "base_noise_a": {
+      "num_envs": 8,
+      "steps": 128,
+      "transitions": 1024,
+      "scenario": "plane_walk",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": true,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": null,
+      "history_overlap_max_error": null,
+      "startup_s": 4.76106407000043,
+      "collection_and_io_s": 1.7062332189998415,
+      "torch_peak_allocated_bytes": 10703360,
+      "report": "logs/impact_preparation/base_noise_a/report.json",
+      "report_sha256": "45c746e3c8018606e497b154f6716e4f8ff571e14ec42e9b0b3ee0ec533a1c09",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/base_noise_a",
+        "policy_intervals": 128,
+        "transitions": 1024,
+        "resets": 0,
+        "valid_increment_rows": 1016,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {},
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": null,
+        "shard_bytes": 459568,
+        "bytes_per_transition": 448.796875,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "base_noise_b": {
+      "num_envs": 8,
+      "steps": 128,
+      "transitions": 1024,
+      "scenario": "plane_walk",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": true,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": null,
+      "history_overlap_max_error": null,
+      "startup_s": 4.6035355029998755,
+      "collection_and_io_s": 1.6274388900001213,
+      "torch_peak_allocated_bytes": 10703360,
+      "report": "logs/impact_preparation/base_noise_b/report.json",
+      "report_sha256": "3aa07a4e1a5df1e32950baaae1e8196ecc990caf812c1bed1fc08bdead88f66f",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/base_noise_b",
+        "policy_intervals": 128,
+        "transitions": 1024,
+        "resets": 0,
+        "valid_increment_rows": 1016,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {},
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": null,
+        "shard_bytes": 459568,
+        "bytes_per_transition": 448.796875,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "observed_noise": {
+      "num_envs": 8,
+      "steps": 128,
+      "transitions": 1024,
+      "scenario": "plane_walk",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": true,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.588532629000838,
+      "collection_and_io_s": 1.8152212610002607,
+      "torch_peak_allocated_bytes": 10713088,
+      "report": "logs/impact_preparation/observed_noise/report.json",
+      "report_sha256": "aeec3860be0e7796a15a275bc3a9818d6ef28c49ead53de6bfae48e0a9fdf618",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/observed_noise",
+        "policy_intervals": 128,
+        "transitions": 1024,
+        "resets": 0,
+        "valid_increment_rows": 1016,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 1.5916157281026244e-12,
+          "normal_integral_ns": 3.242492958577259e-07,
+          "positive_increment_n": 1.907349570728911e-06,
+          "positive_rate_fixed_window_n_per_s": 0.0004577637719194172,
+          "positive_rate_one_step_n_per_s": 0.0011291505088593112
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 175.00653076172034,
+        "shard_bytes": 849616,
+        "bytes_per_transition": 829.703125,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "airborne": {
+      "num_envs": 8,
+      "steps": 10,
+      "transitions": 80,
+      "scenario": "airborne",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.713896260000183,
+      "collection_and_io_s": 0.20282550400042965,
+      "torch_peak_allocated_bytes": 166400,
+      "report": "logs/impact_preparation/airborne/report.json",
+      "report_sha256": "f7d822162eed0baf674ae5f459226af2889b1ae9a93002164b984dc0f997b278",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/airborne",
+        "policy_intervals": 10,
+        "transitions": 80,
+        "resets": 0,
+        "valid_increment_rows": 72,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 0.0,
+          "normal_integral_ns": 0.0,
+          "positive_increment_n": 0.0,
+          "positive_rate_fixed_window_n_per_s": 0.0,
+          "positive_rate_one_step_n_per_s": 0.0
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 0.0,
+        "shard_bytes": 67946,
+        "bytes_per_transition": 849.325,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "stand": {
+      "num_envs": 8,
+      "steps": 128,
+      "transitions": 1024,
+      "scenario": "stand",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.548619597000652,
+      "collection_and_io_s": 1.6120232149987714,
+      "torch_peak_allocated_bytes": 166400,
+      "report": "logs/impact_preparation/stand/report.json",
+      "report_sha256": "93a753da04a8f0caad438606f02ad831aef32908de05a643f0517d8cce20888f",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/stand",
+        "policy_intervals": 128,
+        "transitions": 1024,
+        "resets": 0,
+        "valid_increment_rows": 1016,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 1.0658141036401503e-12,
+          "normal_integral_ns": 2.1457673882174788e-07,
+          "positive_increment_n": 4.768372452446101e-07,
+          "positive_rate_fixed_window_n_per_s": 0.00048828116996446624,
+          "positive_rate_one_step_n_per_s": 0.0004882813809672371
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 117.42971801757919,
+        "shard_bytes": 849616,
+        "bytes_per_transition": 829.703125,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "drop": {
+      "num_envs": 8,
+      "steps": 64,
+      "transitions": 512,
+      "scenario": "drop",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.854090949000238,
+      "collection_and_io_s": 0.8708662699991692,
+      "torch_peak_allocated_bytes": 166400,
+      "report": "logs/impact_preparation/drop/report.json",
+      "report_sha256": "2fe47f6022d21a4ffe85342d44157dd84c13328e816830162f1e75bd1c4c13bf",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/drop",
+        "policy_intervals": 64,
+        "transitions": 512,
+        "resets": 0,
+        "valid_increment_rows": 504,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 1.5916157281026244e-12,
+          "normal_integral_ns": 3.9100650095491574e-07,
+          "positive_increment_n": 1.4210854715202004e-12,
+          "positive_rate_fixed_window_n_per_s": 0.000488281362777343,
+          "positive_rate_one_step_n_per_s": 0.0009765627728484105
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 176.85548400879065,
+        "shard_bytes": 424808,
+        "bytes_per_transition": 829.703125,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "drop_dt_half": {
+      "num_envs": 8,
+      "steps": 64,
+      "transitions": 512,
+      "scenario": "drop",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.0025,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.501152771999841,
+      "collection_and_io_s": 1.3144338879992574,
+      "torch_peak_allocated_bytes": 173056,
+      "report": "logs/impact_preparation/drop_dt_half/report.json",
+      "report_sha256": "7f943323410c098f6e89f436bd2e0733c67411565270e9da9130dadaaa0d3b58",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/drop_dt_half",
+        "policy_intervals": 64,
+        "transitions": 512,
+        "resets": 0,
+        "valid_increment_rows": 504,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 2.4442670110147446e-12,
+          "normal_integral_ns": 5.435943917220243e-07,
+          "positive_increment_n": 2.4442670110147446e-12,
+          "positive_rate_fixed_window_n_per_s": 0.000915527136385208,
+          "positive_rate_one_step_n_per_s": 0.003662108545540832
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 268.08734130859614,
+        "shard_bytes": 572264,
+        "bytes_per_transition": 1117.703125,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "terminal16_v2": {
+      "num_envs": 16,
+      "steps": 64,
+      "transitions": 1024,
+      "scenario": "plane_walk",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 16,
+      "terminal_traces_captured": 16,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 4.536020301999088,
+      "collection_and_io_s": 0.9833938459996716,
+      "torch_peak_allocated_bytes": 10880512,
+      "report": "logs/impact_preparation/terminal16_v2/report.json",
+      "report_sha256": "f889a0117deb9dcf59e8eb492acc633c08454a6b59d340898e54063ecd549880",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/terminal16_v2",
+        "policy_intervals": 64,
+        "transitions": 1024,
+        "resets": 16,
+        "valid_increment_rows": 992,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 1.3926637620897964e-12,
+          "normal_integral_ns": 3.9100649651402364e-07,
+          "positive_increment_n": 1.3926637620897964e-12,
+          "positive_rate_fixed_window_n_per_s": 0.0004882813882431947,
+          "positive_rate_one_step_n_per_s": 0.0009155275001830887
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 156.46160888672014,
+        "shard_bytes": 832360,
+        "bytes_per_transition": 812.8515625,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    },
+    "scale4096_retry": {
+      "num_envs": 4096,
+      "steps": 128,
+      "transitions": 524288,
+      "scenario": "rough_walk",
+      "seed": 1,
+      "window": {
+        "physics_dt": 0.005,
+        "policy_dt": 0.02,
+        "rise_interval_s": 0.01
+      },
+      "observation_noise": false,
+      "reset_count": 0,
+      "terminal_traces_captured": 0,
+      "history_reconstruction_max_error": 0.0,
+      "reference_contact_max_error": 0.0,
+      "history_overlap_max_error": 0.0,
+      "startup_s": 29.901725549998446,
+      "collection_and_io_s": 9.743035512999995,
+      "torch_peak_allocated_bytes": 78065664,
+      "report": "logs/impact_preparation/scale4096_retry/report.json",
+      "report_sha256": "db4dc491cb0a9f8adfa6178e9aa37b97e61fa3f75e67a989430790314e4c9df4",
+      "audit": {
+        "passed": true,
+        "root": "logs/impact_preparation/scale4096_retry",
+        "policy_intervals": 128,
+        "transitions": 524288,
+        "resets": 0,
+        "valid_increment_rows": 520192,
+        "post_to_next_pre_frame_max_error": 0.0,
+        "force_history_overlap_max_error": 0.0,
+        "numpy64_vs_torch32_target_max_errors": {
+          "normal_peak_n": 2.0475985593293444e-05,
+          "normal_integral_ns": 3.910064716450279e-07,
+          "positive_increment_n": 2.0475985593293444e-05,
+          "positive_rate_fixed_window_n_per_s": 0.0019886965783371124,
+          "positive_rate_one_step_n_per_s": 0.004231231476296671
+        },
+        "numeric_tolerance": "8 float32 eps times per-foot force scale, propagated into each target unit",
+        "max_normal_force_n": 365.48597195565503,
+        "shard_bytes": 417367760,
+        "bytes_per_transition": 796.0658264160156,
+        "scope": "data integrity and candidate formulas only; not physical label validity or learned prediction quality"
+      }
+    }
+  },
+  "physics_diagnostic": {
+    "normal_peak_max_n": {
+      "airborne": 0.0,
+      "stand": 117.42971801757919,
+      "drop": 176.85548400879065,
+      "drop_dt_half": 268.08734130859614
+    },
+    "whole_1p28s_normal_resultant_integral_per_env_ns": {
+      "drop": 164.4584083557129,
+      "drop_dt_half": 164.45626831054688
+    },
+    "interpretation": "Peak changed substantially with physics dt. Whole-run integral includes support and is similar in this single nominal-drop diagnostic; this does not validate 20ms impulse targets, event thresholds, dt convergence, or independent multi-seed generalization."
+  },
+  "failed_attempts": [
+    {
+      "path": "logs/impact_preparation/scale4096_v2",
+      "exit_code": 139,
+      "phase": "SimulationApp startup, before environment construction",
+      "log": "logs/impact_preparation/scale4096_v2.console.log",
+      "observed_stack": "getenv / XOpenDisplay / omni.platforminfo / Kit telemetry",
+      "diagnosis": "native startup crash; root cause not established",
+      "incomplete_marker_retained": true,
+      "retry": "logs/impact_preparation/scale4096_retry",
+      "retry_status": "completed with identical collection parameters; no workaround or physics changes"
+    }
+  ],
+  "source_sha256": {
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "01486ea193a757e4a052a2fb6459f7edeeaf5efda8ceb72ee70496acd8840c85",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "scripts/impact/audit_collection.py": "d33cf4fdd2262b870a3c6d54d6506813bc7135a2b56a44f10f7c0512d75c2d2b",
+    "scripts/impact/collect.py": "cc47004eaaca65fc77ba9c29c47909b71e4707050a367a552efe56998b1ddc7a",
+    "scripts/impact/compare_collections.py": "a0853bf323f7d4b0276468bca458e1a8747d9c7ca2374e0f85f5f84e1e2831e6",
+    "tests/test_impact_data_audit.py": "ee0e74c5d75321bf2d9c2129f0c187e809362eda6d873ef7b4ccf3ea27377c30",
+    "tests/test_impact_preparation.py": "18f03ec4b80e91d189bbecca0951888c4a54b481db6e3c97fac76bb4f15e7939",
+    "configs/impact/go1_impact_replay.json": "cc7ef83ba1be553fc42be34f9151ea3b86a746154a0c3b78f2513e2513bd903a"
+  },
+  "limitations": [
+    "4096 test covers 128 policy steps = 2.56s per environment, not long training",
+    "No classifier/regressor/ordinal/replay model has been trained",
+    "No final impact/event threshold has been selected",
+    "Instrumentation comparison covers 8 environments and a finite 128-step prefix with observation noise",
+    "No robot I/O, admittance or policy control changes",
+    "Torch peak memory excludes PhysX/Warp/Kit/driver"
+  ],
+  "next_gate": "A0 event-aligned trace analysis, numerical sensitivity and label specification; then locked dataset splits and stationary supervised baselines"
+}

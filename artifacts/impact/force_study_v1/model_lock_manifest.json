@@ -1,0 +1,291 @@
+{
+  "status": "locked",
+  "recorded_UTC": "2026-11-03T18:12:11.213677+00:00",
+  "runs": [
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep1/I0/detection/report.json",
+      "report_sha256": "92b7633c3bfe4ad715aa1243f163b491a008fa2b815dfee9a3aa56f7a1d85101",
+      "models": "logs/impact_force_study_v1/alternatives/rep1/I0/detection/models.pt",
+      "models_sha256": "d523d0aa32203ed6b15d67e30e5a6deb4ab785a8afa38f7b38baf677953d46c2",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep1/I0/forecast/report.json",
+      "report_sha256": "7f9b599ed73a04688c8f18126aacd03bbd9273e7559a346c2e87212d17c681d4",
+      "models": "logs/impact_force_study_v1/alternatives/rep1/I0/forecast/models.pt",
+      "models_sha256": "09a7eeda1a9294c61e5e0d3ab5a9816e7067e4d2ccc0161a9a0a3b6498ef1f58",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep2/I0/detection/report.json",
+      "report_sha256": "579eada80c32752dab939400b2d6ad56a5a5e1fec57698ab908a2285a18971c6",
+      "models": "logs/impact_force_study_v1/alternatives/rep2/I0/detection/models.pt",
+      "models_sha256": "acc93324198928df062770399b4fd4ebe8f663d5ca63a7c46a90dfd049b182de",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep2/I0/forecast/report.json",
+      "report_sha256": "ac33589df7e56cf9b7fbf393b9c3c04aebd0a13d9fa41334fcbcc05bf2438710",
+      "models": "logs/impact_force_study_v1/alternatives/rep2/I0/forecast/models.pt",
+      "models_sha256": "0a748924f57bc4c24c3fd9c185a1bfa19eaf3d07ae65b50096c6ca580658f82f",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep3/I0/detection/report.json",
+      "report_sha256": "2cc6a55e30c55edeb1eaffeeeeb3fb18d1e689e2eb9fadbc9103c368e6e3df9e",
+      "models": "logs/impact_force_study_v1/alternatives/rep3/I0/detection/models.pt",
+      "models_sha256": "a91597e6f3b5e108e53daed4df768dde4fd88e7d0991effe429b47b3f9e10330",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep3/I0/forecast/report.json",
+      "report_sha256": "b0367712dc7f885637a7faf86646d20ccd2daaa871fdb2dc6588a47d2f71be17",
+      "models": "logs/impact_force_study_v1/alternatives/rep3/I0/forecast/models.pt",
+      "models_sha256": "5de1f9833ac185107eb4056ac22fca969e8180c41d2a51975759ec263f1fd8c6",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep4/I0/detection/report.json",
+      "report_sha256": "d4eca4e69c59e200f9a81bb08a19c71c88af7bd6e3e64f831fe5df48b93b80e6",
+      "models": "logs/impact_force_study_v1/alternatives/rep4/I0/detection/models.pt",
+      "models_sha256": "8480cf4158ad5c6396bb2e8e576a526276598ad0b3c26e1d7917504ff6dce506",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep4/I0/forecast/report.json",
+      "report_sha256": "0f2cb8030bb70f47cb18ce018cddb68b9bd06dc8ae891517784d75ae5abe97fe",
+      "models": "logs/impact_force_study_v1/alternatives/rep4/I0/forecast/models.pt",
+      "models_sha256": "13348030396e1f750ace4a2d49956b3e80ff3654632e5323f40648f91b380d54",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep5/I0/detection/report.json",
+      "report_sha256": "2e2b4ecc94687e49703370092a260c8f685b0a54b683bfef45a178c485135bad",
+      "models": "logs/impact_force_study_v1/alternatives/rep5/I0/detection/models.pt",
+      "models_sha256": "4979edf4f0021686f64c9683f98d4c91e5134f0326984d1c851026b8655fd744",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/alternatives/rep5/I0/forecast/report.json",
+      "report_sha256": "7b3be0f12cd2705d521a4cdc5fb2e901cc702137b05f7b5512ada516273b7e4c",
+      "models": "logs/impact_force_study_v1/alternatives/rep5/I0/forecast/models.pt",
+      "models_sha256": "4281ecf3bd406d87de3d21b314a235506f56021c1a11e7996c77ec25509da153",
+      "updates": 60000,
+      "model_instances": 18
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep1/I0/detection/report.json",
+      "report_sha256": "a40e08bc7730d2dc1b57354c21ef0e52bc3201c9bc58b81de2ff7dcb39403718",
+      "models": "logs/impact_force_study_v1/main/rep1/I0/detection/models.pt",
+      "models_sha256": "35bc49b4e3d75bb5b773fde6fe3e1ae423fcbebd32ecc32622c676b98c89cb42",
+      "updates": 60000,
+      "model_instances": 64
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep1/I0/forecast/report.json",
+      "report_sha256": "3740fb5b9a059e3e74f0afbf5caafac1926991ca071a9bb53a59ccbbabd75f15",
+      "models": "logs/impact_force_study_v1/main/rep1/I0/forecast/models.pt",
+      "models_sha256": "24a6845a483c25d194d45b632d8fab371a52ac04879e92d9c1b46f4ddaef47cb",
+      "updates": 60000,
+      "model_instances": 32
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep1/I0clean/detection/report.json",
+      "report_sha256": "3acd2015702ddd636db9c3b96f7cfdeaed574f6b6245636a1720c715c88a8cb7",
+      "models": "logs/impact_force_study_v1/main/rep1/I0clean/detection/models.pt",
+      "models_sha256": "917a720ac01305e53929d75ed48b1e8c2acc01c2382aa473151d55b9a4e42566",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep1/I1/detection/report.json",
+      "report_sha256": "87e22109add79e0ee58afcc13343f30df28beecbe2b67a38241333b0966749db",
+      "models": "logs/impact_force_study_v1/main/rep1/I1/detection/models.pt",
+      "models_sha256": "b20035c85482ba89df208ae899d4686d3a7a94021e664bb17c5d2460f36e5f1c",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep1/I2/detection/report.json",
+      "report_sha256": "962b43a76b307439ce04c24693c8d8691cfd910cc31397edff98e94760b6ef8f",
+      "models": "logs/impact_force_study_v1/main/rep1/I2/detection/models.pt",
+      "models_sha256": "5f2172638b392c6f125cde18ccbfc92ca05c307fc7578f46505db3671a4a8324",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep2/I0/detection/report.json",
+      "report_sha256": "6a557b82f909f5204ca90ecf46c471bde42f84421d050dcffd9c605d7b93f6df",
+      "models": "logs/impact_force_study_v1/main/rep2/I0/detection/models.pt",
+      "models_sha256": "f762971ff475550b4ab1b293d6bdc86f628339840f79d7dc80f7da788518f9fc",
+      "updates": 60000,
+      "model_instances": 64
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep2/I0/forecast/report.json",
+      "report_sha256": "68c399de207b9a4d0a67c5f575a159eb73248b63ab9a242416d0f20ae0598744",
+      "models": "logs/impact_force_study_v1/main/rep2/I0/forecast/models.pt",
+      "models_sha256": "621260da411bc60eac070ed75782673c16063eb23ce026b7051db2297a19afe0",
+      "updates": 60000,
+      "model_instances": 32
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep2/I0clean/detection/report.json",
+      "report_sha256": "4af4d9a68351fadd93f01617b45ed714b9c48cad8c551f68a71305a20a77a090",
+      "models": "logs/impact_force_study_v1/main/rep2/I0clean/detection/models.pt",
+      "models_sha256": "66b9a29b0c25de7f2e07e9b94e11f3cd375ae4de82d10ef884055534edaa40b2",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep2/I1/detection/report.json",
+      "report_sha256": "6ca4448f0f87ae103a1343d1d6afaf2810050a958c4d4b9f326146dde53aaa99",
+      "models": "logs/impact_force_study_v1/main/rep2/I1/detection/models.pt",
+      "models_sha256": "4c776d47dfa1908c4ea21ac8b75e76b78ed8351c37a7c9aaa689d4d80d96d2f1",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep2/I2/detection/report.json",
+      "report_sha256": "bda04b93c29b86aa93f2289f356b65e2d848eb260940a83141a2d495ced92d4d",
+      "models": "logs/impact_force_study_v1/main/rep2/I2/detection/models.pt",
+      "models_sha256": "d55fab3ab8486ef952066380812766fb47b08ac28c06599e06edf42eed2cd168",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep3/I0/detection/report.json",
+      "report_sha256": "25a5d3d1bf1de364a7f0e895aac10195dc51cccd356e9d40bd20608d59c521ac",
+      "models": "logs/impact_force_study_v1/main/rep3/I0/detection/models.pt",
+      "models_sha256": "b5f1d2ceaace916f14af3dff250021de8fcdab07fc5d14eb247adeaaa3c765ba",
+      "updates": 60000,
+      "model_instances": 64
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep3/I0/forecast/report.json",
+      "report_sha256": "3f057e9abc7c806bcc95aaa4bd829ccf005854e8718c91311619d0c01def2d1d",
+      "models": "logs/impact_force_study_v1/main/rep3/I0/forecast/models.pt",
+      "models_sha256": "88f1e5f31a7ff4cda64ba87db94696d81b5406e5a35537954fd71b6a55f8cdcd",
+      "updates": 60000,
+      "model_instances": 32
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep3/I0clean/detection/report.json",
+      "report_sha256": "500caf93c00ff0beb05576f9df15e0738781fb77c4e729cd5b25bd79b756cd7f",
+      "models": "logs/impact_force_study_v1/main/rep3/I0clean/detection/models.pt",
+      "models_sha256": "1e0bf476ef604797850be07317c4bce1f4fe78b794cabca8379b7667224bfe96",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep3/I1/detection/report.json",
+      "report_sha256": "e7efcf86627a045600223ffdd4ea35b75b46cc9135613cd860cb0fbc6838e033",
+      "models": "logs/impact_force_study_v1/main/rep3/I1/detection/models.pt",
+      "models_sha256": "1e2a52b289c8c4dc01f9889084ff86b96b58362f9050b79aab7b701978481886",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep3/I2/detection/report.json",
+      "report_sha256": "40cd28c52e2c52c73b563a1d97cda168fb8bdb690ab2cb93c3f7fee81ea02769",
+      "models": "logs/impact_force_study_v1/main/rep3/I2/detection/models.pt",
+      "models_sha256": "e5afe0ba6c90cdc16376b04e5be605c7c6b0aad33a24c3bca8eba579955b93ff",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep4/I0/detection/report.json",
+      "report_sha256": "cc98aeda2ced4f80b053b9af51f207b87d5a2b878b5c318d53ccc8fec0a07951",
+      "models": "logs/impact_force_study_v1/main/rep4/I0/detection/models.pt",
+      "models_sha256": "3e4d2139d3c5b4c0cc043dc0555d313399437540aed9794dbb4d720eaa4b343d",
+      "updates": 60000,
+      "model_instances": 64
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep4/I0/forecast/report.json",
+      "report_sha256": "9dd6dd8b6ae77fa6b4d6f62ca21ac65137b893da64c63904fc264dd7f6d00e60",
+      "models": "logs/impact_force_study_v1/main/rep4/I0/forecast/models.pt",
+      "models_sha256": "9dd7336443c33f62fa18521ebfbabaad4cf835a9e4cb9d65b3c0099c0fff5e31",
+      "updates": 60000,
+      "model_instances": 32
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep4/I0clean/detection/report.json",
+      "report_sha256": "dec32e3da3c7450017776000114a79b95582588cb939062257d600f77e5b2291",
+      "models": "logs/impact_force_study_v1/main/rep4/I0clean/detection/models.pt",
+      "models_sha256": "2d9e5b07745473b08d1fcbde731600bfa8a503471e5d2387ea33e6dbe56a7cb7",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep4/I1/detection/report.json",
+      "report_sha256": "0c15c0ac0cdb0c9888d82ded538e859d2799821a3cd02f539381f2a770d28780",
+      "models": "logs/impact_force_study_v1/main/rep4/I1/detection/models.pt",
+      "models_sha256": "dfaa16ee7d48e56227f75eeb3fb32d42ffa9391328c92df5fb78bc0250be7461",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep4/I2/detection/report.json",
+      "report_sha256": "61b3a87cebedd03a23516f6a7dc454b5327014545d2261afddb192f731186411",
+      "models": "logs/impact_force_study_v1/main/rep4/I2/detection/models.pt",
+      "models_sha256": "084fb4d871f48b3321f8315d230375108a96de3f211171dce64be5a27b6e04d3",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep5/I0/detection/report.json",
+      "report_sha256": "67d66c486bd63b3994459d0b23c29b6662d8503c91082ed879940f552a0196c4",
+      "models": "logs/impact_force_study_v1/main/rep5/I0/detection/models.pt",
+      "models_sha256": "b1eb68480e10b7c61e27340d1c9f3bcdb1a2265aa8856a06fc9aa066f0d08dd6",
+      "updates": 60000,
+      "model_instances": 64
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep5/I0/forecast/report.json",
+      "report_sha256": "f864903d49e23a61a882f696695dea91a8d3d00b4b26d7fb86eea597daf74fd4",
+      "models": "logs/impact_force_study_v1/main/rep5/I0/forecast/models.pt",
+      "models_sha256": "7e1a748c2df756593028aed7d9d12acfe477819976489cd4f71deef8652ce2e3",
+      "updates": 60000,
+      "model_instances": 32
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep5/I0clean/detection/report.json",
+      "report_sha256": "e0dc58016b1d0bc980a5d0de78b6fc54df9ff9144975a32d49bbd8f720981ba9",
+      "models": "logs/impact_force_study_v1/main/rep5/I0clean/detection/models.pt",
+      "models_sha256": "020479a09b14373e51f1602de5485a373a6c689f3d8dbd75521e1e6502d1e48e",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep5/I1/detection/report.json",
+      "report_sha256": "85837cdb6a9c0dc7446fb269ff8a1db6d7c4d35a4e2210655def2c25a481abb6",
+      "models": "logs/impact_force_study_v1/main/rep5/I1/detection/models.pt",
+      "models_sha256": "d19c6124ac2f4de0e62473cbacd6b33e8fa657cdcd2959277d33f4655028778f",
+      "updates": 60000,
+      "model_instances": 8
+    },
+    {
+      "report": "logs/impact_force_study_v1/main/rep5/I2/detection/report.json",
+      "report_sha256": "4e11b8bc200637740c07c864e411ff7c17c2d2dbdf8ffb7438a571c1895f0dc8",
+      "models": "logs/impact_force_study_v1/main/rep5/I2/detection/models.pt",
+      "models_sha256": "8d9f51a589acf9296bcd93eb524838cecb5f5076e6c3e54453c6f01c99af2a3c",
+      "updates": 60000,
+      "model_instances": 8
+    }
+  ],
+  "total_runs": 35,
+  "total_model_instances": 780,
+  "scope": "All requested weights complete before global final-test gate; hashes independently checked against training reports.",
+  "spec_sha256": "ce1ef86e31724b06bf8b15cb6db736870157f616f0b5f64aef27b5c7a692acb5",
+  "target_and_model_source_sha256": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a"
+}

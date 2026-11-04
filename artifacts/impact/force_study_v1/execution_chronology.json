@@ -1,0 +1,16 @@
+{
+  "recorded_UTC": "2026-11-03T17:47:33.516782+00:00",
+  "phase": "All main and input fits complete; alternative methods still training; final tests unopened",
+  "clarification": "Updated registration wording to distinguish primary settings fixed before main training from input-capacity matching finalized before input arms. No numerical settings changed. Pre-test source snapshots and earlier config hash are retained.",
+  "coordination_changes": "Bounded two-process final evaluation with file locks and atomic JSON output; no training/inference equations changed.",
+  "descriptive_additions": "Small resolved-load subgroups; terrain-family summaries; training-mean and zero controls; raw physics peak ratios; family-stratified tile bootstrap. Added before final test; no method chosen from final test.",
+  "source_provenance": "Early rep1 ran before metadata and per-input width plumbing were added to the trainer; I0 dimensions, training equations, targets and updates unchanged. Source hashes stored by trainers are disk hashes at save time, not full executable snapshots.",
+  "files": {
+    "configs/impact/force_study_v1.json": "ce1ef86e31724b06bf8b15cb6db736870157f616f0b5f64aef27b5c7a692acb5",
+    "scripts/impact/evaluate_force_study.py": "560d19e8565551f220e8017b4a9fa9cf60188163cad66e1bedb2e97d48e34ef2",
+    "scripts/impact/summarize_force_study.py": "4210011b6b834653680430baf92991b98419bf784887b141633d9bac34110b92",
+    "scripts/impact/analyze_force_reference.py": "5be94edbef1d3ec02fd0ca41a95f762351dae8399779cc26da5449e12bf545a7"
+  },
+  "completed_training_task_runs_at_record": 27,
+  "completed_test_result_files_at_record": 0
+}

@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "entries": [
+    [
+      1,
+      "mse",
+      0
+    ],
+    [
+      1,
+      "mse",
+      1
+    ],
+    [
+      1,
+      "mse",
+      5
+    ],
+    [
+      1,
+      "mse",
+      6
+    ],
+    [
+      2,
+      "mse",
+      0
+    ],
+    [
+      2,
+      "mse",
+      1
+    ],
+    [
+      2,
+      "mse",
+      5
+    ],
+    [
+      2,
+      "mse",
+      6
+    ]
+  ],
+  "best_loss": [
+    0.0009269206711906008,
+    0.0009795892710826593,
+    0.0005974549249003758,
+    0.00043467149498610524,
+    0.0008880714231054299,
+    0.001012555812849314,
+    0.0005874075714018545,
+    0.00043955583987553837
+  ],
+  "best_steps": [
+    58000,
+    60000,
+    58000,
+    58000,
+    56000,
+    58000,
+    58000,
+    56000
+  ],
+  "allocated_parameters_per_model": 45544,
+  "updates": 60000,
+  "exposures_per_model": 122880000,
+  "unique_exposed": 7987524,
+  "available": 7987525,
+  "seconds": 79.37151283999992,
+  "task": "detection",
+  "input": "I0clean",
+  "train_metadata_sha256": "6cb69ed6fd5a4c77f6ecb389879977c43fee5f6222a9cae5a2eff71891a62652",
+  "validation_metadata_sha256": "4c734c8703e09661fb18731db3a2f6629552f23d82c0af3f1b988b828f765f9b",
+  "models_sha256": "1e0bf476ef604797850be07317c4bce1f4fe78b794cabca8379b7667224bfe96",
+  "source_sha256": {
+    "/home/sjc/himloco_lab/scripts/impact/train_force_study.py": "16387de0dca63f4f46675c3080fb190e560a351b6df303200589b354710b2078",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a"
+  }
+}

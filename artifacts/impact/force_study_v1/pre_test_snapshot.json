@@ -1,0 +1,21 @@
+{
+  "recorded_UTC": "2026-11-03T16:40:07.636409+00:00",
+  "stage": "before any final test evaluation; collection and training in progress",
+  "note": "Early rep1 executed before report metadata and input-capacity configuration additions. I0 training equations and locked methods unchanged. This is a pre-evaluation snapshot, not a byte-for-byte record of every earlier process runtime.",
+  "files": {
+    "configs/impact/force_study_v1.json": "7db9d7c3d22bf08285c1263fc8d81aae30895d578d4d164b1a96c3b7382d8a72",
+    "scripts/impact/analyze_force_physics.py": "a0dc673fb53170ebf201d3225b4209a1f96c8c8d4db337d9b2ab6f5a36720309",
+    "scripts/impact/analyze_paired_branches.py": "771bf66340ef0ef7b095f8ec9ec68dfde461689db5b3696334d0b65bbf2cc543",
+    "scripts/impact/audit_force_cache.py": "3072c5f26762027c2aa85802a48d64cf0dd33c32a53c647f0b61f0b945a35565",
+    "scripts/impact/collect.py": "21fdd7c97dd59a83db786450cd4f38f98eef2f1dd47d0dc600ef6cf96d2b3769",
+    "scripts/impact/collect_force_study.py": "4155b003e3a0a0c6d755ca6ccd6d0e001c4e0f8c43dbc1365989e6ddc6ec9c34",
+    "scripts/impact/evaluate_force_study.py": "7c6c4106148dc29a2a764c3302bb2fb87527681901ddb5e03ea8bc7adc3c2ad8",
+    "scripts/impact/paired_contact_branches.py": "14b1826fb996fd9aac33e288de0aa4718814a96d347d69622ee4ac924dcf3a2d",
+    "scripts/impact/run_force_learning.py": "c9a1a1f51f8ab42e466f96b93e715aec3e48b7569e22a08f7b593b6ecea90878",
+    "scripts/impact/run_force_physics.py": "f531b9cfceabcffede83050524b93ad9fc801e9d877b96926740c3a3cf72fc0a",
+    "scripts/impact/summarize_force_study.py": "0113e529d140e3d05be125cf612f5689c0c9932dc63d85c30f6c901eb7b0e4d2",
+    "scripts/impact/train_force_study.py": "16387de0dca63f4f46675c3080fb190e560a351b6df303200589b354710b2078",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a",
+    "source/himloco_lab/himloco_lab/impact/physics_observer.py": "6bb32107010d1b852a322cabf90677d9399e5f0ebda92c075cd542d63883d520"
+  }
+}

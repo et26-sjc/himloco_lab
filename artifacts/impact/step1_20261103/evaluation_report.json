@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "tasks": {
+    "detection": {
+      "file": "detection_results.json",
+      "sha256": "8547f25121db3f11ca5d403e645345f31e4681c2d0f5108b70e1a616f0270b6a"
+    },
+    "forecast": {
+      "file": "forecast_results.json",
+      "sha256": "248762629b5a7b8655b91b58e6d2c89e497e160107d162abcd60bb24598f03a1"
+    }
+  },
+  "elapsed_s": 785.4839999510004,
+  "training_report_sha256": "f181db46df9e505a89516d27da3a335d53e066a7ddfd0c90096f8488dec11263",
+  "test_metadata_sha256": "35cb267b8a97b9e208f7a1126939cc5d59c9322e55ab71b3bda6a768ca6a4433",
+  "test_collection_seed": 33,
+  "limitations": [
+    "one data generation per split",
+    "simulation-only rapid-loading proxy",
+    "no replay yet",
+    "no controller effectiveness claim",
+    "1/min is a comparison operating point; test FAR can shift"
+  ],
+  "source_sha256": {
+    "/home/sjc/himloco_lab/scripts/impact/evaluate.py": "d0b1f2cf7d16e45c4783e055beb85d05d0d2a294aad9c651881d483139c7c74e",
+    "source/himloco_lab/himloco_lab/impact/collection_cfg.py": "af73ab471b3868624fe0bf807551081128bf4e912994ba9fafc64856c902b715",
+    "source/himloco_lab/himloco_lab/impact/dataset.py": "d0940ee9d98147fd9752216ec309a949c4040bda80667002488e0f81b13b3096",
+    "source/himloco_lab/himloco_lab/impact/inference.py": "dd445cfa757707411bc495a7c787788d1601b56dfb5781597c91155fee1e6a60",
+    "source/himloco_lab/himloco_lab/impact/metrics.py": "8b92699d5993938dde39fe906536bba55ed8485949b4d34e8057b2f8d06b266b",
+    "source/himloco_lab/himloco_lab/impact/__init__.py": "81696fb1b1a95b65250dff89e2b9d50fa1fb6401c787e66bd762e658c4bfc050",
+    "source/himloco_lab/himloco_lab/impact/terrains.py": "a26b039521c4a1e511a50ad4d904c19b08ce789662d1e4f04c6f2ee2fc9596f9",
+    "source/himloco_lab/himloco_lab/impact/recording_env.py": "b17f22168ac294c43308859d245e36fb3c190830db3d59d35d8da74f6497ca1d",
+    "source/himloco_lab/himloco_lab/impact/labels.py": "b20b2efa551c577916b49a2d6c7827284f232141b895424a32b42352627e43f5",
+    "source/himloco_lab/himloco_lab/impact/models.py": "88bbda09ecfc35ded5a659a8f38368bb20ce95abf764138cc00d6a23fe10644d"
+  }
+}

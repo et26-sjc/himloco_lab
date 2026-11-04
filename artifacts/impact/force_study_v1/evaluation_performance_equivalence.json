@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "change": "Reuse model-independent ordered row indices; no change to targets, data, models, endpoints, or metric formulas. Applied after test launch to later evaluation processes only. Earlier processes retain original implementation.",
+  "checked_tiles": 84,
+  "checked_rows": 2261632,
+  "evaluation_source_sha256": "6d7f4f9955cf374b52a6a5326d8b0887d61c8bb5b45cc553fb0f00d539cd900d",
+  "event_truth_cache": {
+    "status": "passed",
+    "identical_full_metric_dict_checks": 12,
+    "change": "Reuse label-only grouping across methods and alarm budgets, same masks and grouping."
+  }
+}

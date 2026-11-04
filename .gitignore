@@ -81,3 +81,6 @@ _build
 /artifacts/go1_lab_deploy/**/*.npz
 /artifacts/go1_lab_deploy/*.tar.gz
 /artifacts/go1_lab_deploy/release_check/
+
+# Local research preservation bundles; keep manifest and index reviewable.
+/artifacts/impact/archives/**/*.tar.gz

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "study": "Go1 proprioceptive impact representation and event replay",
+  "status": "A0/A1 implemented; see step1.json and experiment report; replay remains planned",
+  "baseline": {
+    "branch_point": "b482a92cb95d9bf95c352e8fcd5735ae34659b93",
+    "task": "Unitree-Go1-Velocity-PD",
+    "checkpoint": "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt",
+    "checkpoint_sha256": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "policy": "go1_lab_deploy/models/policy.pt",
+    "policy_sha256": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336",
+    "freeze": ["actor", "HIMEstimator", "PD", "rewards"],
+    "kp": 40.0,
+    "kd": 1.0,
+    "action_scale": 0.25
+  },
+  "collection": {
+    "num_envs": 4096,
+    "physics_dt": 0.005,
+    "policy_dt": 0.02,
+    "rise_interval_s": 0.01,
+    "scenario": "rough_walk",
+    "velocity": [0.7, 0.0, 0.0],
+    "steps": 2500,
+    "shard_steps": 16,
+    "randomization": false,
+    "observation_noise": false,
+    "training_seeds": [1, 2, 3, 4, 5],
+    "force_semantics": "world-frame net normal-contact resultant; not total including friction"
+  },
+  "labels": {
+    "status": "rapid_loading_v1 defined in step1.json; physical transfer not validated",
+    "primary_candidate": "max causal 10ms-averaged normal-load rise over a 10ms lag in 20ms interval; loading proxy",
+    "binary_threshold_n": 40.0,
+    "ordinal_thresholds_n": [20.0, 40.0, 80.0],
+    "event_on_n": 40.0,
+    "event_off_n": 40.0,
+    "event_merge_gap_s": 0.04,
+    "normalization": "natural units N; thresholds are operational loading levels, not damage limits",
+    "diagnostics": ["normal_peak_n", "normal_integral_ns", "positive_rate_one_step_n_per_s"]
+  },
+  "tasks": {
+    "detection": "post-interval current frame + five pre-interval frames -> completed interval",
+    "forecast_20ms": "pre-interval history (+ available current action ablation) -> next 20 ms",
+    "forecast_40ms": "same causal input -> next 40 ms; mask incomplete horizons",
+    "post_contact_severity": "planned only if A0 shows remaining peaks are observable at 50 Hz"
+  },
+  "offline_comparison": {
+    "status": "implemented_stationary_step1; phase-only heuristic and further regression families remain future controls",
+    "implemented_spec": "configs/impact/step1.json",
+    "models": ["phase/kinematics heuristic", "binary_BCE", "raw_MSE", "robust_regression", "probabilistic_regression", "monotone_ordinal"],
+    "data_budget_transitions": [1048576, 10240000, 51200000],
+    "optimizer_batch": 1024,
+    "optimizer_step_checkpoints": [1000, 5000, 20000, 50000],
+    "warm_start": "same converged Stage-0 weights within each paired seed",
+    "stop": "validation plateau verified by extended training; max steps is a budget, not proof of convergence"
+  },
+  "continual_comparison": {
+    "status": "planned_not_implemented",
+    "streams": ["A->A", "A->B->C->A"],
+    "arms": ["freeze", "finetune", "compute_matched_recent_rehearsal", "anchor_replay", "reservoir_replay", "event_replay", "all_seen_data_reference"],
+    "mixed_old_fractions": [0.0, 0.2, 0.5],
+    "memory_budget_bytes": [1048576, 8388608, 33554432],
+    "fairness_protocols": ["fixed_new_exposure_plus_compute_matched_controls", "fixed_total_batch_and_updates"],
+    "stream_shifts": ["velocity", "terrain_geometry", "observation_noise_and_delay"],
+    "primary_comparison": "event replay vs uniform reservoir at equal memory bytes and matched updates"
+  },
+  "metrics": {
+    "primary": ["event recall at validation-locked false alarms per robot-minute", "old/new event AP", "retention-adaptation curves"],
+    "secondary": ["per-foot AP", "Brier", "detection latency", "strict pre-contact lead time", "severity-stratified regression error"],
+    "statistics": "five paired training/data seeds; report per-seed differences and hierarchical episode/terrain uncertainty"
+  },
+  "gates": ["A0_label_and_timing_audit", "A1_stationary_learnability", "A2_representation_comparison", "B_offline_continual_replay", "C_simulator_online_and_unseen_domains"],
+  "scope": "supervised impact module only; no locomotion PPO retraining, admittance, quiet-gait reward, or physical robot commands"
+}

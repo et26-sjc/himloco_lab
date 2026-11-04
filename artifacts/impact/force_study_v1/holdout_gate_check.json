@@ -1,0 +1,5 @@
+{
+  "status": "passed",
+  "recorded_UTC": "2026-11-03T17:56:56.228175+00:00",
+  "check": "Final evaluation refused before all model arms locked; validation-only calibration active; zero final-test caches and zero final result JSONs."
+}
