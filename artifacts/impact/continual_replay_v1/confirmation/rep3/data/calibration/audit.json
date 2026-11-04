@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "seed": 3503,
+  "num_envs": 4096,
+  "steps": 600,
+  "domains": {
+    "A": {
+      "robot_intervals": 644050,
+      "foot_prevalence": 0.024864529151463397,
+      "terminations": 0,
+      "resets": 2342
+    },
+    "B": {
+      "robot_intervals": 643500,
+      "foot_prevalence": 0.030602952602952604,
+      "terminations": 0,
+      "resets": 2340
+    },
+    "C": {
+      "robot_intervals": 643500,
+      "foot_prevalence": 0.05660528360528361,
+      "terminations": 0,
+      "resets": 2340
+    },
+    "U": {
+      "robot_intervals": 321750,
+      "foot_prevalence": 0.04777156177156177,
+      "terminations": 0,
+      "resets": 1170
+    }
+  },
+  "native_audit_envs": [
+    0,
+    200,
+    400,
+    600,
+    800,
+    1000,
+    1200,
+    1400,
+    1600,
+    1800,
+    2000,
+    2200,
+    2400,
+    2600,
+    2800,
+    3000,
+    3200,
+    3400,
+    3600,
+    3800,
+    4000
+  ],
+  "native_target_max_error": 0.0,
+  "native_audit_sha256": "11aff1e99e7ea9695df8e866cbd5e570b6977521cbeecb0ff9262c92e3beabe8",
+  "cache_bytes": 1212190315,
+  "raw_report_sha256": "eeb3b4f2da981a13c0a065f632790755e2f1880b200ea3035d906a0332cde202",
+  "format_note": "Validated collector + converter; raw staged one role at a time, then removed."
+}

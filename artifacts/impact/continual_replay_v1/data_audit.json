@@ -1,0 +1,262 @@
+{
+  "status": "passed",
+  "roles": {
+    "train": {
+      "seed": 901,
+      "steps": 2500,
+      "num_envs": 4096,
+      "files_sha256": {
+        "pre": "402f421a984dd192d501117de7fa48277cbbb647520f2dd85b56299607a503c7",
+        "post": "7f6627c1b98e3f8e41bca3da5251c5c74a509537b71ce619bdd8fac215533ea9",
+        "targets": "157954f737e99e0eded065d523f8218acc18083c87b22b833d3dbe0cad327960",
+        "age": "6100c9de106090ae6b2a031169ecd080fa50b6aa525345c59b76e4199aa9db32",
+        "done": "765b3de76685d8d36081972b787a33cdb19a19f51d04b49c18a8362a48cb0aaf",
+        "terminated": "d5090da9bd593a3395e56f998d317ed194fceb905bcaafbb9b6f2a8ee7689b3d"
+      },
+      "bytes": 5038080768,
+      "domains": {
+        "A": {
+          "valid_robot_intervals": 2664025,
+          "valid_robot_minutes": 888.0083333333333,
+          "terminations": 0,
+          "resets_including_timeouts": 9368,
+          "positive_foot_intervals": 265279,
+          "stratum_robot_intervals": [
+            2408740,
+            255195,
+            90
+          ]
+        },
+        "B": {
+          "valid_robot_intervals": 2661750,
+          "valid_robot_minutes": 887.25,
+          "terminations": 0,
+          "resets_including_timeouts": 9360,
+          "positive_foot_intervals": 321877,
+          "stratum_robot_intervals": [
+            2354763,
+            303335,
+            3652
+          ]
+        },
+        "C": {
+          "valid_robot_intervals": 2661750,
+          "valid_robot_minutes": 887.25,
+          "terminations": 0,
+          "resets_including_timeouts": 9360,
+          "positive_foot_intervals": 588267,
+          "stratum_robot_intervals": [
+            2152639,
+            433599,
+            75512
+          ]
+        },
+        "U": {
+          "valid_robot_intervals": 1330875,
+          "valid_robot_minutes": 443.625,
+          "terminations": 0,
+          "resets_including_timeouts": 4680,
+          "positive_foot_intervals": 256151,
+          "stratum_robot_intervals": [
+            1099964,
+            197251,
+            33660
+          ]
+        }
+      },
+      "collector_checks": {
+        "num_envs": 4096,
+        "steps": 2500,
+        "transitions": 10240000,
+        "reset_count": 32768,
+        "history_reconstruction_max_error": 0.0,
+        "reference_contact_max_error": 0.0,
+        "history_overlap_max_error": 0.0,
+        "collection_and_io_s": 227.69271828
+      },
+      "max_target_by_kind": [
+        337.13775634765625,
+        21623.39453125,
+        37021.87890625,
+        428.70556640625,
+        229059.28125,
+        335.96649169921875,
+        15101.69921875,
+        17304.853515625
+      ]
+    },
+    "monitor": {
+      "seed": 902,
+      "steps": 600,
+      "num_envs": 4096,
+      "files_sha256": {
+        "pre": "4c7833b197a1cd90698e746e9cf5346a58b27d50f3dba725025540f622a84139",
+        "post": "41c18893b29e66a475c17efa9f8ecf75091c5a57028ad8ac0b4f30518eec029c",
+        "targets": "508ae9c26f7023def366c409af79e2b0e86345fb14b14aa9dcb1f4e35438f7e1",
+        "age": "34b022a9ae21537c86b99c486e298d97bee0a271913c8433ec9fc678eae29381",
+        "done": "53d34f044008fe5ce88f38f51687cb9180b6099a6fec9e2adc416fd7d9a6891c",
+        "terminated": "128462705046e263f68cec1ea2ab0b5caa8d41a9b4def1f89dd26f91bb0fb449"
+      },
+      "bytes": 1209139968,
+      "domains": {
+        "A": {
+          "valid_robot_intervals": 644050,
+          "valid_robot_minutes": 214.68333333333334,
+          "terminations": 0,
+          "resets_including_timeouts": 2342,
+          "positive_foot_intervals": 64152,
+          "stratum_robot_intervals": [
+            582292,
+            61731,
+            27
+          ]
+        },
+        "B": {
+          "valid_robot_intervals": 643500,
+          "valid_robot_minutes": 214.5,
+          "terminations": 0,
+          "resets_including_timeouts": 2340,
+          "positive_foot_intervals": 77926,
+          "stratum_robot_intervals": [
+            569217,
+            73473,
+            810
+          ]
+        },
+        "C": {
+          "valid_robot_intervals": 643500,
+          "valid_robot_minutes": 214.5,
+          "terminations": 0,
+          "resets_including_timeouts": 2340,
+          "positive_foot_intervals": 143827,
+          "stratum_robot_intervals": [
+            518990,
+            105137,
+            19373
+          ]
+        },
+        "U": {
+          "valid_robot_intervals": 321750,
+          "valid_robot_minutes": 107.25,
+          "terminations": 0,
+          "resets_including_timeouts": 1170,
+          "positive_foot_intervals": 60379,
+          "stratum_robot_intervals": [
+            267345,
+            47262,
+            7143
+          ]
+        }
+      },
+      "collector_checks": {
+        "num_envs": 4096,
+        "steps": 600,
+        "transitions": 2457600,
+        "reset_count": 8192,
+        "history_reconstruction_max_error": 0.0,
+        "reference_contact_max_error": 0.0,
+        "history_overlap_max_error": 0.0,
+        "collection_and_io_s": 56.971706692000225
+      },
+      "max_target_by_kind": [
+        394.1257629394531,
+        21293.830078125,
+        31448.919921875,
+        416.0036926269531,
+        234204.90625,
+        440.0806884765625,
+        17224.76171875,
+        17224.76171875
+      ]
+    },
+    "calibration": {
+      "seed": 903,
+      "steps": 600,
+      "num_envs": 4096,
+      "files_sha256": {
+        "pre": "3836381620d824a923732dc58255c96b0d0093ada1cc5f0c9afee9a2351a2457",
+        "post": "37d46386328ce6d68522a5bb17c0b3021f38cd4b33cead3132dee080d0703ebb",
+        "targets": "7b88d0434f689167dfbf545613a1647e77fccf1c8eddf9c646b88508c3d9bd03",
+        "age": "34b022a9ae21537c86b99c486e298d97bee0a271913c8433ec9fc678eae29381",
+        "done": "53d34f044008fe5ce88f38f51687cb9180b6099a6fec9e2adc416fd7d9a6891c",
+        "terminated": "128462705046e263f68cec1ea2ab0b5caa8d41a9b4def1f89dd26f91bb0fb449"
+      },
+      "bytes": 1209139968,
+      "domains": {
+        "A": {
+          "valid_robot_intervals": 644050,
+          "valid_robot_minutes": 214.68333333333334,
+          "terminations": 0,
+          "resets_including_timeouts": 2342,
+          "positive_foot_intervals": 63588,
+          "stratum_robot_intervals": [
+            582716,
+            61319,
+            15
+          ]
+        },
+        "B": {
+          "valid_robot_intervals": 643500,
+          "valid_robot_minutes": 214.5,
+          "terminations": 0,
+          "resets_including_timeouts": 2340,
+          "positive_foot_intervals": 78218,
+          "stratum_robot_intervals": [
+            569034,
+            73580,
+            886
+          ]
+        },
+        "C": {
+          "valid_robot_intervals": 643500,
+          "valid_robot_minutes": 214.5,
+          "terminations": 0,
+          "resets_including_timeouts": 2340,
+          "positive_foot_intervals": 144621,
+          "stratum_robot_intervals": [
+            518773,
+            105277,
+            19450
+          ]
+        },
+        "U": {
+          "valid_robot_intervals": 321750,
+          "valid_robot_minutes": 107.25,
+          "terminations": 0,
+          "resets_including_timeouts": 1170,
+          "positive_foot_intervals": 62942,
+          "stratum_robot_intervals": [
+            265225,
+            48337,
+            8188
+          ]
+        }
+      },
+      "collector_checks": {
+        "num_envs": 4096,
+        "steps": 600,
+        "transitions": 2457600,
+        "reset_count": 8192,
+        "history_reconstruction_max_error": 0.0,
+        "reference_contact_max_error": 0.0,
+        "history_overlap_max_error": 0.0,
+        "collection_and_io_s": 56.63635214600026
+      },
+      "max_target_by_kind": [
+        295.01495361328125,
+        25602.828125,
+        32374.81640625,
+        459.7811279296875,
+        240931.90625,
+        299.6241760253906,
+        12923.310546875,
+        15164.3876953125
+      ]
+    }
+  },
+  "new_cache_bytes": 7456360704,
+  "limitations": [
+    "Pilot used validated existing collector followed by I0 cache conversion and raw deletion; not the proposed new streaming writer.",
+    "Original pilot raw report/trace were removed before provenance copy was added. Cache hashes and collector log checks retained; no claim of a newly retained native-trace audit."
+  ]
+}

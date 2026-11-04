@@ -1,6 +1,6 @@
 # Go1 冲击模块下一阶段：持续适应、能力保留与 Replay
 
-日期：2026-11-04。状态：**已保存上一阶段代码、有效权重和报告，并按用户要求清理约 220 GiB 轨迹/缓存；本文件是下一阶段方案，尚未执行，也尚未完成 pilot 后的最终参数锁定。** 配套机器可读设置为 [continual_replay_v1_plan.json](../configs/impact/continual_replay_v1_plan.json)。
+日期：2026-11-04。状态：**主任务 D/BCE 的 pilot 与五组独立采集、双初始化复验已完成，严重度 Replay 未通过预设优势判据。** 实测结果见 [阶段报告](GO1_IMPACT_CONTINUAL_REPLAY_RESULTS.md)。原始方案保留如下；实际锁定参数与调整见 [continual_replay_v1_lock.json](../configs/impact/continual_replay_v1_lock.json)。配套原始候选设置为 [continual_replay_v1_plan.json](../configs/impact/continual_replay_v1_plan.json)，不是所有次级消融都已执行。上一阶段仍保留代码、有效权重和报告，约 220 GiB 历史轨迹/缓存已按要求清理。
 
 本阶段的主问题是：**本体感觉冲击模型学习新场景时，是否会失去旧场景能力？在相同内存和计算预算下，按冲击严重度保留记忆，是否比随机记忆、普通二值平衡记忆更有效？** 如果没有实质遗忘，或随机 Replay 已足够，就如实保留这个结论。
 

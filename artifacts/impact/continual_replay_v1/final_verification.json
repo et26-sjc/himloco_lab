@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "data_roles": 20,
+  "independent_collections": 5,
+  "initializations": 2,
+  "fixed_endpoint_checkpoint_files": 810,
+  "method_seed_sequences": 90,
+  "max_serialized_replay_bytes": 8384831,
+  "replay_budget_bytes": 8388608,
+  "all_unique_training_rows_inserted_once": true,
+  "memory_budget_scope": "Serialized unique replay state, not total CPU+GPU process memory. GPU cache duplicates the same records; no additional past rows.",
+  "max_replay_CPU_plus_GPU_persistent_array_bytes": 16733381,
+  "all_native_audit_target_errors": 0.0,
+  "native_audit_targets": [
+    {
+      "rep": 1,
+      "role": "train",
+      "seed": 1501,
+      "native_target_slice_sha256": "a3644a54462675907f056887e6e06c725eccf16bc09e5deb3ad2ddf3dc7e8605",
+      "native_proprio_slice_sha256": "30d8f688d8c3db93e60c066bf1b91a9b125b4cb73bce4ec6e6089097cf1d1c98"
+    },
+    {
+      "rep": 1,
+      "role": "monitor",
+      "seed": 2501,
+      "native_target_slice_sha256": "f50e1fcfeedcbe72675737abad55adf6f44be2abaf9e9c8e10e1d331f27ac59c",
+      "native_proprio_slice_sha256": "d58af267fdbde8f5b62adbc70d8754695850e7ef306c81f031a78b88535230b3"
+    },
+    {
+      "rep": 1,
+      "role": "calibration",
+      "seed": 3501,
+      "native_target_slice_sha256": "ecb1c5851312a60b375e2835e10fbc5ccb1edbdfe2a2ccc27f856a42ad9addf5",
+      "native_proprio_slice_sha256": "5d065a6c63c301469761e0850729ad7b3ee8ade21a0cdeb048ba1f99e1724680"
+    },
+    {
+      "rep": 1,
+      "role": "test",
+      "seed": 4501,
+      "native_target_slice_sha256": "be1504d8b660f1e10b6f2859ff775eff36d0fd3fc1447bbaaba342498ffcc78b",
+      "native_proprio_slice_sha256": "306bf4b45bff97ef1e09ae42a1c639f2f2d66b7d6fa6acf7c1c3ae7aa4d0950e"
+    },
+    {
+      "rep": 2,
+      "role": "train",
+      "seed": 1502,
+      "native_target_slice_sha256": "e538fbd0a2bb9451d94ea1ab5a21dc7db486df5a0a1eda25542ca2a5e844a783",
+      "native_proprio_slice_sha256": "e20de76309d1e2c8007845e930e76e742045333e54bbd52ad7b635b31087cf6d"
+    },
+    {
+      "rep": 2,
+      "role": "monitor",
+      "seed": 2502,
+      "native_target_slice_sha256": "ecb28abd1624a043967715b84447db99254548236a10d5727ef6777c24c8c539",
+      "native_proprio_slice_sha256": "9fd3a7b9306c1ca62720f8a2a00836c75d30911fad0c26c409f5d7f432e9c0eb"
+    },
+    {
+      "rep": 2,
+      "role": "calibration",
+      "seed": 3502,
+      "native_target_slice_sha256": "b93b4fa750649a0381a604aa03a12be23044f42ad400b9aab10a45b7eea6f4cd",
+      "native_proprio_slice_sha256": "19b8ff37ef1d60e013538cef561bd1a38825c56853de8ff8c86407ae7ef37d80"
+    },
+    {
+      "rep": 2,
+      "role": "test",
+      "seed": 4502,
+      "native_target_slice_sha256": "089605cb17d66293d8c5917c5115ee7a7176bc805b7bc8c31ea5abe0b167052c",
+      "native_proprio_slice_sha256": "24520997b0541a3aecf85909d79319f39c45d5687ddc0c1b6158771d3ecb5a50"
+    },
+    {
+      "rep": 3,
+      "role": "train",
+      "seed": 1503,
+      "native_target_slice_sha256": "7c2a8f048e0c80270f82b743113ba0ecf593c73ee53a914fd0b81690ad5f0c82",
+      "native_proprio_slice_sha256": "d81e2e5c907154275f73feb53cc5ede8e328a69d0a27cbd814f4a389f087a1a4"
+    },
+    {
+      "rep": 3,
+      "role": "monitor",
+      "seed": 2503,
+      "native_target_slice_sha256": "f9609c9bbb816599dc28446c0443bac5f755f1752f901ae18571c82a8d1d0da4",
+      "native_proprio_slice_sha256": "5eefd87ec0ee8395fd73bf4e79bbb13d8fce25292ee258a826218693da25241b"
+    },
+    {
+      "rep": 3,
+      "role": "calibration",
+      "seed": 3503,
+      "native_target_slice_sha256": "f7c8cb8bdc9816fccea3909bdcbbfb1cc03018fe5f5e4dd3a8e328730eff2f58",
+      "native_proprio_slice_sha256": "11a2db5a0d42c0a32c67b6014d8c3269b50928d9c3208df30be82099821b0220"
+    },
+    {
+      "rep": 3,
+      "role": "test",
+      "seed": 4503,
+      "native_target_slice_sha256": "b8dfeb2ab830dd1fdd70b4ca588257684f68589179ff8394c62e8f2993a289d2",
+      "native_proprio_slice_sha256": "0e8926071e6920746d6ac9d6a46526cbb36b7c6bbb05ee22d487bb12af6e634f"
+    },
+    {
+      "rep": 4,
+      "role": "train",
+      "seed": 1504,
+      "native_target_slice_sha256": "cf3adfa18b2e1de9526b606121ece5c672d16d05e4573eeb33a6ce0d7abd3f05",
+      "native_proprio_slice_sha256": "01e04c15f4906ebe6d270153967fe3d39f084cecd3414896e4b8e9465f9c2b1a"
+    },
+    {
+      "rep": 4,
+      "role": "monitor",
+      "seed": 2504,
+      "native_target_slice_sha256": "f58d1d59f21d19f9cb2d32e75ed111caed5e76a73af3ed42d51b68c2c7952c72",
+      "native_proprio_slice_sha256": "a42d84681772dfb2b1769e146883dc053695d18079afce2a3babd41c2ae64082"
+    },
+    {
+      "rep": 4,
+      "role": "calibration",
+      "seed": 3504,
+      "native_target_slice_sha256": "608c292476ee2df5d05be08f6352baaba6593429bb95a0edf6e12da2fb546596",
+      "native_proprio_slice_sha256": "3b0ff6763ea907198af204594d3e9496355469b5a959846549a88875ee3e5985"
+    },
+    {
+      "rep": 4,
+      "role": "test",
+      "seed": 4504,
+      "native_target_slice_sha256": "16b6e6576b78cc6a646f17bbea9ae004f2777e1bd6441916ca7db8e166765103",
+      "native_proprio_slice_sha256": "adf34d0b05755a27ddafc58710842c74fc95adeaddbdba5bcbcc7d2cdd7d5867"
+    },
+    {
+      "rep": 5,
+      "role": "train",
+      "seed": 1505,
+      "native_target_slice_sha256": "b11909874a5e844fa21f9002bd136910f11f93741063e6af2b9af50d62385301",
+      "native_proprio_slice_sha256": "122f7c0492516918e752778d5133517679a82b4ce70c834b6d5e22e52c4734aa"
+    },
+    {
+      "rep": 5,
+      "role": "monitor",
+      "seed": 2505,
+      "native_target_slice_sha256": "42caddb3045ae3a8b12750411b5ec490fe8b4e11f6efaf7d166bcf13c3c823db",
+      "native_proprio_slice_sha256": "a0f0ec1aec63fa1005f020c647ba420d9483f26cca2ee5457719318421a2fa0e"
+    },
+    {
+      "rep": 5,
+      "role": "calibration",
+      "seed": 3505,
+      "native_target_slice_sha256": "779aa9debc80f4f0bd18db6c317680aa273767020b814132e6de8ceb44b35c76",
+      "native_proprio_slice_sha256": "aeed2ea12eded72839e0720bbf600593fe3bf7673cd3b6b9e8ddbcffa8356e98"
+    },
+    {
+      "rep": 5,
+      "role": "test",
+      "seed": 4505,
+      "native_target_slice_sha256": "e331a47ab646da8b302c809e8b4e1e22daee23826f0eef0aed20682372d01d4f",
+      "native_proprio_slice_sha256": "b332cc2b2e534a479326d6e1f1095510b6aca8d6505d1b8ca06dc3a8a56164d3"
+    }
+  ],
+  "test_scoring_after_all_models_lock": true,
+  "primary_results": "artifacts/impact/continual_replay_v1/confirmation/summary.json",
+  "unchanged_baseline_sha256": {
+    "logs/himloco_rsl_rl/go1_rough_pd/2026-10-22_23-51-36_go1_pd_him_seed1/model_10000.pt": "3e2ec748f7657ac502334ce69e1275780ecf4cf63251c8afad7b25f5615b29f3",
+    "go1_lab_deploy/models/policy.pt": "82d69e89c1a5759d003da86d056e1152e4c5317a3dc19b49cbb11c45b661c336"
+  },
+  "contract_tests": {
+    "passed": 37,
+    "log_sha256": "5742784096df7f28892acaa2e97aa8ec2a963f1acb34ffb938da98687861a4fa"
+  }
+}

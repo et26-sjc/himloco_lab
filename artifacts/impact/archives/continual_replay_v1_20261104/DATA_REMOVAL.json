@@ -1,0 +1,42 @@
+{
+  "reason": "User requested methods, valid weights and reports rather than retaining bulky datasets.",
+  "removed_bulk_array_files": 138,
+  "removed_files": 143,
+  "already_missing_bulk_files": [],
+  "freed_bytes": 51810721721,
+  "freed_GiB": 48.252494745887816,
+  "UTC": "2026-11-04T13:51:03.539137+00:00",
+  "removed_redundant_resume_files": [
+    {
+      "path": "logs/impact_continual_replay_v1/confirmation/rep3/resume.pt",
+      "bytes": 205375461,
+      "sha256": "a61d0a5f95753a0aee54a096a0194fe9d1ccb6a08f3ea271a22a2efe4f1840c0",
+      "model_optimizer_rng_bounded_replay_preserved": "logs/impact_continual_replay_v1/confirmation/rep3/final_training_state.pt"
+    },
+    {
+      "path": "logs/impact_continual_replay_v1/confirmation/rep1/resume.pt",
+      "bytes": 205371493,
+      "sha256": "8d60e88c93dfa3a58e9c2603d958e4a6330745e546bef435db4fe2f9a807cd43",
+      "model_optimizer_rng_bounded_replay_preserved": "logs/impact_continual_replay_v1/confirmation/rep1/final_training_state.pt"
+    },
+    {
+      "path": "logs/impact_continual_replay_v1/confirmation/rep5/resume.pt",
+      "bytes": 205384293,
+      "sha256": "79a900ace0c27d939090bda4466530ac221f8e6b15ba45c343af54e09c810e9b",
+      "model_optimizer_rng_bounded_replay_preserved": "logs/impact_continual_replay_v1/confirmation/rep5/final_training_state.pt"
+    },
+    {
+      "path": "logs/impact_continual_replay_v1/confirmation/rep2/resume.pt",
+      "bytes": 205370853,
+      "sha256": "38bc37a009ecd0a9960cf19d83e474f5f183befac4b0a8dced0002e69c88aa1e",
+      "model_optimizer_rng_bounded_replay_preserved": "logs/impact_continual_replay_v1/confirmation/rep2/final_training_state.pt"
+    },
+    {
+      "path": "logs/impact_continual_replay_v1/confirmation/rep4/resume.pt",
+      "bytes": 205355557,
+      "sha256": "5199e0d60fcfe97669106c7e3831af21f6d0415459f980e396920b24f271eecc",
+      "model_optimizer_rng_bounded_replay_preserved": "logs/impact_continual_replay_v1/confirmation/rep4/final_training_state.pt"
+    }
+  ],
+  "preserved": "All metadata, historical hashes, reports, weights/Adam/RNG, bounded replay and native audit force/target/proprio subsets. Full frame-wise recomputation requires recollection."
+}

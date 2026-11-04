@@ -4,9 +4,9 @@ Go1 / Isaac Sim 6.1 / Isaac Lab 3.0: [迁移记录、训练、恢复、Play 与�
 旧权重评估：[LEGACY_POLICY_EVAL.md](LEGACY_POLICY_EVAL.md) · 独立导出：[EXPORT_POLICY.md](EXPORT_POLICY.md) · W&B：[WANDB_LOGGING.md](WANDB_LOGGING.md)
 Go1 PD 对照任务：[配置差异、训练与验证](PD_BASELINE.md)（原 Go1 任务继续使用 Actuator Net）。
 Go1 MuJoCo：[独立JIT推理、可调PD、参数扫描与实际结果](sim2sim/go1/README.md)。
-Go1 Impact/Replay research: [step-one experiment and measured results](docs/GO1_IMPACT_STEP1.md) (4096 envs, contact-label diagnostics, classification/regression/ordinal comparison; Replay remains future work). [Full protocol](docs/GO1_IMPACT_REPLAY_PROTOCOL.md).
+Go1 Impact/Replay research: [step-one experiment and measured results](docs/GO1_IMPACT_STEP1.md) (4096 envs, contact-label diagnostics, classification/regression/ordinal comparison). [Full protocol](docs/GO1_IMPACT_REPLAY_PROTOCOL.md).
 Force/loading-rate study: [five data replications, seven prediction methods, physical-time diagnostics and measured conclusions](docs/GO1_FORCE_LOADING_RATE_RESULTS.md).
-Next stage: [continual adaptation and Replay experiment plan](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md). Previous methods, valid weights, reports and metadata are [preserved with checksums](artifacts/impact/archives/force_study_v1_20261104/README.md); about 220 GiB of trajectory/cache binaries were removed at the user's request.
+Continual adaptation/Replay: [five data replications × two initializations, nine methods and measured results](docs/GO1_IMPACT_CONTINUAL_REPLAY_RESULTS.md); [protocol and scope](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md). Previous methods, valid weights, reports and metadata are [preserved with checksums](artifacts/impact/archives/force_study_v1_20261104/README.md); about 220 GiB of trajectory/cache binaries were removed at the user's request.
 
 
 ## Project Overview

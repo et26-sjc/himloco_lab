@@ -1,0 +1,84 @@
+{
+  "status": "locked_before_confirmation",
+  "version": "v1-primary-D-BCE",
+  "locked_at": "2026-11-04T20:16:09.950718",
+  "pilot_results_sha256": "4d9fa4866b031564787a5d7530538ac101866167150345a8a63c033507a9a1fc",
+  "pilot_gate": "Stage0 A probe plateau at 40k-60k; finetune forgetting 0.03176; random replay modest gain, no severity gain. Proceed without tuning severity threshold or budgets.",
+  "replications": 5,
+  "initializations": [
+    1,
+    2
+  ],
+  "methods": [
+    "freeze",
+    "stationary_A",
+    "finetune",
+    "fifo",
+    "uniform",
+    "binary",
+    "severity",
+    "severity_unweighted",
+    "all_past"
+  ],
+  "scope": "Primary detection impact20>2000 N/s only. Brier loss / P20 / continuous MSE and memory sensitivity remain separate secondary experiments.",
+  "updates": {
+    "A": 60000,
+    "B": 20000,
+    "C": 20000
+  },
+  "total_batch": 2048,
+  "replay_current_old": [
+    1024,
+    1024
+  ],
+  "learning_rates": {
+    "A": 0.001,
+    "adaptation": 0.0001
+  },
+  "normalization": "A-only detection frames, frozen",
+  "memory": {
+    "budget_bytes": 8388608,
+    "payload": "float32 270D causal history + float32 8x4 target + int8 stratum + float64 priority key",
+    "capacity_rows": 6889,
+    "state_reserve_bytes": 4096,
+    "severity_edges": [
+      2000.0,
+      4000.0
+    ],
+    "severity_quotas": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "binary_quotas": [
+      0.5,
+      0.5
+    ],
+    "weights": "past observed robot-interval prior / actual stored stratum fraction, both binary and severity"
+  },
+  "evaluation": "Full fixed monitor at block boundaries; predeclared fixed 16384 robot intervals/domain probe each 1000 updates. Final test A0, B5 reference and C5, no best-checkpoint selection.",
+  "confirmation_criteria": {
+    "old_macro_AP_superiority_margin": 0.01,
+    "new_C_AP_noninferiority_margin": 0.01,
+    "two_primary_comparisons": [
+      "severity-uniform",
+      "severity-binary"
+    ],
+    "tests": "paired data replications after averaging two initializations; one-sided t tests vs +.01, Holm for two superiority tests; two-sided 95% paired effect CIs"
+  },
+  "alarms": "Initial A calibrator and threshold; geometry rows modulo 3 = fit/selection/verification. Empirical selection FAR<=0.5, verification reported once. No operational utility claim without separate FAR gate.",
+  "collection_deviation": "Use unchanged validated raw collector + exact converter; stage only one raw role and delete after native audit (env IDs 0,200,...). No unvalidated new streaming writer. Compact records 492 bytes/robot interval plus array headers and small audits.",
+  "source_sha256": {
+    "scripts/impact/train_continual_confirmation.py": "b82fdb3835ededb6ee9eb17edd176a0cbc9f960c447bfb01d1a44791c2ade67c",
+    "scripts/impact/run_continual_pilot.py": "aa82ebce237bf391e115699752170b4ee223686d2a6fb5019685b2f3a97e1198",
+    "scripts/impact/collect_continual_confirmation.py": "0673c7651bbf75e6272e61ec614f286e4870226a7f71f7c488ea842702089023",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a"
+  },
+  "analysis_locked_before_confirmation_training": {
+    "evaluator": "28f5c34ca8b28cb38d90dd3178f1252645011af304d1d686769598a0fc3c17c8",
+    "plotter": "e2058b6c87417ee6ced6e1d298bfd52100b35779784ae3b256094ad3bfde11ee",
+    "alarm_selection_candidates": "128 fixed tail quantiles and disabled candidate; maximize recall under empirical FAR<=0.5; ties prefer lower FAR then higher threshold",
+    "CI": "Two-sided Student t 95% paired intervals over five collections. No feet/frame pseudoreplication."
+  },
+  "implementation_note": "Before any confirmation training: deduplicate identical data gathers; same current draws and stationary/reference draws across two initializations, separate model parameters/Adam moments. Replay draws separate per model."
+}

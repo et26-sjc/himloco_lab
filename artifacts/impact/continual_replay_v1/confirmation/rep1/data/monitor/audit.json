@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "seed": 2501,
+  "num_envs": 4096,
+  "steps": 600,
+  "domains": {
+    "A": {
+      "robot_intervals": 644050,
+      "foot_prevalence": 0.024974769039670833,
+      "terminations": 0,
+      "resets": 2342
+    },
+    "B": {
+      "robot_intervals": 643500,
+      "foot_prevalence": 0.030275835275835276,
+      "terminations": 0,
+      "resets": 2340
+    },
+    "C": {
+      "robot_intervals": 643500,
+      "foot_prevalence": 0.05522377622377622,
+      "terminations": 0,
+      "resets": 2340
+    },
+    "U": {
+      "robot_intervals": 321750,
+      "foot_prevalence": 0.04776301476301476,
+      "terminations": 0,
+      "resets": 1170
+    }
+  },
+  "native_audit_envs": [
+    0,
+    200,
+    400,
+    600,
+    800,
+    1000,
+    1200,
+    1400,
+    1600,
+    1800,
+    2000,
+    2200,
+    2400,
+    2600,
+    2800,
+    3000,
+    3200,
+    3400,
+    3600,
+    3800,
+    4000
+  ],
+  "native_target_max_error": 0.0,
+  "native_audit_sha256": "9c04cd87eb6c5c51d64eba282c8a4a5dfecfabe4ea725b82976bb472d7de12c1",
+  "cache_bytes": 1212161134,
+  "raw_report_sha256": "198cd08d84b7b807b2b4a1e7f577965be78df417bff2a921c6fee9ee9d1a89c0",
+  "format_note": "Validated collector + converter; raw staged one role at a time, then removed."
+}
