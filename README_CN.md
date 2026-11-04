@@ -7,6 +7,7 @@ Go1 MuJoCo：[独立JIT推理、可调PD、参数扫描与实际结果](sim2sim/
 Go1 Impact/Replay 研究：[第一步实验与实际结果](docs/GO1_IMPACT_STEP1.md)（4096 env、物理标签诊断、分类/回归/有序表示）。[总协议](docs/GO1_IMPACT_REPLAY_PROTOCOL.md)。
 接触力/loading-rate 研究：[五组独立数据、七种预测方法、物理时间尺度诊断与阶段结论](docs/GO1_FORCE_LOADING_RATE_RESULTS.md)。
 持续适应与 Replay：[五组数据×双初始化、九种方法与实际结果](docs/GO1_IMPACT_CONTINUAL_REPLAY_RESULTS.md)，[方案与范围](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md)；上一阶段已[保留方法、有效权重、报告及数据元信息](artifacts/impact/archives/force_study_v1_20261104/README.md)，约 220 GiB 轨迹/缓存按要求清理。
+接触严重度可观测性：[五组数据×双初始化、相位/关节/完整输入与六个因果截止的结果](docs/GO1_IMPACT_OBSERVABILITY_RESULTS.md)，[锁定方案](docs/GO1_IMPACT_OBSERVABILITY_PLAN.md)。本轮是事件对齐诊断，未宣称已实现连续流报警。
 
 
 ## 项目概述

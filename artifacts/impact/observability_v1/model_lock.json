@@ -1,0 +1,36 @@
+{
+  "models": {
+    "logs/impact_observability_v1/rep1/phase/models.pt": "395e7c416fe58a250c58d833197860140eb7e2985094564b12a0184ee027e366",
+    "logs/impact_observability_v1/rep1/kinematics/models.pt": "728b89b4cbaeb3d60f7ea76ac95bc199b60560beeb4f23cb51bc77662865eae2",
+    "logs/impact_observability_v1/rep1/full/models.pt": "e9fb7ef9bbc4a20df153721adb605f32e7ebc37e41364a4bc345791ba5bf80c3",
+    "logs/impact_observability_v1/rep2/phase/models.pt": "7ec811473571a0392cec883764238787cc417b695a1996ff84a7f388aea50247",
+    "logs/impact_observability_v1/rep2/kinematics/models.pt": "be09b69fabc1a5c557f5818935775f1e91dbfd1d6c0e6fbdcf3b55d5314a4c0a",
+    "logs/impact_observability_v1/rep2/full/models.pt": "ab90f56b271004c0dc4fdd28963bde92ce1440e237d5891422a756e85a4a1273",
+    "logs/impact_observability_v1/rep3/phase/models.pt": "01ad22f38e60beb0f8381e8cfff714ac29235f850cffd78b843322472cb1e1e8",
+    "logs/impact_observability_v1/rep3/kinematics/models.pt": "eb2654d71bc652c0081b5282b92a7ba4901385ef5ab0235e323262f94cf58ac9",
+    "logs/impact_observability_v1/rep3/full/models.pt": "53c3f0fbf7af66cc2ffdcaa9f80c1787e2feabfd1af3ee597c392f4fb366978e",
+    "logs/impact_observability_v1/rep4/phase/models.pt": "f27bdb10e86636c290e0f9373363f1fe07395029c20bd047ff2d318a94dbc17c",
+    "logs/impact_observability_v1/rep4/kinematics/models.pt": "9f04d149da2dac45e64b7656aa4c51e99151d9ce4e5cc20f7e12a3a6658f0974",
+    "logs/impact_observability_v1/rep4/full/models.pt": "65ff2c285fed90bea979d4bfd73591f9c0ae7c375d777d51cd298bdca76140a6",
+    "logs/impact_observability_v1/rep5/phase/models.pt": "f391fa6d8358eab2a9c05311a1f3c4e5ccdc7fd8cd77f98705635006b535e9fb",
+    "logs/impact_observability_v1/rep5/kinematics/models.pt": "768b338845831447304ef2871c0cfc102ac359b11f69143111dfc502514f10c1",
+    "logs/impact_observability_v1/rep5/full/models.pt": "b91b1fcf656a7778d12430b568a8adcee94e24b3c2898b40e1928bff861e64bd"
+  },
+  "protocol_sha256": "0f98defaeb8d11155bbc0a3d718eeb10180225def5a874d3815a50dc7875d744",
+  "source_sha256": {
+    "configs/impact/observability_v1.json": "0f98defaeb8d11155bbc0a3d718eeb10180225def5a874d3815a50dc7875d744",
+    "docs/GO1_IMPACT_OBSERVABILITY_PLAN.md": "085cf6b03864c82591c71d21e82b38584a5b12370d88ff451b1fa0af3b0c666c",
+    "source/himloco_lab/himloco_lab/impact/observability.py": "efedba8e2cec8058676a5231603f692889084e7cfbb7a4321590ef4cd8c78116",
+    "scripts/impact/collect.py": "9f7b2b28276a659834cd78a951f7df0c57782df5bb1de998fde855711ce17b2d",
+    "scripts/impact/train_observability.py": "8a85e0f91ef92878be5d13138de3dcf56e01c67d13839ac31f9ccce218b0e92d",
+    "scripts/impact/collect_observability.py": "61fdabd7fb8f5bd8566ea58d64c9a36846676d3695870c4742fc8cd2c0075163",
+    "scripts/impact/audit_observability.py": "9e0035602bccac067a72f1997b841a463f023605f87307441e039660814efab4",
+    "scripts/impact/run_observability.py": "9c07eb0eb3481ae0231097b8aa0d670fa85b0241ce867e9f8d24883004f31c2a",
+    "scripts/impact/analyze_observability_timing.py": "b5618063c32cdfb66365c19177bebcadca41c681d3f51b94453fee81535c432e",
+    "scripts/impact/verify_observability.py": "77de9553fc883eec5f84e5968d10ba3e739148c33d520459346d8eac20fe40f3",
+    "scripts/impact/archive_observability.py": "af46e21fa0d87213858e3d1128ae393737ed3a7997d1dbea76d42b43d67a26ed",
+    "scripts/impact/write_observability_report.py": "22e0af32264288314a43db0fbe6ef7aa81a6766b25f9fe0522c2033c7d559e2e",
+    "scripts/impact/evaluate_observability.py": "ee0ccfac84cfcde8dc1af1eae48b49ce30b7dbed55011a9e69ca49903df58d5f"
+  },
+  "test_policy": "All 240 independent models locked before any final test scoring."
+}

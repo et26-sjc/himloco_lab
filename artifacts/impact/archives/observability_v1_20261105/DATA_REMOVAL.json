@@ -1,0 +1,111 @@
+{
+  "removed": [
+    {
+      "path": "datasets/go1_impact/observability_v1/rep3/train/cache/pre.npy",
+      "bytes": 1474560128,
+      "sha256": "ade1fe82d895601cb575c835d613d065cbc955b7f1187270577146fc1cee416f"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep3/test/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "8a3b01ecbb6574875733bb015a030d7006f43c23abc3df3710c60bcfa396e027"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep3/validation/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "778b9cb2d13b38b9d71626a5a6db0fb022f5c3a4765524861b2adbf81d9bd70e"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep3/high_speed/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "33a4961cbb57628798fd08239652277a2d71c283fcc8e85051484e9ae26eff23"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/development/cache/pre.npy",
+      "bytes": 258048128,
+      "sha256": "4b1f26f11476bcc05c75ac852e540b5ce67d6e39cb1661f463eb64eaa4f1c456"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep1/train/cache/pre.npy",
+      "bytes": 1474560128,
+      "sha256": "55e47288ab7479f3f60f8d22dbe01de591bae0a512a106d32343a2744d205893"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep1/test/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "87854f448f87fa9a27f0406bb62b57a55a4db58312be5b6952b0b5544ca474f6"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep1/validation/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "bae13c66befe410cb8d5206adb2285bb0070473610415170b76e9cd54dc3cc6f"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep1/high_speed/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "90f9ff9a3351de2e49310b0751c40dc5a450060776be504a37cab802deaef5f4"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep5/train/cache/pre.npy",
+      "bytes": 1474560128,
+      "sha256": "e2c67afffb4fe4e48fa0f3b59e8bd7142cadb7e0d5465daae4d0d78851184bbb"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep5/test/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "b32505b24b7895460659e79477ac29ec178350e0abbe239970026ba7106928a5"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep5/validation/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "4f33235677076420270f373a06d7e1ec7394301924058046245e321eb6fc1d68"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep5/high_speed/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "ec67c9eba9bff36d4816e4662cc56f9d916458931fd549199e93a4e65e6ebc9a"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep2/train/cache/pre.npy",
+      "bytes": 1474560128,
+      "sha256": "1448342850c7a49483f82f676ed9fa8e1e7fadb70c8d6e35ba2018ba56fda1d4"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep2/test/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "3f2eb55d3d9182f4a99eef547bf1b246828ca3ca3d653586c0097e57282b4f01"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep2/validation/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "5dc0b971ddd93cc36b00f15eeae25232882bf62379c19608aa7a10f123011923"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep2/high_speed/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "d3d64fb2c2df1b5ed26eae2f08aa3a4244530cb168d2cf0380b1645a00bb531c"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep4/train/cache/pre.npy",
+      "bytes": 1474560128,
+      "sha256": "646e8ea1e3e1d6c24e4b19f32bf58d1b20caf6035c408ad46d9f3e70861faaaa"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep4/test/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "a6f7e54b07127129fe916b4ce320d495c0f25f2fc14fce7c77f7adcf574c9c6d"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep4/validation/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "9d94d4c5c108f75538c6b08dbb817e50feee6bd0a816466abbf349d77191776e"
+    },
+    {
+      "path": "datasets/go1_impact/observability_v1/rep4/high_speed/cache/pre.npy",
+      "bytes": 331776128,
+      "sha256": "1b17ab79da918147e53a83d36d3437f9bfbb25190449c51b6bba30f8a27c7c4f"
+    }
+  ],
+  "removed_bytes": 12607490688,
+  "note": "Only this experiment generated full pre-frame arrays removed; event tables, predictions, audits, models and previous research kept."
+}

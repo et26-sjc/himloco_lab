@@ -1,0 +1,545 @@
+{
+  "scope": "Exploratory timing diagnostic on fixed 21/4096 env audit traces; no models or thresholds changed. Earliest argmax used if ties.",
+  "roles": {
+    "1/train": {
+      "audited_events": 5797,
+      "strong_events": 2781,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1288597550457133,
+        0.9893048128342246,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14347357065803668,
+        0.9992808342322905,
+        1.0
+      ]
+    },
+    "1/validation": {
+      "audited_events": 1238,
+      "strong_events": 608,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14862681744749595,
+        0.9894991922455574,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.16611842105263158,
+        0.9950657894736842,
+        1.0
+      ]
+    },
+    "1/test": {
+      "audited_events": 1243,
+      "strong_events": 665,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.13113435237329044,
+        0.9855189058728882,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14285714285714285,
+        0.9984962406015038,
+        1.0
+      ]
+    },
+    "1/high_speed": {
+      "audited_events": 1562,
+      "strong_events": 1409,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14340588988476313,
+        0.9929577464788732,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1383960255500355,
+        0.9978708303761533,
+        1.0
+      ]
+    },
+    "2/train": {
+      "audited_events": 5771,
+      "strong_events": 2872,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.13255934846647027,
+        0.987697106220759,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14484679665738162,
+        0.9979108635097493,
+        1.0
+      ]
+    },
+    "2/validation": {
+      "audited_events": 1194,
+      "strong_events": 581,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.13149078726968175,
+        0.9932998324958124,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.16179001721170397,
+        1.0,
+        1.0
+      ]
+    },
+    "2/test": {
+      "audited_events": 1260,
+      "strong_events": 650,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1388888888888889,
+        0.9904761904761905,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.16153846153846155,
+        1.0,
+        1.0
+      ]
+    },
+    "2/high_speed": {
+      "audited_events": 1538,
+      "strong_events": 1401,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1176853055916775,
+        0.994148244473342,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.11848679514632406,
+        0.9964311206281228,
+        1.0
+      ]
+    },
+    "3/train": {
+      "audited_events": 5772,
+      "strong_events": 2991,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1334026334026334,
+        0.9908177408177408,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1464393179538616,
+        0.9996656636576395,
+        1.0
+      ]
+    },
+    "3/validation": {
+      "audited_events": 1208,
+      "strong_events": 540,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12417218543046357,
+        0.9892384105960265,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12962962962962962,
+        1.0,
+        1.0
+      ]
+    },
+    "3/test": {
+      "audited_events": 1184,
+      "strong_events": 545,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12922297297297297,
+        0.9864864864864865,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14678899082568808,
+        1.0,
+        1.0
+      ]
+    },
+    "3/high_speed": {
+      "audited_events": 1531,
+      "strong_events": 1368,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        32.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14500326583932072,
+        0.9986936642717178,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1425438596491228,
+        1.0,
+        1.0
+      ]
+    },
+    "4/train": {
+      "audited_events": 5866,
+      "strong_events": 3116,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12990112512785543,
+        0.9897715649505625,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1405648267008986,
+        0.9996790757381258,
+        1.0
+      ]
+    },
+    "4/validation": {
+      "audited_events": 1255,
+      "strong_events": 699,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12350597609561753,
+        0.9888446215139443,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1430615164520744,
+        0.9985693848354793,
+        1.0
+      ]
+    },
+    "4/test": {
+      "audited_events": 1201,
+      "strong_events": 585,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12656119900083265,
+        0.9891756869275604,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.13162393162393163,
+        0.9982905982905983,
+        1.0
+      ]
+    },
+    "4/high_speed": {
+      "audited_events": 1540,
+      "strong_events": 1384,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1292207792207792,
+        0.9954545454545455,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12644508670520233,
+        0.9978323699421965,
+        1.0
+      ]
+    },
+    "5/train": {
+      "audited_events": 5729,
+      "strong_events": 2896,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12899284342817247,
+        0.9883051143305988,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1439917127071823,
+        0.9975828729281768,
+        1.0
+      ]
+    },
+    "5/validation": {
+      "audited_events": 1213,
+      "strong_events": 610,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.12201154163231658,
+        0.9868095630667766,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14590163934426228,
+        1.0,
+        1.0
+      ]
+    },
+    "5/test": {
+      "audited_events": 1255,
+      "strong_events": 724,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1362549800796813,
+        0.9936254980079682,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.14226519337016574,
+        0.9986187845303868,
+        1.0
+      ]
+    },
+    "5/high_speed": {
+      "audited_events": 1550,
+      "strong_events": 1421,
+      "peak_lag_ms_quantiles": [
+        2.5,
+        17.5,
+        17.5,
+        17.5,
+        37.5
+      ],
+      "fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.1329032258064516,
+        0.9967741935483871,
+        1.0
+      ],
+      "strong_fraction_peak_already_occurred_by_cutoff": [
+        0.0,
+        0.0,
+        0.0,
+        0.13370865587614356,
+        0.9985925404644617,
+        1.0
+      ]
+    }
+  }
+}

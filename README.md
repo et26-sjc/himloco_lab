@@ -7,6 +7,7 @@ Go1 MuJoCo：[独立JIT推理、可调PD、参数扫描与实际结果](sim2sim/
 Go1 Impact/Replay research: [step-one experiment and measured results](docs/GO1_IMPACT_STEP1.md) (4096 envs, contact-label diagnostics, classification/regression/ordinal comparison). [Full protocol](docs/GO1_IMPACT_REPLAY_PROTOCOL.md).
 Force/loading-rate study: [five data replications, seven prediction methods, physical-time diagnostics and measured conclusions](docs/GO1_FORCE_LOADING_RATE_RESULTS.md).
 Continual adaptation/Replay: [five data replications × two initializations, nine methods and measured results](docs/GO1_IMPACT_CONTINUAL_REPLAY_RESULTS.md); [protocol and scope](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md). Previous methods, valid weights, reports and metadata are [preserved with checksums](artifacts/impact/archives/force_study_v1_20261104/README.md); about 220 GiB of trajectory/cache binaries were removed at the user's request.
+Contact severity observability: [five data replications × two initializations, phase/kinematics/full-input controls and six causal cutoffs](docs/GO1_IMPACT_OBSERVABILITY_RESULTS.md); [locked protocol](docs/GO1_IMPACT_OBSERVABILITY_PLAN.md). This is an event-aligned diagnostic, not a deployed continuous-stream alarm.
 
 
 ## Project Overview

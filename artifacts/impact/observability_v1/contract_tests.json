@@ -1,0 +1,15 @@
+{
+  "count": 43,
+  "successful": true,
+  "tested_source_sha256": {
+    "tests/test_impact_preparation.py": "b7b6ea65ca869b51c1651d56997fd1c1a2d0c5120f289f1c75661e2924bebe66",
+    "tests/test_impact_observability.py": "2c94ab18a4f8eb58437572e3e718b350d13a893ef22fc9b4d317403383bef61f",
+    "tests/test_impact_data_audit.py": "ee0e74c5d75321bf2d9c2129f0c187e809362eda6d873ef7b4ccf3ea27377c30",
+    "tests/test_impact_learning.py": "c1d0ce0e80f1d61eaaf4716ead81de7f545a905357a8d97ccc07ebecaa3cb7d7",
+    "tests/test_continual_evaluation.py": "97249ed5ee97b0d571ef96bc435a673c811d4dad06d6b8098b13571b1130c0d9",
+    "tests/test_continual_replay.py": "f4307f736e06f0cc116bcd3c84b22dd74c7d16890926a2f57fdc7c0b7eca8a66",
+    "tests/test_force_study.py": "f0589464b04d37a3e4b144d65aa8a2344f678d03f0462ca8a7898480c63a6fa9",
+    "source/himloco_lab/himloco_lab/impact/observability.py": "efedba8e2cec8058676a5231603f692889084e7cfbb7a4321590ef4cd8c78116",
+    "source/himloco_lab/himloco_lab/impact/force_study.py": "71ff241722d3faabfc7221f8222130bc19cf3e8eb88d76f7add8801b0167655a"
+  }
+}

@@ -1,0 +1,1113 @@
+{
+  "calibrators": {
+    "phase/bce/1/0": {
+      "slope": 0.9973204499807166,
+      "intercept": 0.02341637307353214,
+      "success": true,
+      "loss": 0.41827519193211565
+    },
+    "phase/bce/1/1": {
+      "slope": 0.9956369315443373,
+      "intercept": 0.03349538804402787,
+      "success": true,
+      "loss": 0.40442818010238135
+    },
+    "phase/bce/1/2": {
+      "slope": 0.9999329841072276,
+      "intercept": 0.020078961780613032,
+      "success": true,
+      "loss": 0.39141396597012856
+    },
+    "phase/bce/1/3": {
+      "slope": 0.9897602953364791,
+      "intercept": 0.017538569342925827,
+      "success": true,
+      "loss": 0.3735430059280757
+    },
+    "phase/bce/1/4": {
+      "slope": 0.9870225726608781,
+      "intercept": 0.0052092917312266465,
+      "success": true,
+      "loss": 0.3528710597614644
+    },
+    "phase/bce/1/5": {
+      "slope": 0.9820050301182395,
+      "intercept": 0.00724805619330576,
+      "success": true,
+      "loss": 0.3374280878858703
+    },
+    "phase/bce/2/0": {
+      "slope": 1.0001955638099895,
+      "intercept": 0.02354919079956429,
+      "success": true,
+      "loss": 0.41820832922044127
+    },
+    "phase/bce/2/1": {
+      "slope": 0.9970096529441766,
+      "intercept": 0.026520092780008567,
+      "success": true,
+      "loss": 0.4043692776675409
+    },
+    "phase/bce/2/2": {
+      "slope": 0.9970508517797215,
+      "intercept": 0.02402554468127981,
+      "success": true,
+      "loss": 0.3925574416169657
+    },
+    "phase/bce/2/3": {
+      "slope": 0.99203602558668,
+      "intercept": 0.02353861154990641,
+      "success": true,
+      "loss": 0.37273110939785964
+    },
+    "phase/bce/2/4": {
+      "slope": 0.9821783779746478,
+      "intercept": 0.005862640155879865,
+      "success": true,
+      "loss": 0.35298963895449537
+    },
+    "phase/bce/2/5": {
+      "slope": 0.9827102252127746,
+      "intercept": 0.009179268797181494,
+      "success": true,
+      "loss": 0.3376396046517811
+    },
+    "kinematics/bce/1/0": {
+      "slope": 0.9350427178813083,
+      "intercept": 0.006313312361986976,
+      "success": true,
+      "loss": 0.3449628237432198
+    },
+    "kinematics/bce/1/1": {
+      "slope": 0.9386275311987418,
+      "intercept": 0.0013514481462806654,
+      "success": true,
+      "loss": 0.3269656588515277
+    },
+    "kinematics/bce/1/2": {
+      "slope": 0.9485147948428657,
+      "intercept": 0.01156933900961115,
+      "success": true,
+      "loss": 0.29966127849907526
+    },
+    "kinematics/bce/1/3": {
+      "slope": 0.9439015803928981,
+      "intercept": 0.006037813865295847,
+      "success": true,
+      "loss": 0.2494797810091689
+    },
+    "kinematics/bce/1/4": {
+      "slope": 0.9378981246700797,
+      "intercept": -0.0005192727966587726,
+      "success": true,
+      "loss": 0.22282584077527914
+    },
+    "kinematics/bce/1/5": {
+      "slope": 0.9381645216647689,
+      "intercept": 0.00211457592996021,
+      "success": true,
+      "loss": 0.2111422014415726
+    },
+    "kinematics/bce/2/0": {
+      "slope": 0.9406962555328876,
+      "intercept": 0.022807637413524602,
+      "success": true,
+      "loss": 0.3444681707895701
+    },
+    "kinematics/bce/2/1": {
+      "slope": 0.9429223909815464,
+      "intercept": 0.0001388739037190068,
+      "success": true,
+      "loss": 0.326426913499463
+    },
+    "kinematics/bce/2/2": {
+      "slope": 0.9422174012826845,
+      "intercept": 0.00595464979428813,
+      "success": true,
+      "loss": 0.3000192540875671
+    },
+    "kinematics/bce/2/3": {
+      "slope": 0.941315803177743,
+      "intercept": 0.02665387692304213,
+      "success": true,
+      "loss": 0.24878189874784926
+    },
+    "kinematics/bce/2/4": {
+      "slope": 0.9350339543205597,
+      "intercept": 0.01193856423052181,
+      "success": true,
+      "loss": 0.2231964346478537
+    },
+    "kinematics/bce/2/5": {
+      "slope": 0.9312026326863238,
+      "intercept": -0.005660184633560026,
+      "success": true,
+      "loss": 0.21182501392361655
+    },
+    "full/bce/1/0": {
+      "slope": 0.9249015184309967,
+      "intercept": 0.025934810210987713,
+      "success": true,
+      "loss": 0.32898135531598816
+    },
+    "full/bce/1/1": {
+      "slope": 0.9283346621186596,
+      "intercept": 0.02674244646712795,
+      "success": true,
+      "loss": 0.30387519731440366
+    },
+    "full/bce/1/2": {
+      "slope": 0.9256232765450827,
+      "intercept": 0.0075481427388768944,
+      "success": true,
+      "loss": 0.23492203670191447
+    },
+    "full/bce/1/3": {
+      "slope": 0.9058868594873627,
+      "intercept": 0.08248777372027624,
+      "success": true,
+      "loss": 0.1258785715177147
+    },
+    "full/bce/1/4": {
+      "slope": 0.8752867750028186,
+      "intercept": 0.14400247374369382,
+      "success": true,
+      "loss": 0.10892764234745476
+    },
+    "full/bce/1/5": {
+      "slope": 0.8741600337339526,
+      "intercept": 0.10643298731741442,
+      "success": true,
+      "loss": 0.10489109232526354
+    },
+    "full/mse/1/0": {
+      "slope": 9.424746925393444,
+      "intercept": -9.471558245558118,
+      "success": true,
+      "loss": 0.3357599951709107
+    },
+    "full/mse/1/1": {
+      "slope": 10.280632722717275,
+      "intercept": -10.323921722341357,
+      "success": true,
+      "loss": 0.31099863969521435
+    },
+    "full/mse/1/2": {
+      "slope": 13.321677811428593,
+      "intercept": -13.324053673770447,
+      "success": true,
+      "loss": 0.24924924151049138
+    },
+    "full/mse/1/3": {
+      "slope": 20.051959461038113,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.1357857389156547
+    },
+    "full/mse/1/4": {
+      "slope": 20.030865524835697,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.11700267388381203
+    },
+    "full/mse/1/5": {
+      "slope": 20.050111736332557,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.11291158409017052
+    },
+    "full/bce/2/0": {
+      "slope": 0.9250990435590487,
+      "intercept": 0.00776082819976772,
+      "success": true,
+      "loss": 0.3287679844317686
+    },
+    "full/bce/2/1": {
+      "slope": 0.9301037169974803,
+      "intercept": 0.00909905187798606,
+      "success": true,
+      "loss": 0.30255984194252866
+    },
+    "full/bce/2/2": {
+      "slope": 0.9286360573886993,
+      "intercept": 0.014085628009676214,
+      "success": true,
+      "loss": 0.23541804570629757
+    },
+    "full/bce/2/3": {
+      "slope": 0.9069089788757363,
+      "intercept": 0.0955846407604151,
+      "success": true,
+      "loss": 0.12595024338181768
+    },
+    "full/bce/2/4": {
+      "slope": 0.8784801693426276,
+      "intercept": 0.1715894053446774,
+      "success": true,
+      "loss": 0.1085391464277568
+    },
+    "full/bce/2/5": {
+      "slope": 0.8813510708859673,
+      "intercept": 0.13504484824122037,
+      "success": true,
+      "loss": 0.1043120562377969
+    },
+    "full/mse/2/0": {
+      "slope": 9.401008543700897,
+      "intercept": -9.451023791761473,
+      "success": true,
+      "loss": 0.33659100062823666
+    },
+    "full/mse/2/1": {
+      "slope": 10.30650006827088,
+      "intercept": -10.349997834564281,
+      "success": true,
+      "loss": 0.3107421841646165
+    },
+    "full/mse/2/2": {
+      "slope": 13.334552460426595,
+      "intercept": -13.35383587879537,
+      "success": true,
+      "loss": 0.24860620559232338
+    },
+    "full/mse/2/3": {
+      "slope": 20.04132257070189,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.13557396682095832
+    },
+    "full/mse/2/4": {
+      "slope": 20.066392070933404,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.11571608641023384
+    },
+    "full/mse/2/5": {
+      "slope": 20.03872310623984,
+      "intercept": -20.0,
+      "success": true,
+      "loss": 0.11388605903000881
+    }
+  },
+  "thresholds": {
+    "phase/bce/1/0": 1.7395095825195312,
+    "phase/bce/1/1": 1.7234278917312622,
+    "phase/bce/1/2": 1.721250295639038,
+    "phase/bce/1/3": 1.686883807182312,
+    "phase/bce/1/4": 1.7059326171875,
+    "phase/bce/1/5": 1.7202051877975464,
+    "phase/bce/2/0": 1.7310941219329834,
+    "phase/bce/2/1": 1.7293256521224976,
+    "phase/bce/2/2": 1.735410213470459,
+    "phase/bce/2/3": 1.6731199026107788,
+    "phase/bce/2/4": 1.6948447227478027,
+    "phase/bce/2/5": 1.7186962366104126,
+    "kinematics/bce/1/0": 1.7500760555267334,
+    "kinematics/bce/1/1": 1.7183330059051514,
+    "kinematics/bce/1/2": 1.7195539474487305,
+    "kinematics/bce/1/3": 1.6800330877304077,
+    "kinematics/bce/1/4": 1.6183561086654663,
+    "kinematics/bce/1/5": 1.5813179016113281,
+    "kinematics/bce/2/0": 1.737583875656128,
+    "kinematics/bce/2/1": 1.722135305404663,
+    "kinematics/bce/2/2": 1.725522756576538,
+    "kinematics/bce/2/3": 1.6768953800201416,
+    "kinematics/bce/2/4": 1.602500081062317,
+    "kinematics/bce/2/5": 1.538427710533142,
+    "full/bce/1/0": 1.7535687685012817,
+    "full/bce/1/1": 1.720165491104126,
+    "full/bce/1/2": 1.5229743719100952,
+    "full/bce/1/3": 1.1020756959915161,
+    "full/bce/1/4": 0.8686954379081726,
+    "full/bce/1/5": 0.9065523147583008,
+    "full/mse/1/0": 1.1699671745300293,
+    "full/mse/1/1": 1.1551600694656372,
+    "full/mse/1/2": 1.100597858428955,
+    "full/mse/1/3": 1.0276386737823486,
+    "full/mse/1/4": 1.0204057693481445,
+    "full/mse/1/5": 1.015812873840332,
+    "full/bce/2/0": 1.7682931423187256,
+    "full/bce/2/1": 1.7338831424713135,
+    "full/bce/2/2": 1.5139719247817993,
+    "full/bce/2/3": 1.09568452835083,
+    "full/bce/2/4": 0.8357374668121338,
+    "full/bce/2/5": 0.8246380686759949,
+    "full/mse/2/0": 1.1721417903900146,
+    "full/mse/2/1": 1.1535744667053223,
+    "full/mse/2/2": 1.0979633331298828,
+    "full/mse/2/3": 1.0288749933242798,
+    "full/mse/2/4": 1.0185368061065674,
+    "full/mse/2/5": 1.0163687467575073
+  },
+  "verification": {
+    "phase/bce/1/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.8857419040019252,
+      "matched": {
+        "auc": 0.7556843559206984,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.13842955231666565,
+      "weak_contact_FPR": 0.027070482649750052,
+      "strong_contact_recall": 0.42170406217920514
+    },
+    "phase/bce/1/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.8941740516922319,
+      "matched": {
+        "auc": 0.7737041739962991,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.13355697691440582,
+      "weak_contact_FPR": 0.02651504078112667,
+      "strong_contact_recall": 0.4487168206481889
+    },
+    "phase/bce/1/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9002997181955829,
+      "matched": {
+        "auc": 0.7825068008930666,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.12980206310749054,
+      "weak_contact_FPR": 0.027801327213728185,
+      "strong_contact_recall": 0.46819181698196216
+    },
+    "phase/bce/1/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9101725780506058,
+      "matched": {
+        "auc": 0.7976392127247584,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.12293671071529388,
+      "weak_contact_FPR": 0.02695354751951355,
+      "strong_contact_recall": 0.496583076697463
+    },
+    "phase/bce/1/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9214182764881464,
+      "matched": {
+        "auc": 0.8239959352472906,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.1148550733923912,
+      "weak_contact_FPR": 0.024905616201820364,
+      "strong_contact_recall": 0.5269619360902256
+    },
+    "phase/bce/1/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9277412912295067,
+      "matched": {
+        "auc": 0.8391111964432765,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.10979888588190079,
+      "weak_contact_FPR": 0.02588547815820543,
+      "strong_contact_recall": 0.5479797231197937
+    },
+    "phase/bce/2/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.8858719377924957,
+      "matched": {
+        "auc": 0.7564853484827355,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.13836853206157684,
+      "weak_contact_FPR": 0.026982781302072677,
+      "strong_contact_recall": 0.4208534975802904
+    },
+    "phase/bce/2/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.8944070978414084,
+      "matched": {
+        "auc": 0.7743510301990371,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.13345669209957123,
+      "weak_contact_FPR": 0.02695354751951355,
+      "strong_contact_recall": 0.44892212934447867
+    },
+    "phase/bce/2/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.8999377928315623,
+      "matched": {
+        "auc": 0.7819215176804191,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.13000963628292084,
+      "weak_contact_FPR": 0.026865846171836173,
+      "strong_contact_recall": 0.46481888840005864
+    },
+    "phase/bce/2/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.910195684121033,
+      "matched": {
+        "auc": 0.7975564357910607,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.12287432700395584,
+      "weak_contact_FPR": 0.027684392083491684,
+      "strong_contact_recall": 0.49834286552280394
+    },
+    "phase/bce/2/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9209833819067752,
+      "matched": {
+        "auc": 0.8228811250538062,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.11520610004663467,
+      "weak_contact_FPR": 0.02595920278615119,
+      "strong_contact_recall": 0.5312793703007519
+    },
+    "phase/bce/2/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9274825723248967,
+      "matched": {
+        "auc": 0.8387324733034868,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.10996056348085403,
+      "weak_contact_FPR": 0.026446280991735537,
+      "strong_contact_recall": 0.549373017519936
+    },
+    "kinematics/bce/1/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9267816176807002,
+      "matched": {
+        "auc": 0.8396655648771354,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.11146999895572662,
+      "weak_contact_FPR": 0.02783056099628731,
+      "strong_contact_recall": 0.5665640123185218
+    },
+    "kinematics/bce/1/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9345187384927388,
+      "matched": {
+        "auc": 0.8578751310634783,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.10528387874364853,
+      "weak_contact_FPR": 0.028912210950974945,
+      "strong_contact_recall": 0.5962457838392726
+    },
+    "kinematics/bce/1/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9446885840221394,
+      "matched": {
+        "auc": 0.8819535682567178,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09697722643613815,
+      "weak_contact_FPR": 0.02663197591136317,
+      "strong_contact_recall": 0.63179351811116
+    },
+    "kinematics/bce/1/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9624787741288938,
+      "matched": {
+        "auc": 0.9207627656575492,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.0794411301612854,
+      "weak_contact_FPR": 0.02490718274037478,
+      "strong_contact_recall": 0.7141223053233612
+    },
+    "kinematics/bce/1/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9703782644794783,
+      "matched": {
+        "auc": 0.9375995074347924,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.07043346762657166,
+      "weak_contact_FPR": 0.02519827914191226,
+      "strong_contact_recall": 0.7567257988721805
+    },
+    "kinematics/bce/1/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9727843981061517,
+      "matched": {
+        "auc": 0.9427667487187228,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.06714548915624619,
+      "weak_contact_FPR": 0.025236127508854782,
+      "strong_contact_recall": 0.771351495568138
+    },
+    "kinematics/bce/2/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9270544729117874,
+      "matched": {
+        "auc": 0.8400417989534494,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.11129965633153915,
+      "weak_contact_FPR": 0.026748911041599672,
+      "strong_contact_recall": 0.563308402991641
+    },
+    "kinematics/bce/2/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9343564994502913,
+      "matched": {
+        "auc": 0.8577182762498705,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.10550291836261749,
+      "weak_contact_FPR": 0.02914608121144795,
+      "strong_contact_recall": 0.5953072297990908
+    },
+    "kinematics/bce/2/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9448024843590817,
+      "matched": {
+        "auc": 0.8814753921438302,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09703417122364044,
+      "weak_contact_FPR": 0.02645657321600842,
+      "strong_contact_recall": 0.6341692330253703
+    },
+    "kinematics/bce/2/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9628598160465057,
+      "matched": {
+        "auc": 0.9214671171689147,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.07885761559009552,
+      "weak_contact_FPR": 0.02426403952407402,
+      "strong_contact_recall": 0.7117465904091509
+    },
+    "kinematics/bce/2/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9699560408882362,
+      "matched": {
+        "auc": 0.936833143535899,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.07083312422037125,
+      "weak_contact_FPR": 0.024934882495829553,
+      "strong_contact_recall": 0.7531132518796992
+    },
+    "kinematics/bce/2/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9725508433822726,
+      "matched": {
+        "auc": 0.9423031250069364,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.0676719918847084,
+      "weak_contact_FPR": 0.026357733175914996,
+      "strong_contact_recall": 0.7768060949218866
+    },
+    "full/bce/1/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9345246873758792,
+      "matched": {
+        "auc": 0.8587844540297144,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.10530781745910645,
+      "weak_contact_FPR": 0.02788902856140556,
+      "strong_contact_recall": 0.5941633670626192
+    },
+    "full/bce/1/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9440133453643116,
+      "matched": {
+        "auc": 0.8803317384161905,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09728217869997025,
+      "weak_contact_FPR": 0.026836612389277047,
+      "strong_contact_recall": 0.6324681038275407
+    },
+    "full/bce/1/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9662372163483427,
+      "matched": {
+        "auc": 0.9324692454467929,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.07496587187051773,
+      "weak_contact_FPR": 0.027041248867190927,
+      "strong_contact_recall": 0.7533949259422202
+    },
+    "full/bce/1/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9893692319895616,
+      "matched": {
+        "auc": 0.9823142799589296,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.040183234959840775,
+      "weak_contact_FPR": 0.025725728652030287,
+      "strong_contact_recall": 0.8940607127144743
+    },
+    "full/bce/1/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9922095700315603,
+      "matched": {
+        "auc": 0.9869295860599687,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.03462231531739235,
+      "weak_contact_FPR": 0.025608007258040914,
+      "strong_contact_recall": 0.9181449718045113
+    },
+    "full/bce/1/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9927243735619016,
+      "matched": {
+        "auc": 0.9874630155351399,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.03351790830492973,
+      "weak_contact_FPR": 0.025590318772136952,
+      "strong_contact_recall": 0.9204636409450686
+    },
+    "full/mse/1/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9324316073411665,
+      "matched": {
+        "auc": 0.8567840794267106,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.10646206885576248,
+      "weak_contact_FPR": 0.028970678516093196,
+      "strong_contact_recall": 0.592696876374835
+    },
+    "full/mse/1/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9425234142759372,
+      "matched": {
+        "auc": 0.8809020701301405,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09777919948101044,
+      "weak_contact_FPR": 0.026485806998567545,
+      "strong_contact_recall": 0.6279806423229213
+    },
+    "full/mse/1/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9626061119076365,
+      "matched": {
+        "auc": 0.9295882275705092,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.07666831463575363,
+      "weak_contact_FPR": 0.027128950214868303,
+      "strong_contact_recall": 0.7456518551107201
+    },
+    "full/mse/1/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9889033091069112,
+      "matched": {
+        "auc": 0.9840179352741466,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.03965676203370094,
+      "weak_contact_FPR": 0.024994884088052154,
+      "strong_contact_recall": 0.9057926382167473
+    },
+    "full/mse/1/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9925320461614489,
+      "matched": {
+        "auc": 0.9881307586267021,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.034584205597639084,
+      "weak_contact_FPR": 0.023969094793526297,
+      "strong_contact_recall": 0.928718280075188
+    },
+    "full/mse/1/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9934742696621031,
+      "matched": {
+        "auc": 0.9894845369977826,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.03316246718168259,
+      "weak_contact_FPR": 0.025708382526564346,
+      "strong_contact_recall": 0.9363827705807369
+    },
+    "full/bce/2/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9346487750468659,
+      "matched": {
+        "auc": 0.8580900248765754,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.1052882969379425,
+      "weak_contact_FPR": 0.028473704212588068,
+      "strong_contact_recall": 0.594925942220267
+    },
+    "full/bce/2/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9435578363223613,
+      "matched": {
+        "auc": 0.8789018314498522,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09775422513484955,
+      "weak_contact_FPR": 0.028444470430028942,
+      "strong_contact_recall": 0.6356063938993988
+    },
+    "full/bce/2/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9659002648436336,
+      "matched": {
+        "auc": 0.9315417088366891,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.0754353478550911,
+      "weak_contact_FPR": 0.026895079954395298,
+      "strong_contact_recall": 0.749904678105294
+    },
+    "full/bce/2/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9892926402891191,
+      "matched": {
+        "auc": 0.9824493871380684,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.04050138220191002,
+      "weak_contact_FPR": 0.025462624608998157,
+      "strong_contact_recall": 0.8925942220266901
+    },
+    "full/bce/2/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9923143910722616,
+      "matched": {
+        "auc": 0.9867854671468814,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.03448810055851936,
+      "weak_contact_FPR": 0.025842137610114432,
+      "strong_contact_recall": 0.9181449718045113
+    },
+    "full/bce/2/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9928195978978959,
+      "matched": {
+        "auc": 0.9878228718811525,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.03325151652097702,
+      "weak_contact_FPR": 0.026328217237308146,
+      "strong_contact_recall": 0.922064447277147
+    },
+    "full/mse/2/0": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9326668003501826,
+      "matched": {
+        "auc": 0.8577307811396903,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.10609661787748337,
+      "weak_contact_FPR": 0.028093665039319437,
+      "strong_contact_recall": 0.5870948819474996
+    },
+    "full/mse/2/1": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9421200552113503,
+      "matched": {
+        "auc": 0.8801988060004986,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.09783647209405899,
+      "weak_contact_FPR": 0.02783056099628731,
+      "strong_contact_recall": 0.6299750696583076
+    },
+    "full/mse/2/2": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.9627356110824081,
+      "matched": {
+        "auc": 0.9295719168446575,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.07694212347269058,
+      "weak_contact_FPR": 0.028502937995147193,
+      "strong_contact_recall": 0.7528083296671066
+    },
+    "full/mse/2/3": {
+      "events": 68302,
+      "positives": 34095,
+      "prevalence": 0.4991801118561682,
+      "AP": 0.988506578069741,
+      "matched": {
+        "auc": 0.9836474099518806,
+        "covered_events": 63719,
+        "coverage_fraction": 0.9329009399431935,
+        "strata": 309,
+        "pairs": 3678561
+      },
+      "Brier": 0.04002411291003227,
+      "weak_contact_FPR": 0.025842663782266788,
+      "strong_contact_recall": 0.9059686170992814
+    },
+    "full/mse/2/4": {
+      "events": 68217,
+      "positives": 34048,
+      "prevalence": 0.4991131242945307,
+      "AP": 0.9927384614883477,
+      "matched": {
+        "auc": 0.9886895259059876,
+        "covered_events": 63638,
+        "coverage_fraction": 0.9328759693331574,
+        "strata": 309,
+        "pairs": 3670580
+      },
+      "Brier": 0.03420954942703247,
+      "weak_contact_FPR": 0.02461295326172847,
+      "strong_contact_recall": 0.9295700187969925
+    },
+    "full/mse/2/5": {
+      "events": 67613,
+      "positives": 33733,
+      "prevalence": 0.4989129309452324,
+      "AP": 0.9932513914582999,
+      "matched": {
+        "auc": 0.9892140204693615,
+        "covered_events": 63089,
+        "coverage_fraction": 0.9330897904249182,
+        "strata": 309,
+        "pairs": 3604216
+      },
+      "Brier": 0.03362046182155609,
+      "weak_contact_FPR": 0.026121605667060212,
+      "strong_contact_recall": 0.9349005424954792
+    }
+  },
+  "train_tail95": 3863.694091796875
+}

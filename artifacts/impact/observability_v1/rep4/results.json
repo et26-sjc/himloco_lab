@@ -1,0 +1,3317 @@
+{
+  "rep": 4,
+  "results": {
+    "test/seen/phase/bce/1/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8829864976996786,
+      "matched": {
+        "auc": 0.7559191977828664,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.139057919383049,
+      "weak_contact_FPR": 0.024226968441185846,
+      "strong_contact_recall": 0.40495630003670596
+    },
+    "test/heldout/phase/bce/1/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8702619665931315,
+      "matched": {
+        "auc": 0.7731033804816777,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.1566176414489746,
+      "weak_contact_FPR": 0.05771322541429394,
+      "strong_contact_recall": 0.46030260489783187
+    },
+    "test/seen/phase/bce/1/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8908683741895326,
+      "matched": {
+        "auc": 0.7722927791066413,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.13454727828502655,
+      "weak_contact_FPR": 0.025453772664483534,
+      "strong_contact_recall": 0.4349163202746005
+    },
+    "test/heldout/phase/bce/1/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8789520823181475,
+      "matched": {
+        "auc": 0.7878322319916989,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.15099532902240753,
+      "weak_contact_FPR": 0.058928914197965324,
+      "strong_contact_recall": 0.49316279311599853
+    },
+    "test/seen/phase/bce/1/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8971418277707056,
+      "matched": {
+        "auc": 0.7834276968642331,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.13071289658546448,
+      "weak_contact_FPR": 0.02508669738507163,
+      "strong_contact_recall": 0.4518804376940705
+    },
+    "test/heldout/phase/bce/1/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8896665346915545,
+      "matched": {
+        "auc": 0.8016757140516629,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.1445963829755783,
+      "weak_contact_FPR": 0.0563695693902361,
+      "strong_contact_recall": 0.5148442780637446
+    },
+    "test/seen/phase/bce/1/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9067426581480041,
+      "matched": {
+        "auc": 0.7957243761552283,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.12435106188058853,
+      "weak_contact_FPR": 0.025125336888167617,
+      "strong_contact_recall": 0.48190990168748327
+    },
+    "test/heldout/phase/bce/1/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9109528351352256,
+      "matched": {
+        "auc": 0.8236821582655235,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.12747998535633087,
+      "weak_contact_FPR": 0.04977925651033335,
+      "strong_contact_recall": 0.5586751936775334
+    },
+    "test/seen/phase/bce/1/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9181234762210222,
+      "matched": {
+        "auc": 0.8220513574481839,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.11624162644147873,
+      "weak_contact_FPR": 0.02574588626563799,
+      "strong_contact_recall": 0.5194135701302184
+    },
+    "test/heldout/phase/bce/1/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9230875689541045,
+      "matched": {
+        "auc": 0.8493692492349814,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.11769594997167587,
+      "weak_contact_FPR": 0.05085179966696554,
+      "strong_contact_recall": 0.5955530097896271
+    },
+    "test/seen/phase/bce/1/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9243454313502784,
+      "matched": {
+        "auc": 0.8370105609725244,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.11128180474042892,
+      "weak_contact_FPR": 0.025326073192351525,
+      "strong_contact_recall": 0.5384160519563823
+    },
+    "test/heldout/phase/bce/1/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9277816565551686,
+      "matched": {
+        "auc": 0.8617596520562956,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.11425710469484329,
+      "weak_contact_FPR": 0.05023892548107969,
+      "strong_contact_recall": 0.6129387690854714
+    },
+    "test/seen/phase/bce/2/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8831858529808977,
+      "matched": {
+        "auc": 0.7559612849098846,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.13891178369522095,
+      "weak_contact_FPR": 0.02476792148452971,
+      "strong_contact_recall": 0.408041586889019
+    },
+    "test/heldout/phase/bce/2/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8702277103330525,
+      "matched": {
+        "auc": 0.7731558079842717,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.15620501339435577,
+      "weak_contact_FPR": 0.05924883229893147,
+      "strong_contact_recall": 0.4637862008007071
+    },
+    "test/seen/phase/bce/2/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8908118771055117,
+      "matched": {
+        "auc": 0.772073582231566,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.13454186916351318,
+      "weak_contact_FPR": 0.02524125539745559,
+      "strong_contact_recall": 0.4347972738365691
+    },
+    "test/heldout/phase/bce/2/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8791319231763335,
+      "matched": {
+        "auc": 0.7896883840314565,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.15084801614284515,
+      "weak_contact_FPR": 0.057265340072941325,
+      "strong_contact_recall": 0.48645557115374616
+    },
+    "test/seen/phase/bce/2/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.8971840081654959,
+      "matched": {
+        "auc": 0.7829994516760614,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.13072840869426727,
+      "weak_contact_FPR": 0.02444914558398779,
+      "strong_contact_recall": 0.4494697473239353
+    },
+    "test/heldout/phase/bce/2/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8895648257192674,
+      "matched": {
+        "auc": 0.800291409535252,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.1455610692501068,
+      "weak_contact_FPR": 0.053490306481540725,
+      "strong_contact_recall": 0.5091249415067852
+    },
+    "test/seen/phase/bce/2/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.906734751283043,
+      "matched": {
+        "auc": 0.7955040483111361,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.1243656575679779,
+      "weak_contact_FPR": 0.0255890109253195,
+      "strong_contact_recall": 0.48338806162637277
+    },
+    "test/heldout/phase/bce/2/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9123741791552735,
+      "matched": {
+        "auc": 0.8253875812353231,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.12637758255004883,
+      "weak_contact_FPR": 0.05067502719303858,
+      "strong_contact_recall": 0.5662143191389799
+    },
+    "test/seen/phase/bce/2/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9180249229524383,
+      "matched": {
+        "auc": 0.8221110434334159,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.11631686240434647,
+      "weak_contact_FPR": 0.026113270297967787,
+      "strong_contact_recall": 0.5202578543262115
+    },
+    "test/heldout/phase/bce/2/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9228602892555108,
+      "matched": {
+        "auc": 0.8479607267442305,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.1180674359202385,
+      "weak_contact_FPR": 0.05187652107083387,
+      "strong_contact_recall": 0.6001353884607373
+    },
+    "test/seen/phase/bce/2/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9243384133666355,
+      "matched": {
+        "auc": 0.8373446829435869,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.11133940517902374,
+      "weak_contact_FPR": 0.026095596185503746,
+      "strong_contact_recall": 0.5422947402180885
+    },
+    "test/heldout/phase/bce/2/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9275946533935584,
+      "matched": {
+        "auc": 0.8620124871194088,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.11379818618297577,
+      "weak_contact_FPR": 0.05114296784192174,
+      "strong_contact_recall": 0.6154572642845899
+    },
+    "test/seen/kinematics/bce/1/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9246289595485756,
+      "matched": {
+        "auc": 0.8380391446170685,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.11250198632478714,
+      "weak_contact_FPR": 0.025057717757749634,
+      "strong_contact_recall": 0.5494290731242746
+    },
+    "test/heldout/kinematics/bce/1/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8781075431204547,
+      "matched": {
+        "auc": 0.8127366064114466,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.15022443234920502,
+      "weak_contact_FPR": 0.08119521402520954,
+      "strong_contact_recall": 0.5685540477304633
+    },
+    "test/seen/kinematics/bce/1/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9323704703090919,
+      "matched": {
+        "auc": 0.8565739624935086,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.10654104501008987,
+      "weak_contact_FPR": 0.02503839800620164,
+      "strong_contact_recall": 0.5781887084453528
+    },
+    "test/heldout/kinematics/bce/1/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9004079458838141,
+      "matched": {
+        "auc": 0.8434394626180984,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.13846983015537262,
+      "weak_contact_FPR": 0.07217352357796404,
+      "strong_contact_recall": 0.608589403629179
+    },
+    "test/seen/kinematics/bce/1/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9430749243966262,
+      "matched": {
+        "auc": 0.882130605086218,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.09782293438911438,
+      "weak_contact_FPR": 0.02524125539745559,
+      "strong_contact_recall": 0.6254402238073035
+    },
+    "test/heldout/kinematics/bce/1/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9235918058728428,
+      "matched": {
+        "auc": 0.8822246736934083,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.11958467215299606,
+      "weak_contact_FPR": 0.06481540725574253,
+      "strong_contact_recall": 0.6689024073207508
+    },
+    "test/seen/kinematics/bce/1/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9610186679282352,
+      "matched": {
+        "auc": 0.9202693383110446,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.08038081973791122,
+      "weak_contact_FPR": 0.024342886950473815,
+      "strong_contact_recall": 0.7067985436652414
+    },
+    "test/heldout/kinematics/bce/1/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.95053336853388,
+      "matched": {
+        "auc": 0.9213327508055267,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.09318503737449646,
+      "weak_contact_FPR": 0.05508989698637149,
+      "strong_contact_recall": 0.7486611553059845
+    },
+    "test/seen/kinematics/bce/1/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9690750792750079,
+      "matched": {
+        "auc": 0.9374346721781259,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.07144876569509506,
+      "weak_contact_FPR": 0.02472107817545488,
+      "strong_contact_recall": 0.7514327999443766
+    },
+    "test/heldout/kinematics/bce/1/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9597132547496589,
+      "matched": {
+        "auc": 0.9344419076893865,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.0853656530380249,
+      "weak_contact_FPR": 0.05597540668630716,
+      "strong_contact_recall": 0.7842116225786294
+    },
+    "test/seen/kinematics/bce/1/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9713818898013207,
+      "matched": {
+        "auc": 0.9420610793166693,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.06846494972705841,
+      "weak_contact_FPR": 0.026816415191747597,
+      "strong_contact_recall": 0.772771007055805
+    },
+    "test/heldout/kinematics/bce/1/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9645365870517623,
+      "matched": {
+        "auc": 0.9429152638171696,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.07949735969305038,
+      "weak_contact_FPR": 0.05391966937879375,
+      "strong_contact_recall": 0.8030851566189202
+    },
+    "test/seen/kinematics/bce/2/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9245743087383588,
+      "matched": {
+        "auc": 0.8376164034781127,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.11258493363857269,
+      "weak_contact_FPR": 0.02464234309946774,
+      "strong_contact_recall": 0.5478318667473537
+    },
+    "test/heldout/kinematics/bce/2/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8773635264382947,
+      "matched": {
+        "auc": 0.8176149855278249,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.14861229062080383,
+      "weak_contact_FPR": 0.08049139420308402,
+      "strong_contact_recall": 0.5690739874174596
+    },
+    "test/seen/kinematics/bce/2/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9323696615417728,
+      "matched": {
+        "auc": 0.8564397390905748,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.1066199243068695,
+      "weak_contact_FPR": 0.02548275229180553,
+      "strong_contact_recall": 0.5781391057628397
+    },
+    "test/heldout/kinematics/bce/2/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8991918045106257,
+      "matched": {
+        "auc": 0.8444441046365573,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.13658840954303741,
+      "weak_contact_FPR": 0.07729221319342248,
+      "strong_contact_recall": 0.6182082878386107
+    },
+    "test/seen/kinematics/bce/2/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9433645469960475,
+      "matched": {
+        "auc": 0.8825550502184927,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.09756036102771759,
+      "weak_contact_FPR": 0.0247969011118517,
+      "strong_contact_recall": 0.6265810855051042
+    },
+    "test/heldout/kinematics/bce/2/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9238209743667958,
+      "matched": {
+        "auc": 0.8809688165583529,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.11965148150920868,
+      "weak_contact_FPR": 0.06833450636637022,
+      "strong_contact_recall": 0.6735818645037176
+    },
+    "test/seen/kinematics/bce/2/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9614123036931627,
+      "matched": {
+        "auc": 0.9212371763570052,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.07991673797369003,
+      "weak_contact_FPR": 0.024738941857207715,
+      "strong_contact_recall": 0.709893751054057
+    },
+    "test/heldout/kinematics/bce/2/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9520512924244274,
+      "matched": {
+        "auc": 0.9222216154224236,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.0916467234492302,
+      "weak_contact_FPR": 0.058672979717192396,
+      "strong_contact_recall": 0.7529766547080539
+    },
+    "test/seen/kinematics/bce/2/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.968609811192074,
+      "matched": {
+        "auc": 0.9364230929458872,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.07190512120723724,
+      "weak_contact_FPR": 0.024904770191619775,
+      "strong_contact_recall": 0.7528829822104354
+    },
+    "test/heldout/kinematics/bce/2/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.962804581417307,
+      "matched": {
+        "auc": 0.9364360202884988,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.08215663582086563,
+      "weak_contact_FPR": 0.051684385807608556,
+      "strong_contact_recall": 0.7908769006456988
+    },
+    "test/seen/kinematics/bce/2/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9713851395654552,
+      "matched": {
+        "auc": 0.9422883474455228,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.06851432472467422,
+      "weak_contact_FPR": 0.02557933392427504,
+      "strong_contact_recall": 0.766617222578576
+    },
+    "test/heldout/kinematics/bce/2/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9629226328917142,
+      "matched": {
+        "auc": 0.9423011723282021,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.0804782286286354,
+      "weak_contact_FPR": 0.05159498902234276,
+      "strong_contact_recall": 0.797208667820977
+    },
+    "test/seen/full/bce/1/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9321772416924428,
+      "matched": {
+        "auc": 0.8562975385861747,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.10662341862916946,
+      "weak_contact_FPR": 0.02562765042841549,
+      "strong_contact_recall": 0.5833275463537068
+    },
+    "test/heldout/full/bce/1/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8960950049925973,
+      "matched": {
+        "auc": 0.8380997214788924,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.13809773325920105,
+      "weak_contact_FPR": 0.07863586921748032,
+      "strong_contact_recall": 0.6176883481516144
+    },
+    "test/seen/full/bce/1/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9423008617797541,
+      "matched": {
+        "auc": 0.8807489680963291,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.09826573729515076,
+      "weak_contact_FPR": 0.02527989490055158,
+      "strong_contact_recall": 0.622057320859912
+    },
+    "test/heldout/full/bce/1/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9150171260547003,
+      "matched": {
+        "auc": 0.8728143738736279,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.125184565782547,
+      "weak_contact_FPR": 0.07102181841448589,
+      "strong_contact_recall": 0.6626631310767951
+    },
+    "test/seen/full/bce/1/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9659503886820192,
+      "matched": {
+        "auc": 0.9343040606281426,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.0752028152346611,
+      "weak_contact_FPR": 0.02414002955921987,
+      "strong_contact_recall": 0.7422743821985893
+    },
+    "test/heldout/full/bce/1/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9455596509890257,
+      "matched": {
+        "auc": 0.9222869313527388,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.09867493063211441,
+      "weak_contact_FPR": 0.06603109603941391,
+      "strong_contact_recall": 0.7642073519471742
+    },
+    "test/seen/full/bce/1/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9898808803084779,
+      "matched": {
+        "auc": 0.9838313955008605,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.039305198937654495,
+      "weak_contact_FPR": 0.023792274031355958,
+      "strong_contact_recall": 0.8911617940298211
+    },
+    "test/heldout/full/bce/1/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9758823904536098,
+      "matched": {
+        "auc": 0.9689316804106821,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.05944186821579933,
+      "weak_contact_FPR": 0.06008061936144347,
+      "strong_contact_recall": 0.8920085270108667
+    },
+    "test/seen/full/bce/1/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9924859180853925,
+      "matched": {
+        "auc": 0.9877535539982131,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.033864498138427734,
+      "weak_contact_FPR": 0.025417174236711332,
+      "strong_contact_recall": 0.9188394568769431
+    },
+    "test/heldout/full/bce/1/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9836065909348081,
+      "matched": {
+        "auc": 0.9777937318452301,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.0492163822054863,
+      "weak_contact_FPR": 0.05469450493147176,
+      "strong_contact_recall": 0.9185065611330973
+    },
+    "test/seen/full/bce/1/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9929670825322997,
+      "matched": {
+        "auc": 0.9883897688691432,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.03277802839875221,
+      "weak_contact_FPR": 0.024595513388726002,
+      "strong_contact_recall": 0.9214039448364336
+    },
+    "test/heldout/full/bce/1/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9854849743468544,
+      "matched": {
+        "auc": 0.9792293107378474,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.04742295667529106,
+      "weak_contact_FPR": 0.05101381893323002,
+      "strong_contact_recall": 0.919722965528097
+    },
+    "test/seen/full/mse/1/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.930060746461243,
+      "matched": {
+        "auc": 0.8562206477726078,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.10724197328090668,
+      "weak_contact_FPR": 0.023782614155581958,
+      "strong_contact_recall": 0.5680499201396811,
+      "RMSE": 401.2246398925781,
+      "MAE": 299.2327880859375,
+      "negative_prediction_fraction": 8.32020046788892e-05,
+      "severity_spearman": 0.8759994857463276,
+      "tail_RMSE": 660.3318481445312
+    },
+    "test/heldout/full/mse/1/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8947088639079248,
+      "matched": {
+        "auc": 0.8373895472666703,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.1399005502462387,
+      "weak_contact_FPR": 0.09277624928018427,
+      "strong_contact_recall": 0.6489367233400926,
+      "RMSE": 804.4264526367188,
+      "MAE": 532.124755859375,
+      "negative_prediction_fraction": 0.0005450060237507888,
+      "severity_spearman": 0.7698923200594425,
+      "tail_RMSE": 1558.0242919921875
+    },
+    "test/seen/full/mse/1/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9397490185760777,
+      "matched": {
+        "auc": 0.8796913311104213,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.09921134263277054,
+      "weak_contact_FPR": 0.025376493658291553,
+      "strong_contact_recall": 0.6149046140415274,
+      "RMSE": 373.1277770996094,
+      "MAE": 277.21820068359375,
+      "negative_prediction_fraction": 9.788471138692848e-05,
+      "severity_spearman": 0.8930394640803548,
+      "tail_RMSE": 597.84814453125
+    },
+    "test/heldout/full/mse/1/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9108072161297524,
+      "matched": {
+        "auc": 0.8687665337775108,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.12760519981384277,
+      "weak_contact_FPR": 0.08106724678482309,
+      "strong_contact_recall": 0.6799771226537722,
+      "RMSE": 723.176025390625,
+      "MAE": 480.5116271972656,
+      "negative_prediction_fraction": 0.0006597441340141128,
+      "severity_spearman": 0.801828480143072,
+      "tail_RMSE": 1300.345947265625
+    },
+    "test/seen/full/mse/1/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9621568892733194,
+      "matched": {
+        "auc": 0.9314215674343895,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.07681306451559067,
+      "weak_contact_FPR": 0.023434858627718047,
+      "strong_contact_recall": 0.7294669695737146,
+      "RMSE": 304.6513671875,
+      "MAE": 215.08499145507812,
+      "negative_prediction_fraction": 0.00010767318252562132,
+      "severity_spearman": 0.9306560620182965,
+      "tail_RMSE": 487.54266357421875
+    },
+    "test/heldout/full/mse/1/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.938849551426331,
+      "matched": {
+        "auc": 0.9156852165365081,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.10358453541994095,
+      "weak_contact_FPR": 0.07358116322221511,
+      "strong_contact_recall": 0.7755940310923933,
+      "RMSE": 609.6676025390625,
+      "MAE": 382.8092041015625,
+      "negative_prediction_fraction": 0.0012621192128965636,
+      "severity_spearman": 0.854516407943403,
+      "tail_RMSE": 1044.5772705078125
+    },
+    "test/seen/full/mse/1/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9893087892075927,
+      "matched": {
+        "auc": 0.9851534530429354,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.03878406807780266,
+      "weak_contact_FPR": 0.0244105060808918,
+      "strong_contact_recall": 0.905973155028224,
+      "RMSE": 169.84483337402344,
+      "MAE": 110.2276611328125,
+      "negative_prediction_fraction": 0.00011746165366431417,
+      "severity_spearman": 0.980519476502403,
+      "tail_RMSE": 254.59678649902344
+    },
+    "test/heldout/full/mse/1/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.972666924808324,
+      "matched": {
+        "auc": 0.967584948937797,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.05709647387266159,
+      "weak_contact_FPR": 0.05924883229893147,
+      "strong_contact_recall": 0.9105183798679353,
+      "RMSE": 396.64190673828125,
+      "MAE": 217.2494354248047,
+      "negative_prediction_fraction": 0.0009752739372382537,
+      "severity_spearman": 0.9393817686613753,
+      "tail_RMSE": 597.514892578125
+    },
+    "test/seen/full/mse/1/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9928952315942344,
+      "matched": {
+        "auc": 0.989214606475189,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.03397504612803459,
+      "weak_contact_FPR": 0.025320494228203493,
+      "strong_contact_recall": 0.9321195506421526,
+      "RMSE": 136.56483459472656,
+      "MAE": 91.48150634765625,
+      "negative_prediction_fraction": 0.000127381669777719,
+      "severity_spearman": 0.9872981556081007,
+      "tail_RMSE": 202.5539093017578
+    },
+    "test/heldout/full/mse/1/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9839371199408085,
+      "matched": {
+        "auc": 0.9780980112029928,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.04485633596777916,
+      "weak_contact_FPR": 0.04764954527987703,
+      "strong_contact_recall": 0.9327744219954176,
+      "RMSE": 302.7977294921875,
+      "MAE": 166.65609741210938,
+      "negative_prediction_fraction": 0.000488253202366592,
+      "severity_spearman": 0.9632364073127192,
+      "tail_RMSE": 456.3418273925781
+    },
+    "test/seen/full/mse/1/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.993593622258142,
+      "matched": {
+        "auc": 0.9900581801489976,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.03296666592359543,
+      "weak_contact_FPR": 0.024848774120649515,
+      "strong_contact_recall": 0.9369487652341244,
+      "RMSE": 129.7808837890625,
+      "MAE": 87.96546173095703,
+      "negative_prediction_fraction": 0.00017289329519801222,
+      "severity_spearman": 0.9886019552615624,
+      "tail_RMSE": 196.32022094726562
+    },
+    "test/heldout/full/mse/1/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9862841405767956,
+      "matched": {
+        "auc": 0.980990935707465,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.041807208210229874,
+      "weak_contact_FPR": 0.04507296913341082,
+      "strong_contact_recall": 0.937299963271945,
+      "RMSE": 281.3700256347656,
+      "MAE": 155.18313598632812,
+      "negative_prediction_fraction": 0.0007526414821247648,
+      "severity_spearman": 0.9689312826997964,
+      "tail_RMSE": 423.638916015625
+    },
+    "test/seen/full/bce/2/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.932291453512185,
+      "matched": {
+        "auc": 0.8565911381429796,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.10648928582668304,
+      "weak_contact_FPR": 0.024835540614947693,
+      "strong_contact_recall": 0.5783474370293945
+    },
+    "test/heldout/full/bce/2/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8912846213542378,
+      "matched": {
+        "auc": 0.8383583638250232,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.13955408334732056,
+      "weak_contact_FPR": 0.08074732868385694,
+      "strong_contact_recall": 0.6138407944678417
+    },
+    "test/seen/full/bce/2/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9422931358305625,
+      "matched": {
+        "auc": 0.8807902560052419,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.0983094573020935,
+      "weak_contact_FPR": 0.025154316515489612,
+      "strong_contact_recall": 0.6219977976408965
+    },
+    "test/heldout/full/bce/2/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9191820020025228,
+      "matched": {
+        "auc": 0.8731992791218394,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.12383628636598587,
+      "weak_contact_FPR": 0.07262140891931665,
+      "strong_contact_recall": 0.6674465761971611
+    },
+    "test/seen/full/bce/2/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9659989992717546,
+      "matched": {
+        "auc": 0.934608728601727,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.07510208338499069,
+      "weak_contact_FPR": 0.024275267820055835,
+      "strong_contact_recall": 0.7423438259541076
+    },
+    "test/heldout/full/bce/2/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9475429778369779,
+      "matched": {
+        "auc": 0.92534804216045,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.09638441354036331,
+      "weak_contact_FPR": 0.06647898138076652,
+      "strong_contact_recall": 0.7735662663131077
+    },
+    "test/seen/full/bce/2/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9898381792601612,
+      "matched": {
+        "auc": 0.9837666739139161,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.03922040015459061,
+      "weak_contact_FPR": 0.02424628819273384,
+      "strong_contact_recall": 0.8930070138193074
+    },
+    "test/heldout/full/bce/2/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9759388662124743,
+      "matched": {
+        "auc": 0.9684893233575447,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.057972997426986694,
+      "weak_contact_FPR": 0.0626399641691727,
+      "strong_contact_recall": 0.8986117610357198
+    },
+    "test/seen/full/bce/2/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9924698673381133,
+      "matched": {
+        "auc": 0.9876581168633458,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.03381599485874176,
+      "weak_contact_FPR": 0.024875766189067425,
+      "strong_contact_recall": 0.917548198694836
+    },
+    "test/heldout/full/bce/2/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.983747058600903,
+      "matched": {
+        "auc": 0.9774255778846875,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.049105849117040634,
+      "weak_contact_FPR": 0.0530933777379275,
+      "strong_contact_recall": 0.9161632993126432
+    },
+    "test/seen/full/bce/2/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9929370513977881,
+      "matched": {
+        "auc": 0.988464028445815,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.03285558894276619,
+      "weak_contact_FPR": 0.024283807872512445,
+      "strong_contact_recall": 0.9212836754329699
+    },
+    "test/heldout/full/bce/2/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.9851807291518354,
+      "matched": {
+        "auc": 0.9793159589580707,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.047008391469717026,
+      "weak_contact_FPR": 0.04830169185070386,
+      "strong_contact_recall": 0.9200377774279868
+    },
+    "test/seen/full/mse/2/0": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9300132774495757,
+      "matched": {
+        "auc": 0.8563386606196317,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.10723459720611572,
+      "weak_contact_FPR": 0.02484520049072169,
+      "strong_contact_recall": 0.5743494608188411,
+      "RMSE": 401.5132141113281,
+      "MAE": 299.1857604980469,
+      "negative_prediction_fraction": 6.851929797084994e-05,
+      "severity_spearman": 0.8763409002350623,
+      "tail_RMSE": 669.9147338867188
+    },
+    "test/heldout/full/mse/2/0": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.8877357884361037,
+      "matched": {
+        "auc": 0.8317813336245973,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.1439989060163498,
+      "weak_contact_FPR": 0.09770298803506303,
+      "strong_contact_recall": 0.6461810429990121,
+      "RMSE": 825.7753295898438,
+      "MAE": 548.2216186523438,
+      "negative_prediction_fraction": 0.0003442143307899719,
+      "severity_spearman": 0.7568544792949241,
+      "tail_RMSE": 1590.0782470703125
+    },
+    "test/seen/full/mse/2/1": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9399056828339318,
+      "matched": {
+        "auc": 0.8803312936985693,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.09906309098005295,
+      "weak_contact_FPR": 0.02392751229219192,
+      "strong_contact_recall": 0.6094483189650897,
+      "RMSE": 373.2203063964844,
+      "MAE": 277.1960754394531,
+      "negative_prediction_fraction": 6.362506240150351e-05,
+      "severity_spearman": 0.8932690607820116,
+      "tail_RMSE": 602.7007446289062
+    },
+    "test/heldout/full/mse/2/1": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9107273708725363,
+      "matched": {
+        "auc": 0.870295560045874,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.12835702300071716,
+      "weak_contact_FPR": 0.08337065711177938,
+      "strong_contact_recall": 0.6846565798367389,
+      "RMSE": 729.2702026367188,
+      "MAE": 481.8821716308594,
+      "negative_prediction_fraction": 0.0008318512994090987,
+      "severity_spearman": 0.8016494934381325,
+      "tail_RMSE": 1318.064208984375
+    },
+    "test/seen/full/mse/2/2": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9622244360710417,
+      "matched": {
+        "auc": 0.9311330346187806,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.07683414220809937,
+      "weak_contact_FPR": 0.023203021609142106,
+      "strong_contact_recall": 0.7291693534786361,
+      "RMSE": 304.68109130859375,
+      "MAE": 215.02464294433594,
+      "negative_prediction_fraction": 0.00013214436037235343,
+      "severity_spearman": 0.9307649907713421,
+      "tail_RMSE": 491.3387451171875
+    },
+    "test/heldout/full/mse/2/2": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9399456848925956,
+      "matched": {
+        "auc": 0.9179129485009011,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.10258937627077103,
+      "weak_contact_FPR": 0.07575660630878495,
+      "strong_contact_recall": 0.7793895908074663,
+      "RMSE": 602.7928466796875,
+      "MAE": 376.50213623046875,
+      "negative_prediction_fraction": 0.0013768573231598875,
+      "severity_spearman": 0.8559061161626312,
+      "tail_RMSE": 1051.619140625
+    },
+    "test/seen/full/mse/2/3": {
+      "events": 204322,
+      "positives": 100801,
+      "prevalence": 0.49334383962568884,
+      "AP": 0.9893579949931878,
+      "matched": {
+        "auc": 0.9850122779504441,
+        "covered_events": 197645,
+        "coverage_fraction": 0.967321189103474,
+        "strata": 378,
+        "pairs": 33157407
+      },
+      "Brier": 0.03877131640911102,
+      "weak_contact_FPR": 0.02531853440364757,
+      "strong_contact_recall": 0.9099016874832591,
+      "RMSE": 170.23068237304688,
+      "MAE": 110.83678436279297,
+      "negative_prediction_fraction": 0.00012725012480300702,
+      "severity_spearman": 0.9805426966339706,
+      "tail_RMSE": 259.94873046875
+    },
+    "test/heldout/full/mse/2/3": {
+      "events": 34862,
+      "positives": 19233,
+      "prevalence": 0.5516895186736275,
+      "AP": 0.9754913606398616,
+      "matched": {
+        "auc": 0.969574135765387,
+        "covered_events": 33876,
+        "coverage_fraction": 0.9717170558200906,
+        "strata": 102,
+        "pairs": 4577750
+      },
+      "Brier": 0.05334880203008652,
+      "weak_contact_FPR": 0.058545012476805935,
+      "strong_contact_recall": 0.9193053605781729,
+      "RMSE": 383.7253723144531,
+      "MAE": 212.79669189453125,
+      "negative_prediction_fraction": 0.0004589524410532959,
+      "severity_spearman": 0.9444503981517297,
+      "tail_RMSE": 611.6017456054688
+    },
+    "test/seen/full/mse/2/4": {
+      "events": 204111,
+      "positives": 100677,
+      "prevalence": 0.4932463218542852,
+      "AP": 0.9930121938969589,
+      "matched": {
+        "auc": 0.9893717997168013,
+        "covered_events": 197444,
+        "coverage_fraction": 0.967336400291998,
+        "strata": 378,
+        "pairs": 33089845
+      },
+      "Brier": 0.03376276418566704,
+      "weak_contact_FPR": 0.025803894270742696,
+      "strong_contact_recall": 0.9347318652721078,
+      "RMSE": 134.6064453125,
+      "MAE": 90.40632629394531,
+      "negative_prediction_fraction": 0.00011758307979481753,
+      "severity_spearman": 0.9876051937169543,
+      "tail_RMSE": 198.706298828125
+    },
+    "test/heldout/full/mse/2/4": {
+      "events": 34818,
+      "positives": 19204,
+      "prevalence": 0.5515537940145901,
+      "AP": 0.9838956703387248,
+      "matched": {
+        "auc": 0.9776858887658793,
+        "covered_events": 33834,
+        "coverage_fraction": 0.9717387558159573,
+        "strata": 102,
+        "pairs": 4571457
+      },
+      "Brier": 0.04513132944703102,
+      "weak_contact_FPR": 0.04803381580632766,
+      "strong_contact_recall": 0.9352739012705686,
+      "RMSE": 307.1769714355469,
+      "MAE": 168.3871307373047,
+      "negative_prediction_fraction": 0.00043081164914699296,
+      "severity_spearman": 0.9633050134654007,
+      "tail_RMSE": 482.70281982421875
+    },
+    "test/seen/full/mse/2/5": {
+      "events": 202437,
+      "positives": 99776,
+      "prevalence": 0.49287432633362477,
+      "AP": 0.9934401709281484,
+      "matched": {
+        "auc": 0.9898612000876478,
+        "covered_events": 195826,
+        "coverage_fraction": 0.9673429264413126,
+        "strata": 378,
+        "pairs": 32521058
+      },
+      "Brier": 0.03321635350584984,
+      "weak_contact_FPR": 0.024653958173016043,
+      "strong_contact_recall": 0.9351246792815907,
+      "RMSE": 130.36241149902344,
+      "MAE": 88.54602813720703,
+      "negative_prediction_fraction": 0.0001679534867637833,
+      "severity_spearman": 0.9884570870659933,
+      "tail_RMSE": 195.02947998046875
+    },
+    "test/heldout/full/mse/2/5": {
+      "events": 34545,
+      "positives": 19059,
+      "prevalence": 0.5517151541467651,
+      "AP": 0.985153369198569,
+      "matched": {
+        "auc": 0.9802457610135442,
+        "covered_events": 33570,
+        "coverage_fraction": 0.9717759444203213,
+        "strata": 102,
+        "pairs": 4500958
+      },
+      "Brier": 0.04281704127788544,
+      "weak_contact_FPR": 0.04449179904429808,
+      "strong_contact_recall": 0.9356209664725327,
+      "RMSE": 288.4922790527344,
+      "MAE": 158.59971618652344,
+      "negative_prediction_fraction": 0.0010131712259371835,
+      "severity_spearman": 0.9668566278215522,
+      "tail_RMSE": 426.36492919921875
+    },
+    "high_speed/seen/phase/bce/1/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9824874594916123,
+      "matched": {
+        "auc": 0.722451686814112,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05930241942405701,
+      "weak_contact_FPR": 0.34967044110190976,
+      "strong_contact_recall": 0.901284986842555
+    },
+    "high_speed/heldout/phase/bce/1/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9655314195946447,
+      "matched": {
+        "auc": 0.7206773743834862,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08026672899723053,
+      "weak_contact_FPR": 0.3861311102690413,
+      "strong_contact_recall": 0.8849752481662908
+    },
+    "high_speed/seen/phase/bce/1/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9841216091396299,
+      "matched": {
+        "auc": 0.7420760139592719,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05812876299023628,
+      "weak_contact_FPR": 0.3326009802264661,
+      "strong_contact_recall": 0.903502101773692
+    },
+    "high_speed/heldout/phase/bce/1/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9643249487916437,
+      "matched": {
+        "auc": 0.7201107479390965,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08340001851320267,
+      "weak_contact_FPR": 0.4406972338006821,
+      "strong_contact_recall": 0.89754555114947
+    },
+    "high_speed/seen/phase/bce/1/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9858767143101707,
+      "matched": {
+        "auc": 0.7616688706658914,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.056539129465818405,
+      "weak_contact_FPR": 0.33293898935271254,
+      "strong_contact_recall": 0.9115845323126346
+    },
+    "high_speed/heldout/phase/bce/1/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9683525580027905,
+      "matched": {
+        "auc": 0.7347106534362711,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08018699288368225,
+      "weak_contact_FPR": 0.4022356953391436,
+      "strong_contact_recall": 0.8974159603970661
+    },
+    "high_speed/seen/phase/bce/1/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9882968642474793,
+      "matched": {
+        "auc": 0.7909301903443063,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05061103776097298,
+      "weak_contact_FPR": 0.3059405103937806,
+      "strong_contact_recall": 0.9204786234236697
+    },
+    "high_speed/heldout/phase/bce/1/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9752995915356488,
+      "matched": {
+        "auc": 0.7801094495015172,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.06500767916440964,
+      "weak_contact_FPR": 0.30977643046608566,
+      "strong_contact_recall": 0.9022626545369722
+    },
+    "high_speed/seen/phase/bce/1/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9902679999567453,
+      "matched": {
+        "auc": 0.8232002782213645,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.04744406417012215,
+      "weak_contact_FPR": 0.26291317947417364,
+      "strong_contact_recall": 0.9168576608627237
+    },
+    "high_speed/heldout/phase/bce/1/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9787961759356661,
+      "matched": {
+        "auc": 0.8078804963450059,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.061085570603609085,
+      "weak_contact_FPR": 0.2897781149250901,
+      "strong_contact_recall": 0.9073723517361201
+    },
+    "high_speed/seen/phase/bce/1/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.990684001471972,
+      "matched": {
+        "auc": 0.837570866030994,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.04618370160460472,
+      "weak_contact_FPR": 0.24102127659574468,
+      "strong_contact_recall": 0.9141176369332461
+    },
+    "high_speed/heldout/phase/bce/1/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9789243672435503,
+      "matched": {
+        "auc": 0.8132469885502154,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.05946359783411026,
+      "weak_contact_FPR": 0.27601377199693955,
+      "strong_contact_recall": 0.901436406372421
+    },
+    "high_speed/seen/phase/bce/2/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9828174594560106,
+      "matched": {
+        "auc": 0.7276219188900597,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05916052311658859,
+      "weak_contact_FPR": 0.3485296603008281,
+      "strong_contact_recall": 0.8991874850483579
+    },
+    "high_speed/heldout/phase/bce/2/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9643500716574422,
+      "matched": {
+        "auc": 0.7194129109603752,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07994430512189865,
+      "weak_contact_FPR": 0.407540735126942,
+      "strong_contact_recall": 0.894694554596584
+    },
+    "high_speed/seen/phase/bce/2/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9844800332361757,
+      "matched": {
+        "auc": 0.7465875828576368,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05780265852808952,
+      "weak_contact_FPR": 0.3518675004225114,
+      "strong_contact_recall": 0.911926284132463
+    },
+    "high_speed/heldout/phase/bce/2/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9646614353762681,
+      "matched": {
+        "auc": 0.72793485943681,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08040601760149002,
+      "weak_contact_FPR": 0.40450928381962864,
+      "strong_contact_recall": 0.8941502734364876
+    },
+    "high_speed/seen/phase/bce/2/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9860638763640465,
+      "matched": {
+        "auc": 0.7651197269001476,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.056026641279459,
+      "weak_contact_FPR": 0.2944482001014027,
+      "strong_contact_recall": 0.8935955708964151
+    },
+    "high_speed/heldout/phase/bce/2/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.967460290230166,
+      "matched": {
+        "auc": 0.7388250409056651,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07971157878637314,
+      "weak_contact_FPR": 0.36642667677150437,
+      "strong_contact_recall": 0.8741414612653241
+    },
+    "high_speed/seen/phase/bce/2/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9886366861800957,
+      "matched": {
+        "auc": 0.7926464721039091,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05051043629646301,
+      "weak_contact_FPR": 0.30247591684975494,
+      "strong_contact_recall": 0.9196370595673422
+    },
+    "high_speed/heldout/phase/bce/2/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9772378887739454,
+      "matched": {
+        "auc": 0.7900192129710986,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.061870068311691284,
+      "weak_contact_FPR": 0.30162940507768093,
+      "strong_contact_recall": 0.9109452349480341
+    },
+    "high_speed/seen/phase/bce/2/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9897955680595397,
+      "matched": {
+        "auc": 0.8229490976293279,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.0478062629699707,
+      "weak_contact_FPR": 0.27804548144390906,
+      "strong_contact_recall": 0.9236992440050628
+    },
+    "high_speed/heldout/phase/bce/2/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9766526515716387,
+      "matched": {
+        "auc": 0.8025672822079186,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.060278475284576416,
+      "weak_contact_FPR": 0.3072254883368102,
+      "strong_contact_recall": 0.9180043046443482
+    },
+    "high_speed/seen/phase/bce/2/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9908171535454622,
+      "matched": {
+        "auc": 0.8370085270108484,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.04624803364276886,
+      "weak_contact_FPR": 0.24153191489361703,
+      "strong_contact_recall": 0.9159035356491204
+    },
+    "high_speed/heldout/phase/bce/2/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9784645915088566,
+      "matched": {
+        "auc": 0.8138241174136776,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.05859256163239479,
+      "weak_contact_FPR": 0.27352716143840855,
+      "strong_contact_recall": 0.9052494123792113
+    },
+    "high_speed/seen/kinematics/bce/1/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9893708991456486,
+      "matched": {
+        "auc": 0.829966175271611,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.050961121916770935,
+      "weak_contact_FPR": 0.25245056616528644,
+      "strong_contact_recall": 0.9093716892792454
+    },
+    "high_speed/heldout/kinematics/bce/1/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.963104479747338,
+      "matched": {
+        "auc": 0.7499198483268704,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.09232328832149506,
+      "weak_contact_FPR": 0.3738158393330807,
+      "strong_contact_recall": 0.8704092475960915
+    },
+    "high_speed/seen/kinematics/bce/1/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9909722510423506,
+      "matched": {
+        "auc": 0.8522450785070368,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04850063472986221,
+      "weak_contact_FPR": 0.22840966706101065,
+      "strong_contact_recall": 0.9101491746693551
+    },
+    "high_speed/heldout/kinematics/bce/1/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.970387328801264,
+      "matched": {
+        "auc": 0.774488239865353,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.0861116573214531,
+      "weak_contact_FPR": 0.3353543008715423,
+      "strong_contact_recall": 0.8773293937744603
+    },
+    "high_speed/seen/kinematics/bce/1/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9926179299201846,
+      "matched": {
+        "auc": 0.8793594397113506,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04581542685627937,
+      "weak_contact_FPR": 0.20905864458340376,
+      "strong_contact_recall": 0.9163690577902327
+    },
+    "high_speed/heldout/kinematics/bce/1/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9761323109655171,
+      "matched": {
+        "auc": 0.8092777758252401,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07655864208936691,
+      "weak_contact_FPR": 0.2959454338764684,
+      "strong_contact_recall": 0.8969235155379313
+    },
+    "high_speed/seen/kinematics/bce/1/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.995589912677931,
+      "matched": {
+        "auc": 0.921878190336613,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.03741682693362236,
+      "weak_contact_FPR": 0.16304715227311137,
+      "strong_contact_recall": 0.933003827620382
+    },
+    "high_speed/heldout/kinematics/bce/1/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.984870486067886,
+      "matched": {
+        "auc": 0.8768872253267572,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.056958962231874466,
+      "weak_contact_FPR": 0.24441076165214096,
+      "strong_contact_recall": 0.922945338620636
+    },
+    "high_speed/seen/kinematics/bce/1/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9967473723023639,
+      "matched": {
+        "auc": 0.9382268201767696,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.03363965079188347,
+      "weak_contact_FPR": 0.1582974046834052,
+      "strong_contact_recall": 0.9486966784113844
+    },
+    "high_speed/heldout/kinematics/bce/1/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9898218630910861,
+      "matched": {
+        "auc": 0.9075040310781514,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.051137860864400864,
+      "weak_contact_FPR": 0.2427460648587142,
+      "strong_contact_recall": 0.9436506495863911
+    },
+    "high_speed/seen/kinematics/bce/1/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9971091250726271,
+      "matched": {
+        "auc": 0.9446822234674781,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.03228986635804176,
+      "weak_contact_FPR": 0.14919148936170212,
+      "strong_contact_recall": 0.950752229145867
+    },
+    "high_speed/heldout/kinematics/bce/1/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9909970345785135,
+      "matched": {
+        "auc": 0.9188884863907036,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.05066361650824547,
+      "weak_contact_FPR": 0.2247513389441469,
+      "strong_contact_recall": 0.9428571428571428
+    },
+    "high_speed/seen/kinematics/bce/2/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9895844108256598,
+      "matched": {
+        "auc": 0.8293342299109822,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.05131399631500244,
+      "weak_contact_FPR": 0.24036673990197735,
+      "strong_contact_recall": 0.9041898773110967
+    },
+    "high_speed/heldout/kinematics/bce/2/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9624587874655578,
+      "matched": {
+        "auc": 0.7487168898417272,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.09423347562551498,
+      "weak_contact_FPR": 0.36756347101174686,
+      "strong_contact_recall": 0.8710053650571495
+    },
+    "high_speed/seen/kinematics/bce/2/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.990925059370446,
+      "matched": {
+        "auc": 0.8504691520433889,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.048833560198545456,
+      "weak_contact_FPR": 0.2258323474733818,
+      "strong_contact_recall": 0.9106190834216192
+    },
+    "high_speed/heldout/kinematics/bce/2/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9682529194422411,
+      "matched": {
+        "auc": 0.7792400332712426,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08402245491743088,
+      "weak_contact_FPR": 0.37173171655930276,
+      "strong_contact_recall": 0.8904698960682166
+    },
+    "high_speed/seen/kinematics/bce/2/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9927769922942214,
+      "matched": {
+        "auc": 0.8791664010448297,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04601018875837326,
+      "weak_contact_FPR": 0.2028054757478452,
+      "strong_contact_recall": 0.9135026144014217
+    },
+    "high_speed/heldout/kinematics/bce/2/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9758175720399117,
+      "matched": {
+        "auc": 0.8073432990858218,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07487127184867859,
+      "weak_contact_FPR": 0.3249336870026525,
+      "strong_contact_recall": 0.9060726226576471
+    },
+    "high_speed/seen/kinematics/bce/2/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9956785744692161,
+      "matched": {
+        "auc": 0.9242570237823693,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.03695398196578026,
+      "weak_contact_FPR": 0.18244042589149906,
+      "strong_contact_recall": 0.9422311267557499
+    },
+    "high_speed/heldout/kinematics/bce/2/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9862728350524648,
+      "matched": {
+        "auc": 0.8817885343080402,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.05561080947518349,
+      "weak_contact_FPR": 0.2548313755210307,
+      "strong_contact_recall": 0.9342197340797761
+    },
+    "high_speed/seen/kinematics/bce/2/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9966531009353503,
+      "matched": {
+        "auc": 0.9385754340581182,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.03384893760085106,
+      "weak_contact_FPR": 0.1596077436807845,
+      "strong_contact_recall": 0.9475207813087948
+    },
+    "high_speed/heldout/kinematics/bce/2/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9895218914616136,
+      "matched": {
+        "auc": 0.9083095625637598,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.05174132063984871,
+      "weak_contact_FPR": 0.23933244832163852,
+      "strong_contact_recall": 0.944169281435573
+    },
+    "high_speed/seen/kinematics/bce/2/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9968509934672061,
+      "matched": {
+        "auc": 0.9446724669524489,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.03255729749798775,
+      "weak_contact_FPR": 0.14502127659574468,
+      "strong_contact_recall": 0.9473697800117051
+    },
+    "high_speed/heldout/kinematics/bce/2/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9901706991215473,
+      "matched": {
+        "auc": 0.9132826582169806,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.04967192932963371,
+      "weak_contact_FPR": 0.21786534047436878,
+      "strong_contact_recall": 0.9442413162705667
+    },
+    "high_speed/seen/full/bce/1/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9908010783564593,
+      "matched": {
+        "auc": 0.8545304623113346,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04887346550822258,
+      "weak_contact_FPR": 0.22029744803109683,
+      "strong_contact_recall": 0.9063300980827723
+    },
+    "high_speed/heldout/full/bce/1/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9691596647714916,
+      "matched": {
+        "auc": 0.7765572464532152,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08385171741247177,
+      "weak_contact_FPR": 0.3277756726032588,
+      "strong_contact_recall": 0.8791695824585958
+    },
+    "high_speed/seen/full/bce/1/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.992369789548871,
+      "matched": {
+        "auc": 0.8755412169783043,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04631674289703369,
+      "weak_contact_FPR": 0.1997211424708467,
+      "strong_contact_recall": 0.9098544137247531
+    },
+    "high_speed/heldout/full/bce/1/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9730821891179995,
+      "matched": {
+        "auc": 0.8079019201255873,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.0794568806886673,
+      "weak_contact_FPR": 0.30409245926487305,
+      "strong_contact_recall": 0.8921804939999481
+    },
+    "high_speed/seen/full/bce/1/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9951952010398455,
+      "matched": {
+        "auc": 0.9202470655209791,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.040228813886642456,
+      "weak_contact_FPR": 0.1760182524928173,
+      "strong_contact_recall": 0.9310302108608728
+    },
+    "high_speed/heldout/full/bce/1/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.977792033847521,
+      "matched": {
+        "auc": 0.84707617240127,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.0697820857167244,
+      "weak_contact_FPR": 0.2639257294429708,
+      "strong_contact_recall": 0.9081979109970713
+    },
+    "high_speed/seen/full/bce/1/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9982702695169445,
+      "matched": {
+        "auc": 0.9752890297758572,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.024431129917502403,
+      "weak_contact_FPR": 0.11538786547236775,
+      "strong_contact_recall": 0.967388332592871
+    },
+    "high_speed/heldout/full/bce/1/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9873271631927403,
+      "matched": {
+        "auc": 0.9238851985926109,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.04679805785417557,
+      "weak_contact_FPR": 0.23114816218264495,
+      "strong_contact_recall": 0.9543322188528627
+    },
+    "high_speed/seen/full/bce/1/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9987584281252727,
+      "matched": {
+        "auc": 0.9821410068850719,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.020873408764600754,
+      "weak_contact_FPR": 0.11256234677487531,
+      "strong_contact_recall": 0.9761442547805562
+    },
+    "high_speed/heldout/full/bce/1/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9920492535105002,
+      "matched": {
+        "auc": 0.9470014623103722,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.0381447970867157,
+      "weak_contact_FPR": 0.20576521904039446,
+      "strong_contact_recall": 0.9694525840831886
+    },
+    "high_speed/seen/full/bce/1/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.998949958371419,
+      "matched": {
+        "auc": 0.98357800873053,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.02010490372776985,
+      "weak_contact_FPR": 0.10876595744680852,
+      "strong_contact_recall": 0.9769296312872242
+    },
+    "high_speed/heldout/full/bce/1/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9941559277722071,
+      "matched": {
+        "auc": 0.9495352533884697,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.03680741786956787,
+      "weak_contact_FPR": 0.1954858454475899,
+      "strong_contact_recall": 0.9712718725515801
+    },
+    "high_speed/seen/full/mse/1/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9884483589986064,
+      "matched": {
+        "auc": 0.8554020108801863,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.049407631158828735,
+      "weak_contact_FPR": 0.21966368091938482,
+      "strong_contact_recall": 0.8998453573015276,
+      "RMSE": 495.27734375,
+      "MAE": 362.5539245605469,
+      "negative_prediction_fraction": 0.0002211393721193687,
+      "severity_spearman": 0.7852838411795076,
+      "tail_RMSE": 749.1865844726562
+    },
+    "high_speed/heldout/full/mse/1/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9592517916680754,
+      "matched": {
+        "auc": 0.7737898659387606,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08182471990585327,
+      "weak_contact_FPR": 0.40697233800682076,
+      "strong_contact_recall": 0.915221729777363,
+      "RMSE": 1010.9005126953125,
+      "MAE": 689.779052734375,
+      "negative_prediction_fraction": 0.0008663733157018764,
+      "severity_spearman": 0.6176658919322024,
+      "tail_RMSE": 1485.3056640625
+    },
+    "high_speed/seen/full/mse/1/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9896311557957039,
+      "matched": {
+        "auc": 0.8768026338276218,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04704893380403519,
+      "weak_contact_FPR": 0.2267196214297786,
+      "strong_contact_recall": 0.9170312019411503,
+      "RMSE": 458.88201904296875,
+      "MAE": 335.2512512207031,
+      "negative_prediction_fraction": 0.00027545430562237155,
+      "severity_spearman": 0.8125555981535432,
+      "tail_RMSE": 667.474853515625
+    },
+    "high_speed/heldout/full/mse/1/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.966041310923661,
+      "matched": {
+        "auc": 0.8017148650601187,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08086399734020233,
+      "weak_contact_FPR": 0.3696475937855248,
+      "strong_contact_recall": 0.921286576989866,
+      "RMSE": 958.864013671875,
+      "MAE": 640.9796142578125,
+      "negative_prediction_fraction": 0.0006839789334488498,
+      "severity_spearman": 0.6673315665334549,
+      "tail_RMSE": 1433.7779541015625
+    },
+    "high_speed/seen/full/mse/1/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9921966428493355,
+      "matched": {
+        "auc": 0.9160547097267376,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04142610356211662,
+      "weak_contact_FPR": 0.22697312827446342,
+      "strong_contact_recall": 0.9472463347117324,
+      "RMSE": 380.0611267089844,
+      "MAE": 265.6235656738281,
+      "negative_prediction_fraction": 0.0003879638107357346,
+      "severity_spearman": 0.8789451634208516,
+      "tail_RMSE": 527.5626831054688
+    },
+    "high_speed/heldout/full/mse/1/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9739689320129586,
+      "matched": {
+        "auc": 0.8404500892309735,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07411234825849533,
+      "weak_contact_FPR": 0.3497536945812808,
+      "strong_contact_recall": 0.9401290723893942,
+      "RMSE": 840.6666259765625,
+      "MAE": 519.6361083984375,
+      "negative_prediction_fraction": 0.0014363557602425844,
+      "severity_spearman": 0.756468475238169,
+      "tail_RMSE": 1302.8685302734375
+    },
+    "high_speed/seen/full/mse/1/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9972369128930991,
+      "matched": {
+        "auc": 0.9764725579866523,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.023375164717435837,
+      "weak_contact_FPR": 0.1251478789927328,
+      "strong_contact_recall": 0.9744796828543112,
+      "RMSE": 216.6619415283203,
+      "MAE": 139.70372009277344,
+      "negative_prediction_fraction": 0.00032588960101801704,
+      "severity_spearman": 0.9670077446366708,
+      "tail_RMSE": 280.0852966308594
+    },
+    "high_speed/heldout/full/mse/1/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9865024808332786,
+      "matched": {
+        "auc": 0.9160556688027429,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.042271923273801804,
+      "weak_contact_FPR": 0.23740053050397877,
+      "strong_contact_recall": 0.9718010522769095,
+      "RMSE": 536.3324584960938,
+      "MAE": 289.3983154296875,
+      "negative_prediction_fraction": 0.000911971911265133,
+      "severity_spearman": 0.9149210052947037,
+      "tail_RMSE": 774.061279296875
+    },
+    "high_speed/seen/full/mse/1/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9986427375091627,
+      "matched": {
+        "auc": 0.9845456613024639,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.018923550844192505,
+      "weak_contact_FPR": 0.10085383379829234,
+      "strong_contact_recall": 0.9806596996545001,
+      "RMSE": 174.31765747070312,
+      "MAE": 115.81613159179688,
+      "negative_prediction_fraction": 0.0003223025605579329,
+      "severity_spearman": 0.9779324505802918,
+      "tail_RMSE": 223.43887329101562
+    },
+    "high_speed/heldout/full/mse/1/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9937395699860453,
+      "matched": {
+        "auc": 0.9482968413822302,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.03198444843292236,
+      "weak_contact_FPR": 0.1835767115494026,
+      "strong_contact_recall": 0.9784249150740347,
+      "RMSE": 405.830078125,
+      "MAE": 223.0417022705078,
+      "negative_prediction_fraction": 0.0004790583082398029,
+      "severity_spearman": 0.9536990179979986,
+      "tail_RMSE": 611.445556640625
+    },
+    "high_speed/seen/full/mse/1/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9988584388831655,
+      "matched": {
+        "auc": 0.9870233908923073,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.01742815040051937,
+      "weak_contact_FPR": 0.10531914893617021,
+      "strong_contact_recall": 0.9846756980066789,
+      "RMSE": 163.96286010742188,
+      "MAE": 108.89099884033203,
+      "negative_prediction_fraction": 0.00033219215557535683,
+      "severity_spearman": 0.9804575499205932,
+      "tail_RMSE": 207.3773956298828
+    },
+    "high_speed/heldout/full/mse/1/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9957973784769842,
+      "matched": {
+        "auc": 0.9553210656645057,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.02810235135257244,
+      "weak_contact_FPR": 0.1570390206579954,
+      "strong_contact_recall": 0.9806476886915644,
+      "RMSE": 367.1512756347656,
+      "MAE": 199.83241271972656,
+      "negative_prediction_fraction": 0.000735327910289995,
+      "severity_spearman": 0.9608222213537063,
+      "tail_RMSE": 554.7077026367188
+    },
+    "high_speed/seen/full/bce/2/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9908249281496778,
+      "matched": {
+        "auc": 0.8553757669316604,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04870744049549103,
+      "weak_contact_FPR": 0.20998816968058137,
+      "strong_contact_recall": 0.9007467277263251
+    },
+    "high_speed/heldout/full/bce/2/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9658552302856449,
+      "matched": {
+        "auc": 0.7741680236803774,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.08241686224937439,
+      "weak_contact_FPR": 0.3442591890867753,
+      "strong_contact_recall": 0.8885778710831195
+    },
+    "high_speed/seen/full/bce/2/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9922596998352448,
+      "matched": {
+        "auc": 0.8780815419968543,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04615428298711777,
+      "weak_contact_FPR": 0.19874936623288827,
+      "strong_contact_recall": 0.9109693790369434
+    },
+    "high_speed/heldout/full/bce/2/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9720462788569005,
+      "matched": {
+        "auc": 0.8009295055784003,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07772936671972275,
+      "weak_contact_FPR": 0.3217127699886321,
+      "strong_contact_recall": 0.8941761915869684
+    },
+    "high_speed/seen/full/bce/2/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.995347932710423,
+      "matched": {
+        "auc": 0.9220297027978056,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.040499161928892136,
+      "weak_contact_FPR": 0.1725114078080108,
+      "strong_contact_recall": 0.9308251597689757
+    },
+    "high_speed/heldout/full/bce/2/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9786754606235086,
+      "matched": {
+        "auc": 0.8510171745217259,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.06816566735506058,
+      "weak_contact_FPR": 0.2874194770746495,
+      "strong_contact_recall": 0.9179431355778451
+    },
+    "high_speed/seen/full/bce/2/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9982800071870864,
+      "matched": {
+        "auc": 0.9749327225299378,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.023976072669029236,
+      "weak_contact_FPR": 0.1283589656920737,
+      "strong_contact_recall": 0.9718994566146065
+    },
+    "high_speed/heldout/full/bce/2/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9877750711501097,
+      "matched": {
+        "auc": 0.9238174455339605,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.04530743137001991,
+      "weak_contact_FPR": 0.23664266767715045,
+      "strong_contact_recall": 0.9608895109245005
+    },
+    "high_speed/seen/full/bce/2/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9988677831107512,
+      "matched": {
+        "auc": 0.9828506527528078,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.020313028246164322,
+      "weak_contact_FPR": 0.11175923577648153,
+      "strong_contact_recall": 0.9773287038620737
+    },
+    "high_speed/heldout/full/bce/2/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.9939931947168165,
+      "matched": {
+        "auc": 0.951230258272433,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.03688516095280647,
+      "weak_contact_FPR": 0.2004551488716101,
+      "strong_contact_recall": 0.972642169955657
+    },
+    "high_speed/seen/full/bce/2/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9990100728467166,
+      "matched": {
+        "auc": 0.9843677788835318,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.019709769636392593,
+      "weak_contact_FPR": 0.10246808510638297,
+      "strong_contact_recall": 0.9770759458808138
+    },
+    "high_speed/heldout/full/bce/2/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9939287134136207,
+      "matched": {
+        "auc": 0.9541023190041996,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.03605058044195175,
+      "weak_contact_FPR": 0.18267023718439174,
+      "strong_contact_recall": 0.9695743013841734
+    },
+    "high_speed/seen/full/mse/2/0": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9876878608974001,
+      "matched": {
+        "auc": 0.8557130985345006,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04996174946427345,
+      "weak_contact_FPR": 0.2336065573770492,
+      "strong_contact_recall": 0.9010927514439014,
+      "RMSE": 497.93450927734375,
+      "MAE": 363.9299621582031,
+      "negative_prediction_fraction": 0.00014742624807957913,
+      "severity_spearman": 0.7857704746092468,
+      "tail_RMSE": 744.2718505859375
+    },
+    "high_speed/heldout/full/mse/2/0": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9593417449728184,
+      "matched": {
+        "auc": 0.7618478524037692,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.0826573371887207,
+      "weak_contact_FPR": 0.41985600606290263,
+      "strong_contact_recall": 0.9180208900292876,
+      "RMSE": 1031.0296630859375,
+      "MAE": 703.4478149414062,
+      "negative_prediction_fraction": 0.00031919016894279656,
+      "severity_spearman": 0.605118505361794,
+      "tail_RMSE": 1545.043212890625
+    },
+    "high_speed/seen/full/mse/2/1": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9896672880646393,
+      "matched": {
+        "auc": 0.8774105024909172,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04730880632996559,
+      "weak_contact_FPR": 0.2227480141963833,
+      "strong_contact_recall": 0.9138358224257545,
+      "RMSE": 459.27734375,
+      "MAE": 336.6070861816406,
+      "negative_prediction_fraction": 0.00019786154347522464,
+      "severity_spearman": 0.8131522374683932,
+      "tail_RMSE": 664.7953491210938
+    },
+    "high_speed/heldout/full/mse/2/1": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.9643231721329626,
+      "matched": {
+        "auc": 0.7996000714628803,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07838174700737,
+      "weak_contact_FPR": 0.3927624100037893,
+      "strong_contact_recall": 0.9262887800326569,
+      "RMSE": 942.9987182617188,
+      "MAE": 631.4417114257812,
+      "negative_prediction_fraction": 0.00038758806228768154,
+      "severity_spearman": 0.6727936833125778,
+      "tail_RMSE": 1371.566162109375
+    },
+    "high_speed/seen/full/mse/2/2": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9920909522615764,
+      "matched": {
+        "auc": 0.9177156534100673,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.04130004346370697,
+      "weak_contact_FPR": 0.21366401892851106,
+      "strong_contact_recall": 0.9409837326133762,
+      "RMSE": 380.1166687011719,
+      "MAE": 265.88726806640625,
+      "negative_prediction_fraction": 0.00024829683887087013,
+      "severity_spearman": 0.8793484789863477,
+      "tail_RMSE": 526.939697265625
+    },
+    "high_speed/heldout/full/mse/2/2": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.973626478161895,
+      "matched": {
+        "auc": 0.838494232203595,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.07165119796991348,
+      "weak_contact_FPR": 0.35126942023493746,
+      "strong_contact_recall": 0.9398180545836249,
+      "RMSE": 812.77587890625,
+      "MAE": 507.3252868652344,
+      "negative_prediction_fraction": 0.0011855634846446729,
+      "severity_spearman": 0.7685861588174439,
+      "tail_RMSE": 1220.120849609375
+    },
+    "high_speed/seen/full/mse/2/3": {
+      "events": 257756,
+      "positives": 234088,
+      "prevalence": 0.9081767252750663,
+      "AP": 0.9972673548177099,
+      "matched": {
+        "auc": 0.9766171436064125,
+        "covered_events": 251264,
+        "coverage_fraction": 0.9748133894070361,
+        "strata": 95,
+        "pairs": 71749874
+      },
+      "Brier": 0.02313985675573349,
+      "weak_contact_FPR": 0.13528815278012507,
+      "strong_contact_recall": 0.976940295957076,
+      "RMSE": 218.0398712158203,
+      "MAE": 140.39540100097656,
+      "negative_prediction_fraction": 0.00026769502940765684,
+      "severity_spearman": 0.9662116307672703,
+      "tail_RMSE": 290.7645568847656
+    },
+    "high_speed/heldout/full/mse/2/3": {
+      "events": 43861,
+      "positives": 38583,
+      "prevalence": 0.8796653063085657,
+      "AP": 0.988943147636743,
+      "matched": {
+        "auc": 0.9181010984977175,
+        "covered_events": 43721,
+        "coverage_fraction": 0.996808098310572,
+        "strata": 31,
+        "pairs": 10243080
+      },
+      "Brier": 0.04004587605595589,
+      "weak_contact_FPR": 0.23001136794240243,
+      "strong_contact_recall": 0.9740818495192183,
+      "RMSE": 521.25439453125,
+      "MAE": 287.98614501953125,
+      "negative_prediction_fraction": 0.0007751761245753631,
+      "severity_spearman": 0.9167923097416849,
+      "tail_RMSE": 790.2496948242188
+    },
+    "high_speed/seen/full/mse/2/4": {
+      "events": 257522,
+      "positives": 233864,
+      "prevalence": 0.9081321207508485,
+      "AP": 0.9986943083861018,
+      "matched": {
+        "auc": 0.9855534602910162,
+        "covered_events": 251055,
+        "coverage_fraction": 0.9748875824201427,
+        "strata": 95,
+        "pairs": 71669550
+      },
+      "Brier": 0.018998391926288605,
+      "weak_contact_FPR": 0.1011074477977851,
+      "strong_contact_recall": 0.9802363766975678,
+      "RMSE": 170.1916046142578,
+      "MAE": 113.33716583251953,
+      "negative_prediction_fraction": 0.0002951204168964205,
+      "severity_spearman": 0.9790716143053868,
+      "tail_RMSE": 217.250244140625
+    },
+    "high_speed/heldout/full/mse/2/4": {
+      "events": 43836,
+      "positives": 38563,
+      "prevalence": 0.8797107400310247,
+      "AP": 0.994266494123303,
+      "matched": {
+        "auc": 0.9480127258728074,
+        "covered_events": 43696,
+        "coverage_fraction": 0.9968062779450679,
+        "strata": 31,
+        "pairs": 10231754
+      },
+      "Brier": 0.032141417264938354,
+      "weak_contact_FPR": 0.1849042290915987,
+      "strong_contact_recall": 0.978787957368462,
+      "RMSE": 405.74005126953125,
+      "MAE": 224.1363525390625,
+      "negative_prediction_fraction": 0.00045624600784743136,
+      "severity_spearman": 0.9516231708120119,
+      "tail_RMSE": 617.205078125
+    },
+    "high_speed/seen/full/mse/2/5": {
+      "events": 255876,
+      "positives": 232376,
+      "prevalence": 0.9081586393409308,
+      "AP": 0.9988735438413816,
+      "matched": {
+        "auc": 0.9869178879992961,
+        "covered_events": 249456,
+        "coverage_fraction": 0.9749097218965437,
+        "strata": 95,
+        "pairs": 70926965
+      },
+      "Brier": 0.017727484926581383,
+      "weak_contact_FPR": 0.10429787234042553,
+      "strong_contact_recall": 0.9834621475539642,
+      "RMSE": 165.5983123779297,
+      "MAE": 110.21607208251953,
+      "negative_prediction_fraction": 0.0002579374384467476,
+      "severity_spearman": 0.9801361566845408,
+      "tail_RMSE": 211.84228515625
+    },
+    "high_speed/heldout/full/mse/2/5": {
+      "events": 43518,
+      "positives": 38290,
+      "prevalence": 0.879865802656372,
+      "AP": 0.9949208742176127,
+      "matched": {
+        "auc": 0.9541389998733023,
+        "covered_events": 43381,
+        "coverage_fraction": 0.996851877384071,
+        "strata": 31,
+        "pairs": 10087002
+      },
+      "Brier": 0.03053748607635498,
+      "weak_contact_FPR": 0.17482785003825554,
+      "strong_contact_recall": 0.9798380778271089,
+      "RMSE": 383.9438781738281,
+      "MAE": 211.07139587402344,
+      "negative_prediction_fraction": 0.0009191598878624937,
+      "severity_spearman": 0.95618407302489,
+      "tail_RMSE": 557.1694946289062
+    }
+  }
+}
