@@ -19,6 +19,7 @@ def main(clean=False):
     source+=list(Path('source/himloco_lab/himloco_lab/impact').glob('*.py'))
     source+=[Path('scripts/impact/train_force_study.py'),Path('configs/impact/go1_impact_replay.json')]
     source+=list(root.rglob('*.json'))+list(root.rglob('*.png'))+list(root.rglob('*.npz'))
+    source+=list(root.rglob('*.txt'))
     for rep in range(1,6):
         source+=list((Path('logs/impact_observability_v1')/f'rep{rep}').rglob('*.pt'))
         source+=list((Path('logs/impact_observability_v1')/f'rep{rep}').rglob('*.json'))

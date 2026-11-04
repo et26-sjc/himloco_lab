@@ -44,11 +44,14 @@ def main():
         report=json.loads(path.read_text());assert report['status']=='passed';audits.append(report)
     assert len(audits)==20
     dependencies=[Path('scripts/impact/train_force_study.py')]+list(Path('source/himloco_lab/himloco_lab/impact').glob('*.py'))
+    test_evidence=json.loads((root/'contract_tests.json').read_text())
+    assert test_evidence['successful']
+    for path,digest in test_evidence['tested_source_sha256'].items():assert file_hash(path)==digest,path
     result={'status':'passed','primary_recomputed_without_full_proprio_frames':True,
             'paired_differences':differences,'native_roles_passed':len(audits),
             'native_events_recomputed':sum(a['events_recomputed'] for a in audits),
             'max_native_error_n_per_s':max(a['max_abs_label_error_n_per_s'] for a in audits),
-            'formal_models_locked':240,'scientific_contract_tests_passed':43,
+            'formal_models_locked':240,'scientific_contract_tests_passed':test_evidence['count'],
             'dependency_sha256':{str(p):file_hash(p) for p in dependencies}}
     (root/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
     print('OBS_VERIFIED',json.dumps(result),flush=True)
