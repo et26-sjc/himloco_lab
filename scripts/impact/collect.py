@@ -35,6 +35,10 @@ parser.add_argument("--research-observations", action="store_true",
 parser.add_argument("--drop-height-range", type=float, nargs=2,
                     help="Controlled randomized initial base height, only for drop diagnostics [m]")
 parser.add_argument("--velocity", type=float, nargs=3)
+parser.add_argument("--velocity-range-x", type=float, nargs=2,
+                    help="Research override: uniform forward command range, resampled only on reset")
+parser.add_argument("--episode-length-s", type=float,
+                    help="Research override for safe travel inside the fixed terrain tiles")
 parser.add_argument("--randomization", action=argparse.BooleanOptionalAction, default=None)
 parser.add_argument("--observation-noise", action=argparse.BooleanOptionalAction, default=None)
 parser.add_argument("--baseline-observer", action="store_true", help="No added sensor; for A/A and A/B trajectory audits")
@@ -108,6 +112,16 @@ def main():
                               randomization=args.randomization, observation_noise=args.observation_noise,
                               instrumented=not args.baseline_observer)
     cfg.sim.device = args.device
+    if args.velocity_range_x is not None:
+        low, high = args.velocity_range_x
+        if not (0 < low <= high <= 1.2):
+            raise ValueError('Forward command range must lie in (0,1.2]')
+        cfg.commands.base_velocity.ranges.lin_vel_x = (low, high)
+        cfg.commands.base_velocity.low_vel_env_lin_x_ranges = (low, high)
+    if args.episode_length_s is not None:
+        if not (1 <= args.episode_length_s <= 6):
+            raise ValueError('Research episode length must lie in [1,6] seconds')
+        cfg.episode_length_s = args.episode_length_s
     if args.solver_position_iterations is not None:
         cfg.scene.robot.spawn.articulation_props.solver_position_iteration_count = args.solver_position_iterations
         cfg.sim.physics.min_position_iteration_count = args.solver_position_iterations
@@ -269,6 +283,7 @@ def main():
             "baseline_contract_tests_passed": baseline_contract_tests,
             "num_envs": args.num_envs, "steps": args.steps, "transitions": args.num_envs * args.steps,
             "scenario": args.scenario, "seed": args.seed, "velocity": list(args.velocity),
+            "velocity_range_x": args.velocity_range_x, "episode_length_s": cfg.episode_length_s,
             "terrain": terrain_metadata,
             "drop_height_range_m": args.drop_height_range,
             "randomization": args.randomization, "observation_noise": args.observation_noise,

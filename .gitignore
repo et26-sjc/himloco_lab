@@ -84,3 +84,6 @@ _build
 
 # Local research preservation bundles; keep manifest and index reviewable.
 /artifacts/impact/archives/**/*.tar.gz
+
+# Event-level predictions stay local with the research preservation bundle.
+/artifacts/impact/observability_v1/**/*.npz
