@@ -16,6 +16,7 @@ def write_report():
     payload=json.loads((ROOT/'summary.json').read_text());summary=payload['summary']
     labels=[('phase','bce','Phase proxy'),('kinematics','bce','Joint kinematics'),
             ('full','bce','Full BCE'),('full','mse','Full continuous MSE')]
+    low=min(row['matched_auc']['CI95'][0] for row in summary.values())
     fig,axes=plt.subplots(2,2,figsize=(12,8),sharex=True,sharey=True)
     for axis,(role,domain) in zip(axes.flat,[('test','seen'),('test','heldout'),('high_speed','seen'),('high_speed','heldout')]):
         for kind,method,label in labels:
@@ -23,7 +24,7 @@ def write_report():
             axis.plot(range(6),[r['mean'] for r in rows],marker='o',label=label)
             axis.fill_between(range(6),[r['CI95'][0] for r in rows],[r['CI95'][1] for r in rows],alpha=.12)
         axis.axhline(.5,color='grey',linestyle=':');axis.axvline(2.5,color='grey',linestyle='--')
-        axis.set_title(f'{role}: {domain} terrain');axis.set_ylim(.45,1.01);axis.grid(alpha=.2)
+        axis.set_title(f'{role}: {domain} terrain');axis.set_ylim(max(0,min(.45,low-.03)),1.01);axis.grid(alpha=.2)
         axis.set_xticks(range(6),['pre40','pre20','pre-last','post-first','post20','post40'],rotation=20)
     axes[0,0].legend(fontsize=8);axes[0,0].set_ylabel('Within-stratum AUROC');axes[1,0].set_ylabel('Within-stratum AUROC')
     fig.suptitle('Go1 contact severity: phase-controlled discrimination vs causal cutoff\n5 independent data replications; shading = paired-data mean 95% t interval')

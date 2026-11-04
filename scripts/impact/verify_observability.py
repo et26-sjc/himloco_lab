@@ -15,6 +15,15 @@ def main():
     lock=json.loads((root/'model_lock.json').read_text())
     for path,digest in lock['models'].items():assert file_hash(path)==digest
     for path,digest in lock['source_sha256'].items():assert file_hash(path)==digest,path
+    entries_count=0
+    for rep in range(1,6):
+        meta=json.loads((Path('datasets/go1_impact/observability_v1')/f'rep{rep}/train/cache/metadata.json').read_text())
+        for kind in ('phase','kinematics','full'):
+            report=json.loads((Path('logs/impact_observability_v1')/f'rep{rep}'/kind/'report.json').read_text())
+            assert report['training_events']==meta['domains']['seen']['events']
+            assert report['updates']==30000
+            entries_count+=len(report['entries'])
+    assert entries_count==240 and len(lock['models'])==15
     differences=[]
     for rep in range(1,6):
         cache=Path('datasets/go1_impact/observability_v1')/f'rep{rep}/test/cache'
@@ -51,7 +60,7 @@ def main():
             'paired_differences':differences,'native_roles_passed':len(audits),
             'native_events_recomputed':sum(a['events_recomputed'] for a in audits),
             'max_native_error_n_per_s':max(a['max_abs_label_error_n_per_s'] for a in audits),
-            'formal_models_locked':240,'scientific_contract_tests_passed':test_evidence['count'],
+            'formal_models_locked':entries_count,'scientific_contract_tests_passed':test_evidence['count'],
             'dependency_sha256':{str(p):file_hash(p) for p in dependencies}}
     (root/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
     print('OBS_VERIFIED',json.dumps(result),flush=True)
