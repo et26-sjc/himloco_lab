@@ -16,6 +16,8 @@ def main(clean=False):
             Path('docs/GO1_IMPACT_OBSERVABILITY_RESULTS.md'),Path('source/himloco_lab/himloco_lab/impact/observability.py'),
             Path('scripts/impact/collect.py'),Path('tests/test_impact_observability.py')]
     source+=list(Path('scripts/impact').glob('*observability*.py'))
+    source+=list(Path('source/himloco_lab/himloco_lab/impact').glob('*.py'))
+    source+=[Path('scripts/impact/train_force_study.py'),Path('configs/impact/go1_impact_replay.json')]
     source+=list(root.rglob('*.json'))+list(root.rglob('*.png'))+list(root.rglob('*.npz'))
     for rep in range(1,6):
         source+=list((Path('logs/impact_observability_v1')/f'rep{rep}').rglob('*.pt'))

@@ -58,7 +58,7 @@ def evaluate(rep):
         bank,item=load_bank(log/kind/'models.pt')
         ids=validation.ids();scores,_=predict(bank,validation,ids,kind,item['moments'])
         strata=validation.strata(item['moments'])
-        np.savez_compressed(out/f'validation_{kind}_predictions.npz',event_id=ids,score=scores)
+        np.savez_compressed(out/f'validation_{kind}_predictions.npz',event_id=ids,score=scores,strata=strata[ids])
         for i,(seed,method,h) in enumerate(bank.entries):
             key=f'{kind}/{method}/{seed}/{h}'
             valid=validation.cpu['valid_cutoff'][ids,h]
@@ -83,7 +83,7 @@ def evaluate(rep):
             bank,item=load_bank(log/kind/'models.pt')
             scores,_=predict(bank,data,ids,kind,item['moments'])
             strata=data.strata(item['moments'])
-            np.savez_compressed(out/f'{role}_{kind}_predictions.npz',event_id=ids,score=scores)
+            np.savez_compressed(out/f'{role}_{kind}_predictions.npz',event_id=ids,score=scores,strata=strata[ids])
             for i,(seed,method,h) in enumerate(bank.entries):
                 key=f'{kind}/{method}/{seed}/{h}'
                 for domain in ('seen','heldout'):
