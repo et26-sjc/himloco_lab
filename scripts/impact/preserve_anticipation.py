@@ -47,6 +47,12 @@ def preserve(cleanup=False):
     manifest={str(p):dict(bytes=p.stat().st_size,sha256=file_hash(p)) for p in files}
     target=dest/'methods_models_future_events.tar.gz'
     temporary=target.with_suffix('.tmp')
+    if target.exists() and (dest/'manifest.json').exists():
+        previous=json.loads((dest/'manifest.json').read_text())['files']
+        assert all(previous.get(path)==record for path,record in manifest.items()),'Evidence changed after archive'
+        missing=set(previous)-set(manifest)
+        assert all(Path(path).name=='resume.pt' for path in missing)
+        manifest=previous
     if not target.exists():
         with tarfile.open(temporary,'w:gz',compresslevel=1) as archive:
             for path in files:archive.add(path,arcname=str(path),recursive=False)
@@ -65,7 +71,8 @@ def preserve(cleanup=False):
         git_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
         files=manifest,scope='Local snapshot, not external backup. Full training requires deterministic recollection; complete fixtures allow independent inference and alarm recount.')
     dump(dest/'manifest.json',report)
-    if cleanup:
+    cleanup_done=(dest/'cleanup.json').exists() and json.loads((dest/'cleanup.json').read_text())['status']=='completed'
+    if cleanup and not cleanup_done:
         removed=[]
         for cache in ROOT.glob('*/**/cache'):
             assert cache.resolve().is_relative_to(ROOT.resolve())

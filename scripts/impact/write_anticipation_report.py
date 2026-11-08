@@ -24,6 +24,7 @@ def main():
         '## 实验条件与实际增加的模块','',
         '完整原HIMLoco JIT冻结并采集轨迹。影子网络复制原HIM的270→128→64主干，增加64→64→4冲击head；所有head不参与采集动作。A专用、B冻结读出、C联合HIM原损失、D原HIM继续更新但截断impact梯度。',
         '分别训练BCE、同二值目标的概率MSE/Brier、未来落足严重度MSE。C权重0.1/1/10全部保留；主机制比较只用独立开发集预选权重。补充原始历史从头BCE、相位BCE和19维冻结读出诊断。',
+        'A/从头模型有效训练参数47364，B的64维head为4420，C/D含原HIM路径为64295；相位模型41156，比完整历史从头模型少约13.1%。核心四组impact结构相同，相位对照并非严格等参数。所有目标采用同一LR/更新预算；本轮不证明每种目标已经达到各自最优可达性能。',
         '4096总环境，400Hz物理、50Hz输入/策略；5组独立数据×2初始化。六地形家族训练、箱块留出，正常0.4–0.9m/s，提速1.0–1.1m/s。每个模型60000更新、batch2048；共230个正式未来模型。',
         '每复制train2500、validation/test/high_speed各600策略步，总88,064,000个机器人区间。共享84地形块，四足与4096环境均不作为额外独立数据复制。',
         '接触法向合力模长先20ms均值，再取20ms滞后正差分；落足后40ms峰值>2000N/s定义强加载。这不是完整摩擦合力、原生数值导数或损伤阈值。','',
@@ -76,6 +77,21 @@ def main():
             for metric in values:values[metric].append(float(np.mean([m[metric] for m in rows])))
         preservation[group]={k:ci(v) for k,v in values.items()}
         lines.append(f"| {group} | {np.mean(values['velocity_rmse']):.4f} | {np.mean(values['actor_action_RMS_shift']):.4f} |")
+    lines+=['','A为独立预测副本；其原HIM输出变化不判定冲击任务成败，也意味着不能直接用A替换原Estimator。','',
+        '全部联合权重的敏感性结果如下。开发选择只最小化冲击目标损失，没有同时约束原HIM能力，因此被选中不等于可安全接回Actor。','',
+        '| 联合目标 | λ | 正常已见检出率 | FAR保守上界/min | 验证速度RMSE | Actor动作RMS变化 |',
+        '|---|---:|---:|---:|---:|---:|']
+    tradeoff={}
+    for loss in ('bce','brier','mse'):
+        for weight in spec['lambda_candidates']:
+            method=f'joint_{loss}_lambda{weight:g}';alarm=groups[f'test_seen/20/0/{method}']
+            values={k:[] for k in ('velocity_rmse','actor_action_RMS_shift')}
+            for rep in range(1,6):
+                final=json.loads((LOG/f'rep{rep}/curve.json').read_text())[-1]['models']
+                rows=[m for m in final if m['entry']['group']=='joint' and m['entry']['loss']==loss and m['entry']['lambda']==weight]
+                for metric in values:values[metric].append(float(np.mean([m[metric] for m in rows])))
+            tradeoff[method]={k:ci(v) for k,v in values.items()}
+            lines.append(f"| {loss} | {weight:g} | {alarm['recall']['mean']*100:.2f}% | {alarm['far_upper_conservative']:.3f} | {np.mean(values['velocity_rmse']):.4f} | {np.mean(values['actor_action_RMS_shift']):.4f} |")
     lines+=['','## 已完成20ms的阳性诊断','',
         '第一复制另外以同样原始历史估计刚完成20ms内最大平滑loading-rate，使用相同四组及三类目标。只有一组数据×两初始化，不把它写成五复制的泛化结论。','',
         '| 组 | MSE RMSE N/s | MSE排序AP | BCE排序AP |','|---|---:|---:|---:|']
@@ -95,6 +111,7 @@ def main():
         '[协议](GO1_IMPACT_SHARED_REPRESENTATION_PLAN.md)；[主汇总](../artifacts/impact/shared_anticipation_v1/summary.json)；[模型/工作点锁](../artifacts/impact/shared_anticipation_v1/model_lock.json)；[开发选择](../artifacts/impact/shared_anticipation_v1/development/decision.json)。']
     dump(ART/'him_preservation.json',preservation)
     dump(ART/'loss_comparisons.json',loss_comparisons)
+    dump(ART/'joint_tradeoff.json',tradeoff)
     Path('docs/GO1_IMPACT_SHARED_ANTICIPATION_RESULTS.md').write_text('\n'.join(lines)+'\n')
     try:
         import matplotlib
