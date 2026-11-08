@@ -69,7 +69,7 @@ def preserve(cleanup=False):
     report=dict(status='verified',timestamp=datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
         archive=str(target),archive_bytes=target.stat().st_size,archive_sha256=file_hash(target),
         git_commit=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
-        files=manifest,scope='Local snapshot, not external backup. Full training requires deterministic recollection; complete fixtures allow independent inference and alarm recount.')
+        files=manifest,scope='Local snapshot, not external backup. Full training requires recollection with recorded seeds/config; GPU PhysX bitwise determinism is not guaranteed. Complete fixtures allow independent inference and alarm recount.')
     dump(dest/'manifest.json',report)
     cleanup_done=(dest/'cleanup.json').exists() and json.loads((dest/'cleanup.json').read_text())['status']=='completed'
     if cleanup and not cleanup_done:
@@ -92,7 +92,7 @@ def preserve(cleanup=False):
     (dest/'README.md').write_text(
         '# Go1共享HIM未来冲击风险：保存索引\n\n'
         '本地压缩包已经逐成员SHA256回读校验。保留正式与开发权重、Adam/RNG、原baseline权重、完整64环境输入/输出片段、21环境原生接触审计、全部事件标签、锁定报警记录、报告和方法代码。\n\n'
-        '模型仍可直接从`logs/impact_shared_anticipation_v1/rep*/models.pt`读取。全量输入大数组已清理；全量重新训练需依照固定seed和配置重新采集。此快照不是外部备份。\n\n'
+        '模型仍可直接从`logs/impact_shared_anticipation_v1/rep*/models.pt`读取。全量输入大数组已清理；全量重新训练需依照固定seed和配置重新采集，GPU PhysX不保证逐位一致。现有权重和完整复核片段保留。此快照不是外部备份。\n\n'
         '主结果见[实验报告](../../../../docs/GO1_IMPACT_SHARED_ANTICIPATION_RESULTS.md)，详细文件和哈希见[manifest.json](manifest.json)。\n')
     print('ANTICIPATION_ARCHIVE_VERIFIED',target,report['archive_bytes'],flush=True)
 
