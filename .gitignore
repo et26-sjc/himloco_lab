@@ -92,3 +92,8 @@ _build
 # Detailed per-foot/tile ledgers are kept locally and in the verified bundle.
 /artifacts/impact/causal_stream_v1/rep*/results.json
 /artifacts/impact/causal_stream_v1/rep*/operating_points.json
+/artifacts/impact/shared_anticipation_v1/**/*.npz
+/artifacts/impact/shared_anticipation_v1/rep*/results.json
+/artifacts/impact/shared_anticipation_v1/rep*/operating_points.json
+/artifacts/impact/shared_anticipation_v1/development/results.json
+/artifacts/impact/shared_anticipation_v1/development/operating_points*.json

@@ -32,6 +32,8 @@ parser.add_argument("--solver-position-iterations", type=int)
 parser.add_argument("--solver-velocity-iterations", type=int)
 parser.add_argument("--research-observations", action="store_true",
                     help="Archive clean 200Hz proprioception, ideal IMU specific force and actual actuator effort")
+parser.add_argument("--him-supervision", action="store_true",
+                    help="Archive next critic first48 only for original HIM losses, with pre-reset terminal replacement")
 parser.add_argument("--drop-height-range", type=float, nargs=2,
                     help="Controlled randomized initial base height, only for drop diagnostics [m]")
 parser.add_argument("--velocity", type=float, nargs=3)
@@ -225,7 +227,17 @@ def main():
                     env.episode_length_buf[:] = env.max_episode_length - 1
                 if observer is not None:
                     observer.begin()
-                post, _, _, done, infos, reset_ids, _ = env.step(action)
+                post, next_critic, _, done, infos, reset_ids, terminal_critic = env.step(action)
+                if args.him_supervision:
+                    next48 = next_critic[:, :48].clone()
+                    next48[reset_ids] = terminal_critic[:, :48]
+                    if len(reset_ids):
+                        expected_terminal = infos["final_obs"]["critic"][reset_ids, :48]
+                        if not torch.equal(next48[reset_ids], expected_terminal):
+                            raise AssertionError("HIM targets must use pre-reset terminal critic")
+                    if not torch.isfinite(next48).all():
+                        raise ValueError("Non-finite original HIM supervision")
+                    row["him_next_critic48"] = array(next48)
                 if observer is not None:
                     samples = observer.end()
                     sampling_stride = max(1, round(.005 / args.physics_dt))
@@ -288,6 +300,7 @@ def main():
             "drop_height_range_m": args.drop_height_range,
             "randomization": args.randomization, "observation_noise": args.observation_noise,
             "research_observations": args.research_observations,
+            "him_supervision": args.him_supervision,
             "solver_iterations": [cfg.scene.robot.spawn.articulation_props.solver_position_iteration_count,
                                   cfg.scene.robot.spawn.articulation_props.solver_velocity_iteration_count],
             "solver_global_bounds": [cfg.sim.physics.min_position_iteration_count,cfg.sim.physics.max_position_iteration_count,
