@@ -105,6 +105,16 @@ def main():
                (group!='joint' or m['entry']['lambda']==selected[loss])]
             chosen[loss]={k:float(np.mean([m[k] for m in r])) for k in ('AP',*(('severity_RMSE_n_per_s',) if loss=='mse' else ()))}
         lines.append(f"| {group} | {chosen['mse']['severity_RMSE_n_per_s']:.2f} | {chosen['mse']['AP']:.4f} | {chosen['bce']['AP']:.4f} |")
+    numerical=s['ranking']['test_seen/dedicated_mse']
+    alarm_delta=loss_comparisons['dedicated/bce-mse']
+    same_target_delta=loss_comparisons['dedicated/bce-brier']
+    shared_delta=s['shared_comparisons']['bce/C-A']['difference']
+    lines+=['','## 本轮可以回答到哪一步','',
+        f"1. **MSE是否完全学不会：**A连续未来严重度RMSE为{numerical['RMSE_n_per_s']['mean']:.1f}N/s，训练均值基线为{numerical['training_mean_baseline_RMSE_n_per_s']['mean']:.1f}N/s，零基线为{numerical['zero_baseline_RMSE_n_per_s']['mean']:.1f}N/s。结合上面的接触后诊断，数值学习能力应按目标和时窗判断；平均RMSE改善仍不等于尾部足够精确。",'',
+        f"2. **数值估计与风险报警是否等价：**A的BCE减连续MSE及时检出率差为{alarm_delta['difference']['mean']*100:.2f}个百分点，95%CI[{alarm_delta['difference']['lower']*100:.2f}, {alarm_delta['difference']['upper']*100:.2f}]，双方误报预算通过={alarm_delta['both_far_pass']}。这比较的是二值风险目标与连续严重度目标两种完整方案。",'',
+        f"3. **是否只是MSE损失的问题：**同二值标签下，A的BCE减Brier差为{same_target_delta['difference']['mean']*100:.2f}个百分点，95%CI[{same_target_delta['difference']['lower']*100:.2f}, {same_target_delta['difference']['upper']*100:.2f}]，双方误报预算通过={same_target_delta['both_far_pass']}。Brier本身就是概率MSE，需与连续目标比较分开解读。",'',
+        f"4. **共享是否复现旧问题：**BCE的C−A差为{shared_delta['mean']*100:.2f}个百分点，95%CI[{shared_delta['lower']*100:.2f}, {shared_delta['upper']*100:.2f}]。只支持当前目标、权重网格、预算和固定策略数据中的共享判断；不能当作旧实验的唯一归因。",'',
+        f"5. **是否已经证明可用于提前控制：**预设未来主判据{'通过' if s['primary_pass'] else '未通过'}。无论分类方案相对回归的差异如何，本轮均没有控制干预、执行器响应或真实损伤结果，因此尚未证明动作收益。"]
     lines+=['','## 证据边界与复现','',
         '共享在当前Go1任务中的影响不能自动还原旧实验的唯一原因；旧head接入层、监督时窗、尺度、更新安排和闭环均可能不同。19维补充读出有效head参数较少，也不能独自证明不可逆信息瓶颈。',
         'D−B还混合了最终表征改变和训练中head追踪移动特征的影响，不能独自确诊追踪滞后。若出现下降，需冻结D的最终trunk重新训练head作进一步干预；梯度负余弦同样不是冲突致损的充分证据。',
