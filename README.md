@@ -9,6 +9,7 @@ Force/loading-rate study: [five data replications, seven prediction methods, phy
 Continual adaptation/Replay: [five data replications × two initializations, nine methods and measured results](docs/GO1_IMPACT_CONTINUAL_REPLAY_RESULTS.md); [protocol and scope](docs/GO1_IMPACT_CONTINUAL_REPLAY_PLAN.md). Previous methods, valid weights, reports and metadata are [preserved with checksums](artifacts/impact/archives/force_study_v1_20261104/README.md); about 220 GiB of trajectory/cache binaries were removed at the user's request.
 Contact severity observability: [five data replications × two initializations, phase/kinematics/full-input controls and six causal cutoffs](docs/GO1_IMPACT_OBSERVABILITY_RESULTS.md); [locked protocol](docs/GO1_IMPACT_OBSERVABILITY_PLAN.md). This is an event-aligned diagnostic, not a deployed continuous-stream alarm.
 Causal continuous monitoring: [4096 envs, five data replications, learned/PD/oracle triggers, continuous BCE/MSE and packet-delay results](docs/GO1_IMPACT_CAUSAL_STREAM_RESULTS.md); [protocol and recorded secondary-control addition](docs/GO1_IMPACT_CAUSAL_STREAM_PLAN.md). The frozen modular trigger/severity proposal failed its primary endpoint; background supervision, calibration transfer and detection deadlines are evaluated separately.
+Next research objective: [anticipate the next strong touchdown with useful intervention lead time](docs/GO1_IMPACT_ANTICIPATION_PLAN.md). Design only: future-risk prediction, adaptation/Replay and physical utility require separate evidence.
 
 
 ## Project Overview
