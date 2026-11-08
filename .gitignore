@@ -87,3 +87,5 @@ _build
 
 # Event-level predictions stay local with the research preservation bundle.
 /artifacts/impact/observability_v1/**/*.npz
+/artifacts/impact/causal_stream_v1/**/*.npz
+/artifacts/impact/causal_stream_v1/development/
