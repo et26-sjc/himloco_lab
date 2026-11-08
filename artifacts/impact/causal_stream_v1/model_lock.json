@@ -1,0 +1,42 @@
+{
+  "protocol_sha256": "fc18ce7b0506fddd60712096a57801244db59ed1d7bd4ead98b8e0e42401baf0",
+  "source_sha256": {
+    "configs/impact/causal_stream_v1.json": "fc18ce7b0506fddd60712096a57801244db59ed1d7bd4ead98b8e0e42401baf0",
+    "docs/GO1_IMPACT_CAUSAL_STREAM_PLAN.md": "c2f18d5e1b96f27e0fe104ed8f39fe7d65fecd24507d89b56db29dd7f58780d7",
+    "source/himloco_lab/himloco_lab/impact/causal_stream.py": "93d6c9a0a3b04a14356fab4c69e2ce2c3d112d8c33a535aeb10c94e050a82cae",
+    "source/himloco_lab/himloco_lab/impact/observability.py": "efedba8e2cec8058676a5231603f692889084e7cfbb7a4321590ef4cd8c78116",
+    "scripts/impact/collect.py": "9f7b2b28276a659834cd78a951f7df0c57782df5bb1de998fde855711ce17b2d",
+    "scripts/impact/run_causal_stream.py": "ecd9365c8df8c375fecd8f90b075bc4330cff39176951fd137986c283ea429f9",
+    "scripts/impact/collect_causal_stream.py": "de86383a52c15a5cdc6da27fef43ca829f7a66705faa74e2ddfaf00d43fc87a9",
+    "scripts/impact/preserve_causal_stream.py": "71ad87641486c17411627b2d8c9c9992d3d39bdc909f2b4ba9ff5ef2dcee5314",
+    "scripts/impact/verify_causal_stream.py": "bb7a88c1ca393c4290ea9e93600bafe67b3bf8283a35f5aaf5a17c5d3c4a463d",
+    "scripts/impact/evaluate_causal_stream.py": "0bc3a879e8fd09a7f1f4991e2f6fbdb2b3a814d6c2fab1c720016c2f3a75fce8",
+    "scripts/impact/analyze_causal_stream.py": "5a45ab451c514e0f0b1e387577b5d122eb6db01fcdd741af2c8ea080ff2f5bc4",
+    "scripts/impact/audit_causal_stream.py": "5edd50d06998879b30a03b2c775fac7de3448f8fc3d4dde1420aa3c8fd6cf498",
+    "scripts/impact/train_causal_stream.py": "7bf77d2f69a8ecc8be341411a3deedef32a0ef11676790139759387f3b14d325"
+  },
+  "models": {
+    "logs/impact_causal_stream_v1/rep1/models.pt": "6d0782fccb5e9a827adf79fd0d702de67e0d58780aa770389de79fdacff8c67b",
+    "logs/impact_causal_stream_v1/rep1/frozen.pt": "2846c1875e5191e8fc86db7abf0bd75773891036f0898e62a6bb2d620ffacbe3",
+    "logs/impact_causal_stream_v1/rep1/pd.pt": "0e43ef940f9962cf73316f5c2a4e013de87b622ebfc3e785967197cc5724ae2f",
+    "logs/impact_causal_stream_v1/rep2/models.pt": "4650f597e9c3ccc02cc10c0400c0df049e37253df494b6c9e6f6ccb962e62ee1",
+    "logs/impact_causal_stream_v1/rep2/frozen.pt": "bab01a183ca4ec3b6b5490a6c3cdc082db4a94ebbde9b0928b1113c9b7f60bce",
+    "logs/impact_causal_stream_v1/rep2/pd.pt": "3780f102b79fdc77caadf804c7ac186e4d088afe0a4759a868b6e7acadf1ccce",
+    "logs/impact_causal_stream_v1/rep3/models.pt": "1598fa8f70db18651a95073a4bccdbe05ec0eea5c1205e14bafc9d4fb3f56a8d",
+    "logs/impact_causal_stream_v1/rep3/frozen.pt": "6d6bfd26ad8feedf79ccf2d2553daf3c75ac3d1eba860f480d18ae27e78165a7",
+    "logs/impact_causal_stream_v1/rep3/pd.pt": "10be81b16fdcae4ea2591dc0aee8a5a2d1bd1175689b72d68931f557bc2bb241",
+    "logs/impact_causal_stream_v1/rep4/models.pt": "c988f86733ea0cce3628f8252e97de56271ac65bd3145f1d5605354997533990",
+    "logs/impact_causal_stream_v1/rep4/frozen.pt": "fe436b0eb4b41101fbf864c3cdd739801588a7d0492d694cdce4c513312f954b",
+    "logs/impact_causal_stream_v1/rep4/pd.pt": "464f118f0a20365b1be9917ed4ad712975bbc1319fca1d48b1c6584049248e49",
+    "logs/impact_causal_stream_v1/rep5/models.pt": "cdd3ded7ec0ab2708e67b136cafc715745d5a538e6bf5aa9fc4ef92852237640",
+    "logs/impact_causal_stream_v1/rep5/frozen.pt": "b6b4ab313700530e92009a07b897f4b709d44daa4f620401c32fd51ce1737344",
+    "logs/impact_causal_stream_v1/rep5/pd.pt": "d9f35bb272b3053784835c1976236e39e97ce447533838f30cd8b89b16578c7e"
+  },
+  "operating_points": {
+    "artifacts/impact/causal_stream_v1/rep1/operating_points.json": "b269d46999a0abfd4b36019b75156546412536a08947a10100dfeaed0096f7f6",
+    "artifacts/impact/causal_stream_v1/rep2/operating_points.json": "781166f71f52170f6cc7dc96a3c36bf5b2210ccdca0f6c3928cf48dae5d99110",
+    "artifacts/impact/causal_stream_v1/rep3/operating_points.json": "de64f35474f044782bdadf4beaef2695960b7fcf6a1bf04e89ecbab446e075ca",
+    "artifacts/impact/causal_stream_v1/rep4/operating_points.json": "ba7109efeb81707745d27e43f7ff232879a0ae77e39c92b78ce44e810e7549d6",
+    "artifacts/impact/causal_stream_v1/rep5/operating_points.json": "596893f69d7f199a6056dadc050be25d1c3733d15e42014d321bd47650b64ccf"
+  }
+}

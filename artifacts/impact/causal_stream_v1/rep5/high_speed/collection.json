@@ -1,0 +1,66 @@
+{
+  "steps": 600,
+  "num_envs": 4096,
+  "seed": 6405,
+  "domains": {
+    "seen": {
+      "events": 364528,
+      "positive_fraction": 0.9095158670938858,
+      "severity_quantiles": [
+        69.49295806884766,
+        2435.3521118164062,
+        2861.94140625,
+        3389.8527221679688,
+        4095.650708007812,
+        4680.624902343749,
+        5772.825541992165,
+        9617.794921875
+      ],
+      "threshold_positive_fractions": {
+        "1000": 0.9852110125971119,
+        "2000": 0.9095158670938858,
+        "4000": 0.11240563139182724
+      }
+    },
+    "heldout": {
+      "events": 62477,
+      "positive_fraction": 0.8839252845046978,
+      "severity_quantiles": [
+        74.70321655273438,
+        2508.053466796875,
+        3099.9013671875,
+        3958.337890625,
+        5121.18642578125,
+        5895.5283203125,
+        7890.322187499991,
+        21007.720703125
+      ],
+      "threshold_positive_fractions": {
+        "1000": 0.9668838132432735,
+        "2000": 0.8839252845046978,
+        "4000": 0.24237719480768924
+      }
+    }
+  },
+  "counts": {
+    "all_force_rises": 632880,
+    "air_gap_candidates": 505346,
+    "initial_excluded": 73927,
+    "outcome_censored": 4414,
+    "kept": 427005
+  },
+  "max_xy": 4.436027526855469,
+  "terminations": 1,
+  "resets": 12288,
+  "status": "completed",
+  "events": 427005,
+  "valid_robot_minutes": 708.6046666666666,
+  "artifacts_sha256": {
+    "pre.npy": "99dd73684f23cc0500004526e8f878fff4373b97e3b12aae51df947da10e287e",
+    "events.npz": "5e9954efdb5a00107f21ecaab3c9c2c9b68a555f52e3afd98cbb09a9f6b79cf6",
+    "stream.npz": "d3485f63b30a535bb7e32124eaa69271fa394347ff9d2493f57d5498ff84a108",
+    "fixture.npz": "9d581d57fdaebe760cc656ee3482285745f3d3cad0ffcb4c05e64b9e45e92af5",
+    "native_audit.npz": "9565413d8987001639a58758ab2d8d2b0f21ee0f4f44a84d1b1bef2e17923063"
+  },
+  "raw_report_sha256": "1f3244bd8522299a3924604637e1865bf309021cc7c857c6e9c5159a7d87dc6b"
+}

@@ -24,3 +24,6 @@ artifacts/impact/**/*.csv -text whitespace=cr-at-eol
 artifacts/impact/force_study_v1/results_tables.md -text whitespace=-blank-at-eof
 # Keep Matplotlib SVG bytes identical to the archived figure.
 artifacts/impact/continual_replay_v1/confirmation/continual_results.svg -text whitespace=-blank-at-eol
+
+# Preserve this study's Matplotlib export bytes, including SVG path spacing.
+artifacts/impact/causal_stream_v1/*.svg -text whitespace=-blank-at-eol

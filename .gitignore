@@ -89,3 +89,6 @@ _build
 /artifacts/impact/observability_v1/**/*.npz
 /artifacts/impact/causal_stream_v1/**/*.npz
 /artifacts/impact/causal_stream_v1/development/
+# Detailed per-foot/tile ledgers are kept locally and in the verified bundle.
+/artifacts/impact/causal_stream_v1/rep*/results.json
+/artifacts/impact/causal_stream_v1/rep*/operating_points.json
