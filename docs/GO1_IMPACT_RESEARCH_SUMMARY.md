@@ -10,6 +10,8 @@
 
 下一步研究**下一次落足的强冲击风险及有效提前量**；接触后识别保留为诊断，动作收益单独验收。
 
+随后补充的共享trunk差异见[机制对照计划](GO1_IMPACT_SHARED_REPRESENTATION_PLAN.md)：既有Go1独立网络结果不直接回答原Estimator多任务head的表现。下一轮需在同一冻结行为轨迹上区分表征、联合梯度与特征持续变化，不先认定共享一定有害。
+
 ## 实验基座
 
 Go1基线为`Unitree-Go1-Velocity-PD`，Kp40、Kd1、action scale0.25。原baseline物理200Hz、策略50Hz；Actor使用当前45D及HIMEstimator从270D历史估计的3D速度和16D latent，Critic训练时使用238D privileged observation。HIM-PPO、独立Estimator、prototype/Sinkhorn/swap loss未因impact研究修改。
