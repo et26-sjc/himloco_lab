@@ -16,6 +16,22 @@ LOG=Path('logs/impact_causal_stream_v1')
 
 def compact():
     for cache in sorted(ROOT.glob('rep*/*/cache')):
+        # prepare_events' metadata precedes adding confirmation/peak columns.
+        # Preserve its byte-identical table and point the extended metadata at
+        # the actual extended table instead of silently retaining a stale hash.
+        metadata_path=cache/'metadata.json'
+        metadata=json.loads(metadata_path.read_text())
+        extended_sha=file_hash(cache/'events.npz')
+        if metadata['events_sha256']!=extended_sha:
+            base={k:v for k,v in dict(np.load(cache/'events.npz')).items()
+                  if k not in ('confirm','native_peak_offset')}
+            np.savez_compressed(cache/'event_alignment.npz',**base)
+            assert file_hash(cache/'event_alignment.npz')==metadata['events_sha256']
+            metadata['event_alignment_events_sha256']=metadata['events_sha256']
+            metadata['event_alignment_filename']='event_alignment.npz'
+            metadata['events_sha256']=extended_sha
+            metadata['extension']='Original rows unchanged; causal confirmation and native peak offset added.'
+            metadata_path.write_text(json.dumps(metadata,indent=2)+'\n')
         destination=cache/'evaluation_context.npz'
         if destination.exists():continue
         stream=dict(np.load(cache/'stream.npz'))
