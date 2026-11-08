@@ -10,6 +10,7 @@ Continual adaptation/Replay: [five data replications × two initializations, nin
 Contact severity observability: [five data replications × two initializations, phase/kinematics/full-input controls and six causal cutoffs](docs/GO1_IMPACT_OBSERVABILITY_RESULTS.md); [locked protocol](docs/GO1_IMPACT_OBSERVABILITY_PLAN.md). This is an event-aligned diagnostic, not a deployed continuous-stream alarm.
 Causal continuous monitoring: [4096 envs, five data replications, learned/PD/oracle triggers, continuous BCE/MSE and packet-delay results](docs/GO1_IMPACT_CAUSAL_STREAM_RESULTS.md); [protocol and recorded secondary-control addition](docs/GO1_IMPACT_CAUSAL_STREAM_PLAN.md). The frozen modular trigger/severity proposal failed its primary endpoint; background supervision, calibration transfer and detection deadlines are evaluated separately.
 Next research objective: [anticipate the next strong touchdown with useful intervention lead time](docs/GO1_IMPACT_ANTICIPATION_PLAN.md). Design only: future-risk prediction, adaptation/Replay and physical utility require separate evidence.
+Impact research review: [all completed stages, supported/unsupported claims and the next experiment](docs/GO1_IMPACT_RESEARCH_SUMMARY.md).
 
 
 ## Project Overview
