@@ -1,0 +1,26 @@
+{
+  "status": "verified_stage_bulk_removed",
+  "files": [
+    {
+      "file": "datasets/go1_impact/shared_anticipation_v1/rep1/train/cache/pre.npy",
+      "bytes": 1843200128,
+      "sha256": "03a49922beee7c44588ebc689576e39e0c4919fff7b73d9a628ac0e2d3928aff"
+    },
+    {
+      "file": "datasets/go1_impact/shared_anticipation_v1/rep1/train/cache/post.npy",
+      "bytes": 1843200128,
+      "sha256": "883b958f16f5b423fbcf598eb8970560330aaae227a0d24ae7892ed6d1f025f6"
+    },
+    {
+      "file": "datasets/go1_impact/shared_anticipation_v1/rep1/train/cache/next48.npy",
+      "bytes": 1966080128,
+      "sha256": "eb6793a1d6a6d832e1e5cc1d0b16f036e3b148040cea409bb3d51481fb677df9"
+    },
+    {
+      "file": "datasets/go1_impact/shared_anticipation_v1/rep1/train/cache/current_targets.npy",
+      "bytes": 491520128,
+      "sha256": "5d1ec68f1abb9f2a7d62b19e4f97bef05858ee9189ef250dd7e829291ecfe9f6"
+    }
+  ],
+  "retained": "Original labels, complete fixtures, native audits, provenance, models and locked sparse alarms."
+}

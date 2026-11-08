@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "native_envs": 21,
+  "events_recomputed": 7369,
+  "max_severity_error_n_per_s": 0.0007362365704466356,
+  "terminal_rows_preserved": 49152,
+  "first_future_event_audit": "exhaustive over audit trajectories, all feet and boundaries",
+  "fixture_sha256": "d92d6caeace0c6d506a349063cd66eba70d6fa3561ed11a62bab457ca275ccc6"
+}

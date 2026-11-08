@@ -1,0 +1,32 @@
+{
+  "status": "measured",
+  "device": "NVIDIA GeForce RTX 5070 Ti",
+  "scope": "Current host only; includes Python dispatch and synchronous CUDA completion. No robot communication/actuator measurement.",
+  "architectures": {
+    "dedicated": {
+      "batch": 1,
+      "repetitions": 300,
+      "p50_ms": 0.037004999999999996,
+      "p95_ms": 0.04087235000000001,
+      "p99_ms": 0.1377773899999997,
+      "max_ms": 0.230459
+    },
+    "probe19": {
+      "batch": 1,
+      "repetitions": 300,
+      "p50_ms": 0.062004000000000004,
+      "p95_ms": 0.0645875,
+      "p99_ms": 0.06748088999999997,
+      "max_ms": 0.221657
+    },
+    "phase": {
+      "batch": 1,
+      "repetitions": 300,
+      "p50_ms": 0.0326385,
+      "p95_ms": 0.034240049999999994,
+      "p99_ms": 0.03519051,
+      "max_ms": 0.039332
+    }
+  },
+  "maximum_p99_ms": 0.1377773899999997
+}

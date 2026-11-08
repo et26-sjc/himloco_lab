@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "steps": 2500,
+  "num_envs": 4096,
+  "seed": 9101,
+  "valid_robot_intervals": 8589312,
+  "events": 1396591,
+  "positive_per_foot_fraction": 0.08005114379358906,
+  "future_landing_per_foot_fraction": 0.1583572700584168,
+  "input": "pre[t] and five older frames only; newest first",
+  "target": "first qualified landing strictly after input, within80ms; severity after40ms",
+  "onset_semantics": "5N force threshold; no strict geometric contact or actuator utility claim",
+  "hashes": {
+    "pre.npy": "03a49922beee7c44588ebc689576e39e0c4919fff7b73d9a628ac0e2d3928aff",
+    "next48.npy": "eb6793a1d6a6d832e1e5cc1d0b16f036e3b148040cea409bb3d51481fb677df9",
+    "post.npy": "883b958f16f5b423fbcf598eb8970560330aaae227a0d24ae7892ed6d1f025f6",
+    "events.npz": "2f2cdd4d2dea63a395e1419282385a4cfc7c9947234bf0f5b718df4cde8f38bb",
+    "future.npz": "5a6e30c98bcf976ecc66ecb485b01e336882ff0e3409e9c90d1f859b47a38fa1",
+    "fixture.npz": "d92d6caeace0c6d506a349063cd66eba70d6fa3561ed11a62bab457ca275ccc6",
+    "native_audit.npz": "34a9d1ebb10bf19655e19607abdab9470d1eb13dfb41c9621cf43c44144edb1f",
+    "current_targets.npy": "5d1ec68f1abb9f2a7d62b19e4f97bef05858ee9189ef250dd7e829291ecfe9f6"
+  }
+}

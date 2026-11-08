@@ -1,0 +1,45 @@
+{
+  "status": "locked_before_formal_training_and_tests",
+  "timestamp": "2026-11-09T00:15:15.491145+08:00",
+  "selected_joint_lambda": {
+    "bce": 10.0,
+    "brier": 10.0,
+    "mse": 10.0
+  },
+  "selection": "Minimum own validation impact loss averaged across two initializations; validation seen-family role0 only.",
+  "validation_losses": {
+    "bce": {
+      "0.1": 0.08868048805743456,
+      "1.0": 0.08431931189261377,
+      "10.0": 0.08211082010529935
+    },
+    "brier": {
+      "0.1": 0.027743801241740584,
+      "1.0": 0.026354512432590127,
+      "10.0": 0.025142730737570673
+    },
+    "mse": {
+      "0.1": 0.041273903916589916,
+      "1.0": 0.037492771341931075,
+      "10.0": 0.036101401259656996
+    }
+  },
+  "formal_updates": 60000,
+  "formal_batch": 2048,
+  "initial_development_updates": 15000,
+  "extended_development_updates": 60000,
+  "reason_for_extension": "Losses still improving at15000; continued same optimizer/RNG to60000 before formal tests.",
+  "last10000_relative_improvement_min_median_max": [
+    -0.0083316347956955,
+    0.0023108279531298213,
+    0.009664935302159183
+  ],
+  "all_lambda_sensitivity_models_retained": true,
+  "formal_models_per_replication": 46,
+  "current_diagnostic": "One replication matched completed20ms loading-rate diagnostic, not an independent five-seed primary.",
+  "lead_scope": "20ms force-threshold research endpoint only. Geometry and actuator/N0 physical utility unverified.",
+  "host_inference_allowance_ms": 5.0,
+  "development_maximum_batch1_p99_ms": 1.11151665,
+  "development_training_sha256": "f319fbad217fe94c642243c5f7a6c29d38b3321158e396bb0889f8aa1204de73",
+  "protocol_sha256": "ac71948daa8c7140c5da266f79f23982d14b295d65611798c09b11f9d8dd993d"
+}
