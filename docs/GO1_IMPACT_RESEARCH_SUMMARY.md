@@ -10,7 +10,7 @@
 
 下一步研究**下一次落足的强冲击风险及有效提前量**；接触后识别保留为诊断，动作收益单独验收。
 
-随后补充的共享trunk差异见[机制对照计划](GO1_IMPACT_SHARED_REPRESENTATION_PLAN.md)：既有Go1独立网络结果不直接回答原Estimator多任务head的表现。下一轮需在同一冻结行为轨迹上区分表征、联合梯度与特征持续变化，不先认定共享一定有害。
+用户随后明确旧冲击head与原HIMEstimator的速度/latent共享trunk，差异见[机制对照计划](GO1_IMPACT_SHARED_REPRESENTATION_PLAN.md)：既有Go1独立网络结果不直接回答原Estimator多任务head的表现。下一轮需在同一冻结行为轨迹上区分表征、联合梯度与特征持续变化，不先认定共享一定有害。
 
 ## 实验基座
 

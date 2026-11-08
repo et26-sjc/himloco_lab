@@ -4,9 +4,9 @@
 
 ## 新信息改变了哪项归因
 
-用户指出旧实验是在Estimator上加head、共享trunk。此前Go1实验主要训练独立网络，证明本体历史可用于估计，不证明接到既有Estimator上同样有效。旧问题可能同时涉及目标、共享表征、优化与闭环，而非单一MSE损失问题。共享也可能带来有益迁移，负迁移只是待检验假设。
+用户明确确认：旧实验的冲击head与原HIMEstimator的速度/latent共享trunk。此前Go1实验主要训练独立网络，证明本体历史可用于估计，不证明接到既有Estimator上同样有效。旧问题可能同时涉及目标、共享表征、优化与闭环，而非单一MSE损失问题。共享也可能带来有益迁移，负迁移只是待检验假设。
 
-必须区分两种共享：原HIM速度/latent与冲击共享；独立ContactEstimator内的force/impact共享。旧MC日志约1269及4439行记录了独立358→128→64→8 ContactEstimator及force/impact共享encoder，不能据此确认它与HIM主干共享。用户所指版本若不同，以其具体实现为准；本计划先设计在当前Go1上与HIM共享的机制对照，另列仅force/impact共享的对应检查。
+必须区分两种共享：原HIM速度/latent与冲击共享；独立ContactEstimator内的force/impact共享。本轮主研究明确采用前者。旧MC日志约1269及4439行记录了独立358→128→64→8 ContactEstimator及force/impact共享encoder，该段不能代表用户所指共享HIM版本；不将两个历史实现混同。后者仅作为其他共享形式的对应检查，不替换本轮主研究。
 
 当前代码事实：
 
